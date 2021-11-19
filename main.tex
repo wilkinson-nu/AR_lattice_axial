@@ -18,7 +18,7 @@
 \usepackage{amssymb}
 \usepackage[top=2cm,bottom=3cm]{geometry}
 \usepackage[svgnames]{xcolor}
-% hyper-ref prevents the document from compiling on the arXiv - it is 
+% hyper-ref prevents the document from compiling on the arXiv - it is
 % included in some other `usepackage` and that generates a conflict.
 % Will attempt to use it differently, hope for a better outcome.
 %\usepackage[bookmarks=false]{hyperref}
@@ -29,7 +29,7 @@
 \usepackage{amsmath}
 \usepackage{bm}     % nice math bold italics
 \usepackage{lineno}
-\usepackage{listings} 
+\usepackage{listings}
 \usepackage[normalem]{ulem}
 \usepackage[section]{placeins}
 \usepackage{hepunits}
@@ -83,11 +83,40 @@
 %Table of Contents
 \tableofcontents
 
-\input{intro}
+
+% ------------------------------------------------------------------------------
+% Intoroduction
+\section{Introduction\label{sec:intro}}
+\input{sections/intro}
+
+
+% ------------------------------------------------------------------------------
+% Lattice QCD
+\section{Lattice QCD determinations of the nucleon quasi-elastic form factor\label{sec:intro}}
+\input{sections/lqcd}
+
+
+% ------------------------------------------------------------------------------
+% Impact
+\section{Phenomenological Impact\label{sec:impact}}
+\input{sections/impact}
+
+
+% ------------------------------------------------------------------------------
+% Future
+\section{Future Improvements\label{sec:future}}
+\input{sections/future}
+
+
+% ------------------------------------------------------------------------------
+% Conclusions
+\section{Conclusions\label{sec:conclusions}}
+\input{sections/conclusions}
+
 
 %Disclosure
 \section*{DISCLOSURE STATEMENT}
-The authors are not aware of any affiliations, memberships, funding, or financial holdings that might be perceived as affecting the objectivity of this review. 
+The authors are not aware of any affiliations, memberships, funding, or financial holdings that might be perceived as affecting the objectivity of this review.
 
 % Acknowledgements
 \section*{ACKNOWLEDGMENTS} %Acknowledgements, general annotations, funding.
