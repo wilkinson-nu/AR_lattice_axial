@@ -8,7 +8,7 @@ three-flavor mixing paradigm is sufficient~\cite{Esteban:2020cvm, ParticleDataGr
 These goals introduce stringent requirements on the precision of current and future experiments.
 High-intensity beams are required to produce the flux of neutrinos
  to be able to accumulate the necessary statistics.
-Increased statistics place additional burden on the systematic uncertainties developed for the experimental program.
+Increased statistics place additional burden on the systematic uncertainties needed for the experimental program.
 
 Two, billion dollar scale, next-generation experiments designed to meet these experimental constraints
 are the Deep Underground Neutrino Experiment (DUNE)~\cite{Abi:2020wmh}
@@ -19,24 +19,36 @@ neutrino energy spectrum peaked at a neutrino energy of $\approx$0.6 GeV, with s
 contributions between 0.1--2 GeV, over a 295 km baseline. Despite their different energies and
 baselines, both experiments sit at a similar L/E, so probe similar oscillation physics.
 At the few-GeV energies of interest, neutrino interactions with nucleons have many available interaction channels,
- including quasielastic, resonant, and deep inelastic scattering.
-In order to increase the interaction cross section,
- large nuclear targets are used in place of elementary targets
- as both target and detection material.
-Neutrino interaction cross sections on these large nuclear targets,
- and all of their complications,
- must be understood to make theoretical predictions about neutrino event rates.
+ including quasielastic, resonant, and deep inelastic scattering~\cite{zeller12, hayato_review_2014, Mosel:2016cwa, Katori:2016yel, NuSTEC:2017hzk}.
+All current and planned experiments use nuclear targets ($^{12}$C--$^{40}$Ar) as the
+target material to increase the interaction rate, as well as to avoid serious experimental complications using elementary targets.
+The use of nuclear targets significantly complicates the cross-section modeling issues and
+associated systematics as intra-nuclear dynamics have a comparable energy scale to
+the energy transfers in the neutrino interactions of interest.
 
-Neutrino quasielastic scattering event topology is the simplest of these interactions
- since this interaction makes the assumption of scattering with a single free nucleon.
-Despite the simplicity of this interaction,
- intranuclear rescattering of the particles can make the event topology observed
- in the detector more complicated.
-Nuclear modeling is required to control these effects,
- which makes isolation of the initial free nucleon interaction more complicated.
-In order to access the neutrino interaction cross sections with free nucleons,
- other methods must be employed.
+A significant challenge impeding progress towards a consistent theoretical description of neutrino-nucleus interactions is the lack of data to benchmark parts of the calculation against. For example, neutrino quasielastic scattering ($\nu_{l} + n \rightarrow l^{-} + p$ or $\bar{\nu}_{l} + p \rightarrow l^{+} + n$) is the simplest of the relevant hard scattering processes, and dominates the neutrino cross section below $\approx$1 GeV. However, modern experiments using nuclear targets are unable to measure it without significant nuclear effects~\cite{garvey_review_2014, NuSTEC:2017hzk}.
+Neutrino cross-section models for quasielastic scattering (and other hard-scattering processes) have relied heavily on sparse data from the 1960--1980's from several bubble chamber experiments which used $H_{2}$ or $D_2$ targets~\cite{zeller12, ParticleDataGroup:2020ssz}.
+The small neutrino cross section, and relatively weak (by modern standards) accelerator neutrino beams utilized by these early experiments, mean that the available quasielastic event sample on light targets amounts to a few thousand events~\cite{ANL_Barish_1977, BNL_Baker_1981}.
+Safety considerations make it unlikely that new high-statistics bubble chamber experiments with
+ hydrogen or deuterium fills will be deployed to fill this crucial gap,
+ so experiments are looking for other ways to access neutrino interactions
+ with elementary targets, as a tool for disambiguating neutrino cross section modeling uncertainties.
+One possibility is to use experiments with various hydrocarbon targets to subtract the carbon interaction contributions from
+ the total hydrocarbon event rates, and produce ``on hydrogen'' measurements~\cite{PhysRevD.92.051302, PhysRevD.101.092003, Hamacher-Baumann:2020ogq, DUNE:2021tad}.
+ These ideas are promising, but typically rely on kinematic tricks that are only relevant for some channels, and it remains to be seen whether the model systematics associated with the carbon subtraction can be adequately controlled. Such ideas may also be extended to other compound target materials with hydrogen or deuterium components.
 
+In the absence of an updated scattering experiment on an elementary target,
+ lattice QCD (LQCD) could provide the missing free nucleon amplitudes
+ that are otherwise not known at the required precision.
+The nucleon axial form factor is the first benchmark quantity that could be computed,
+ with a few-${\rm GeV}^2$ reach in momentum transfer possible.
+More challenging computations could provide information about nucleon
+ resonant and nonresonant contributions to axial matrix elements,
+ such as the $\Delta$ or Roper resonance channels,
+ inclusive contributions in the shallow inelastic scattering region,
+ or deep inelastic scattering parton distribution functions.
+
+{\color{blue} I've orphaned this paragraph by mistake, I think it needs to be worked in again somewhere?}
 The interaction via a weak current means that scattering cross sections are small,
  and so interaction data with elementary targets is sparse
  (in the case of bubble chamber experiments)
@@ -51,22 +63,3 @@ If the axial form factor uncertainty could be decreased,
  tensions in the neutron (?) magnetic form factor are still
  roughly half the size of the total axial form factor uncertainty,
  limiting the precision on the quasielastic neutrino-nucleon cross section.
-
-Restrictions on new high-statistics bubble chamber experiments with
- hydrogen or deuterium fills are not likely due to safety considerations,
- so experiments are looking for other ways to access neutrino interactions
- with elementary targets.
-One such way is to use experiments with various hydrocarbon targets
- and subtract away the carbon interaction contributions from
- the total hydrocarbon event rates.
-
-In the absence of an updated scattering experiment on an elementary target,
- lattice QCD (LQCD) could provide the missing free nucleon amplitudes
- that are otherwise not known at the required precision.
-The nucleon axial form factor is the first benchmark quantity that could be computed,
- with a few-${\rm GeV}^2$ reach in momentum transfer possible.
-More challenging computations could provide information about nucleon
- resonant and nonresonant contributions to axial matrix elements,
- such as the $\Delta$ or Roper resonance channels,
- inclusive contributions in the shallow inelastic scattering region,
- or deep inelastic scattering parton distribution functions.
