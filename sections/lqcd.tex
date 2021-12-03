@@ -1,57 +1,15 @@
 % ------------------------------------------------------------------------------
 % LQCD Intro
 \subsection{Lattice QCD\label{sec:lqcd_intro}}
-Lattice QCD is a discretized version of QCD, formulated in Euclidean spacetime, in which the quark fields live at the sites of the lattice and the gluon fields live on the links between the sites.  These link fields are given by Wilson-lines
-\begin{equation}
-U_\mu(x) = \exp\left\{i a\int_0^1 dt A_\mu(x +(1-t)a\hat{\mu}) \right\}
-    \approx \exp\left\{i a \bar{A}_\mu(x) \right\}\, ,
-\end{equation}
-where $A_\mu(x)$ is the gluon field, $a$ is the ``lattice spacing'' and $\bar{A}_\mu(x)$ is the average value of $A_\mu(x)$ over the spacetime interval $[x, x+a\hat{\mu}]$.
-This parameterization of the gauge fields allows for the construction of a discretized theory which preserves gauge-invariance~\addcite{Wilson}, a key property of gauge theories.
-For example, the discretized Dirac operator
-\begin{equation}
-\bar{\psi}(x)\g_\mu D_\mu \psi(x) \rightarrow
-\bar{\psi}(x)\g_\mu\frac{1}{2a}\left[U_\mu(x)\psi(x+a\hat{\mu}) -U^\dagger_\mu(x)\psi(x-a\hat{\mu}) \right]\, ,
-\end{equation}
-is invariant under gauge transformations,
-\begin{align}
-&\psi(x)\rightarrow \Omega(x)\psi(x)\, ,&
-&U_\mu(x)\rightarrow \Omega(x)U_\mu(x)\Omega^{-1}(x+a\hat{\mu})\, .&
-\end{align}
+\input{sections/lqcd_intro}
 
-
-\begin{equation}
-\hspace{-1.25in}\Umunu \hspace{-0.65in}
-    =U_{\mu\nu}(x)
-    =U_\mu(x)U_\nu(x+a\hat{\mu}) U^\dagger_\mu(x+a\hat{\nu}) U^\dagger_\nu(x)
-\end{equation}
-
-
-
-\bigskip
-\begin{itemize}
-
-\item The choice of Euclidean space is to allow Monte Carlo
-
-\item comment on fermion and determinant
-
-\end{itemize}
 
 % ------------------------------------------------------------------------------
 % LQCD results
 \subsection{Survey of lattice QCD results of $F_A(Q^2)$\label{sec:lqcd_results}}
-
-Citations for $F_A(Q^2)$ references pulled from NME21, no $g_A$-only references:
-\begin{description}
-\item[NME 21]~\cite{Park:2021ypf}
-\item[RQCD 20]~\cite{Bali:2018qus,RQCD:2019jai} %% 63
-\item[ETMC 20]~\cite{Alexandrou:2018sjm,Alexandrou:2019brg,Alexandrou:2020okk} %% 54-56
-\item[PACS 18 (erratum)]~\cite{Ishikawa:2018rew,Shintani:2018ozy} %% 60-61 (62 proceedings)
-\item[PNDME 17]~\cite{Gupta:2017dwj,Gupta:2018qil,Jang:2019vkm,Jang:2019jkn} %% 6-9
-\item[CLS 17]~\cite{Hasan:2017wwt,Hasan:2019noy} %% LHPC? 66-67
-\end{description}
-
+\input{sections/lqcd_survey}
 
 % ------------------------------------------------------------------------------
 % z-expansion
-\subsection{Combinding the $z$-expansion with the continuum and chiral extrapolations\label{sec:z_continuum}}
+\subsection{Combining the $z$-expansion with the continuum and chiral extrapolations\label{sec:z_continuum}}
+\input{sections/lqcd_z_expansion}
