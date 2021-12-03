@@ -36,7 +36,7 @@
 \usepackage{hepparticles}
 \usepackage{cancel}
 \usepackage{hepnames}
-\usepackage{epstopdf}
+%\usepackage{epstopdf}
 \usepackage{mathtools}
 \usepackage[capitalise]{cleveref}
 \usepackage{braket}
@@ -44,8 +44,15 @@
 \usepackage{xcolor}
 \usepackage{multirow}
 
+\usepackage[Export]{adjustbox}
+
+%\newcommand{\Umunu}{\includegraphics[width=0.5\textwidth,fbox=1pt,valign=c]{plots/plaquette}}
+\newcommand{\Umunu}{\includegraphics[width=0.6\textwidth,valign=c]{plots/plaquette}}
+
 \setcounter{secnumdepth}{4}
-\newcommand\addcite{[{\color{blue} \underline{CITATION NEEDED}}]}
+\def\addcite#1{{\color{red}CITE[#1]}}
+
+\def\g{\gamma}
 
 % Metadata Information
 \jname{Xxxx. Xxx. Xxx. Xxx.}
