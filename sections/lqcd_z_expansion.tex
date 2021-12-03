@@ -1,0 +1,57 @@
+The $z$ expansion is a conformal mapping from the four-momentum transfer squared $Q^2$
+ to a small expansion parameter $z$, parameterized by the relation
+\begin{align}
+ z(t=-Q^2;t_0,t_c) = \frac{\sqrt{t_c-t} -\sqrt{t_c-t_0}}{ \sqrt{t_c-t} +\sqrt{t_c-t_0}},
+\end{align}
+ where $t_c$ is the kinematic cutoff in timelike momentum transfer for
+ a particle production threshold and $t_0$ is a parameter that may be
+ chosen to improve the series convergence.
+Inverting this relation and expanding as a power series in $z$ about $Q^2=-t_0$ yields
+\begin{align}
+ Q^2+t_0 = 4 (t_c-t_0) \sum_{k=1}^\infty k z^k.
+ \label{eq:Q2toz}
+\end{align}
+A general series in $Q^2$ may therefore be converted to an expansion in $z$ and $t_0$
+ by first converting powers of $Q^2$ to those of $Q^2+t_0$ and $t_0$,
+\begin{align}
+ Q^{2m} &= \big( (Q^2+t_0) -t_0 \big)^m
+ = \sum_{n=0}^{m} \left( \begin{array}{c} m \\ n \end{array} \right) (Q^2+t_0)^n (-t_0)^{m-n}
+\end{align}
+ and then using Eq.~(\ref{eq:Q2toz}) to convert powers of $Q^2+t_0$ into a power series in $z$.
+Following this procedure, the LECs that appear as prefactors for powers of $Q^2$
+ are instead assembled into expressions related to the coefficients of the $z$ expansion,
+\begin{align}
+ F\big(z(Q^2)\big) = \sum_k a_k z^k.
+ \label{eq:zexp}
+\end{align}
+
+%The transformation to take an expansion in $Q^2$ to an expansion in $z$
+% is possible because the expression in Eq.~(\ref{eq:Q2toz}) starts at $O(z^1)$.
+%The inverse transformation, taking a power series expansion of $z$ to an expansion in $Q^2$,
+% is not tractible since all higher powers of $z$ generate terms of order $O\big((Q^2)^0\big)$.
+When transforming the expansion in $Q^2$ into an expansion in $z$,
+ the one expansion parameter $Q^2$ is replaced instead by two new parameters, $z$ and $t_0$.
+The parameter $t_0$ is arbitrary and can be chosen to be small (or 0) based on preference.
+
+
+To demonstrate this, take $\alpha=\sqrt{(t_c-t)/(t_c-t_0)}$ and expand
+\begin{align}
+ z = \frac{\alpha-1}{\alpha+1} = 1 - 2 \sum_k (-\alpha)^k,
+\end{align}
+ then expanding $\alpha^k$ in $t$ yields
+\begin{align}
+ \alpha^k &= \biggr(\frac{ t_c}{ t_c -t_0} \biggr)^{k/2} \biggr( 1 -\frac{t}{t_c} \biggr)^{k/2}
+ \nonumber\\
+ &= \sum_{n=0} \biggr(\begin{array}{c} k \\ n \end{array} \biggr)
+ \biggr(\frac{ t_c}{ t_c -t_0} \biggr)^{k/2} \biggr( -\frac{t}{2t_c} \biggr)^{n}.
+\end{align}
+The term that appears with $n=0$ is a $t$-independent term that is multiplied by
+ the unknown LEC $a_k$ in the $z$ expansion of Eq.~(\ref{eq:zexp}).
+
+The power series in $z$ fixes the $Q^2$ dependence of the form factor
+ by building in the correlations required by analyticity
+ between LECs of measurable low powers of $Q^2$
+ and in practice unmeasurable higher powers.
+Further constraints from perturbative QCD may be used to bound the size of higher-order LECs
+ in the expansion.
+%Since $|z|<1$ is satisfied for all data in the quasielastic regime,
