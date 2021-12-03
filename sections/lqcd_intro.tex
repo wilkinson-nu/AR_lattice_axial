@@ -15,21 +15,45 @@ is invariant under gauge transformations,
 &\psi(x)\rightarrow \Omega(x)\psi(x)\, ,&
 &U_\mu(x)\rightarrow \Omega(x)U_\mu(x)\Omega^{-1}(x+a\hat{\mu})\, .&
 \end{align}
-
-
+In the continuum, the gluon action-density is given by product of field strength tensors, which are gauge-covariant curl's of the gauge potential
+\begin{align}
+&\mathcal{L}_G = \frac{1}{2g^2}\textrm{Tr}\left[G_{\mu\nu} G_{\mu\nu}\right]\, &
+&G_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu +i [A_\mu, A_\nu]\, ,&
+\end{align}
+where $g$ is the gauge coupling.
+When constructing the discretized gluon-action, it is therefore natural to use objects which encode this curl of the gauge potential.  The simplest such object is referred to as a ``plaquette'' and given by
 \begin{equation}
 \hspace{-1.25in}\Umunu \hspace{-0.65in}
     =U_{\mu\nu}(x)
-    =U_\mu(x)U_\nu(x+a\hat{\mu}) U^\dagger_\mu(x+a\hat{\nu}) U^\dagger_\nu(x)
+    =U_\mu(x)U_\nu(x+a\hat{\mu}) U^\dagger_\mu(x+a\hat{\nu}) U^\dagger_\nu(x)\, .
 \end{equation}
+One can then show that the Wilson gauge-action reduces to the continuum action plus irrelevant operators which vanish in the continuum limit
+\begin{align}
+S_G(U) &= \beta \sum_{n=x/a} \sum_{\mu<\nu}
+    \textrm{Re}\left[ 1 - \frac{1}{N_c} \textrm{Tr} \left[U_{\mu\nu}(n) \right]\right]
+\nonumber\\&=
+    \frac{\beta}{2N_c} a^4 \sum_{n=x/a,\mu,\nu} \frac{1}{2}
+    \textrm{Tr} \left[ G_{\mu\nu}(n)G_{\mu\nu}(n)\right]
+    +\mathrm{O}(a^6)\, ,
+    & \rightarrow \beta = \frac{2N_c}{g^2}\, .
+\end{align}
+The continuum limit, which is the assymptotically large $Q^2$ region, is therefore approached as $\beta\rightarrow\infty$ where $g(Q^2)\rightarrow 0$.
 
 
 
-\bigskip
+\addcomment{thoughts for rest of intro to LQCD}
 \begin{itemize}
 
-\item The choice of Euclidean space is to allow Monte Carlo
+\item many choices of discretized action
 
-\item comment on fermion and determinant
+\item many choices of fermions
+
+\item Symanzik shows us all choices reduce to QCD close to the continuum, plus irrelevant operators
+
+\item advantages and disadvantages of different choices, cost for $\mathrm{O}(a^2)$ improved
+
+\item full calculation requires extrapolation to the continuum limit, physical pion mass, infinite volume
+
+\item extra challenges for FF: light pions = more noise, (light pions more expensive cause larger L, larger condition number, and more statistics needed); finite L limits accessible kinematic points - particularly challenging for extracting slope of form factors at small $Q^2$ - FF parameterizations can show non-trivial structure in between kinematically accessible points - leads to ideas to compute slope of FF as well as FF...
 
 \end{itemize}
