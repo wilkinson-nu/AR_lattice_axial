@@ -1,0 +1,76 @@
+
+Precise nucleon form factors for (quasi)elastic scattering are of the most immediate concern
+ for neutrino oscillation experiments and simultaneously one of the easiest
+ targets for lattice QCD in regards to nucleon interactions.
+However, processes with higher energy transfers are also a cause for concern,
+ especially when considering the higher-energy neutrino flux at DUNE.
+Given the discrepancy between lattice axial form factor data and experimental constraints,
+ it is not unreasonable to expect other interaction mechanisms are similarly discrepant.
+These interaction types are more challenging for or even inaccessible to
+ experimental measurements.
+Appeals to model assumptions may give some handle for missing quantities,
+ but are also subject to unquantifiable systematic effects.
+Larger energy transfers can access other fundamentally different interaction topologies,
+ such as resonant or nonresonant pion production mechanisms,
+ nuclear responses with correlated nucleon pairs,
+ or scattering off partons within nucleons.
+In principle, all of these interaction mechanisms are accessible to lattice QCD,
+ though with varying degrees of difficulty.
+
+Calculations that access resonant scattering matrix elements are the most similar
+ to calculations with elastic scattering.
+The main source of difficulty in these calculations stem from trying to extract
+ information about the excited states rather than the ground state.
+A dense spectrum arises from states that contain multiple particles
+ moving with several different discrete lattice momenta.
+Empirical evidence from dedicated computations demonstrates that these multiparticle states are
+ in practice difficult to quantify without interpolating operators that closely
+ resemble those states in their construction~\textcolor{red}{[cite JLab]}.
+Not only are these states dense, but they have a strong power-law dependence on the
+ lattice spatial volume, as compared to exponentially-damped corrections
+ for single-particle states, leading to nontrivial corrections to the state masses.
+In addition, the necessary correlation functions for extracting these states often have
+ unfavorable combinatoric factors multiplying the number of terms to account for
+ permutations of quark lines, changing momenta, varying time ranges, or the like.
+
+%To access information about the resonant scattering of neutrinos,
+% the aforementioned issues will need to be overcome by some
+% combination of clever algorithms and computational power.
+Some form of approximate all-to-all method is likely necessary
+ to compute amplitudes of nucleon resonant and nonresonant transitions
+ to states with pions.
+The aforementioned issues are, at least in part, circumvented by applying approximate
+ all-to-all techniques, for instance distillation~\textcolor{red}{[citations]}.
+Though the overhead for these methods is large,
+ these techniques enable sophisticated calculations with large bases
+ of interpolating operators including multiparticle interpolators.
+Using an all-to-all method specifically avoids producing the sequential
+ quark propagator inversions, like in traditional three-point correlator functions,
+ that become costly when enumerating all possible quark line combinations
+ and especially in the case of multiparticle operators.
+The higher-mass resonances will be more technically difficult
+ due to the increased density of states with the energy transfers involved.
+Using these propagator data, a calculation of the Roper resonance contribution
+ has the secondary consequence of offering a handle on removing excited
+ state contamination from a calculation of the quasielastic form factors.
+\textcolor{red}{[summarizing statement or two about current status]}
+
+Calculations of two-nucleon matrix elements provide key insights
+ about the correlations between nucleons inside of a nuclear medium,
+ a vital ingredient for construction of an effective theory
+ of neutrino interactions with nuclear targets.
+%% heavier than physical Mpi => NPLQCD/HALQCD controversy
+First efforts have been made to compute deuteron and dineutron scattering phase shifts
+ at unphysically heavy pion masses.
+There is some controversy about whether the deuteron forms a
+ bound state at these higher pion masses.~\textcolor{red}{[citations, more content]}.
+%% gA(Q2) on D2
+Once this controversy is cleared,
+ matrix elements of currents inserted between two-nucleon states could
+ provide information about the strength of nuclear corrections in deuterium.
+These corrections were assumed to be strong only at low momentum transfer
+ and energy-independent in the deuterium bubble chamber data reanalysis~\cite{Meyer:2016oeg},
+ for which an uncertainty inflation was needed to account for observed theory-data discrepancies.
+%% energy scales of NNpi
+
+
