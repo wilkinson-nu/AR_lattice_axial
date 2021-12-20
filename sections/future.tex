@@ -4,56 +4,73 @@ Precise nucleon form factors for (quasi)elastic scattering are of the most immed
  targets for lattice QCD in regards to nucleon interactions.
 However, processes with higher energy transfers are also a cause for concern,
  especially when considering the higher-energy neutrino flux at DUNE.
-Given the discrepancy between lattice axial form factor data and experimental constraints,
- it is not unreasonable to expect other interaction mechanisms are similarly discrepant.
-These interaction types are more challenging for or even inaccessible to
- experimental measurements.
-Appeals to model assumptions may give some handle for missing quantities,
- but are also subject to unquantifiable systematic effects.
-Larger energy transfers can access other fundamentally different interaction topologies,
+These larger energy transfers can access other fundamentally different interaction topologies,
  such as resonant or nonresonant pion production mechanisms,
  nuclear responses with correlated nucleon pairs,
  or scattering off partons within nucleons.
 In principle, all of these interaction mechanisms are accessible to lattice QCD,
  though with varying degrees of difficulty.
+Given the discrepancy between lattice axial form factor data and experimental constraints,
+ it is not unreasonable to expect other interaction mechanisms have similar discrepancies
+ between theory and observation.
+These interaction types are more challenging to extract or even inaccessible to
+ experimental measurements.
+Appeals to model assumptions may give some handle for missing quantities,
+ but are also subject to unquantifiable systematic effects.
 
-Calculations that access resonant scattering matrix elements are the most similar
- to calculations with elastic scattering.
-The main source of difficulty in these calculations stem from trying to extract
- information about the excited states rather than the ground state.
-A dense spectrum arises from states that contain multiple particles
- moving with several different discrete lattice momenta.
-Empirical evidence from dedicated computations demonstrates that these multiparticle states are
- in practice difficult to quantify without interpolating operators that closely
- resemble those states in their construction~\textcolor{red}{[cite JLab]}.
-Not only are these states dense, but they have a strong power-law dependence on the
- lattice spatial volume, as compared to exponentially-damped corrections
- for single-particle states, leading to nontrivial corrections to the state masses.
-In addition, the necessary correlation functions for extracting these states often have
+Calculations that access the combined resonant and nonresonant scattering amplitudes
+ are the most similar to those of elastic scattering,
+ where a current induces a transition of the nucleon to a multiparticle final state.
+Only stable final states, such as nucleon-pion states or other multiparticle states,
+ are obtained as eigenstates of the Hamiltonian.
+Resonance properties are indirectly probed by converting the observed spectrum,
+ with its power-law finite volume corrections, to a scattering phase shift in infinite volume.
+These power-law finite volume corrections are in contrast with exponentially-damped
+ corrections obtained for single-particle states.
+The multiparticle states make up a dense spectrum that arises from
+ states where individual hadrons move with different discrete lattice momenta.
+
+The main difficulties in these calculations stem the challenges of extracting
+ information about many excited states rather than a single ground state.
+Empirical evidence from dedicated computations demonstrates that these multiparticle states
+ are in practice difficult to quantify without interpolating operators constructed to
+ closely resemble the states they are intended to identify,
+ both in the number of quarks and antiquarks and also the individual
+ momenta of the quark-level components~\textcolor{red}{[cite JLab]}.
+The necessary interpolating operators for extracting multiparticle states often have
  unfavorable combinatoric factors multiplying the number of terms to account for
  permutations of quark lines, changing momenta, varying time ranges, or the like.
-
-%To access information about the resonant scattering of neutrinos,
-% the aforementioned issues will need to be overcome by some
-% combination of clever algorithms and computational power.
 Some form of approximate all-to-all method is likely necessary
  to compute amplitudes of nucleon resonant and nonresonant transitions
  to states with pions.
+
 The aforementioned issues are, at least in part, circumvented by applying approximate
  all-to-all techniques, for instance distillation~\textcolor{red}{[citations]}.
 Though the overhead for these methods is large,
  these techniques enable sophisticated calculations with large bases
  of interpolating operators including multiparticle interpolators.
-Using an all-to-all method specifically avoids producing the sequential
- quark propagator inversions, like in traditional three-point correlator functions,
- that become costly when enumerating all possible quark line combinations
- and especially in the case of multiparticle operators.
-The higher-mass resonances will be more technically difficult
+Using an all-to-all method specifically avoids the need to produce sequential
+ quark propagator inversions that are used in traditional three-point correlator functions,
+ which are the source of many unfavorable combinatoric factors and are
+ costly when enumerating all possible quark line combinations.
+Though the lowest resonances will be accessible with these techniques,
+ the higher-mass resonances will be more technically difficult
  due to the increased density of states with the energy transfers involved.
 Using these propagator data, a calculation of the Roper resonance contribution
  has the secondary consequence of offering a handle on removing excited
  state contamination from a calculation of the quasielastic form factors.
 \textcolor{red}{[summarizing statement or two about current status]}
+
+To access higher resonance states in the so-called shallow inelastic scattering (SIS) regime,
+ lattice calculations will likely be more successful using other methods
+ that access the inclusive nucleon scattering amplitude to hadronic states.
+A four-point function calculation on the lattice can obtain a discrete sampling
+ of the scattering amplitude as a function of the center-of-mass energy,
+ convolved with weights that are exponential in the energy and time separation.
+Applying an inverse transformation to obtain the scattering amplitude
+ is an ill-posed problem, but initial calculations using techniques
+ such as Backus-Gilbert or moments have shown promise.
+\textcolor{red}{[more detail, references, check wording]}
 
 Calculations of two-nucleon matrix elements provide key insights
  about the correlations between nucleons inside of a nuclear medium,
@@ -64,13 +81,19 @@ First efforts have been made to compute deuteron and dineutron scattering phase 
  at unphysically heavy pion masses.
 There is some controversy about whether the deuteron forms a
  bound state at these higher pion masses.~\textcolor{red}{[citations, more content]}.
-%% gA(Q2) on D2
-Once this controversy is cleared,
- matrix elements of currents inserted between two-nucleon states could
- provide information about the strength of nuclear corrections in deuterium.
-These corrections were assumed to be strong only at low momentum transfer
- and energy-independent in the deuterium bubble chamber data reanalysis~\cite{Meyer:2016oeg},
- for which an uncertainty inflation was needed to account for observed theory-data discrepancies.
-%% energy scales of NNpi
 
+%% gA(Q2) on D2 and nuclear ET
+Future calculations of matrix elements for currents inserted between
+ two-nucleon states could provide direct information about the LEC inputs to nuclear
+ models~\cite{Drischler:2019xuo}
+ or by providing direct comparisons of neutrino interaction matrix elements in deuterium.
+\textcolor{red}{[more detail needed on ET LECs]}
+%% overlap of energy scales of NN vs NNpi
+\textcolor{red}{[the following is likely too much detail]}
+Deuterium corrections from nuclear models were assumed to be strong only at low momentum transfer
+ and energy-independent in the reanalysis of deuterium bubble chamber data~\cite{Meyer:2016oeg},
+ despite the inability of these corrections to account for the theory-data discrepancies.
+A direct lattice QCD computation of these effects would isolate the effect,
+ either by definitively attributing the discrepancy to deuterium effects
+ or by implicating the other systematics corrections.
 
