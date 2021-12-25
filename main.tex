@@ -9,43 +9,8 @@
 % For tracking purposes => this is v1.0 - Apr. 2013
 
 \documentclass{ar-1col}
-\usepackage{url}
-\usepackage[numbers,sort&compress]{natbib}
+\input{preamble}
 
-%% added packages
-\usepackage{xspace}
-\usepackage{graphicx}
-\usepackage{amssymb}
-\usepackage[top=2cm,bottom=3cm]{geometry}
-\usepackage[svgnames]{xcolor}
-% hyper-ref prevents the document from compiling on the arXiv - it is
-% included in some other `usepackage` and that generates a conflict.
-% Will attempt to use it differently, hope for a better outcome.
-%\usepackage[bookmarks=false]{hyperref}
-\usepackage[bookmarks=false,colorlinks=true,linkcolor=DarkBlue,citecolor=DarkBlue]{hyperref}
-\usepackage{subfig}
-\usepackage{rotating}
-\usepackage{units}
-\usepackage{amsmath}
-\usepackage{bm}     % nice math bold italics
-\usepackage{lineno}
-\usepackage{listings}
-\usepackage{lmodern} % suppress font warnings
-\usepackage[normalem]{ulem}
-\usepackage[section]{placeins}
-\usepackage{hepunits}
-\usepackage{hepparticles}
-\usepackage{cancel}
-\usepackage{hepnames}
-%\usepackage{epstopdf}
-\usepackage{mathtools}
-\usepackage[capitalise]{cleveref}
-\usepackage{braket}
-\usepackage{slashed}
-\usepackage{xcolor}
-\usepackage{multirow}
-
-\usepackage[Export]{adjustbox}
 
 %\newcommand{\Umunu}{\includegraphics[width=0.5\textwidth,fbox=1pt,valign=c]{plots/plaquette}}
 \newcommand{\Umunu}{\includegraphics[width=0.6\textwidth,valign=c]{plots/plaquette}}
@@ -53,13 +18,14 @@
 \setcounter{secnumdepth}{4}
 \def\addcite#1{{\color{red}CITE[#1]}}
 \def\addcomment#1{{\color{red}COMMENT: #1}}
+\def\new#1{{\color{blue}#1}}
 
 \def\g{\gamma}
 
 % Metadata Information
 \jname{Xxxx. Xxx. Xxx. Xxx.}
 \jvol{AA}
-\jyear{2020}
+\jyear{2022}
 \doi{10.1146/((please add article doi))}
 
 
@@ -67,7 +33,7 @@
 \begin{document}
 
 % Page header
-\markboth{Short authors}{Short title}
+\markboth{A. Meyer, A. Walker-Loud, C. Wilkinson}{LQCD for neutrino physics}
 
 % Title
 \title{Status of Lattice QCD Determination of Nucleon Form Factors

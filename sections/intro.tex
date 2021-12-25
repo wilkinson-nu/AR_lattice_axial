@@ -26,7 +26,7 @@ The use of nuclear targets significantly complicates the cross-section modeling 
 associated systematics as intra-nuclear dynamics have a comparable energy scale to
 the energy transfers in the neutrino interactions of interest.
 
-A significant challenge impeding progress towards a consistent theoretical description of neutrino-nucleus interactions is the lack of data to benchmark parts of the calculation against. For example, neutrino quasielastic scattering ($\nu_{l} + n \rightarrow l^{-} + p$ or $\bar{\nu}_{l} + p \rightarrow l^{+} + n$) is the simplest of the relevant hard scattering processes, and dominates the neutrino cross section below $\approx$1 GeV. However, modern experiments using nuclear targets are unable to measure it without significant nuclear effects~\cite{garvey_review_2014, NuSTEC:2017hzk}.
+A significant challenge impeding progress towards a consistent theoretical description of neutrino-nucleus interactions is the lack of data to benchmark parts of the calculation against. For example, neutrino quasielastic scattering ($\nu_{l} + n \rightarrow l^{-} + p$ or $\bar{\nu}_{l} + p \rightarrow l^{+} + n$) is the simplest of the relevant hard scattering processes, and dominates the neutrino cross section below \new{energies of} $\approx$1 GeV. However, modern experiments using nuclear targets are unable to measure it without significant nuclear effects~\cite{garvey_review_2014, NuSTEC:2017hzk}.
 Neutrino cross-section models for quasielastic scattering (and other hard-scattering processes) have relied heavily on sparse data from the 1960--1980's from several bubble chamber experiments which used $H_{2}$ or $D_2$ targets~\cite{zeller12, ParticleDataGroup:2020ssz}.
 The small neutrino cross section, and relatively weak (by modern standards) accelerator neutrino beams utilized by these early experiments, mean that the available quasielastic event sample on light targets amounts to a few thousand events~\cite{ANL_Barish_1977, BNL_Baker_1981}.
 {\color{red} [We could consider adding some comments about pion electroproduction here]}
@@ -43,19 +43,21 @@ The axial radius, which is proportional to the slope of the form factor at $Q^2=
 Ideally, the lack of precision in the axial form factor would
  be rectified by a modern neutrino scattering experiment.
 
-Safety considerations make it unlikely that new high-statistics bubble chamber experiments with
- hydrogen or deuterium fills will be deployed to fill this crucial gap,
- so experiments are looking for other ways to access neutrino interactions
- with elementary targets, as a tool for disambiguating neutrino cross section modeling uncertainties.
+Safety considerations make it unlikely that new high-statistics bubble chamber experiments \new{using}
+hydrogen or deuterium will be deployed to fill this crucial gap,
+so \new{experimentalists} are looking for other ways to access neutrino interactions
+with elementary targets as a tool for disambiguating neutrino cross section modeling uncertainties.
 One possibility is to use experiments with various hydrocarbon targets to subtract the carbon interaction contributions from
  the total hydrocarbon event rates, and produce ``on hydrogen'' measurements~\cite{PhysRevD.92.051302, PhysRevD.101.092003, Hamacher-Baumann:2020ogq, DUNE:2021tad}.
- These ideas are promising, but typically rely on kinematic tricks that are only relevant for some channels, and it remains to be seen whether the model systematics associated with the carbon subtraction can be adequately controlled. Such ideas may also be extended to other compound target materials with hydrogen or deuterium components.
+These ideas are promising, but typically rely on kinematic tricks that are only relevant for some channels, and it remains to be seen whether the \new{systematic uncertainty associated with modelling} the carbon subtraction can be adequately controlled. Such ideas may also be extended to other compound target materials with hydrogen or deuterium components.
 
-In the absence of an updated scattering experiment on an elementary target,
- lattice QCD (LQCD) could provide the missing free nucleon amplitudes
- that are otherwise not known at the required precision.
-The nucleon axial form factor is the first benchmark quantity that could be computed,
- with a few-${\rm GeV}^2$ reach in momentum transfer possible.
+
+\new{
+Fortunately, lattice QCD provides a theoretical alternative for predicting the free nucleon amplitudes directly from the Standard Model (SM) of particle physics, with systematically improvable theoretical uncertainties.}{\color{red}Andre is messing with this and next paragraph}
+%In the absence of an updated scattering experiment on an elementary target, lattice QCD (LQCD) could provide the missing free nucleon amplitudes that are otherwise not known at the required precision.
+The nucleon axial form factor is a critical benchmark quantity that can be computed,
+
+the first benchmark quantity that could be computed, with a few-${\rm GeV}^2$ reach in momentum transfer possible.
 A tension in the neutron magnetic form factor parameterization,
  which is roughly half the size of the total axial form factor uncertainty,
  could be resolved with a similar LQCD calculation.
@@ -105,4 +107,3 @@ More challenging computations could provide information about nucleon
 \end{description}
 
 \textcolor{red}{[Most focus on axial, but vector is important too]}
-

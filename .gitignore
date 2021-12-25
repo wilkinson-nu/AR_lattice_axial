@@ -12,6 +12,7 @@
 *.cb2
 .*.lb
 
+tmp
 main.pdf
 
 ## Intermediate documents:
