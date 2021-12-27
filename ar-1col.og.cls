@@ -86,8 +86,8 @@
    {\setlength\paperheight {250mm}%
     \setlength\paperwidth  {176mm}}
 \DeclareOption{letterpaper}
-   {\setlength\paperheight {10in} %9.125in %CD: adjusted to avoid cutting off contents 
-    \setlength\paperwidth  {8.0in}} %7.375in %CD: adjusted to avoid cutting off contents 
+   {\setlength\paperheight {9.125in}%
+    \setlength\paperwidth  {7.375in}}
 \DeclareOption{legalpaper}
    {\setlength\paperheight {14in}%
     \setlength\paperwidth  {8.5in}}
@@ -838,14 +838,6 @@
   \fboxsep10\p@\advance\hsize-2\fboxsep\begin{shaded}\leftmargini12\p@%
   \if#1\relax\else\issueshead{#1}\fi}
   {\end{shaded}}
-%
-\def\afterthoughtshead#1{\noindent{\title@color{\sffamily\bfseries#1}\par\vskip4.2\p@}}
-\newenvironment{afterthoughts}[1][\relax]%
-{\par\overfullrule0\p@\let\centerline\leftline%
-	\definecolor{shadecolor}{cmyk}{0, 0.3, 0.3, 0}
-	\fboxsep10\p@\advance\hsize-2\fboxsep\begin{shaded}\leftmargini12\p@%
-		\if#1\relax\else\afterthoughtshead{#1}\fi}
-	{\end{shaded}}
 %
 \gdef\fps@textbox{t}
 \def\ftype@textbox{3}

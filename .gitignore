@@ -12,7 +12,11 @@
 *.cb2
 .*.lb
 
+tmp
 main.pdf
+Jaxo_tmp.*
+plots/plaquette.eps
+plots/plaquette.xml
 
 ## Intermediate documents:
 *.dvi

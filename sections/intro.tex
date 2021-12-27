@@ -26,7 +26,7 @@ The use of nuclear targets significantly complicates the cross-section modeling 
 associated systematics as intra-nuclear dynamics have a comparable energy scale to
 the energy transfers in the neutrino interactions of interest.
 
-A significant challenge impeding progress towards a consistent theoretical description of neutrino-nucleus interactions is the lack of data to benchmark parts of the calculation against. For example, neutrino quasielastic scattering ($\nu_{l} + n \rightarrow l^{-} + p$ or $\bar{\nu}_{l} + p \rightarrow l^{+} + n$) is the simplest of the relevant hard scattering processes, and dominates the neutrino cross section below $\approx$1 GeV. However, modern experiments using nuclear targets are unable to measure it without significant nuclear effects~\cite{garvey_review_2014, NuSTEC:2017hzk}.
+A significant challenge impeding progress towards a consistent theoretical description of neutrino-nucleus interactions is the lack of data to benchmark parts of the calculation against. For example, neutrino quasielastic scattering ($\nu_{l} + n \rightarrow l^{-} + p$ or $\bar{\nu}_{l} + p \rightarrow l^{+} + n$) is the simplest of the relevant hard scattering processes, and dominates the neutrino cross section below \new{energies of} $\approx$1 GeV. However, modern experiments using nuclear targets are unable to measure it without significant nuclear effects~\cite{garvey_review_2014, NuSTEC:2017hzk}.
 Neutrino cross-section models for quasielastic scattering (and other hard-scattering processes) have relied heavily on sparse data from the 1960--1980's from several bubble chamber experiments which used $H_{2}$ or $D_2$ targets~\cite{zeller12, ParticleDataGroup:2020ssz}.
 The small neutrino cross section, and relatively weak (by modern standards) accelerator neutrino beams utilized by these early experiments, mean that the available quasielastic event sample on light targets amounts to a few thousand events~\cite{ANL_Barish_1977, BNL_Baker_1981}.
 {\color{red} [We could consider adding some comments about pion electroproduction here]}
@@ -45,14 +45,15 @@ The axial radius, which is proportional to the slope of the form factor at $Q^2=
 Ideally, the lack of precision in the axial form factor would
  be rectified by a modern neutrino scattering experiment.
 
-Safety considerations make it unlikely that new high-statistics bubble chamber experiments with
- hydrogen or deuterium fills will be deployed to fill this crucial gap,
- so experiments are looking for other ways to access neutrino interactions
- with elementary targets, as a tool for disambiguating neutrino cross section modeling uncertainties.
+Safety considerations make it unlikely that new high-statistics bubble chamber experiments \new{using}
+hydrogen or deuterium will be deployed to fill this crucial gap,
+so \new{experimentalists} are looking for other ways to access neutrino interactions
+with elementary targets as a tool for disambiguating neutrino cross section modeling uncertainties.
 One possibility is to use experiments with various hydrocarbon targets to subtract the carbon interaction contributions from
  the total hydrocarbon event rates, and produce ``on hydrogen'' measurements~\cite{PhysRevD.92.051302, PhysRevD.101.092003, Hamacher-Baumann:2020ogq, DUNE:2021tad}.
- These ideas are promising, but typically rely on kinematic tricks that are only relevant for some channels, and it remains to be seen whether the model systematics associated with the carbon subtraction can be adequately controlled. Such ideas may also be extended to other compound target materials with hydrogen or deuterium components.
+These ideas are promising, but typically rely on kinematic tricks that are only relevant for some channels, and it remains to be seen whether the \new{systematic uncertainty associated with modelling} the carbon subtraction can be adequately controlled. Such ideas may also be extended to other compound target materials with hydrogen or deuterium components.
 
+\newasm{
 In the absence of an updated scattering experiment on an elementary target,
  lattice QCD (LQCD) could provide the missing free nucleon amplitudes
  that are otherwise not known at the required precision.
@@ -73,7 +74,9 @@ For charged current quasielastic scattering of a neutrino with a free nucleon,
  with $Q^2 = -q^2$.
 Existing calculations from LQCD extend up to a range of $Q^2 \lesssim 1~{\rm GeV}^2$,
  which is ideal for the neutrino interactions at the ${\rm GeV}$ energy scale.
+}
 
+\newasm{
 The vector form factors, $F_1$ and $F_2$,
  are precisely estimated from electron-proton scattering data,
  up to a tension in existing parameterizations of the proton magnetic form factor
@@ -89,20 +92,45 @@ A percent level calculation of the form factor $Q^2$ behavior
  or a direct calculation of the slope of the magnetic form factor
  would provide useful insight about this tension or could discriminate
  between the two parameterizations.
+}
 
+\new{
+Fortunately, lattice QCD provides a theoretical alternative for predicting the free nucleon amplitudes directly from the Standard Model (SM) of particle physics, with systematically improvable theoretical uncertainties.}
+%In the absence of an updated scattering experiment on an elementary target, lattice QCD (LQCD) could provide the missing free nucleon amplitudes that are otherwise not known at the required precision.
+\new{The nucleon quasi-elastic form factor can be computed with a few-${\rm GeV}^2$ reach in momentum transfer and relatively small uncertainty.}
+A tension in the neutron magnetic form factor parameterization, which is roughly half the size of the total axial form factor uncertainty, can be resolved with a similar LQCD calculation.
+\new{Building upon these critical benchmark quantities,}
+more challenging computations can provide information about nucleon
+resonant and nonresonant contributions to axial matrix elements,
+such as the $\Delta$ or Roper resonance channels, \new{pion-production,}
+inclusive contributions in the shallow inelastic scattering region,
+or deep inelastic scattering parton distribution functions.
+
+\new{Given the present state of the field, in this review, we focus on elastic single-nucleon amplitudes, in which we anticipate the LQCD results will become impactful for the experimental programs in the next year or two.
+For example, Figure~\ref{fig:protonmagneticff} demonstrates the current tension in the determination of the proton magnetic form factor.
+Two different parameterizations of the form factor, normalized by the dipole are displayed.
+The Bradford, Bodek, Budd and Arrington parameterization from Neutrino-Nucleus Interaction 2005 Workshop (BBBA05)~\cite{Bradford:2006yz} are displayed as the lower (blue) band with a solid mean value.
+A more recent z-expansion parameterization from Borah {\it et al.}~\cite{Borah:2020gte} is displayed by the upper (black) band with a dashed mean value.
+Of note, even the sign of the slope of the form factor is not determined.
+}
+%------------------------------------------------------------------------------
+% proton magnetic FF
 \begin{figure}[hbt!]
  \centering
- \includegraphics[width=0.5\textwidth]{plots/proton_magnetic-standalone.pdf}
+ \includegraphics[width=0.75\textwidth]{plots/proton_magnetic-standalone.pdf}
 \caption{
- Proton magnetic form factor normalized by a reference dipole ansatz
- with a dipole mass of $0.84~{\rm GeV}$.
- Plotted are the 1~GeV fit to the electron scattering data with the $z$ expansion by
- Borah {\it et al.}~\cite{Borah:2020gte}
- and the BBBA05 parameterization~\cite{Bradford:2006yz}.
- \label{fig:protonmagneticff}
+Proton magnetic form factor normalized by a reference dipole ansatz
+with a dipole mass of $0.84~{\rm GeV}$.
+The proton-only fit to a $z$ expansion by Borah {\it et al.}~\cite{Borah:2020gte}
+and the BBBA05 parameterization~\cite{Bradford:2006yz} are shown.
+\label{fig:protonmagneticff}
 }
 \end{figure}
+%------------------------------------------------------------------------------
 
+
+
+\newasm{
 The nucleon axial form factor has had a much more complicated past
  than the vector form factors in lattice QCD.
 The axial charge, the value of the axial form factor at $Q^2=0$,
@@ -113,7 +141,9 @@ LQCD calculations of the axial charge have historically been low compared
 As treatment of systematics have become more sophisticated,
  modern calculations of the axial charge have finally started to come into
  agreement with the experimental value at the percent level.
+}
 
+\newasm{
 Armed with the newfound confidence in the control of systematics for the axial charge,
  more emphasis is now being put into the form factor at nonzero momentum transfer.
 One extremely striking feature of lattice calculations is the strong preference for a slower
@@ -125,7 +155,9 @@ When integrated over the full range of $Q^2$ to compute the nucleon cross sectio
  over neutrino energies greater than $1~{\rm GeV}$.
 In addition, the precision on the axial form factor uncertainty from lattice QCD
  is small enough to be sensitive to the tension between vector form factor parameterizations.
+}
 
+\newasm{
 The aformentioned situation with nucleon form factors
  is depicted in Fig.~\ref{fig:nucleonxsec}.
 The black dot-dashed curve is the default case,
@@ -148,10 +180,15 @@ The size of the red band with respect to the green band demonstrates
 Additionally, the size of the red band demonstrates the relevance
  of the tension in vector form factors, characterized by the difference
  between the black and blue curves.
+}
 
+The relevance of this tension to the neutrino program can be understood from Figures~\ref{fig:nucleonxsec}.
+
+%------------------------------------------------------------------------------
+% nu-N cross section
 \begin{figure}[hbt!]
  \centering
- \includegraphics[width=0.5\textwidth]{plots/xsec_comparison-standalone.pdf}
+ \includegraphics[width=0.75\textwidth]{plots/xsec_comparison-standalone.pdf}
 \caption{
  Neutrino cross sections on a free neutron, with their uncertainty bands,
  for various choices of parameterization.
@@ -171,6 +208,7 @@ Additionally, the size of the red band demonstrates the relevance
 }
 \end{figure}
 
+\newasm{
 So far, the focus of this manuscript has been on the charged-current
  quasielastic form factors, which are the easiest target for lattice QCD
  efforts and most relevant to the next-generation neutrino oscillation program.
@@ -178,7 +216,9 @@ Of these, the axial form factor has gotten the most attention from lattice colla
  and is the focus of the material in Sec.~\ref{sec:lqcd}.
 The phenomenological impact of the axial form factor obtained from lattice QCD
  is given in more detail in Sec.~\ref{sec:impact}.
+}
 
+\newasm{
 Similar calculations could also access the isoscalar form factors of the nucleon,
  which apply to neutral current scattering amplitudes,
  although the precision obtained from these calculations is more limited
@@ -191,6 +231,7 @@ More challenging computations could provide information about nucleon
  or deep inelastic scattering parton distribution functions.
 Some applications of lattice QCD to other interaction mechanisms
  are outlined in Sec.~\ref{sec:future}.
+}
 
 \begin{description}
 \item[first $z$ exp vector form factor] \cite{Ye:2017gyb}
@@ -200,4 +241,3 @@ Some applications of lattice QCD to other interaction mechanisms
 \end{description}
 
 \textcolor{red}{[Most focus on axial, but vector is important too]}
-
