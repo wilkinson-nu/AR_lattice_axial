@@ -53,36 +53,49 @@ These ideas are promising, but typically rely on kinematic tricks that are only 
 
 
 \new{
-Fortunately, lattice QCD provides a theoretical alternative for predicting the free nucleon amplitudes directly from the Standard Model (SM) of particle physics, with systematically improvable theoretical uncertainties.}{\color{red}Andre is messing with this and next paragraph}
+Fortunately, lattice QCD provides a theoretical alternative for predicting the free nucleon amplitudes directly from the Standard Model (SM) of particle physics, with systematically improvable theoretical uncertainties.}
 %In the absence of an updated scattering experiment on an elementary target, lattice QCD (LQCD) could provide the missing free nucleon amplitudes that are otherwise not known at the required precision.
-The nucleon axial form factor is a critical benchmark quantity that can be computed,
+\new{The nucleon quasi-elastic form factor can be computed with a few-${\rm GeV}^2$ reach in momentum transfer and relatively small uncertainty.}
+A tension in the neutron magnetic form factor parameterization, which is roughly half the size of the total axial form factor uncertainty, can be resolved with a similar LQCD calculation.
+\new{Building upon these critical benchmark quantities,}
+more challenging computations can provide information about nucleon
+resonant and nonresonant contributions to axial matrix elements,
+such as the $\Delta$ or Roper resonance channels, \new{pion-production,}
+inclusive contributions in the shallow inelastic scattering region,
+or deep inelastic scattering parton distribution functions.
 
-
-the first benchmark quantity that could be computed, with a few-${\rm GeV}^2$ reach in momentum transfer possible.
-A tension in the neutron magnetic form factor parameterization,
- which is roughly half the size of the total axial form factor uncertainty,
- could be resolved with a similar LQCD calculation.
-More challenging computations could provide information about nucleon
- resonant and nonresonant contributions to axial matrix elements,
- such as the $\Delta$ or Roper resonance channels,
- inclusive contributions in the shallow inelastic scattering region,
- or deep inelastic scattering parton distribution functions.
-
+\new{Given the present state of the field, in this review, we focus on elastic single-nucleon amplitudes, in which we anticipate the LQCD results will become impactful for the experimental programs in the next year or two.
+For example, Figure~\ref{fig:protonmagneticff} demonstrates the current tension in the determination of the proton magnetic form factor.
+Two different parameterizations of the form factor, normalized by the dipole are displayed.
+The Bradford, Bodek, Budd and Arrington parameterization from Neutrino-Nucleus Interaction 2005 Workshop (BBBA05)~\cite{Bradford:2006yz} are displayed as the lower (blue) band with a solid mean value.
+A more recent z-expansion parameterization from Borah {\it et al.}~\cite{Borah:2020gte} is displayed by the upper (black) band with a dashed mean value.
+Of note, even the sign of the slope of the form factor is not determined.
+}
+%------------------------------------------------------------------------------
+% proton magneitic FF
 \begin{figure}[hbt!]
  \centering
- \includegraphics[width=0.5\textwidth]{plots/proton_magnetic-standalone.pdf}
+ \includegraphics[width=0.75\textwidth]{plots/proton_magnetic-standalone.pdf}
 \caption{
- Proton magnetic form factor normalized by a reference dipole ansatz
- with a dipole mass of $0.84~{\rm GeV}$.
- The proton-only fit to a $z$ expansion by Borah {\it et al.}~\cite{Borah:2020gte}
- and the BBBA05 parameterization~\cite{Bradford:2006yz} are shown.
- \label{fig:protonmagneticff}
+Proton magnetic form factor normalized by a reference dipole ansatz
+with a dipole mass of $0.84~{\rm GeV}$.
+The proton-only fit to a $z$ expansion by Borah {\it et al.}~\cite{Borah:2020gte}
+and the BBBA05 parameterization~\cite{Bradford:2006yz} are shown.
+\label{fig:protonmagneticff}
 }
 \end{figure}
+%------------------------------------------------------------------------------
 
+
+
+
+The relevance of this tension to the neutrino program can be understood from Figures~\ref{fig:nucleonxsec}.
+
+%------------------------------------------------------------------------------
+% nu-N cross section
 \begin{figure}[hbt!]
  \centering
- \includegraphics[width=0.5\textwidth]{plots/xsec_comparison-standalone.pdf}
+ \includegraphics[width=0.75\textwidth]{plots/xsec_comparison-standalone.pdf}
 \caption{
  Neutrino cross sections on a free neutron, with their uncertainty bands,
  for various choices of parameterization.
