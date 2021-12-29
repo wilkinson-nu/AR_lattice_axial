@@ -6,7 +6,7 @@ Computations of the nucleon axial charge have long been considered
 This quantity has been precisely measured with experiments probing neutron beta decay,
  characterized by a weak decay with a low momentum transfer.
 Historically, lattice calculations of the axial charge have obtained values
- that were $10-20\%$ too low, despite significant investment of effort.
+ that were $O(10\%)$ too low, despite significant investments of effort.
 This has been the subject of some controversy,
  with more and more sophisticated calculations to scrutinize lattice systematics.
 Over time, contamination from excited states was identified as
@@ -15,27 +15,62 @@ Many collaborations have opted for high-statistics computations
  to reduce the statistical uncertainty at late times and permit
  multi-exponential fits to the time dependence of the correlation functions.
 As time progressed, LQCD results moved closer to the experimental value,
- and now modern calculations are in agreement with experiment at the 1\% level.
-
+ and now modern calculations are in agreement with experiment
+ at the 1\% level~\cite{Kronfeld:2019nfb}.
 Modern efforts to compute nucleon matrix elements now target the nucleon
  axial form factor with its four-momentum transfer dependence.
-Initial calculations revealed a significant apparent violation of the
- generalized Goldberger-Triemann relation, which relates the axial and pseudoscalar
- matrix elements to each other by means of the partially-conserved axial current (PCAC) relation.
-Scrutiny of the excited states revealed the importance of nucleon-pion two-particle states
- in the spectrum, which contribute unequally in considerations of both
- two-point versus three-point correlation functions
- and also in matrix elements of an axial current versus a pseudoscalar current.
-Even in the case of the axial charge,
- three-point correlation functions give a better handle on
- the state energies for a given center of mass momentum than the two-point functions,
- which can lead to a bias if only the two-point functions are used to fix the
- spectrum~\cite{He:2021yvm}.
-In addition, the $G$ parity-violating contribution to the axial and pseudoscalar amplitudes
- at nonzero momentum transfer has a larger amplitude for transitioning
- to nucleon-pion states than to elastically scatter a nucleon,
- which effectively enhances the nucleon-pion contribution in the three-point
- correlators~\cite{Jang:2019vkm}.
+
+The partially-conserved axial current (PCAC) relation for the correlators,
+\begin{align}
+ \partial_\mu A^{a,\mu}(x) = 2 m_q P^{a}(x),
+ \label{eq:pcac}
+\end{align}
+ is an exact symmetry in the continuum limit and is a useful
+ consistency check for calculations targeting the axial form factor.
+The generalization of this relation to the nucleon form factors
+ gives the generalized Goldberger-Triemann relation,
+\begin{align}
+ 2 M_N G_A(Q^2) -\frac{Q^2}{2M_N} \widetilde{G}_P(Q^2) = 2 m_q G_{P}(Q^2).
+ \label{eq:ggt}
+\end{align}
+The pion pole dominance ansatz is also checked,
+\begin{align}
+ \widetilde{G}^{\rm PPD}_P(Q^2) = \frac{4M_N^2}{Q^2+M_\pi^2} G_A(Q^2),
+ \label{eq:ppd}
+\end{align}
+ which is only approximate and is obtained
+ by carefully considering the asymptotic behavior of the
+ form factors in the double limit $Q^2\to0$ and $m_q\to0$~\cite{Sasaki:2007gw}.
+Initial calculations targeting the axial form factor verified the PCAC relation
+ for the full correlation functions but found significant \emph{apparent} violations
+ of the Generalized Goldberger-Triemann (GGT) relation.
+\textcolor{red}{[pion pole dominance estimates]}
+
+\textcolor{red}{[asm still working on below]}
+The resolution of the apparent violation of GGT
+ is informed by baryon chiral perturbation theory, which suggests that the contaminations
+ to the spatial axial, temporal axial, and induced pseudoscalar are very different.
+The axial contributions are largely dominated by $N\pi$ excited states
+ and are mostly independent of $Q^2$.
+The temporal axial current is so afflicted by this contamination that it
+ was unable to be successfully fit and was consequently omitted from analyses.
+On the other hand, the induced pseudoscalar is driven by the single nucleon contribution and has
+ a strong $Q^2$ dependence~\cite{Bar:2018xyi}, with the largest correction at low $Q^2$.
+The pseudoscalar contamination is obtained from applying the PCAC relation
+ to the contaminations determined for the axial and induced pseudoscalar corrections.
+
+Scrutiny of the excited states again revealed the importance of the contamination in the spectrum.
+The excited states contribute unequally in considerations of both
+ two-point versus three-point correlation functions and also in
+ the contributions to the axial, pseudoscalar, and induced pseudoscalar form factors.
+%Three-point correlation functions give a better handle on
+% the state energies for a given center of mass momentum than the two-point functions,
+% which can lead to a bias if only the two-point functions are used to fix the
+% spectrum~\cite{He:2021yvm}.
+The axial form factor contribution to the matrix element
+
+%At present, there are a few computations with a complete set of systematic uncertainties.
+%The PNDME collaboration released a
 
 \textcolor{red}{[
  Different methods of dealing with excited states.
