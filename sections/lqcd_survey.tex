@@ -17,89 +17,114 @@ Many collaborations have opted for high-statistics computations
 As time progressed, LQCD results moved closer to the experimental value,
  and now modern calculations are in agreement with experiment
  at the 1\% level~\cite{Kronfeld:2019nfb}.
+\textcolor{red}{[more citations]}
 Modern efforts to compute nucleon matrix elements now target the nucleon
  axial form factor with its four-momentum transfer dependence.
 
-The partially-conserved axial current (PCAC) relation for the correlators,
+To check the accuracy of lattice QCD calculations targeting the axial form factor,
+ the validity of the partially-conserved axial current (PCAC) relation,
 \begin{align}
- \partial_\mu A^{a,\mu}(x) = 2 m_q P^{a}(x),
+ \partial^\mu A^{a}_{\mu}(x) = 2 m_q P^{a}(x),
  \label{eq:pcac}
 \end{align}
- is an exact symmetry in the continuum limit and is a useful
- consistency check for calculations targeting the axial form factor.
+ has been scrutinized with lattice data.
+The PCAC relation is an exact symmetry in the continuum limit.
 The generalization of this relation to the nucleon form factors
- gives the generalized Goldberger-Triemann relation,
+ yields the generalized Goldberger-Triemann (GGT) relation,
 \begin{align}
- 2 M_N G_A(Q^2) -\frac{Q^2}{2M_N} \widetilde{G}_P(Q^2) = 2 m_q G_{P}(Q^2).
+ 2 M_N G_A(Q^2) -\frac{Q^2}{2M_N} \widetilde{G}_P(Q^2) = 2 m_q G_{P}(Q^2),
  \label{eq:ggt}
 \end{align}
-The pion pole dominance ansatz is also checked,
+ which provides orthogonal checks of individual matrix elements
+ for the axial and pseudoscalar currents.
+The pion pole dominance (PPD) ansatz is also studied,
 \begin{align}
  \widetilde{G}^{\rm PPD}_P(Q^2) = \frac{4M_N^2}{Q^2+M_\pi^2} G_A(Q^2),
  \label{eq:ppd}
 \end{align}
- which is only approximate and is obtained
- by carefully considering the asymptotic behavior of the
+ which is only approximate even in the continuum and is obtained
+ by carefully considering the leading asymptotic behavior of the
  form factors in the double limit $Q^2\to0$ and $m_q\to0$~\cite{Sasaki:2007gw}.
+
 Initial calculations targeting the axial form factor verified the PCAC relation
  for the full correlation functions but found significant \emph{apparent} violations
- of the Generalized Goldberger-Triemann (GGT) relation.
-\textcolor{red}{[pion pole dominance estimates]}
-
-\textcolor{red}{[asm still working on below]}
+ of the Generalized Goldberger-Triemann relation, Eq.~\ref{eq:ggt}.
 The resolution of the apparent violation of GGT
- is informed by baryon chiral perturbation theory, which suggests that the contaminations
- to the spatial axial, temporal axial, and induced pseudoscalar are very different.
+ is now informed by baryon chiral perturbation theory, which suggests that the
+ corrections to the spatial axial, temporal axial, and induced pseudoscalar
+ are functionally different and not properly removed.
 The axial contributions are largely dominated by $N\pi$ excited states
- and are mostly independent of $Q^2$.
-The temporal axial current is so afflicted by this contamination that it
- was unable to be successfully fit and was consequently omitted from analyses.
+ with a highly suppressed single nucleon chiral correction.
+The correction to the axial current is nearly independent of $Q^2$.
 On the other hand, the induced pseudoscalar is driven by the single nucleon contribution and has
  a strong $Q^2$ dependence~\cite{Bar:2018xyi}, with the largest correction at low $Q^2$.
-The pseudoscalar contamination is obtained from applying the PCAC relation
- to the contaminations determined for the axial and induced pseudoscalar corrections.
+The $N\pi$ contribution in the induced pseudoscalar is highly suppressed by
+ an approximate cancellation.
+The pseudoscalar contamination is redundant with the axial and induced pseudoscalar
+ chiral corrections and can be obtained by application of the PCAC relation.
 
-Scrutiny of the excited states again revealed the importance of the contamination in the spectrum.
-The excited states contribute unequally in considerations of both
- two-point versus three-point correlation functions and also in
- the contributions to the axial, pseudoscalar, and induced pseudoscalar form factors.
-%Three-point correlation functions give a better handle on
-% the state energies for a given center of mass momentum than the two-point functions,
-% which can lead to a bias if only the two-point functions are used to fix the
-% spectrum~\cite{He:2021yvm}.
-The axial form factor contribution to the matrix element
+Scrutiny of the lattice QCD data has demonstrated many of the features
+ that were expected from chiral perturbation theory.
+The primary excited state contaminations to the axial matrix elements
+ were shown to be driven by two specific $N\pi$ states,
+ characterized by a transition through an axial current
+ of the nucleon state to an $N\pi$ excited state or vise versa~\cite{Jang:2019vkm}.
+\textcolor{red}{[is below statement understandable?]}
+The momenta of the states with the strongest contribution are those
+ where a valence quark diagrams can be drawn containing only a single
+ zero-momentum gluon emission, which fixes the relative momenta of the
+ quark constituents making up the nucleons and the pion.
+These $N\pi$ states were initially expected to be negligible due to a volume suppression
+ of the state overlap, which makes them invisible to the two-point functions~\cite{Bar:2016uoj}.
+However, the three-point axial matrix element enhances these contributions relative
+ to the ground state nucleon matrix element, which is enough to overcome the volume suppression.
+As a consequence, analyses that fix the spectrum using the two-point functions alone
+ will often miss the important $N\pi$ contamination to the
+ axial matrix element~\cite{Jang:2019vkm,He:2021yvm}.
 
-%At present, there are a few computations with a complete set of systematic uncertainties.
-%The PNDME collaboration released a
+The lattice data also showed deviations as large as $40\%$ from the pion pole
+ dominance ansatz at low $Q^2$, where it was expected to
+ work best~\cite{Bali:2014nma,Gupta:2017dwj}.
+Each $Q^2$ prefered dominant $N\pi$ states with different energies,
+ which when neglected across the full range of momentum transfers
+ produced a $Q^2$-dependent discrepancy in excess of the $Q^2$ behavior
+ expected from the GGT and PPD relations.
+Fits to the three-point functions that allowed for the possibility of
+ nonnegligible $N\pi$ states are able to constrain the effects of these states,
+ removing the contamination and thereby restoring the PPD relation.
 
-\textcolor{red}{[
- Different methods of dealing with excited states.
- FH, 3pt fits, summation, other?
-]}
-
+\begin{itemize}
+\item
+\textcolor{red}{[ ensemble details of calculations.]}
+\item
 \textcolor{red}{[
  $g_A(Q^2)$ parameterizations.
  $z$ expansion intro, taken from chiral section.
 ]}
-
+\item
 \textcolor{red}{[
-$g_A(Q^2)$ from LQCD - 3pt calculations.
-both $r_A^2$ and full form factor shape.
-derivative methods vs explicit.
-highlight importance of providing nondipole parameterization
- coefficients+covariance after chiral-continuum.
+ Different methods of dealing with excited states.
+ FH, 3pt fits, summation, other?
 ]}
-
-\textcolor{red}{[ensemble details of calculations.]}
-RQCD and NME with complete error budgets.
-actions, ensembles, Mpi.
-
-\textcolor{red}{[more detailed RQCD, NME]}
-
-\textcolor{red}{[connection of Npi with XPT]}
-\textcolor{red}{[]}
-
-\textcolor{red}{[]}
+\item
+\textcolor{red}{[
+ axial form factor with full set of coefficients and covariance needed
+ in chiral-continuum-FV limit.
+ $r_A^2$ reported to connect with pion electroproduction/neutron decay/very low-$Q^2$ applications,
+ but not nearly as important for neutrinos.
+]}
+\item
+\textcolor{red}{[ Need an axial ff calculation with explicit $N\pi$-like operators. ]}
+\item
+\textcolor{red}{[ Will need to verify systematics for large $Q^2$ axial ff,
+ but chiral corrections/excited state contaminations are also smallest in this region.
+ May be fooled into comfort by breakdown of XPT.
+]}
+\item
+\textcolor{red}{[ form factor slopes at $Q^2=0$ could be good orthogonal constraints.  ]}
+\item
+\textcolor{red}{[ failure of dipole parameterization with existing LQCD data ]}
+\end{itemize}
 
 Citations for $F_A(Q^2)$ references pulled from NME21, no $g_A$-only references:
 \begin{description}
