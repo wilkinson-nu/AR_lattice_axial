@@ -106,14 +106,48 @@ This methodology paper focuses on computing the nucleon charges
 This method yields the axial radius directly from $Q^2=0$ data,
  which is compared to the nucleon form factor slopes and charges obtained from
  fits to data at nonzero $Q^2$ using the traditional three-point correlator methods.
-The axial radius obtained from this method would provide extra constraint on
+Though the results are in agreement between the two methods,
+ the direct derivative proves to be noisier than the traditional method.
+With more precision, the axial radius obtained from this method,
+ or constraints on the slope obtained in a similar fashion at nonzero $Q^2$,
+ could provide orthogonal constraints on the form factor that could
+ help pin down the axial form factor shape.
 
 \textcolor{red}{[PACS]}
-The PACS collaboration has a few computations of the axial form factor
+The PACS collaboration has focused on computing the axial form factor
  on large ensembles with Wilson clover fermions at
  physical pion mass~\cite{Ishikawa:2018rew,Shintani:2018ozy}.
-They also perform a computation of the axial radius using derivative methods,
- like the CLS collaboration~\cite{Ishikawa:2021eut}.
+The ensemble used in this analysis has a volume of $(10.8~{\rm fm})^3$,
+ considerably larger than ensembles used by other collaborations.
+The large volume reduces the minimum $Q^2$ that can be probed
+ with the discrete lattice momenta but forces the need for many units of momenta
+ to access the same kinematic range as other computations.
+They compare this ensemble to a computation of the axial radius using
+ the traditional method compared with derivatives obtained from
+ moments of the correlators~\cite{Aglietti:1994nx},
+ on a $(5.5~{\rm fm})^3$ volume ensemble, finding agreement between the results of each.
+Results on both ensembles are about $1\sigma$ small compared to the axial radius
+ from the average from experimental sources in Ref.~\cite{Hill:2017wgb}.
+
+\textcolor{red}{[Other calculations]}
+In addition to the aforementioned published results,
+ a handful of recent preliminary results that deserve mention.
+The Mainz collaboration has an ongoing calculation on 12 ensembles,
+ including an ensemble at physical pion mass
+ and a chiral-continuum and infinite volume extrapolation~\cite{Djukanovic:2021yqg}.
+This computation is performed with improved Wilson fermions.
+The Fermilab Lattice and MILC collaborations also have an ongoing
+ computation of the axial form factor using a unitary HISQ-on-HISQ setup,
+ for which a preliminary computation of the axial charge on
+ a single unphysical ensemble exists~\cite{Lin:2020wko}.
+Because of the choice of action, this computation has more nucleon ``tastes''
+ than other efforts, which is more computationally affordable
+ at the cost of a more challenging analysis.
+The CalLat collaboration have a computation of the axial form factor
+ using a mixed-action domain wall on HISQ setup,
+ with existing data on several ensembles including multiple physical pion mass ensembles.
+The fits to one physical mass ensemble from the CalLat collaboration are used
+ to make statements about the pheno impact of the LQCD results in Sec.~\ref{sec:impact}.
 
 \begin{figure}[hbt!]
 \centering
@@ -168,7 +202,11 @@ As a rough estimate, NME claims that the uncertainties are at least a factor of 
 \item
 \textcolor{red}{[ form factor slopes at $Q^2=0$ could be good orthogonal constraints.  ]}
 \item
-\textcolor{red}{[ failure of dipole parameterization with existing LQCD data ]}
+\textcolor{red}{[
+ failure of dipole parameterization with existing LQCD data.
+ consistency with expt for $r_A^2$ but high at large $Q^2$ means
+ that one-parameter fits are insufficient to describe $Q^2$ behavior.
+ ]}
 \end{itemize}
 
 Citations for $F_A(Q^2)$ references pulled from NME21, no $g_A$-only references:
