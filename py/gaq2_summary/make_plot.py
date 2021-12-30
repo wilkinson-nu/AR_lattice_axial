@@ -103,7 +103,7 @@ plt.ylim([ 0.6, 1.35])
 #plt.axis('off')
 plt.text(x=0.25, y=0.65, s=r'$\nu$D $z$ exp', color='red', rotation=-30, fontsize=20)
 
-plt.legend([phn, phr, phe, php, php21, phc], [lbn, lbr, lbe, lbp, lbp21, lbc], fontsize=12)
+plt.legend([phn, phr, phe, php21, php, phc], [lbn, lbr, lbe, lbp21, lbp, lbc], fontsize=12)
 plt.xticks( fontsize=20)
 plt.yticks( fontsize=20)
 plt.xlabel( r'$Q^2/$GeV$^2$', fontsize=20)
