@@ -55,23 +55,24 @@ These ideas are promising, but typically rely on kinematic tricks that are only 
 
 \newasm{
 In the absence of an updated scattering experiment on an elementary target,
- lattice QCD (LQCD) could provide the missing free nucleon amplitudes
- that are otherwise not known at the required precision.
-Lattice computations access current insertions with a quark bilinear gamma structure.
+lattice QCD (LQCD) could provide the missing free nucleon amplitudes
+that are otherwise not known at the required precision.
+Lattice QCD (discussed in more detail in Sec.~\ref{sec:lqcd})
+enables the calculation of the nucleon matrix elements that give rise to the form factors directly in terms of the Standard Model quark-level currents.
 For charged current quasielastic scattering of a neutrino with a free nucleon,
- the interaction is described by a $V-A$ weak interaction, with current contributions
+the interaction is described by a $V-A$ weak interaction given at the quark level by
+$\bar{u}\gamma_\mu(1- \gamma_5)d$ (or its conjugate), with the nucleon level amplitude at four-momentum transfer $Q^2 = -q^2$ described by
 \begin{align}
- \langle n | V^\mu | p \rangle
- &= \bar{u}_n \Big[
+ \langle p | V^\mu | n \rangle
+ &= \bar{u}_p \Big[
  F_1(q^2) \gamma^\mu +\frac{i}{2M} F_2(q^2) \sigma^{\mu\nu} q_\nu
- \Big] u_p,
+ \Big] u_n,
  \nonumber\\
- \langle n | A^\mu | p \rangle
- &= \bar{u}_n \Big[
+ \langle p | A^\mu | n \rangle
+ &= \bar{u}_p \Big[
  F_A(q^2) \gamma^\mu \gamma_5 +\frac{1}{M} F_P(q^2) q^\mu \gamma_5
- \Big] u_p,
+ \Big] u_n\, .
 \end{align}
- with $Q^2 = -q^2$.
 Existing calculations from LQCD extend up to a range of $Q^2 \lesssim 1~{\rm GeV}^2$,
  which is ideal for the neutrino interactions at the ${\rm GeV}$ energy scale.
 }
