@@ -100,11 +100,13 @@ Fits to the three-point functions that allowed for the possibility of
 \textcolor{red}{[CLS]}
 The CLS collaboration have an axial form factor computation on a
  single ensemble of Wilson clover fermions at physical pion mass~\cite{Hasan:2017wwt}.
-This is a methodology paper that focuses on computing the nucleon charges
- and radii by computing derivatives with respect to momenta to the correlation functions.
+This methodology paper focuses on computing the nucleon charges
+ and radii by explicitly computing derivatives of the correlation functions
+ with respect to the momentum transfer.
 This method yields the axial radius directly from $Q^2=0$ data,
- which is compared to axial form factor data at nonzero $Q^2$ that
- are parameterized and fit using the traditional three-point method.
+ which is compared to the nucleon form factor slopes and charges obtained from
+ fits to data at nonzero $Q^2$ using the traditional three-point correlator methods.
+The axial radius obtained from this method would provide extra constraint on
 
 \textcolor{red}{[PACS]}
 The PACS collaboration has a few computations of the axial form factor
@@ -112,6 +114,29 @@ The PACS collaboration has a few computations of the axial form factor
  physical pion mass~\cite{Ishikawa:2018rew,Shintani:2018ozy}.
 They also perform a computation of the axial radius using derivative methods,
  like the CLS collaboration~\cite{Ishikawa:2021eut}.
+
+\begin{figure}[hbt!]
+\centering
+\includegraphics[width=0.5\textwidth]{plots/gaq2-overlay-standalone.pdf}
+\caption{
+Published results for the axial form factor obtained from lattice QCD,
+ compared with the deuterium extraction from Ref.~\cite{Meyer:2016oeg}.
+Collaborations that have obtained their results from only a single ensemble
+ are plotted as scatter points.
+These single-ensemble results will have small but unknown corrections due to chiral, continuum,
+ and finite volume systematic shifts.
+The NME~\cite{Park:2021ypf} and RQCD~\cite{RQCD:2019jai}
+ results are both obtained from fits to several ensembles.
+The RQCD perform the full chiral-continuum and finite volume extrapolations to the data,
+ fitting to each of the form factors independently for each ensemble but providing
+ the constraint that the form factors must satisfy the GGT relation in the continuum.
+The NME collaboration also performed a chiral-continuum and finite volume extrapolation
+ on their data, but found significantly larger uncertainties and so their result
+ is obtained from an average of the results on their five largest volume ensembles.
+As a rough estimate, NME claims that the uncertainties are at least a factor of 5 larger
+ if the fits are relaxed to allow the results to change with pion mass or lattice spacing.
+}
+\end{figure}
 
 \begin{itemize}
 \item
