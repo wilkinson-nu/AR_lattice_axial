@@ -69,6 +69,8 @@ The CalLat collaboration have a computation of the axial form factor
 The fits to one physical mass ensemble from the CalLat collaboration are used
  to make statements about the pheno impact of the LQCD results in Sec.~\ref{sec:impact}.
 
+\textcolor{red}{[description of summary plot]}
+
 \begin{figure}[hbt!]
 \centering
 \includegraphics[width=0.5\textwidth]{plots/gaq2-overlay-standalone.pdf}
@@ -92,6 +94,59 @@ As a rough estimate, NME claims that the uncertainties are at least a factor of 
 }
 \end{figure}
 
+Though the axial radius is useful for connecting with low-energy applications,
+ such as pion electroproduction and neutron decay applications,
+ the needs of neutrino physics in the GeV-scale energy range depend
+ on the full momentum transfer dependence of the form factor.
+The main deliverables from lattice QCD calculations of the axial form factor
+ are the axial and induced pseudoscalar form factors taken in the continuum-chiral
+ and infinite volume limits, complete with a set of parameterization coefficients
+ and covariance matrix.
+This is especially true considering the agreement between LQCD and experiment
+ for the axial radius taken together with the observation that
+ LQCD prefers a slower form factor fall off than experiment.
+If the axial radius were the only parameter determining the form factor $Q^2$ dependence,
+ then these two observations are incompatible ---
+ though the form factor shape, especially when allowed to explore its full uncertainty,
+ is decidedly \emph{not} a dipole shape, the central value curve determined
+ from experiment appears to follow a dipole-like shape.
+Restricting to dipole shape only, agreement with the axial radius at $Q^2=0$
+ would mean the axial form factor should agree over the entire relevant $Q^2$ range,
+ a statement that is not supported by the LQCD data.
+
+The excellent agreement of the axial form factor data and parameterizations
+ for all of the LQCD simulations provides credibility to the claims
+ made by the lattice collaborations, in particular the slow falloff with $Q^2$.
+Despite the apparent violations of GGT in the low-$Q^2$ region,
+ the high-$Q^2$ region seems to be in better control and not as sensitive to
+ the same excited state contamination.
+This is expected based on the approximation that the
+ two dominant $N\pi$ excited states are the only excited state contaminations,
+ which indicates a mass gap that grows with $Q^2$ leading to a larger suppression.
+\textcolor{red}{[ but the $N\pi$ contribution from XPT is constant with $Q^2$,
+ so something isn't right ]}
+The high-$Q^2$ agreement is reflected by the restoration of the GGT relation at large $Q^2$,
+ which is generally the case even for computations that have difficulty satisfying
+ the GGT relation at low $Q^2$.
+Modern calcluations with $N\pi$-like interpolating operators should be able
+ to isolate these remnant excited state contributions in order to make
+ concrete statements about the relative size of the $N\pi$ contamination.
+If these calculations can show that the large-$Q^2$ region is less afflicted
+ than the low-$Q^2$ region, then worries about the contamination should be more or less resolved.
+
+Another concern to note is that the magnitude of $Q^2$ may adversely affect
+ the convergence of the chiral expansion at large $Q^2$,
+ limiting the ability to extrapolate lattice QCD results to the physical point.
+Even for low and moderate values of momentum transfer,
+ a large expansion order would be needed to constrain the form factor
+ dependence on the relevant low energy constants,
+ limiting the predictability of the theory.
+There is some hope that expanding in terms of the $z$ expansion parameter $z$
+ may alleviate some of these concerns by building in correlations between
+ low and high orders of $Q^2$ that are expected from analyticity.
+This will be discussed in more detail in Sec.~\ref{sec:z_continuum},
+ where the relationship between $Q^2$ and $z$ will be analyzed in more detail.
+
 \begin{itemize}
 \item
 \textcolor{red}{[
@@ -101,10 +156,9 @@ As a rough estimate, NME claims that the uncertainties are at least a factor of 
 \item
 \textcolor{red}{[
  Axial form factor has different corrections than induced pseudoscalar.
- Most of $N\pi$ contamination introduced into GGT and PCAC from induced pseudoscalar.
+ Most of $N\pi$ contamination introduced into GGT and PCAC from axial,
+ enhanced by $Q^2$-dependent prefactor.
 ]}
-\item
-\textcolor{red}{[ ensemble details of calculations.]}
 \item
 \textcolor{red}{[
  $g_A(Q^2)$ parameterizations.
@@ -115,27 +169,6 @@ As a rough estimate, NME claims that the uncertainties are at least a factor of 
  Different methods of dealing with excited states.
  FH, 3pt fits, summation, other?
 ]}
-\item
-\textcolor{red}{[
- axial form factor with full set of coefficients and covariance needed
- in chiral-continuum-FV limit.
- $r_A^2$ reported to connect with pion electroproduction/neutron decay/very low-$Q^2$ applications,
- but not nearly as important for neutrinos.
-]}
-\item
-\textcolor{red}{[ Need an axial ff calculation with explicit $N\pi$-like operators. ]}
-\item
-\textcolor{red}{[ Will need to verify systematics for large $Q^2$ axial ff,
- but chiral corrections/excited state contaminations are also smallest in this region.
- May be fooled into comfort by breakdown of XPT.
-]}
-\item
-\item
-\textcolor{red}{[
- failure of dipole parameterization with existing LQCD data.
- consistency with expt for $r_A^2$ but high at large $Q^2$ means
- that one-parameter fits are insufficient to describe $Q^2$ behavior.
- ]}
 \end{itemize}
 
 Citations for $F_A(Q^2)$ references pulled from NME21, no $g_A$-only references:
