@@ -50,18 +50,20 @@ Initial calculations targeting the axial form factor verified the PCAC relation
  for the full correlation functions but found significant \emph{apparent} violations
  of the Generalized Goldberger-Triemann relation, Eq.~\ref{eq:ggt}.
 The resolution of the apparent violation of GGT
- is now informed by baryon chiral perturbation theory, which suggests that the
- corrections to the spatial axial, temporal axial, and induced pseudoscalar
+ is now informed by baryon chiral perturbation theory, which suggests that chiral
+ and excited state corrections to the spatial axial, temporal axial, and induced pseudoscalar
  are functionally different and not properly removed.
 The axial contributions are largely dominated by $N\pi$ excited states
  with a highly suppressed single nucleon chiral correction.
 The correction to the axial current is nearly independent of $Q^2$.
-On the other hand, the induced pseudoscalar is driven by the single nucleon contribution and has
+On the other hand, corrections to the induced pseudoscalar are
+ driven by the single nucleon chiral contribution and has
  a strong $Q^2$ dependence~\cite{Bar:2018xyi}, with the largest correction at low $Q^2$.
 The $N\pi$ contribution in the induced pseudoscalar is highly suppressed by
  an approximate cancellation.
-The pseudoscalar contamination is redundant with the axial and induced pseudoscalar
- chiral corrections and can be obtained by application of the PCAC relation.
+The contamination to the pseudoscalar current is redundant with the
+ axial and induced pseudoscalar chiral corrections and can be obtained
+ by application of the PCAC relation.
 
 Scrutiny of the lattice QCD data has demonstrated many of the features
  that were expected from chiral perturbation theory.
@@ -89,29 +91,26 @@ Each $Q^2$ prefered dominant $N\pi$ states with different energies,
  which when neglected across the full range of momentum transfers
  produced a $Q^2$-dependent discrepancy in excess of the $Q^2$ behavior
  expected from the GGT and PPD relations.
-Fits to the three-point functions that allowed for the possibility of
+Fits to the three-point functions that allow for the possibility of
  nonnegligible $N\pi$ states are able to constrain the effects of these states,
  removing the contamination and thereby restoring the PPD relation.
 
 \textcolor{red}{[NME]}
 \textcolor{red}{[RQCD]}
-\textcolor{red}{[ETMC]}
 
-\textcolor{red}{[CLS]}
-The CLS collaboration have an axial form factor computation on a
- single ensemble of Wilson clover fermions at physical pion mass~\cite{Hasan:2017wwt}.
-This methodology paper focuses on computing the nucleon charges
- and radii by explicitly computing derivatives of the correlation functions
- with respect to the momentum transfer.
-This method yields the axial radius directly from $Q^2=0$ data,
- which is compared to the nucleon form factor slopes and charges obtained from
- fits to data at nonzero $Q^2$ using the traditional three-point correlator methods.
-Though the results are in agreement between the two methods,
- the direct derivative proves to be noisier than the traditional method.
-With more precision, the axial radius obtained from this method,
- or constraints on the slope obtained in a similar fashion at nonzero $Q^2$,
- could provide orthogonal constraints on the form factor that could
- help pin down the axial form factor shape.
+\textcolor{red}{[ETMC]}
+The ETMC calculation~\cite{Alexandrou:2020okk} of the axial form factor
+ is performed on three ensembles with twisted mass fermions all at physical pion mass.
+Two of these ensembles include only light quarks in the sea,
+ leading to unquantifiable systematic corrections from
+ neglecting the effects of strange quarks.
+However, these two two-flavor ensembles permit an explicit test of finite-volume corrections,
+ demonstrating a lack of dependence on the volume in the range of typical lattice computations.
+The remaining ensemble has four flavors of sea quarks and thus is not subject
+ to the same criticism of neglecting the strange quarks.
+Despite the agreement with the trend of axial form factor results from other collaborations,
+ the results from this computation do not satisfy the PPD and GGT relations,
+ suggesting remnant excited state contamination.
 
 \textcolor{red}{[PACS]}
 The PACS collaboration has focused on computing the axial form factor
@@ -128,6 +127,23 @@ They compare this ensemble to a computation of the axial radius using
  on a $(5.5~{\rm fm})^3$ volume ensemble, finding agreement between the results of each.
 Results on both ensembles are about $1\sigma$ small compared to the axial radius
  from the average from experimental sources in Ref.~\cite{Hill:2017wgb}.
+Like the ETMC results, the PACS calculation does not satisfy the PPD and GGT relations.
+
+\textcolor{red}{[CLS]}
+The CLS collaboration have an axial form factor computation on a
+ single ensemble of Wilson clover fermions at physical pion mass~\cite{Hasan:2017wwt}.
+This methodology paper focuses on computing the nucleon charges
+ and radii by explicitly computing derivatives of the correlation functions
+ with respect to the momentum transfer.
+This method yields the axial radius directly from $Q^2=0$ data,
+ which is compared to the nucleon form factor slopes and charges obtained from
+ fits to data at nonzero $Q^2$ using the traditional three-point correlator methods.
+Though the results are in agreement between the two methods,
+ the direct derivative proves to be noisier than the traditional method.
+With more precision, the axial radius obtained from this method,
+ or constraints on the slope obtained in a similar fashion at nonzero $Q^2$,
+ could provide orthogonal constraints on the form factor that could
+ help pin down the axial form factor shape.
 
 \textcolor{red}{[Other calculations]}
 In addition to the aforementioned published results,
@@ -174,6 +190,16 @@ As a rough estimate, NME claims that the uncertainties are at least a factor of 
 
 \begin{itemize}
 \item
+\textcolor{red}{[
+ temporal axial current - subject to large excited state corrections.
+ ETMC claim precise, use it to constrain $N\pi$.
+]}
+\item
+\textcolor{red}{[
+ Axial form factor has different corrections than induced pseudoscalar.
+ Most of $N\pi$ contamination introduced into GGT and PCAC from induced pseudoscalar.
+]}
+\item
 \textcolor{red}{[ ensemble details of calculations.]}
 \item
 \textcolor{red}{[
@@ -200,7 +226,6 @@ As a rough estimate, NME claims that the uncertainties are at least a factor of 
  May be fooled into comfort by breakdown of XPT.
 ]}
 \item
-\textcolor{red}{[ form factor slopes at $Q^2=0$ could be good orthogonal constraints.  ]}
 \item
 \textcolor{red}{[
  failure of dipole parameterization with existing LQCD data.
