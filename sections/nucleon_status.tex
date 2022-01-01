@@ -1,34 +1,23 @@
-\newasm{
-For charged current quasielastic scattering of a neutrino with a free nucleon,
-the interaction is described by a $V-A$ weak interaction given at the quark level by
-$\bar{u}\gamma_\mu(1- \gamma_5)d$ (or its conjugate), with the nucleon level amplitude at four-momentum transfer $Q^2 = -q^2$ described by
+For charged current quasi-elastic scattering of a neutrino with a free nucleon,
+the interaction is described by a $V-A$ weak interaction, given at the quark level by
+$\bar{u}\gamma_\mu(1- \gamma_5)d$ (or its conjugate), with the nucleon level amplitude at four-momentum transfer $Q^2 = -q^2$ parameterized by
 \begin{align}
  \langle p | V^\mu | n \rangle
- &= \bar{u}_p \Big[
+ &= \bar{U}_p(p+q) \Big[
  F_1(q^2) \gamma^\mu +\frac{i}{2M} F_2(q^2) \sigma^{\mu\nu} q_\nu
- \Big] u_n,
+ \Big] U_n(p),
  \nonumber\\
  \langle p | A^\mu | n \rangle
- &= \bar{u}_p \Big[
+ &= \bar{U}_p(p+q) \Big[
  F_A(q^2) \gamma^\mu \gamma_5 +\frac{1}{M} F_P(q^2) q^\mu \gamma_5
- \Big] u_n\, .
+ \Big] U_n(p)\, .
 \end{align}
-Existing calculations from LQCD extend up to a range of $Q^2 \lesssim 1~{\rm GeV}^2$,
-which is ideal for the neutrino interactions at the ${\rm GeV}$ energy scale.
-}
 
-{\color{red}TRANSPLANTED FROM OLD INTRO}
-For example, Figure~\ref{fig:protonmagneticff} demonstrates the current tension in the determination of the proton magnetic form factor.
-Two different parameterizations of the form factor, normalized by the dipole are displayed.
-The Bradford, Bodek, Budd and Arrington parameterization from Neutrino-Nucleus Interaction 2005 Workshop (BBBA05)~\cite{Bradford:2006yz} are displayed as the lower (blue) band with a solid mean value.
-A more recent z-expansion parameterization from Borah {\it et al.}~\cite{Borah:2020gte} is displayed by the upper (black) band with a dashed mean value.
-Of note, even the sign of the slope of the form factor is not determined.
-
-\newasm{
 The vector form factors, $F_1$ and $F_2$,
 are precisely estimated from electron-proton scattering data,
 up to a tension in existing parameterizations of the proton magnetic form factor
 shown in Fig.~\ref{fig:protonmagneticff}.
+{\color{red}Andre: I am confused.  e-p gets us flavor conserving $F_{1,2}$, but here, we need flavor changing}
 The tension is significant over all $Q^2 > 0$, at the level of several percent,
 including significant disagreement in the slope of the form factor at $Q^2 = 0$.
 Of the nucleon form factor calculations from lattice QCD,
@@ -40,7 +29,18 @@ A percent level calculation of the form factor $Q^2$ behavior
 or a direct calculation of the slope of the magnetic form factor
 would provide useful insight about this tension or could discriminate
 between the two parameterizations.
-}
+
+
+
+
+
+{\color{red}TRANSPLANTED FROM OLD INTRO}
+For example, Figure~\ref{fig:protonmagneticff} demonstrates the current tension in the determination of the proton magnetic form factor.
+Two different parameterizations of the form factor, normalized by the dipole are displayed.
+The Bradford, Bodek, Budd and Arrington parameterization from Neutrino-Nucleus Interaction 2005 Workshop (BBBA05)~\cite{Bradford:2006yz} are displayed as the lower (blue) band with a solid mean value.
+A more recent z-expansion parameterization from Borah {\it et al.}~\cite{Borah:2020gte} is displayed by the upper (black) band with a dashed mean value.
+Of note, even the sign of the slope of the form factor is not determined.
+
 
 %------------------------------------------------------------------------------
 % proton magnetic FF
