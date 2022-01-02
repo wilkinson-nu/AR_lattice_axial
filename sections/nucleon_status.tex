@@ -16,7 +16,7 @@ $\bar{u}\gamma_\mu(1- \gamma_5)d$ (or its conjugate for proton to neutron), with
     \Big] U_n(p)\, .
 \end{align}
 The isovector, vector form factors, $F_1^+$ and $F_2^+$, can be precisely estimated from electron-nucleon scattering data.
-Electron-proton and electron-neutron scattering are sensitive to the isoscalar, $F_{1,2}^s$ and isovector, $F_{1,2}^3$ form factors.  After isolating $F_{1,2}^3$, approximate isospin symmetry can be used to relate these $\tau_3$ form factors to the charged $\tau_+$ form factors of equation~\eqref{eq:nucleon_ff}: in the isospin limit, $\langle p| \bar{u}\, \Gamma u - \bar{d}\, \Gamma d |p\rangle = \langle p| \bar{u}\, \Gamma d |n\rangle$ for dirac structure $\Gamma$.
+Electron-proton and electron-neutron scattering are sensitive to the isoscalar, $F_{1,2}^s$ and isovector, $F_{1,2}^3$ form factors.  After isolating $F_{1,2}^3$, approximate isospin symmetry can be used to relate these $\tau_3$ form factors to the charged $\tau_+$ form factors of equation~\eqref{eq:nucleon_ff}: in the isospin limit, $\langle p| \bar{u}\, \Gamma u - \bar{d}\, \Gamma d |p\rangle = \langle p| \bar{u}\, \Gamma d |n\rangle$ for dirac structure $\Gamma$. \new{The overall uncertainty of the electron-neutron form factors is larger than those of the proton due to the relative sparsity of electron-neutron data.}
 
 %------------------------------------------------------------------------------
 % proton magnetic FF
@@ -33,7 +33,7 @@ and the BBBA05 parameterization~\cite{Bradford:2006yz} are shown.
 \end{figure}
 %------------------------------------------------------------------------------
 
-Even though the overall uncertainty of the electron-neutron form factors is larger than those of the proton, there is a significant tension in existing parameterizations of the proton magnetic form factor
+\new{However, there} is a significant tension in existing parameterizations of the proton magnetic form factor, as
 shown in Figure~\ref{fig:protonmagneticff}.
 Two different parameterizations of the form factor, normalized by the dipole are displayed.
 The Bradford, Bodek, Budd and Arrington parameterization from Neutrino-Nucleus Interaction 2005 Workshop (BBBA05)~\cite{Bradford:2006yz} are displayed as the lower (blue) band with a solid mean value.
@@ -55,16 +55,16 @@ LQCD calculations of the axial charge have historically been low compared to exp
 It is now understood that the treatment of excited state systematics is the main culprit for this discrepancy~\cite{Bar:2017kxh,Ottnad:2020qbw,Aoki:2021kgd}.
 With proper control over the excited state contamination, the LQCD calculations are now in good agreement with the experimental value~\addcite{modern values} with one group achieving a sub-percent determination of $g_A$~\cite{Chang:2018uxx,Berkowitz:2018gqe,Walker-Loud:2019cif}.
 
-
+\cw{Should we explicitly note again that this also fills a gap in the experimental program?}
 Armed with the newfound confidence in the control of systematics for the axial charge,
 more emphasis is now being put into the form factor at nonzero momentum transfer.
 One extremely striking feature of lattice calculations is the strong preference for a slower
-fall off of the form factor with increasing $Q^2$ than predicted by phenomenological determinations from experiment.
+fall off of the form factor with increasing $Q^2$ than predicted by phenomenological determinations from experiment~\citeneeded.
 This preference is consistently reproduced by several lattice collaborations using
 independent computation methods, lending more credence to the result.
 When integrated over the full range of $Q^2$ to compute the nucleon cross section,
 this translates to an enhancement in the free nucleon cross section as large as $30-40\%$
-over neutrino energies greater than $1~{\rm GeV}$.
+over neutrino energies greater than $1~{\rm GeV}$~\citeneeded.
 In addition, the precision on the axial form factor uncertainty from lattice QCD
 is small enough to be sensitive to the tension between vector form factor parameterizations.
 
@@ -74,7 +74,7 @@ The aforementioned situation with nucleon form factors is depicted in Figure~\re
 The black dot-dashed curve is the default case, which uses the $z$ expansion parameterizations of the vector and axial form factors from Refs.~\cite{Borah:2020gte}~and~\cite{Meyer:2016oeg}, respectively.
 The green band shows the uncertainty obtained from the axial form factor alone, and the gray band from the (much smaller) vector form factor uncertainty by itself.
 The blue solid curve substitutes the vector form factors of the default choice with the BBBA05 parameterization~\cite{Bradford:2006yz}, taking the uncorrelated uncertainty from the BBBA05 vector form factors only.
-The observed tension between the black and blue bands is the result of the tension between proton magnetic form factor parameterizations.
+The observed tension between the black and blue bands is the result of the tension between proton magnetic form factor parameterizations (see Figure~\ref{fig:protonmagneticff}).
 The red dotted curve instead substitutes the axial form factor of the default with a parameterization obtained from lattice QCD and its uncertainty.
 The size of the red band with respect to the green band demonstrates the uncertainty reduction from replacing the deuterium scattering axial form factor with one obtained from LQCD, and the significant change in normalization is due to the slower fall off of the axial form factor.
 Additionally, the size of the red band demonstrates the relevance of the tension in vector form factors, characterized by the difference between the black and blue curves.
@@ -104,6 +104,7 @@ Additionally, the size of the red band demonstrates the relevance of the tension
 }
 \end{figure}
 
+\cw{I think these comments are out of place here. They should be removed or worked into the intro or the next section.}
 In the next section, we review the current status of LQCD calculations of the axial form factor.
 We emphasize that LQCD calculations of the electric and magnetic form factors are more mature, but equally important.
 We anticipate, given the state of the field, that within a couple years, we will have a complete error budget for the single nucleon (quasi-) elastic form factors from LQCD.
