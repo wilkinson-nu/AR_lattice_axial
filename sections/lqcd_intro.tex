@@ -48,14 +48,33 @@ This is known as the universality of the continuum limit, with each choice only 
 Deviations from QCD, which arise at finite $a$, are often called \textit{discretization corrections} or \textit{scaling violations}.
 That all lattice actions reduce to QCD as $a\rightarrow0$ is known as the universality of the continuum limit.  It is a property which can be proved in perturbation theory but must be established numerically given the non-perturbative nature of QCD.
 For sufficiently small lattice spacings, one can use effective field theory (EFT) to construct a continuum theory that encodes the discretization effects in a tower of higher dimensional operators.  This is known as the Symanzik EFT for lattice actions~\cite{Symanzik:1983dc,Symanzik:1983gh}.
-One interesting example involves the violation of Lorentz Symmetry at finite lattice spacing: in the Symanzik EFT, the operators which encode this Lorentz violation scale as $a^2$ with respect to the operators which survive the continuum limit, and thus, Lorentz symmetry is an accidental symmetry of the continuum limit.  It is not respected at any finite lattice spacing, but the measurable consequences vanish as $\mathrm{a^2}$ for sufficiently small lattice spacing.
+One interesting example involves the violation of Lorentz Symmetry at finite lattice spacing: in the Symanzik EFT, the operators which encode this Lorentz violation scale as $a^2$ with respect to the operators which survive the continuum limit, and thus, Lorentz symmetry is an accidental symmetry of the continuum limit.  It is not respected at any finite lattice spacing, but the measurable consequences vanish as $a^2$ for sufficiently small lattice spacing.
 
 
 The inclusion of quark fields adds more variety of lattice actions.
 One main complication for fermions is that the ``naive discretization'', equation~\eqref{eq:naive_fermions}, leads to a well-known doubling problem in which, instead of a single fermion, one has $2^d$ doubler fermions, or poles in the propagator in $d$ dimensions.
 In particular, it is challenging to remove these doublers without breaking chiral symmetry with the lattice regulator, an issue known as the Nielsen-Ninomiya No Go Theorem~\cite{Nielsen:1981hk,Nielsen:1980rz,Nielsen:1981xu}.
-One of the simplest solutions is known as the Wilson fermion action in which an irrelevant double-derivative operator is added to the lattice action.  This operator adds a mass to the doubles that scales as $1/a$, thus removing them from the relevant light degrees of freedom of the theory, but is also explicitly breaks chiral symmetry, thus, simulating a theory with light fermions requires fine-tuning of the bare quark mass.
-The clover-Wilson fermion discretization adds yet another operator which is designed to remove the $\mathrm{O}(a)$ additive quark mass through a tuning of an irrelevant operator~\addcite{Csw}.
+
+There are four commonly used methods for discretizing the fermion action that deal with this no-go theorem differently.
+One of the first is known as staggered or Kogut-Susskind fermions~\addcite{KS}, which splits the four components of the fermion spinor onto different corners of the local hypercube, reducing the doublers by a factor of four.  To simulate a single fermion, the fourth root of the determinant is used.%
+% FOOTNOTE ---------------------------------------------------------------------
+\footnote{There is some concern that the rooting procedure introduces non-local discretization effects which lead staggered fermions to fall in a different universality class than QCD~\addcite{Creutz and response}.
+So far, with sub-percent precision results for many hadronic quantities, there is no numerical evidence that this is the case.  But this emphasizes the importance of computing the same quantity with multiple discretization schemes to verify the continuum limit results.}
+%-------------------------------------------------------------------------------
+Staggered fermions are commonly used as they are numerically less expensive to simulate than most other variants, and state of the art results with staggered fermions utilize six lattice spacings to control the continuum limit.
+They also maintain a remnant of the chiral symmetry, so the staggered quark mass is protected from additive mass renormalization.
+While staggered fermions work very well for mesons,
+because the four components of the quark spinor are split onto different sites,
+they form a new symmetry group, denoted \textit{taste} to differentiate it from flavor symmetry, with the same algebra as the Dirac algebra of the continuum spinors.
+Further, the Dirac structure becomes entangled with the spacetime symmetry, significantly complicating the construction of hadrons with spin, such as the nucleon~\addcite{Aaron knows some refs}.
+
+The other most commonly used scheme is known as clover-Wilson fermions~\addcite{Csw}.
+Wilson noted that the addition of an irrelevant, double-derivative operator in the fermion action would give a mass to the doublers that scales as $1/a$, thus lifting all but one of the doublers to be a heavy state that decouples in the continuum limit.  The expense of such a treatment is the double derivative operator breaks chiral symmetry explicitly and thus the quark mass is given as the sum of the bare quark mass and a term that scales as $1/a$, requiring a fine-tuning to achieve the light masses of the up and down quarks.  The theory also introduces discretization corrections which scale as $\mathrm{O}(a)$ while with staggered fermions, the leading discretization corrections scale as $\mathrm{O}(a^2)$.
+Clover-Wilson fermions are Wilson fermions with the addition of another dimension-5 irrelevant operator whose coefficient is tuned to remove the leading chiral-symmetry breaking $\mathrm{O}(a)$ corrections from the spectrum.
+In order to study matrix elements of operators, such as calculations of the nucleon form factors, the currents must also be modified to include additional irrelevant operators to remove the leading $\mathrm{O}(a)$ corrections.
+It is well understood how to make this $\mathrm{O}(a)$ improvements, and routinely done, but it is also laborious.
+
+
 
 
 
