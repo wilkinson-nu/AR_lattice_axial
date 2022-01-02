@@ -4,9 +4,9 @@ U_\mu(x) = \exp\left\{i a\int_0^1 dt A_\mu(x +(1-t)a\hat{\mu}) \right\}
     \approx \exp\left\{i a \bar{A}_\mu(x) \right\}\, ,
 \end{equation}
 where $A_\mu(x)$ is the gluon field, $a$ is the ``lattice spacing'' and $\bar{A}_\mu(x)$ is the average value of $A_\mu(x)$ over the spacetime interval $[x, x+a\hat{\mu}]$.
-This parameterization of the gauge fields allows for the construction of a discretized theory which preserves gauge-invariance~\addcite{Wilson}, a key property of gauge theories.
+This parameterization of the gauge fields allows for the construction of a discretized theory which preserves gauge-invariance~\cite{Wilson:1974sk}, a key property of gauge theories.
 For example, the discretized Dirac operator
-\begin{equation}
+\begin{equation}\label{eq:naive_fermions}
 \bar{\psi}(x)\g_\mu D_\mu \psi(x) \rightarrow
 \bar{\psi}(x)\g_\mu\frac{1}{2a}\left[U_\mu(x)\psi(x+a\hat{\mu}) -U^\dagger_\mu(x)\psi(x-a\hat{\mu}) \right]\, ,
 \end{equation}
@@ -15,6 +15,9 @@ is invariant under gauge transformations,
 &\psi(x)\rightarrow \Omega(x)\psi(x)\, ,&
 &U_\mu(x)\rightarrow \Omega(x)U_\mu(x)\Omega^{-1}(x+a\hat{\mu})\, .&
 \end{align}
+Of note, the transformation of the link field maintains gauge invariance for the combindation of the $\bar{\psi}(x)$ and $\psi(x\pm a\hat{\mu})$ fields.
+
+
 In the continuum, the gluon action-density is given by the product of field strength tensors, which are gauge-covariant curl's of the gauge potential
 \begin{align}
 &\mathcal{L}_G = \frac{1}{2g^2}\textrm{Tr}\left[G_{\mu\nu} G_{\mu\nu}\right]\, &
@@ -27,8 +30,8 @@ When constructing the discretized gluon-action, it is therefore natural to use o
     =U_{\mu\nu}(x)
     =U_\mu(x)U_\nu(x+a\hat{\mu}) U^\dagger_\mu(x+a\hat{\nu}) U^\dagger_\nu(x)\, .
 \end{equation}
-One can then show that the Wilson gauge-action reduces to the continuum action plus irrelevant operators which vanish in the continuum limit
-\begin{align}
+One can then show that the Wilson gauge-action reduces to the continuum action plus irrelevant (higher dimensional) operators which vanish in the continuum limit
+\begin{align}\label{eq:gluon_action}
 S_G(U) &= \beta \sum_{n=x/a} \sum_{\mu<\nu}
     \textrm{Re}\left[ 1 - \frac{1}{N_c} \textrm{Tr} \left[U_{\mu\nu}(n) \right]\right]
 \nonumber\\&=
@@ -39,12 +42,29 @@ S_G(U) &= \beta \sum_{n=x/a} \sum_{\mu<\nu}
 \end{align}
 The continuum limit, which is the assymptotically large $Q^2$ region, is therefore approached as $\beta\rightarrow\infty$ where $g(Q^2)\rightarrow 0$.
 
+There are many choices one can make in constructing the discretized lattice action.
+Provided continuum QCD is recovered as $a\rightarrow0$, each choice is valid.
+This is known as the universality of the continuum limit, with each choice only varying at finite lattice spacing.
+Deviations from QCD, which arise at finite $a$, are often called \textit{discretization corrections} or \textit{scaling violations}.
+That all lattice actions reduce to QCD as $a\rightarrow0$ is known as the universality of the continuum limit.  It is a property which can be proved in perturbation theory but must be established numerically given the non-perturbative nature of QCD.
+For sufficiently small lattice spacings, one can use effective field theory (EFT) to construct a continuum theory that encodes the discretization effects in a tower of higher dimensional operators.  This is known as the Symanzik EFT for lattice actions~\cite{Symanzik:1983dc,Symanzik:1983gh}.
+One interesting example involves the violation of Lorentz Symmetry at finite lattice spacing: in the Symanzik EFT, the operators which encode this Lorentz violation scale as $a^2$ with respect to the operators which survive the continuum limit, and thus, Lorentz symmetry is an accidental symmetry of the continuum limit.  It is not respected at any finite lattice spacing, but the measurable consequences vanish as $\mathrm{a^2}$ for sufficiently small lattice spacing.
+
+
+The inclusion of quark fields adds more variety of lattice actions.
+One main complication for fermions is that the ``naive discretization'', equation~\eqref{eq:naive_fermions}, leads to a well-known doubling problem in which, instead of a single fermion, one has $2^d$ doubler fermions, or poles in the propagator in $d$ dimensions.
+In particular, it is challenging to remove these doublers without breaking chiral symmetry with the lattice regulator, an issue known as the Nielsen-Ninomiya No Go Theorem~\cite{Nielsen:1981hk,Nielsen:1980rz,Nielsen:1981xu}.
+One of the simplest solutions is known as the Wilson fermion action in which an irrelevant double-derivative operator is added to the lattice action.  This operator adds a mass to the doubles that scales as $1/a$, thus removing them from the relevant light degrees of freedom of the theory, but is also explicitly breaks chiral symmetry, thus, simulating a theory with light fermions requires fine-tuning of the bare quark mass.
+The clover-Wilson fermion discretization adds yet another operator which is designed to remove the $\mathrm{O}(a)$ additive quark mass through a tuning of an irrelevant operator~\addcite{Csw}.
+
+
+
+
+
 
 
 \addcomment{thoughts for rest of intro to LQCD}
 \begin{itemize}
-
-\item many choices of discretized action
 
 \item many choices of fermions
 
@@ -54,6 +74,8 @@ The continuum limit, which is the assymptotically large $Q^2$ region, is therefo
 
 \item full calculation requires extrapolation to the continuum limit, physical pion mass, infinite volume
 
-\item extra challenges for FF: light pions = more noise, (light pions more expensive cause larger L, larger condition number, and more statistics needed); finite L limits accessible kinematic points - particularly challenging for extracting slope of form factors at small $Q^2$ - FF parameterizations can show non-trivial structure in between kinematically accessible points - leads to ideas to compute slope of FF as well as FF...
+\item 2pt function
+
+\item {\color{red}[move to next section?]} extra challenges for FF: light pions = more noise, (light pions more expensive cause larger L, larger condition number, and more statistics needed); finite L limits accessible kinematic points - particularly challenging for extracting slope of form factors at small $Q^2$ - FF parameterizations can show non-trivial structure in between kinematically accessible points - leads to ideas to compute slope of FF as well as FF...
 
 \end{itemize}
