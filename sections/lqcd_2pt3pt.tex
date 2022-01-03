@@ -1,27 +1,30 @@
-In order to determine the mass of the nucleon (or any hadron), we rely on the construction of two-point correlation functions, typically evaluated in a mixed time-momentum representation as a function of Euclidean time.
-The non-perturbative nature of QCD means we do not know how to construct the nucleon wave function, and so we utilize \textit{interpolating} operators which have the quantum numbers of the state we are interested in.
-These creation and annihilation operators will couple to all eigenstates of QCD with the same quantum numbers, with the two-point function given with a spectral decomposition as
+In order to determine the mass of the nucleon (or any hadron), we rely on the construction of two-point correlation functions that are constructed in a mixed time-momentum representation, most commonly utilizing spatially local creation operators (sources) and momentum space annihilation operators (sinks).
+The non-perturbative nature of QCD means we do not know how to construct the nucleon wave function, and so we utilize \textit{interpolating operators} which have the quantum numbers of the state we are interested in.
+These creation and annihilation operators will couple to all eigenstates of QCD with the same quantum numbers giving rise to a two-point function with a spectral decomposition
 \begin{align}\label{eq:2pt}
     C(t,\mathbf{p}) &= \sum_{\mathbf{x}} e^{-i \mathbf{p\cdot x}}
-        \langle \Omega| O(t,\mathbf{x}) O^\dagger(0,\mathbf{0}) | \Omega \rangle
+        \langle \O| O(t,\mathbf{x}) O^\dagger(0,\mathbf{0}) | \O \rangle
 %\nonumber\\&=
     =
-    \sum_{n=0} z_n(\mathbf{p}) z_n^\dagger(\mathbf{p}) e^{-E_n(\mathbf{p})t}\, .
+    \sum_{n=0}^\infty z_n(\mathbf{p}) z_n^\dagger(\mathbf{p}) e^{-E_n(\mathbf{p})t}\, .
 \end{align}
-In this expression, $|\Omega\rangle$ is the vacuum state and $z_n^\dagger = \langle n|O^\dagger|\Omega\rangle$.
-To go from the first equality to the second, we have inserted a complete set of states, $1=\sum_n |n\rangle\langle n|$ and we have used the time-evolution operator to expose the temporal dependence.
-\cw{One complaint I've been getting a lot when I write public DUNE things is that I overuse phrases like this, when really, nothing in the paper should not be ``of note''.}
-\cw{I also think the bullet points slightly complicate the flow of this section}
-Of note:
-\begin{itemize}[leftmargin=*]
-\item The two-point functions are typically computed with spatially local sources and momentum space sinks, as in Equation~\eqref{eq:2pt} with momentum conservation selecting only the source with the same momentum;
+In this expression, $|\O\rangle$ is the vacuum state,
+$z_n(\mathbf{p}) = \sum_{\mathbf{x}}e^{-i\mathbf{p\cdot x}} \langle \O|O(0,\mathbf{x})|n\rangle$
+and $z_n^\dagger(\mathbf{p}) = \langle n(\mathbf{p})|O^\dagger(0,\mathbf{0})|\O\rangle$.
+To go from the first equality to the second, we have inserted a complete set of states, $1=\sum_n |n\rangle\langle n|$ and we have used the time-evolution operator to shift the annihilation operator to $t=0$ and expose the explicit time dependence.
+Momentum conservation selects only the state $n(\mathbf{p})$ in the sum over all states enabling the use of this mixed spatial creation operator and momentum annihilation operator.
+As we will discuss in more detail below, it is more desirable to instead use momentum space creation operators.
+They are not commonly used as they are significantly more expensive numerically to generate.
 
-\item For large Euclidean time, the correlation function will be dominated by the ground state as the excited states will be exponentially suppressed by the energy gap
+For large Euclidean time, the correlation function will be dominated by the ground state as the excited states will be exponentially suppressed by the energy gap
 \begin{equation}
     C(t) = z_0 z_0^\dagger e^{-E_0 t}\left[
-        1 + r_1 r^\dagger_1 e^{-\Delta_{1,0}t} + \cdots \right]\, ,
-\end{equation}
-where $\Delta_{m,n} \equiv E_m - E_n$ and $r_n = z_n / z_0$.
+        1 + r_1 r^\dagger_1 e^{-\Delta_{1,0}t} + \cdots \right]\, .
+\end{equation}%
+\begin{marginnote}
+\entry{$\D_{m,n}= E_m - E_n$}{}
+\entry{$r_n = z_n / z_0$}{}
+\end{marginnote}%
 It is useful to construct an \textit{effective mass} to visualize at which the ground state begins to saturate the correlation function
 \begin{align}
 m_{\rm eff}(t) &= \ln \left( \frac{C(t)}{C(t+1)} \right)
@@ -30,13 +33,15 @@ m_{\rm eff}(t) &= \ln \left( \frac{C(t)}{C(t+1)} \right)
     E_0 + \ln\left( 1 + \sum_{n=1} r_n r^\dagger_n e^{-\Delta_{n,0}t}\right)\, .
 \end{align}
 
-\end{itemize}
-A well known challenge which complicates this picture is that for nucleons, the StoN ratio degrades exponentially in time~\cite{Lepage:1989hd}
+
+A well known challenge which complicates the analysis is that for nucleon two-point functions, the StoN ratio degrades exponentially at large Euclidean time~\cite{Lepage:1989hd}
 \begin{equation}
-\frac{\mathrm{Signal}}{\mathrm{Noise}} \propto \sqrt{N_{\mathrm{sample}}} e^{(m_{\mathrm{N}} - \frac{3}{2}m_\pi)t}\, ,
+\lim_{{\rm large}\ t}\frac{\mathrm{Signal}}{\mathrm{Noise}}
+    \propto \sqrt{N_{\mathrm{sample}}} e^{(m_{\mathrm{N}} - \frac{3}{2}m_\pi)t}\, ,
 \end{equation}
- which adds an extra source of excited state systematic uncertainty that must be quantified.
-For nucleons, as the pion mass is reduced towards its physical value, the excited state energy gap also shrinks, as the lowest lying excited state is typically a nucleon-pion in a relative $P$-wave.  At the same time, the energy scale which governs the exponential degradation of the signal also grows.  The former issue means calculations must be performed at larger Euclidean time to suppress the smaller gapped excited states and the latter issue means we need exponentially more statistics to obtain a fixed relative uncertainty at a given time.
+which adds an extra source of excited state systematic uncertainty that must be quantified:
+the region in time when the ground state begins to saturate the correlation functions, at $t\approx 1$~fm, the noise is becoming significant, making the correlation functions in this region susceptible to correlated fluctuations which can bias a simplistic single-state analysis.
+Further, as the pion mass is reduced towards its physical value, the excited state energy gap also shrinks, as the lowest lying excited state is typically a nucleon-pion in a relative $P$-wave.  At the same time, the energy scale which governs the exponential degradation of the signal also grows.  The former issue means calculations must be performed at larger Euclidean time to suppress the smaller gapped excited states and the latter issue means we need exponentially more statistics to obtain a fixed relative uncertainty at a given time.
 
 \bigskip\noindent
 {\color{red}[points to add]}
