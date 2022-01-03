@@ -1,20 +1,9 @@
-Lattice QCD has been and remains one of the major uses of the worlds leadership computing facilities.
-There is an extensive literature on LQCD covering the broad range of technical and formal aspects that are necessary to cary out state of the art calculations, for which we can not do justice in this review.
-Rather, for an in depth introduction to lattice QCD, we refer readers to the text books~\cite{Smit:2002ug,DeGrand:2006zz,Gattringer:2010zz} and in this review, we provide a high-level summary of general issues that must be addressed as well as issues specific to LQCD calculations of nucleon matrix elements and form factors.
-
-Lattice QCD is a discretized version of QCD, formulated in Euclidean spacetime.
-Even at finite lattice spacing and volume, the multi-dimensional path integral is vastly too large to perform.
-The use of Euclidean spacetime renders the action density real for zero chemical potential for which one can use a Hybrid Monte Carlo algorithm~\cite{Duane:1987de} to approximate the integral with importance sampling.
-The action is quadratic in the quark fields allowing for an analytic integration over these fermionic degrees of freedom, such that the path integral
-\begin{equation}\label{eq:Z_QCD}
-Z_{QCD} = \int D U\, {\rm Det}[\Dslash(U) + m]\, e^{-S_G(U)}
-\end{equation}
-is sampled with a weight given by ${\rm Det}[\Dslash(U) + m]\, e^{-S_G(U)}$, where $S_G(U)$ is the gluon action in terms of link fields which are Wilson lines
+Lattice QCD is a discretized version of QCD, formulated in Euclidean spacetime, in which the quark fields live at the sites of the lattice and the gluon fields live on the links between the sites.  These link fields are given by Wilson-lines
 \begin{equation}
 U_\mu(x) = \exp\left\{i a\int_0^1 dt A_\mu(x +(1-t)a\hat{\mu}) \right\}
-    \approx \exp\left\{i a \bar{A}_\mu(x) \right\}\, .
+    \approx \exp\left\{i a \bar{A}_\mu(x) \right\}\, ,
 \end{equation}
-Here, $A_\mu(x)$ is the gluon field, $a$ is the ``lattice spacing'' and $\bar{A}_\mu(x)$ is the average value of $A_\mu(x)$ over the spacetime interval $[x, x+a\hat{\mu}]$.
+where $A_\mu(x)$ is the gluon field, $a$ is the ``lattice spacing'' and $\bar{A}_\mu(x)$ is the average value of $A_\mu(x)$ over the spacetime interval $[x, x+a\hat{\mu}]$.
 This parameterization of the gauge fields allows for the construction of a discretized theory which preserves gauge-invariance~\cite{Wilson:1974sk}, a key property of gauge theories.
 For example, the discretized Dirac operator
 \begin{equation}\label{eq:naive_fermions}
@@ -65,24 +54,42 @@ One interesting example involves the violation of Lorentz Symmetry at finite lat
 The inclusion of quark fields adds more variety of lattice actions.
 One main complication for fermions is that the ``naive discretization'', equation~\eqref{eq:naive_fermions}, leads to a well-known doubling problem in which, instead of a single fermion, one has $2^d$ doubler fermions, or poles in the propagator in $d$ dimensions.
 In particular, it is challenging to remove these doublers without breaking chiral symmetry with the lattice regulator, an issue known as the Nielsen-Ninomiya No Go Theorem~\cite{Nielsen:1981hk,Nielsen:1980rz,Nielsen:1981xu}.
-There are four commonly used fermion discretization schemes that deal with this no-go theorem in different ways which are known as staggered or Kogut-Susskind fermions~\addcite{}, clover-Wilson fermions~\addcite{}, twisted mass fermions~\addcite{} and domain wall fermions (DWF)~\addcite{}.
-In this review, we comment that:
+There are four commonly used fermion discretization schemes that deal with this no-go theorem in different ways:
 \begin{itemize}[leftmargin=*]
-\item Staggered fermions are the least expensive numerically to simulate, have leading scaling violations of $\mathrm{O}(a^2)$, and they have a remnant chiral symmetry protecting the quark mass from additive mass renormalization.  However, they split the 4 components of the fermion spinor onto different components of a local hypercube, mixing the Dirac algebra with spacetime translations.  This significantly complicates their use for baryons~\addcite{}.
+\item Staggered, or Kogut-Susskind fermions~\addcite{KS}, split the four components of the fermion spinor onto different corners of a local hyper-cube, reducing the doublers by a factor of four.  A fourth root of the fermion determinant is then used to simulate a single fermion flavor.  Staggered fermions retain a remnant chiral symmetry, protecting the quark mass from additive mass renormalization.  They are the least expensive numerically to simulate, and thus state of the art computations now include six lattice spacings to control the continuum extrapolation.  Splitting the spinor components to different lattice sites complicates the Dirac structure of the theory, mixing it with the spacetime symmetries, and complicating the construction of hadrons with spin, such as nucleons~\addcite{Aaron knows some refs}.
 
-\item Clover-Wilson fermions are the most commonly used discretization scheme given their theoretical simplicity and preservation of all symmetries except chiral symmetry.  The explicit breaking of chiral symmetry with the Wilson operator means the light quark masses must be finely tuned against ultra-violet chiral symmetry breaking that scales as $1/a$, after which there remain residual $\mathrm{O}(a)$ chiral symmetry breaking effects.  It is well known, albeit laborious, how to non-perturbatively remove these leading $\mathrm{O}(a)$ scaling violations~\addcite{}, which must be done for both the action as well as matrix elements.
+\item Clover-Wilson fermions add two irrelevant dimension-5 operators to the action.  The first is a double derivative operator (the Wilson opeator) that gives a mass to the doublers that scales as $1/a$, thus lifting all but one of the doublers to be a heavy state that decouples in the continuum limit.  The double derivative operator explicitly breaks chiral symmetry causing an $1/a$ additive shift to the quark mass, thus requiring fine-tuning to retain the small up and down quark masses.
+The second operator is the clover operator, $a c_{SW} \bar{q} \sigma_{\mu\nu} G_{\mu\nu} q$.  The $c_{SW}$ coefficient~\addcite{Csw} can be tuned to remove the residual $\mathrm{O}(a)$ chiral symmetry breaking discretization effects from the spectrum~\addcite{O(a) papers}.  Removing such $\mathrm{O}(a)$ effects from all quantities, such as nucleon matrix elements and form factors, requires the tuning of additional irrelevant operators to remove such scaling violations from currents and other operators.  This procedure is well understood, and routinely carried out, but is also laborious and time consuming.  Nevertheless, since Wilson type fermions respect all other symmetries and they are relatively inexpensive to simulate, they are the most widely used in the literature.
 
-\item Twisted mass fermions~\addcite{} are a variant of Wilson fermions that exploits the approximate $SU(2)$ chiral symmetry of QCD to introduce a twisted quark mass term, $i\mu\g_5 \tau_3$.  At maximal twist, the bare quark mass is cancelled by the $1/a$ additive quark mass, leaving $\mu$ as the only contribution through $\mathrm{O}(a)$ to the physical quark mass.  Indeed, all observables are automatically $\mathrm{O}(a)$ improved at maximal twist.
-However, twisted mass fermions break isospin symmetry at finite lattice spacing, causing some complications now that LQCD results are precise enough to require isospin breaking corrections from $m_d-m_u$ and QED to be compared with experiment.
+\item Twisted-mass fermions~\addcite{tm papers} are a variant of Wilson or clover-Wilson fermions where the approximate $SU(2)$ flavor symmetry of the light quarks is used to add a mass term proportional to $i\gamma_5 \tau_3$.  This mass terms is protected from additive mass renormalization, and so if one works at \textit{maximal twist}, such that the regular mass term just cancels the $1/a$ mass term from the Wilson operator, the theory is automatically $\mathrm{O}(a)$ improved, meaning the leading $\mathrm{O}(a)$ chiral symmetry breaking corrections that normally arise for Wilson fermions are removed.
+Twisted mass fermions break isospin symmetry at finite lattice spacing, causing some complications now that LQCD results are precise enough to require isospin breaking corrections from $m_d-m_u$ and QED to be compared with experiment.
 
-\item The fourth most common discretization are Domain Wall Fermions (DWF)~\addcite{}, which introduce a fifth dimension to the theory with unit links (the gluons are not dynamic in the fifth dimension) with the left and right handed fermions bound to opposite sides of the fifth dimension.  The overlap of these left and right modes gives rise to an explicit chiral symmetry breaking that is exponentially suppressed by the extent of the fifth dimension.  For sufficiently small chiral symmetry breaking (large $L_5$), DWF are also automatically $\mathrm{O}(a)$ improved.
+\item The fourth most common discretization are Domain Wall Fermions (DWF)~\addcite{}, which introduce a fifth dimension to the theory with unit links (the gluons are not dynamic in the fifth dimension).  The left and right handed fermions are bound to opposite sides of the fifth dimension.  The overlap of these left and right modes gives rise to an explicit chiral symmetry breaking that is exponentially suppressed by the extent of the fifth dimension.  For sufficiently small chiral symmetry breaking (large $L_5$), DWF are also automatically $\mathrm{O}(a)$ improved.
 While very desirable, DWF are numerically more expensive to simulate, both because of the extra fifth dimension and also because the algorithmic speed up offered by multi-grid, which works tremendously for clover-Wilson fermions~\addcite{Kate + Balint Titan/Summit}, is not yet flushed out for DWF~\addcite{Boyle and QUDA people}.
 
 \item A final common variant of action is one in which the fermion discretization used in the generation of the gauge fields (the sea quarks) and the action used when generating quark propagators (the valence quarks) are different: this is known as a \textit{mixed action}~\cite{Renner:2004ck}.
 The most common reason to use such an action is to take advantage of numerically less expensive methods to generate the configurations while retaining good chiral symmetry properties of the valence quarks, which is known to suppress chiral symmetry breaking effects from the sea-quarks~\cite{Bar:2002nr,Bar:2005tu,Tiburzi:2005is,Chen:2007ug}.
 
-\end{itemize}
-As mentioned above, a key assumption of LQCD is that all varieties of lattice action, for sufficiently small lattice spacing, are approximated by continuum QCD plus irrelevant operators whose contributions vanish in the continuum limit.
-It is important for the field to test this assumption of universality by computing the same quantities with a variety of lattice actions, both at the level of gluons as well as the fermions, in order to gain confidence in the results that are extrapolated to the physical point.
 
-{\color{red}comment on continuum, infinite volume and physical quark mass extrapolations - common issues for all LQCD calculations.  then comment on signal-to-noise problems and excited state contamination for nucleons.}
+\end{itemize}
+There is an extensive literature on LQCD and its application to computing properties of nucleons.
+For reviews concerning nucleon structure, see Refs.~\addcite{}.
+For in depth introductions to lattice QCD, see the text books~\cite{Smit:2002ug,DeGrand:2006zz,Gattringer:2010zz}.
+
+
+
+
+
+
+\addcomment{thoughts for rest of intro to LQCD}
+\begin{itemize}
+
+\item refer to reviews of LQCD and text books, Smitt, Gatringer and Lang, DeTar and DeGrand
+
+\item full calculation requires extrapolation to the continuum limit, physical pion mass, infinite volume
+
+\item 2pt function
+
+\item {\color{red}[move to next section?]} extra challenges for FF: light pions = more noise, (light pions more expensive cause larger L, larger condition number, and more statistics needed); finite L limits accessible kinematic points - particularly challenging for extracting slope of form factors at small $Q^2$ - FF parameterizations can show non-trivial structure in between kinematically accessible points - leads to ideas to compute slope of FF as well as FF...
+
+\end{itemize}
