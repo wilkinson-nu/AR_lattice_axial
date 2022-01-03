@@ -1,31 +1,39 @@
-\cw{Some repetition between this paragraph and Section 2.}
-Computations of the nucleon axial charge have long been considered
- a vital benchmark for nucleon physics with LQCD.
-This quantity has been precisely measured with experiments probing neutron beta decay,
- characterized by a weak decay with a low momentum transfer.
-Historically, lattice calculations of the axial charge have obtained values
- that were $O(10\%)$ too low, despite significant investments of effort.
-This has been the subject of some controversy,
- with more and more sophisticated calculations to scrutinize lattice systematics.
-Over time, contamination from excited states was identified as
- an important contributing factor to the systematic deviation.
-Many collaborations have opted for high-statistics computations
- to reduce the statistical uncertainty at late times and permit
- multi-exponential fits to the time dependence of the correlation functions.
-As time progressed, LQCD results moved closer to the experimental value,
- and now modern calculations are in agreement with experiment
- at the 1\% level~\cite{Kronfeld:2019nfb}.
-\textcolor{red}{[more citations]}
+%\cw{Some repetition between this paragraph and Section 2.}
+%Computations of the nucleon axial charge have long been considered
+% a vital benchmark for nucleon physics with LQCD.
+%This quantity has been precisely measured with experiments probing neutron beta decay,
+% characterized by a weak decay with a low momentum transfer.
+%Historically, lattice calculations of the axial charge have obtained values
+% that were $O(10\%)$ too low, despite significant investments of effort.
+%This has been the subject of some controversy,
+% with more and more sophisticated calculations to scrutinize lattice systematics.
+%Over time, contamination from excited states was identified as
+% an important contributing factor to the systematic deviation.
+%Many collaborations have opted for high-statistics computations
+% to reduce the statistical uncertainty at late times and permit
+% multi-exponential fits to the time dependence of the correlation functions.
+%As time progressed, LQCD results moved closer to the experimental value,
+% and now modern calculations are in agreement with experiment
+% at the 1\% level~\cite{Kronfeld:2019nfb}.
+%\textcolor{red}{[more citations]}
+
+\asm{Moved down from previous paragraph and removed redundant text}
 Modern efforts to compute nucleon matrix elements now target the nucleon
  axial form factor with its four-momentum transfer dependence.
-
-To check the accuracy of LQCD calculations targeting the axial form factor,
- the validity of the PCAC relation,
+\new{Given how difficult the axial charge has been to properly nail down,
+ cross checks of observables computed with lattice QCD are vital
+ for testing consistency of the results.}
+%To check the accuracy of LQCD calculations targeting the axial form factor,
+% the validity of the PCAC relation,
+\new{The validity of the PCAC relation,}
 \begin{align}
  \partial^\mu A^{a}_{\mu}(x) = 2 m_q P^{a}(x),
  \label{eq:pcac}
 \end{align}
- has been scrutinized with lattice data.
+% has been scrutinized with lattice data.
+\new{is the most reasonable choice for checking consistency.
+Here, $A^{a}_\mu$ and $P^{a}$ are the axial and pseudoscalar currents,
+ respectively, and $m_q$ is the light quark mass.}
 The PCAC relation is an exact symmetry in the continuum limit.
 The generalization of this relation to the nucleon form factors
  yields the generalized Goldberger-Triemann (GGT)%
@@ -37,9 +45,12 @@ The generalization of this relation to the nucleon form factors
  2 M_{\mathrm{N}} G_{\mathrm{A}}(Q^2) -\frac{Q^2}{2M_{\mathrm{N}}} \widetilde{G}_{\mathrm{P}}(Q^2) = 2 m_q G_{\mathrm{P}}(Q^2),
  \label{eq:ggt}
 \end{align}
- \cw{I feel like we probably still need to define some of these terms}
+ \done{I feel like we probably still need to define some of these terms}
  which provides orthogonal checks of individual matrix elements
  for the axial and pseudoscalar currents.
+\new{The axial, induced pseudoscalar, and pseudoscalar form factors of the nucleon
+ ($G_A$, $\widetilde{G}_{P}$, and $G_{P}$, respectively) appear in this expression,
+ and $M_N$ is the nucleon mass.}
 The pion pole dominance (PPD) ansatz is also studied,%
 \begin{marginnote}
  \entry{PPD}{Pion pole dominance}
@@ -51,6 +62,7 @@ The pion pole dominance (PPD) ansatz is also studied,%
  which is only approximate even in the continuum and is obtained
  by carefully considering the leading asymptotic behavior of the
  form factors in the double limit $Q^2\to0$ and $m_q\to0$~\cite{Sasaki:2007gw}.
+\new{In this expression, $M_\pi$ is the pion mass.}
 
 Initial calculations targeting the axial form factor verified the PCAC relation
  for the full correlation functions but found significant \emph{apparent} violations
@@ -58,13 +70,13 @@ Initial calculations targeting the axial form factor verified the PCAC relation
  is now informed by baryon $\chi$PT, which suggests that chiral
  and excited state corrections to the spatial axial, temporal axial, and induced pseudoscalar
  are functionally different and not properly removed.
-The axial contributions are largely dominated by $N\pi$ excited states
- with a highly suppressed single nucleon chiral correction.
+The axial contributions are largely dominated by \new{loop-level} $N\pi$ excited states
+ with a highly suppressed \new{tree-level} correction.
 The correction to the axial current is nearly independent of $Q^2$.
 On the other hand, corrections to the induced pseudoscalar are
- driven by the single nucleon chiral contribution and has
+ driven by the \new{tree-level} correction and has
  a strong $Q^2$ dependence~\cite{Bar:2018xyi}, with the largest correction at low $Q^2$.
-The $N\pi$ contribution in the induced pseudoscalar is highly suppressed by
+The $N\pi$ \new{loop} contribution in the induced pseudoscalar is highly suppressed by
  an approximate cancellation.
 The contamination to the pseudoscalar current is redundant with the
  axial and induced pseudoscalar chiral corrections and can be obtained
@@ -72,14 +84,14 @@ The contamination to the pseudoscalar current is redundant with the
 
 Scrutiny of the LQCD data has demonstrated many of the features
  that were expected from chiral perturbation theory.
-The primary excited state contaminations to the axial matrix elements
+The primary excited state contaminations to the axial form factor matrix elements
  were shown to be driven by two specific $N\pi$ states,
  characterized by a transition through an axial current
  of the nucleon state to an $N\pi$ excited state or vise versa~\cite{Jang:2019vkm}.
-\textcolor{red}{[is below statement understandable?]}
-\cw{Should be either ``a valence quark diagram'' or ``valence quark diagrams''}
+\done{[is below statement understandable?]}
+\done{Should be either ``a valence quark diagram'' or ``valence quark diagrams''}
 The momenta of the states with the strongest contribution are those
- where a valence quark diagrams can be drawn containing only a single
+ where valence quark diagrams can be drawn containing only a single
  zero-momentum gluon emission, which fixes the relative momenta of the
  quark constituents making up the nucleons and the pion.
 These $N\pi$ states were initially expected to be negligible due to a volume suppression
@@ -100,5 +112,7 @@ Each $Q^2$ prefered dominant $N\pi$ states with different energies,
 Fits to the three-point functions that allow for the possibility of
  nonnegligible $N\pi$ states are able to constrain the effects of these states,
  removing the contamination and thereby restoring the PPD relation.
-\textcolor{red}{[ could fit to temporal axial too ]}
+
+\textcolor{red}{[ could fit to temporal axial too
+ - this seems to be key to getting the form factor correct and should be mentioned ]}
 
