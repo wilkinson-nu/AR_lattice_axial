@@ -1,4 +1,4 @@
-For charged current quasi-elastic scattering of a neutrino with a free nucleon,
+For charged current quasielastic scattering of a neutrino with a free nucleon,
 the neutron ($|n\rangle$) to proton ($\langle p|$)
 interaction is described by a $V-A$ weak interaction, given at the quark level by
 $\bar{u}\gamma_\mu(1- \gamma_5)d$ (or its conjugate for proton to neutron), with the nucleon level amplitude at four-momentum transfer $Q^2 = -q^2$ parameterized by
@@ -11,19 +11,19 @@ $\bar{u}\gamma_\mu(1- \gamma_5)d$ (or its conjugate for proton to neutron), with
 \nonumber\\
 \langle p | A^\mu | n \rangle
     &= \bar{U}_p(p+q) \Big[
-        F_A^+(q^2) \gamma^\mu \gamma_5
+        F_{\mathrm{A}}^+(q^2) \gamma^\mu \gamma_5
         +\frac{1}{M} F_P^+(q^2) q^\mu \gamma_5
     \Big] U_n(p)\, .
 \end{align}
 The isovector, vector form factors, $F_1^+$ and $F_2^+$, can be precisely estimated from electron-nucleon scattering data.
 Electron-proton and electron-neutron scattering are sensitive to the isoscalar, $F_{1,2}^s$ and isovector, $F_{1,2}^3$ form factors.  After isolating $F_{1,2}^3$, approximate isospin symmetry can be used to relate these $\tau_3$ form factors to the charged $\tau_+$ form factors of equation~\eqref{eq:nucleon_ff}: in the isospin limit, $\langle p| \bar{u}\, \Gamma u - \bar{d}\, \Gamma d |p\rangle = \langle p| \bar{u}\, \Gamma d |n\rangle$ for Dirac structure $\Gamma$.
 The overall uncertainty of the electron-neutron form factors is larger than those of the proton due to the relative sparsity of electron-neutron data.
-
 %------------------------------------------------------------------------------
 % proton magnetic FF
 \begin{figure}
  \centering
  \includegraphics[width=0.7\textwidth]{plots/proton_magnetic-standalone.pdf}
+ \vspace{4pt}
 \caption{
 Proton magnetic form factor normalized by a reference dipole ansatz
 with a dipole mass of $0.84~{\rm GeV}$.
@@ -41,40 +41,38 @@ The Bradford, Bodek, Budd and Arrington parameterization from Neutrino-Nucleus I
 A more recent z-expansion parameterization from Borah {\it et al.}~\cite{Borah:2020gte} is displayed by the upper (black) band with a dashed mean value.
 The tension is significant over all $Q^2 > 0$, at the level of several percent,
 including significant disagreement in the slope of the form factor at $Q^2 = 0$.
-Of the nucleon form factor calculations from lattice QCD,
+Of the nucleon form factor calculations from LQCD,
 the vector form factors are also the most mature,
 exhibiting no obvious tensions with experimental determinations
 of the vector form factors at their current level of precision.
 A percent level calculation of the form factor $Q^2$ behavior combined with a direct calculation of the slope of the magnetic form factor would provide useful insight about this tension or could discriminate
 between the two parameterizations.
 
-The nucleon axial form factor has had a much more complicated past than the vector form factors in LQCD.
+The nucleon axial form factor has had a much more complicated past than the vector form factors in LQCD.%
 \begin{marginnote}
- \entry{Axial charge} {The} axial form factor at zero momentum transfer, ($g_A = F_A(0)$)
-\end{marginnote}
+ \entry{Axial charge} {The} axial form factor at zero momentum transfer, ($g_{\mathrm{A}} = F_{\mathrm{A}}(0)$)
+\end{marginnote}%
 The axial charge is a key benchmark for LQCD and is precisely known
 from neutron decay experiments~\cite{Dubbers:2021wqv}.
 LQCD calculations of the axial charge have historically been low compared to experiment~\cite{Aoki:2021kgd},
  and the discrepancy has been the topic of some controversy.
 It is now understood that the treatment of excited state systematics is the main culprit for this discrepancy~\cite{Bar:2017kxh,Ottnad:2020qbw,Aoki:2021kgd}.
 With proper control over the excited state contamination, the LQCD calculations are now in good agreement with the experimental value~\cite{Jang:2019vkm,Gupta:2018qil,Alexandrou:2020okk,Abramczyk:2019fnf,Park:2021ypf,RQCD:2019jai,Hasan:2019noy,Djukanovic:2021yqg,Harris:2019bih,Liang:2018pis,Shintani:2018ozy,Ishikawa:2018rew}
- with one group achieving a sub-percent determination of $g_A$~\cite{Chang:2018uxx,Berkowitz:2018gqe,Walker-Loud:2019cif}.
+ with one group achieving a sub-percent determination of $g_{\mathrm{A}}$~\cite{Chang:2018uxx,Berkowitz:2018gqe,Walker-Loud:2019cif}.
 
-\done{Should we explicitly note again that this also fills a gap in the experimental program?}
 Armed with the newfound confidence in the control of systematics for the axial charge,
  more emphasis is now being put into the form factor at nonzero momentum transfer
  \new{to make contact with the needs of the neutrino community and provide
  complementary constraints on free nucleon amplitudes}.
-One extremely striking feature of lattice calculations is the strong preference for a slower
-fall off of the form factor with increasing $Q^2$ than predicted by phenomenological determinations from experiment~\citeneeded.
+One extremely striking feature of LQCD calculations is the strong preference for a slower
+fall off of the form factor with increasing $Q^2$ than predicted by phenomenological determinations from experiment (Figure~\ref{fig:gaq2_overlay}).
 This preference is consistently reproduced by several lattice collaborations using
 independent computation methods, lending more credence to the result.
 When integrated over the full range of $Q^2$ to compute the nucleon cross section,
 this translates to an enhancement in the free nucleon cross section as large as $30-40\%$
-over neutrino energies greater than $1~{\rm GeV}$~\citeneeded.
-In addition, the precision on the axial form factor uncertainty from lattice QCD
+over neutrino energies greater than $1~{\rm GeV}$ (Section~\ref{sec:impact}).
+In addition, the precision on the axial form factor uncertainty from LQCD
 is small enough to be sensitive to the tension between vector form factor parameterizations.
-\asm{The \citeneeded are arguments made in this paper? Maybe just need section refs?}
 
 The aforementioned situation with nucleon form factors is depicted in Figure~\ref{fig:nucleonxsec}.
 {\color{gray}[Andre: would it be useful to make this paragraph a bullet list?]}
@@ -112,7 +110,7 @@ Additionally, the size of the red band demonstrates the relevance of the tension
 % nu-N cross section
 \begin{figure}[hbt!]
  \centering
- \includegraphics[width=0.7\textwidth]{plots/xsec_comparison-standalone.pdf}
+ \includegraphics[width=0.7\textwidth]{plots/xsec_comparison-standalone.pdf}\vspace{4pt}
 \caption{
  Neutrino cross sections on a free neutron, with their uncertainty bands,
  for various choices of parameterization.
