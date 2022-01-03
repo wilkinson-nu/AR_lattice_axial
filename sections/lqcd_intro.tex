@@ -4,11 +4,25 @@ Rather, for an in depth introduction to lattice QCD, we refer readers to the tex
 
 
 
-{\color{red}[add comment here about full systematic uncertainty: three normal limits, excited state, signal-to-noise]}
 The promise of LQCD is to provide predictions of low-energy hadronic and nuclear quantities with fully quantified theoretical uncertainties rooted in the Standard Model.
 In order to deliver upon this promise, there are several sources of systematic uncertainty which must be quantified.
 For all LQCD calculations, these include extrapolations to the continuum and infinite volume limits as well as an extrapolation or interpolation to the physical quark mass limit.
+For the continuum extrapolation, at least three values of the lattice spacing of $\mathrm{O}(a\lesssim0.12\textrm{ fm})$ are required to ascertain if the leading discretization corrections are sufficient or not to describe the observed scaling violations.
+For the finite volume effects, a rule of thumb has been established from experience, that one requires calculations with $m_\pi L \gtrsim4$ in order to keep these finite size corrections at the level of $\lesssim1-2\%$ and at least qualitatively described by the leading analytic formulae.
+%-------------------------------------------------------------------------------
+\begin{marginnote}
+    \entry{$\chi$PT}{Chiral Perturbation Theory: the low-energy EFT of QCD}
+\end{marginnote}
+%-------------------------------------------------------------------------------
+For the light-quark mass dependence, $\chi$PT may be able to guide the extrapolations.
+However, for the nucleon, the convergence of $\chi$PT is not yet established, even at the physical pion mass with evidence of lack of convergence for the nucleon mass and $g_A$~\cite{Chang:2018uxx,Walker-Loud:2019cif}.
+As we will discuss more in section~\ref{sec:calc_anatomy}, for properties of nucleons, there are two additional significant sources of systematic uncertainty which are the exponentially degrading signal-to-noise (StoN) problem for nucleons and excited state contamination.
 
+
+
+%-------------------------------------------------------------------------------
+% LQCD Intro
+\subsection{Lattice QCD: A High Level Summary}
 Lattice QCD is a discretized version of QCD, formulated in Euclidean spacetime.
 Even at finite lattice spacing and volume, the multi-dimensional path integral is vastly too large to perform.
 The use of Euclidean spacetime renders the action density real for zero chemical potential for which one can use a Hybrid Monte Carlo algorithm~\cite{Duane:1987de} to approximate the integral with importance sampling.
@@ -91,12 +105,3 @@ The most common reason to use such an action is to take advantage of numerically
 \end{itemize}
 As mentioned above, a key assumption of LQCD is that all varieties of lattice action, for sufficiently small lattice spacing, are approximated by continuum QCD plus irrelevant operators whose contributions vanish in the continuum limit.
 It is important for the field to test this assumption of universality by computing the same quantities with a variety of lattice actions, both at the level of gluons as well as the fermions, in order to gain confidence in the results that are extrapolated to the physical point.
-
-For any particular lattice action, in order to obtain a result at the physical point, several extrapolations must be made, which are an extrapolation to the continuum, infinite volume and physical quark mass limits.
-For the continuum limit, at least three lattice spacings of $\mathrm{O}(a\lesssim0.12\textrm{ fm})$ must be used to ascertain if the leading discretization corrections are sufficient or not to describe the scaling violations.
-For the finite volume effects, a rule of thumb has been established from experience, that one requires calculations with $m_\pi L \gtrsim4$ in order to keep these finite size corrections at the level of $\lesssim1-2\%$ and at least qualitatively described by the leading analytic formulae.
-
-
-
-
-{\color{red}comment on continuum, infinite volume and physical quark mass extrapolations - common issues for all LQCD calculations.  then comment on signal-to-noise problems and excited state contamination for nucleons.}
