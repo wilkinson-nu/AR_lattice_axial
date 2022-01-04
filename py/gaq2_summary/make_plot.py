@@ -117,7 +117,7 @@ plt.text(x=0.25, y=0.60, s=r'$\nu$D $z$ exp', color='red', rotation=-30, fontsiz
 plt.legend(
   [phn, phr, phm, phx, php21, php, phe, phc],
   [lbn, lbr, lbm, lbx, lbp21, lbp, lbe, lbc],
-  fontsize=12)
+    fontsize=12,ncol=2)
 plt.xticks( fontsize=14)
 plt.yticks( fontsize=14)
 plt.xlabel( r'$Q^2/$GeV$^2$', fontsize=14)
