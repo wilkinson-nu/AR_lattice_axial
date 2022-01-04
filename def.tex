@@ -1,5 +1,17 @@
+% Greek letters
 \def\g{\gamma}
-\def\O{\Omega}
+\def\t{\tau}
+
 \def\D{\Delta}
+\def\G{\Gamma}
+\def\O{\Omega}
+
+% math
+\makeatletter
+\newcommand*\dotp{\mathpalette\bigcdot@{.5}}
+\newcommand*\bigcdot@[2]{\mathbin{\vcenter{\hbox{\scalebox{#2}{$\m@th#1\bullet$}}}}}
+\makeatother
+
 
 \def\Dslash{D\hskip-0.65em /}
+\def\tsep{t_{\rm sep}}
