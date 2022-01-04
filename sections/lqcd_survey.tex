@@ -9,7 +9,7 @@
 
 Though the axial charge and radius are useful for connecting with low-energy applications,
  such as pion electroproduction and neutron decay,
- the needs of neutrino physics in the GeV-scale energy range depend
+ the needs of neutrino physics in the few-GeV energy range depend
  on the full momentum transfer dependence of the form factor.
 The main deliverables from LQCD calculations of the axial form factor
  are the axial and induced pseudoscalar form factors taken in the continuum-chiral
@@ -39,6 +39,7 @@ In addition, the dipole parameterization violates
  and is primarily motivated by its asymptotic behavior at high-$Q^2$,
  a regime well outside of the kinematic range probed by neutrino scattering experiments.
 }
+\cw{I don't think the use of the dipole for FA was motivated by its asymptotic behaviour? I thought they just tried out a few FFs and found the dipole worked best, but didn't really have a strong theory motivation for any of theose they tried.}
 \new{
 Figure~\ref{fig:gaq2_overlay} shows the status of existing calculations of
  the nucleon axial form factor from LQCD,
@@ -81,9 +82,8 @@ The NME collaboration also performed a chiral-continuum and finite volume extrap
  is obtained from an average of the results on their five largest volume ensembles.
 As a rough estimate, NME claims that the uncertainties are at least a factor of 5 larger
  if the fits are relaxed to allow the results to change with pion mass or lattice spacing.
- \cw{Why are there two PACS 21 datapoints on top of each other at ~0.4 GeV$^2$}}
- \asm{Two different ways of constructing momentum vectors of magnitude 3:
- (2,2,1) and (3,0,0)}
+% \cw{Why are there two PACS 21 datapoints on top of each other at ~0.4 GeV$^2$}}
+% \asm{Two different ways of constructing momentum vectors of magnitude 3: (2,2,1) and (3,0,0)}
 \label{fig:gaq2_overlay}
 \end{figure}
 
@@ -97,8 +97,9 @@ The ETMC~\cite{Alexandrou:2020okk}, LHPC~\cite{Hasan:2017wwt},
 Though these results are expected to be close to the physical point results,
  they will have unquantified systematic shifts.
 The ETMC has three ensembles, two of which have only 2 flavors of sea quarks
- and will be subject to systematics from neglecting sea effects from strange quarks.
-The remaining ETMC ensemble is a 2+1+1 flavor ensemble at physical pion mass,
+ and will be subject to systematics from neglecting sea effects from strange quarks.}
+\cw{Should it be entirely obvious to a non-expert reader why you've written 2+1+1 rather than 4? (asking for a friend)}
+\new{The remaining ETMC ensemble is a 2+1+1 flavor ensemble at physical pion mass,
  which is shown in Fig.~\ref{fig:gaq2_overlay}.
 The PACS results are on two different ensembles with physical pion mass,
  with volumes of $(5.5~{\rm fm})^3$ and $(10.8~{\rm fm})^3$
@@ -108,6 +109,7 @@ The Mainz collaboration has an ongoing calculation in proceedings on 12 ensemble
 The results from their two-state fit to the E250 physical pion mass ensemble
  are plotted with the other results.
 }
+\cw{E250 physical pion mass ensemble seems like jargon to me}
 
 \new{
 The published results use different lattice actions for the simulations ---
@@ -146,6 +148,7 @@ The high-$Q^2$ agreement is reflected by the restoration of the GGT relation at 
 % which indicates a mass gap that grows with $Q^2$ leading to a larger suppression.
 %\textcolor{red}{[ but the $N\pi$ contribution from XPT is constant with $Q^2$,
 % so something isn't right ]}
+\cw{I would suggest ``modified'' rather than spoiled, which seems too emotive}
 \new{These claims could be spoiled by systematic effects
  that are common to all of the calculations,
  and excited state contaminations from $N\pi$ states in
@@ -231,6 +234,7 @@ The LHPC~\cite{Hasan:2017wwt} and PACS~\cite{Ishikawa:2021eut} collaborations
  explore methods for directly computing the form factor values and slopes
  directly at $Q^2=0$, which offer alternative methods for constraining
  the form factor shape that could be used to complement traditional methods.
+ \cw{Do we need citations for these two collaborations? It seems difficult for a reader to find out more...}
 The Fermilab Lattice and MILC collaborations also have an ongoing
  computation of the axial form factor using a unitary HISQ-on-HISQ setup,
  for which a preliminary computation of the axial charge on
