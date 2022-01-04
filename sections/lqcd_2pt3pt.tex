@@ -2,16 +2,21 @@ In order to determine the mass of the nucleon (or any hadron), we rely on the co
 The non-perturbative nature of QCD means we do not know how to construct the nucleon wave function, and so we utilize \textit{interpolating operators} which have the quantum numbers of the state we are interested in.
 These creation and annihilation operators will couple to all eigenstates of QCD with the same quantum numbers giving rise to a two-point function with a spectral decomposition
 \begin{align}\label{eq:2pt}
-    C(t,\mathbf{p}) &= \sum_{\mathbf{x}} e^{-i \mathbf{p\cdot x}}
+    C(t,\mathbf{p}) &= \sum_{\mathbf{x}} e^{-i \mathbf{p\dotp x}}
         \langle \O| O(t,\mathbf{x}) O^\dagger(0,\mathbf{0}) | \O \rangle
 %\nonumber\\&=
     =
     \sum_{n=0}^\infty z_n(\mathbf{p}) z_n^\dagger(\mathbf{p}) e^{-E_n(\mathbf{p})t}\, .
 \end{align}
 In this expression, $|\O\rangle$ is the vacuum state,
-$z_n(\mathbf{p}) = \sum_{\mathbf{x}}e^{-i\mathbf{p\cdot x}} \langle \O|O(0,\mathbf{x})|n\rangle$
+$z_n(\mathbf{p}) = \sum_{\mathbf{x}}e^{-i\mathbf{p\dotp x}} \langle \O|O(0,\mathbf{x})|n\rangle$
 and $z_n^\dagger(\mathbf{p}) = \langle n(\mathbf{p})|O^\dagger(0,\mathbf{0})|\O\rangle$.
-To go from the first equality to the second, we have inserted a complete set of states, $1=\sum_n |n\rangle\langle n|$ and we have used the time-evolution operator to shift the annihilation operator to $t=0$ and expose the explicit time dependence.
+To go from the first equality to the second, we have inserted a complete set of states, $1=\sum_n |n\rangle\langle n|$ and we have used the time-evolution operator to shift the annihilation operator to $t=0$ and expose the explicit time dependence.%
+%-------------------------------------------------------------------------------
+\begin{marginnote}
+\entry{$O(t,\mathbf{x}) = e^{\hat{H}t} O(0,\mathbf{x}) e^{-\hat{H}t}$}{The Hamiltonian, $\hat{H}$, is used to time evolve the operator}
+\end{marginnote}%
+%-------------------------------------------------------------------------------
 Momentum conservation selects only the state $n(\mathbf{p})$ in the sum over all states enabling the use of this mixed spatial creation operator and momentum annihilation operator.
 As we will discuss in more detail below, it is more desirable to instead use momentum space creation operators.
 They are not commonly used as they are significantly more expensive numerically to generate.
@@ -34,7 +39,7 @@ m_{\rm eff}(t) &= \ln \left( \frac{C(t)}{C(t+1)} \right)
 \end{align}
 
 
-A well known challenge which complicates the analysis is that for nucleon two-point functions, the StoN ratio degrades exponentially at large Euclidean time~\cite{Lepage:1989hd}
+A well known challenge which complicates the analysis is that for nucleon two-point functions, the S/N ratio degrades exponentially at large Euclidean time~\cite{Lepage:1989hd}
 \begin{equation}
 \lim_{{\rm large}\ t}\frac{\mathrm{Signal}}{\mathrm{Noise}}
     \propto \sqrt{N_{\mathrm{sample}}} e^{(m_{\mathrm{N}} - \frac{3}{2}m_\pi)t}\, ,
@@ -42,23 +47,66 @@ A well known challenge which complicates the analysis is that for nucleon two-po
 which adds an extra source of excited state systematic uncertainty that must be quantified:
 the region in time when the ground state begins to saturate the correlation functions, at $t\approx 1$~fm, the noise is becoming significant, making the correlation functions in this region susceptible to correlated fluctuations which can bias a simplistic single-state analysis.
 Further, as the pion mass is reduced towards its physical value, the excited state energy gap also shrinks, as the lowest lying excited state is typically a nucleon-pion in a relative $P$-wave.  At the same time, the energy scale which governs the exponential degradation of the signal also grows.  The former issue means calculations must be performed at larger Euclidean time to suppress the smaller gapped excited states and the latter issue means we need exponentially more statistics to obtain a fixed relative uncertainty at a given time.
+In order to boost statistics, given the numerical cost of generating more configurations, time and spatial translation invariance are used to generate sources at several choices of $t_0$ and $\mathbf{x}_0$, which are then translated back to the origin and averaged together.  For the nucleon, it was observed that hundreds of sources on each configuration, using an anisotropic clover-Wilson ensemble~\cite{HadronSpectrum:2008xlg}, still showed approximate $\sqrt{N_{\rm sample}}$ improvement of the stochastic uncertainty as a function of the number of sources per configuration~\cite{Beane:2009kya}.
+
+
+
+The most common method of constructing three-point correlation functions follows a similar strategy, beginning with spatially local sources.
+A nucleon three-point function with current $j_\G$ is contstructed with interpolating operators $N(\tsep,\mathbf{x})$ and $N^\dagger(0,\mathbf{0})$,%
+%-------------------------------------------------------------------------------
+\begin{marginnote}
+\entry{$j_\G = \bar{q}\, \G\, q$}{quark bilinear currents of Dirac structure $\G$ and unspecified flavor structure}
+\end{marginnote}%
+%-------------------------------------------------------------------------------
+\begin{align}
+C_\G(\tsep,\t) &= \sum_{\mathbf{x,y}}e^{-i\mathbf{p\dotp x} +i\mathbf{q\dotp y}}
+    \langle\O|N(\tsep,\mathbf{x}) j_\G(\t,\mathbf{y}) N^\dagger(0,\mathbf{0}) |\O\rangle
+\nonumber\\&=
+    \sum_{n,m} z_n(\mathbf{p})z_m^\dagger(\mathbf{p-q})e^{-E_n(\tsep-\t)}e^{-E_m \t} g_{n,m}^\G\, ,
+\end{align}
+where $g_{n,m}^\G$ are the matrix elements of interest, and in principle, all other quantities can be determined from the two-point function, a point we will return to.%
+%-------------------------------------------------------------------------------
+\begin{marginnote}
+\entry{$g_{n,m}^\G = \langle n| j_\G |m\rangle$}{hadronic matrix elements of interest from state $m$ to $n$ with implicit momentum and energy dependence}
+\end{marginnote}%
+%-------------------------------------------------------------------------------
+Often, the sink is projected to zero momentum, $\mathbf{p}_n=0$, for which momentum conservation gives the momentum of the incoming state to be $\mathbf{p}_m = -\mathbf{q}$.
+A typicall calculation is performed with a sequential propagator~\cite{Martinelli:1988rr}
+whose source is constructed by taking the forward propagators from the origin and contracting all but one spin and color index at the sink time, $\tsep$.%
+% FOOTNOTE ---------------------------------------------------------------------
+\footnote{\color{red}Add comment about Adelaide FH method and one-end trick} 
+%-------------------------------------------------------------------------------
+
+Each choice of $\tsep$, flavor and spin of the initial and final state, and each choice of flavor for the current requires a new sequential propagator, rendering this aspect of the computation relatively expensive.
+While each sequential propagator can only be used for these specific choices, one is free to insert any quark bilinear operator for the current, including non-trivial spatial structure and momentum.
+To boost statistics, in addition to taking advantage of translation invariance, as with the two-point function, the \textit{coherent sink technique}~\cite{LHPC:2010jcs} is used to solve a single sequential propagator for many choices of the origin.
+
+The most significant challenge in determining the nucleon matrix elements and subsequent form factors is dealing with the excited state contamination, an issue that is compounded by the degrading S/N.
+If the nucleon two-point function is becoming saturated by the ground state at $t\approx1$~fm, the ideal three-point function would use values of $\tsep\approx2$~fm.
+In practice, a few values of $\tsep$ in the range $0.8 \lesssim \tsep \lesssim 1.5$~fm are used because the S/N ratio of the three-point functions decays more rapidly than the two-point function, and an extrapolation to large $\tsep$ is used to isolate the ground state matrix elements.
+However, using just one excited state in the analysis requires three values of $\tsep$ in order to have a one degree-of-freedom fit to extract the ground state matrix element.
+Following Ref.~\cite{Chang:2018uxx}, that utilized many values of $\tsep$ to determine $g_A$, a few groups have begun advocating for the use of many values of $\tsep$, including small values, to improve our ability to understand and control the excited state contamination~\cite{Hasan:2019noy,Alexandrou:2019brg,He:2021yvm}.
+Ref.~\cite{He:2021yvm} utilized 13 values of $\tsep$, which allows for a systematic study of the uncertainty associated with truncating early and/or late values of $\tsep$ in the analysis, as well as providing sufficient data to perform up to a complete 5-state fit.
+
+
+
+
+
 
 \bigskip\noindent
 {\color{red}[points to add]}
 \begin{enumerate}
-\item 3pt functions are similarly constructed (local source), momentum sink, momentum current
 
-\item Each choice of $t$ requires new sequential propagator (expensive) - coherent sequential sink - most groups only use 3 values of $t$
+\item 2pt functions are not sufficient to constrain excited state spectrum,
 
-\item StoN for 3pt is worse, so we can not pull source and sink apart enough such that matrix element is saturated by g.s.
+\item 3pt functions do a much better job, therefore, fitting 2pt and feeding into 3pt underestimates uncertainty and may bias results.  Also, no ability to resolve ``nature'' of state (Npi or Npipi)
+
+\item non-zero momentum means parity mixing, further complicating analysis (should also fit parity odd spec and include)
+
+\item momentum smearing for higher momentum states, S goes with non-zero P but N goes with P=0, increasing the energy scale associated with S/N degradation;  for larger Qsq, use of momentum smeared sources
 
 \item the energy of the in/out states are different, complicating the analysis and preventing the use of FH/summation method
 
-\item Add figure of 3pt $q=0$, FH and 3pt $q\neq0$?
-
-\item non-zero momentum means parity mixing, further complicating analysis
-
 \item excited state contamination seems to ruin PCAC (next section or merge with this one?)
-
 
 \end{enumerate}
