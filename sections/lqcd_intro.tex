@@ -31,11 +31,11 @@ degrading S/N problem for nucleons and excited state contamination.
 \subsection{LQCD: A High Level Summary}
 The QCD path integral is quadratic in the quark fields allowing for an analytic integration over the fermionic fields such that in Euclidean space, one has the gluonic integral
 \begin{equation}\label{eq:Z_QCD}
-Z_{\mathrm{QCD}} = \int D U\, {\rm Det}[\Dslash(U) + m]\, e^{-S_{\mathrm{G}}(U)},
+Z_{\mathrm{QCD}} = \int D U\, {\rm Det}[\Dslash(U) + m_q]\, e^{-S_{\mathrm{G}}(U)},
 \end{equation}
-with gluon action $S_{\mathrm{G}}(U)$ and the determinant of the quark operator ${\rm Det}[\Dslash(U) + m]$, for each flavor of quark simulated.
+with gluon action $S_{\mathrm{G}}(U)$ and the determinant of the quark operator ${\rm Det}[\Dslash(U) + m_q]$, for each flavor of quark simulated.
 Even at finite lattice spacing and volume, the multi-dimensional integral is vastly too large to perform.
-However, in Euclidean space, the fermion determinant is real and positive for zero chemical potential, as well as $S_{\mathrm{G}}$, and so the integral can be approximated with an HMC algorithm~\cite{Duane:1987de} using the factor ${\rm Det}[\Dslash(U) + m]\, e^{-S_{\mathrm{G}}(U)}$ as the importance sampling weight.%
+However, in Euclidean space, the fermion determinant is real and positive for zero chemical potential, as well as $S_{\mathrm{G}}$, and so the integral can be approximated with an HMC algorithm~\cite{Duane:1987de} using the factor ${\rm Det}[\Dslash(U) + m_q]\, e^{-S_{\mathrm{G}}(U)}$ as the importance sampling weight.%
 %-------------------------------------------------------------------------------
 \begin{marginnote}
 \entry{HMC}{Hybrid Monte Carlo}
@@ -50,9 +50,9 @@ where $O[U_i]$ is the correlation function evaluated on configuration $i$.
 The most expensive part of generating the configurations is evaluating the fermion determinant for the light and strange quarks.
 This is done with the use of pseudo-fermions (bosonic fields, $\phi$)
 \begin{equation}
-Z_\psi = \int D\bar{\psi}D\psi\, e^{-\bar{\psi}[\Dslashe[U]+m]\psi}
-    = {\rm Det}[\Dslash(U) + m]
-    = \int D\phi^\dagger D\phi\, e^{-\phi^\dagger \frac{1}{\Dslashe[U]+m} \phi}
+Z_\psi = \int D\bar{\psi}D\psi\, e^{-\bar{\psi}[\Dslashe[U]+m_q]\psi}
+    = {\rm Det}[\Dslash(U) + m_q]
+    = \int D\phi^\dagger D\phi\, e^{-\phi^\dagger \frac{1}{\Dslashe[U]+m_q} \phi}
 \end{equation}
 for which the bilinear operator is the inverse of the Dirac operator, which is a large, sparse matrix.
 Most of the algorithmic development for accelerating LQCD has gone into efficiently solving these large sparse matrices with large condition numbers.  In particular, this is a problem very well suited for GPUs
