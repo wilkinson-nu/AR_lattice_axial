@@ -1,4 +1,4 @@
-Lattice QCD has been and remains one of the major uses of the world's leadership computing facilities.
+LQCD has been and remains one of the major uses of the world's leadership computing facilities.
 There is an extensive literature on LQCD covering the broad range of technical and formal aspects that are necessary to cary out state of the art calculations, for which we can not do justice in this review.
 Rather, for an in depth introduction to LQCD, we refer readers to the text books~\cite{Smit:2002ug,DeGrand:2006zz,Gattringer:2010zz} and in this review, we provide a high-level summary of general issues that must be addressed as well as issues specific to LQCD calculations of nucleon matrix elements and form factors.
 These issues are also discussed in detail in the bi-annual FLAG Reviews, see for example the most recent one~\cite{Aoki:2021kgd}.%
@@ -11,8 +11,8 @@ These issues are also discussed in detail in the bi-annual FLAG Reviews, see for
 The promise of LQCD is to provide predictions of low-energy hadronic and nuclear quantities with fully quantified theoretical uncertainties rooted in the Standard Model.
 In order to deliver upon this promise, there are several sources of systematic uncertainty which must be quantified.
 For all LQCD calculations, these include extrapolations to the continuum and infinite volume limits as well as an extrapolation or interpolation to the physical quark mass limit.
-For the continuum extrapolation, at least three values of the lattice spacing of $\mathrm{O}(a\lesssim0.12\textrm{ fm})$ are required to ascertain if the leading discretization corrections are sufficient or not to describe the observed scaling violations (do all three results lie on a straight line or can one detect higher-order curvature?).
-For the finite volume effects, a rule of thumb has been established from experience, that one requires calculations with $m_\pi L \gtrsim4$ in order to keep these finite size corrections at the level of $\lesssim1-2\%$ and at least qualitatively described by the leading analytic formulae.%
+For the continuum extrapolation, at least three values of the lattice spacing, $a$, of $\mathrm{O}(a\lesssim0.12\textrm{ fm})$ are required to ascertain if the leading discretization corrections are sufficient or not to describe the observed scaling violations (do all three results lie on a straight line or can one detect higher-order curvature?).
+For the finite volume effects, a rule of thumb has been established from experience, that one requires calculations with $m_\pi L \gtrsim4$ \new{(where $L$ is the spatial extent of the lattice volume)} in order to keep these finite size corrections at the level of $\lesssim1-2\%$ and at least qualitatively described by the leading analytic formulae.%
 \begin{marginnote}
     \entry{$\chi$PT}{Chiral Perturbation Theory: the low-energy effective field theory of QCD}
 \end{marginnote}%
@@ -31,11 +31,11 @@ degrading S/N problem for nucleons and excited state contamination.
 \subsection{LQCD: A High Level Summary}
 The QCD path integral is quadratic in the quark fields allowing for an analytic integration over the fermionic fields such that in Euclidean space, one has the gluonic integral
 \begin{equation}\label{eq:Z_QCD}
-Z_{\mathrm{QCD}} = \int D U\, {\rm Det}[\Dslash(U) + m]\, e^{-S_{\mathrm{G}}(U)}
+Z_{\mathrm{QCD}} = \int D U\, {\rm Det}[\Dslash(U) + m]\, e^{-S_{\mathrm{G}}(U)},
 \end{equation}
 with gluon action $S_{\mathrm{G}}(U)$ and the determinant of the quark operator ${\rm Det}[\Dslash(U) + m]$, for each flavor of quark simulated.
 Even at finite lattice spacing and volume, the multi-dimensional integral is vastly too large to perform.
-However, in Euclidean space, the fermion determinant is real and positive for zero chemical potential, as well as $S_G$, and so the integral can be approximated with an HMC algorithm~\cite{Duane:1987de} using the factor ${\rm Det}[\Dslash(U) + m]\, e^{-S_{\mathrm{G}}(U)}$ as the importance sampling weight.%
+However, in Euclidean space, the fermion determinant is real and positive for zero chemical potential, as well as $S_{\mathrm{G}}$, and so the integral can be approximated with an HMC algorithm~\cite{Duane:1987de} using the factor ${\rm Det}[\Dslash(U) + m]\, e^{-S_{\mathrm{G}}(U)}$ as the importance sampling weight.%
 %-------------------------------------------------------------------------------
 \begin{marginnote}
 \entry{HMC}{Hybrid Monte Carlo}
@@ -126,7 +126,7 @@ In this review, we comment that:
 \item Clover-Wilson fermions are the most commonly used discretization scheme given their theoretical simplicity and preservation of all symmetries except chiral symmetry.  The explicit breaking of chiral symmetry with the Wilson operator means the light quark masses must be finely tuned against ultra-violet chiral symmetry breaking that scales as $1/a$, after which there remain residual $\mathrm{O}(a)$ chiral symmetry breaking effects.  It is well known, albeit laborious, how to non-perturbatively remove these leading $\mathrm{O}(a)$ scaling violations~\cite{Luscher:1996sc,Luscher:1996ug,Luscher:1996jn,Capitani:1998mq}, which must be done for both the action as well as matrix elements.
 
 \item Twisted mass fermions are a variant of Wilson fermions that exploits the approximate $SU(2)$ chiral symmetry of QCD to introduce a twisted quark mass term, $i\mu\g_5 \tau_3$.  At maximal twist, the bare quark mass is cancelled by the $1/a$ additive quark mass, leaving $\mu$ as the only contribution through $\mathrm{O}(a)$ to the physical quark mass.  Indeed, all observables are automatically $\mathrm{O}(a)$ improved at maximal twist~\cite{Frezzotti:2003ni}.
-However, twisted mass fermions break isospin symmetry at finite lattice spacing, causing some complications now that LQCD results are precise enough to require isospin breaking corrections from $m_d-m_u$ and
+However, twisted mass fermions break isospin symmetry at finite lattice spacing, causing some complications now that LQCD results are precise enough to require isospin breaking corrections from $m_d-m_u$ and%
 \begin{marginnote}
 \entry{QED}{Quantum electro-dynamics}
 \end{marginnote}%
