@@ -1,18 +1,29 @@
-{\color{red}items to comment on}
-\begin{itemize}
-\item won't be performing precision calculations at 2-3 fm
-\item variational with pi-N operators
-\item this enables Breit-Frame and improved single-nucleon
-\item domain-decomposed idea of Giusti et al
-\end{itemize}
+The most pressing issue to \new{definitively} resolve with the LQCD calculations is whether or not the excited state contamination is under complete control for the nucleon (quasi-)elastic form factor calculations.
+If they are, then the LQCD results indicate that the nucleon axial form factor is significantly different than what has been extracted phenomenologically, as indicated in Figure~\ref{fig:gaq2_overlay}.
+\new{However, it is worth observing that} LQCD calculations of $g_{\mathrm{A}}$ were systematically low for many years, \new{before} it was finally understood the issues was related to an under-estimation of the systematic uncertainty associated with these excited states.
+
+There are several groups computing these form factors, with several different lattice actions and several different approaches to quantifying and removing the excited state contamination from the ground state matrix elements.
+Given the heightened awareness of this issue, it is much less likely that all the LQCD results are polluted by such a contamination than was the case for $g_{\mathrm{A}}$.
+The most clear way to definitively resolve the question would be to perform an extremely high statistics calculation with source-sink separation times of $\tsep\approx2-3$~fm.  The extreme numerical cost
+renders this an unlikely approach.
+In the longer term, the use of multi-level integration schemes can lead to an exponentially improved stochastic precision~\cite{Ce:2016idq}.
+
+A much more practical solution would be to implement a variational calculation using distillation~\cite{HadronSpectrum:2009krc} or its stochastic variant~\cite{Morningstar:2011ka}.
+There are several advantages to such a calculation.
+First, these methods enable the use of multi-hadron creation and annihilation operators which is essential to properly identify both the spectrum and the nature of the state, whether it is a $P$-wave $N\pi$ state, some radial excitation of the nucleon such as the Roper which can prominantly decay to an $N\pi\pi$ state or otherwise.
+Given this information, one can construct linear combinations of these operators which systematically remove the excited states from the correlation function~\cite{Blossier:2009kd}, allowing for the utilization of much earlier Euclidean times where the stochastic noise is relatively much smaller.
+Second, these variational methods enable the use of momentum space creation as well as annihilation operators, with full control over the spin projection of the source and sink at minimal extra cost.
+This enables one to construct useful linear combinations of correlation functions that eliminate for example, the induced pseudoscalar contribution to an axial three point function, simplifying the analysis~\cite{Meyer:2017ddy}.
+Further, one can exploit the Breit-Frame in which magintude of the incoming and outgoing momentum are the same which opens the door for utilizing the Feynman-Hellmann-like correlation functions which suppress the excited state contamination significantly compared to the three-point functions~\cite{He:2021yvm}.
+It is encouraging that the first exploratory calculations with such methods have begun~\cite{Egerer:2018xgu,Barca:2021iak}.
+
+Given the state of the field and the rapid advances recently made, we anticipate this excited state issue will be definitively resolved for elastic nucleon form factor calculations within a year or two, thus enabling precise determinations of the quasi-elastic axial form factor and the elastic electric and magnetic form factors that will resolve the discrepancies reviewed in Section~\ref{sec:sof}.
 
 
-Precise nucleon form factors for (quasi)elastic scattering are of the most immediate concern
- for neutrino oscillation experiments and simultaneously one of the easiest
- targets for LQCD in regards to nucleon interactions.
-\new{Higher energy transfer processes also play a sub-dominant role for T2K (and the future
+%Precise nucleon form factors for (quasi)elastic scattering are of the most immediate concern for neutrino oscillation experiments and simultaneously one of the easiest targets for LQCD in regards to nucleon interactions.
+Moving beyond these simplest quantities, higher energy transfer processes also play a sub-dominant role for T2K (and the future
 Hyper-K) experiments, and a major role in the DUNE experiment which has a higher energy neutrino
-flux, as can be seen in Figures~\ref{fig:t2k_impact} and~\ref{fig:dune_impact}, respectively.}
+flux, as can be seen in Figures~\ref{fig:t2k_impact} and~\ref{fig:dune_impact}, respectively.
 These higher energy transfers can access other fundamentally different interaction topologies,
  such as resonant or nonresonant pion production mechanisms,
  nuclear responses with correlated nucleon pairs,
@@ -22,6 +33,7 @@ In principle, all of these interaction mechanisms are accessible to LQCD,
 Given the discrepancy between lattice axial form factor data and experimental constraints,
  it is not unreasonable to expect other interaction mechanisms have similar discrepancies
  between theory and observation.
+ \cw{I would rephrase, and say that these interaction types are as unaccessible as CCQE with modern neutrino-nucleus data, typically relying on old H2 and D2 bubble chamber datasets, with even lower statistics than the historic CCQE datasets already discussed, compounding the problem.}
 These interaction types are more challenging to extract or even inaccessible to
  experimental measurements.
 Appeals to model assumptions may give some handle for missing quantities,
@@ -30,78 +42,87 @@ Appeals to model assumptions may give some handle for missing quantities,
 Calculations that access the combined resonant and nonresonant scattering amplitudes
  are the most similar to those of elastic scattering,
  where a current induces a transition of the nucleon to a multiparticle final state.
-Only stable final states, such as nucleon-pion states or other multiparticle states,
- are obtained as eigenstates of the Hamiltonian.
-Resonance properties are indirectly probed by converting the observed spectrum,
- with its power-law finite volume corrections, to a scattering phase shift in infinite volume.
-These power-law finite volume corrections are in contrast with exponentially-damped
- corrections obtained for single-particle states.
-The multiparticle states make up a dense spectrum that arises from
- states where individual hadrons move with different discrete lattice momenta.
+\new{The most prominant resonant contribution is from the $N\rightarrow\D$ transition.
+However, building up an understanding of the entire resonant region, following the standard LQCD computational strategy, will be an extremely challenging endeavour given the dense spectrum of multi-particle states, and more importantly, the lack of formalism to relate three-particle matrix elements in finite volume to the infinite volume physics of interest.
+It is likely that alternative strategies which focus on the inclusive $N\rightarrow X$ contribution~\cite{Hansen:2017mnd,Gambino:2020crt,Fukaya:2020wpp,Bruno:2020kyl}, or the use of two-currents to compute the hadronic tensor~\cite{Liu:1993cv,Liang:2019frk} will be more fruitful.
+}
 
-The main difficulties in these calculations stem the challenges of extracting
- information about many excited states rather than a single ground state.
-Empirical evidence from dedicated computations demonstrates that these multiparticle states
- are in practice difficult to quantify without interpolating operators constructed to
- closely resemble the states they are intended to identify,
- both in the number of quarks and antiquarks and also the individual
- momenta of the quark-level components~\cite{Wilson:2015dqa}.
-The necessary interpolating operators for extracting multiparticle states often have
- unfavorable combinatoric factors multiplying the number of terms to account for
- permutations of quark lines, changing momenta, varying time ranges, or the like.
-Some form of approximate all-to-all method is likely necessary
- to compute amplitudes of nucleon resonant and nonresonant transitions
- to states with pions.
+%Only stable final states, such as nucleon-pion states or other multiparticle states,
+% are obtained as eigenstates of the Hamiltonian.
+%Resonance properties are indirectly probed by converting the observed spectrum,
+% with its power-law finite volume corrections, to a scattering phase shift in infinite volume.
+%These power-law finite volume corrections are in contrast with exponentially-damped
+% corrections obtained for single-particle states.
+%The multiparticle states make up a dense spectrum that arises from
+% states where individual hadrons move with different discrete lattice momenta.
 
-The aforementioned issues are, at least in part, circumvented by applying approximate
- all-to-all techniques, for instance distillation~\cite{HadronSpectrum:2009krc,Morningstar:2011ka}
-Though the overhead for these methods is large,
- these techniques enable sophisticated calculations with large bases
- of interpolating operators including multiparticle interpolators.
-Using an all-to-all method specifically avoids the need to produce sequential
- quark propagator inversions that are used in traditional three-point correlator functions,
- which are the source of many unfavorable combinatoric factors and are
- costly when enumerating all possible quark line combinations.
-Though the lowest resonances will be accessible with these techniques,
- the higher-mass resonances will be more technically difficult
- due to the increased density of states with the energy transfers involved.
-Using these propagator data, a calculation of the Roper resonance contribution
- has the secondary consequence of offering a handle on removing excited
- state contamination from a calculation of the quasielastic form factors.
-\textcolor{red}{[summarizing statement or two about current status, few citations]}
+%The main difficulties in these calculations stem the challenges of extracting
+% information about many excited states rather than a single ground state.
+%Empirical evidence from dedicated computations demonstrates that these multiparticle states
+% are in practice difficult to quantify without interpolating operators constructed to
+% closely resemble the states they are intended to identify,
+% both in the number of quarks and antiquarks and also the individual
+% momenta of the quark-level components~\cite{Wilson:2015dqa}.
+%The necessary interpolating operators for extracting multiparticle states often have
+% unfavorable combinatoric factors multiplying the number of terms to account for
+% permutations of quark lines, changing momenta, varying time ranges, or the like.
+%Some form of approximate all-to-all method is likely necessary
+% to compute amplitudes of nucleon resonant and nonresonant transitions
+% to states with pions.
 
-To access higher resonance states in the so-called shallow inelastic scattering (SIS) regime,
- lattice calculations will likely be more successful using other methods
- that access the inclusive nucleon scattering amplitude to hadronic states.
-A four-point function calculation on the lattice can obtain a discrete sampling
- of the scattering amplitude as a function of the center-of-mass energy,
- convolved with weights that are exponential in the energy and time separation.
-Applying an inverse transformation to obtain the scattering amplitude
- is an ill-posed problem, but initial calculations
- using novel methods~\cite{Hansen:2017mnd,Bulava:2019kbi,Bruno:2020kyl}
- have shown promise~\cite{Liang:2019frk}.
+%The aforementioned issues are, at least in part, circumvented by applying approximate
+% all-to-all techniques, for instance distillation~\cite{HadronSpectrum:2009krc,Morningstar:2011ka}
+%Though the overhead for these methods is large,
+% these techniques enable sophisticated calculations with large bases
+% of interpolating operators including multiparticle interpolators.
+%Using an all-to-all method specifically avoids the need to produce sequential
+% quark propagator inversions that are used in traditional three-point correlator functions,
+% which are the source of many unfavorable combinatoric factors and are
+% costly when enumerating all possible quark line combinations.
+%Though the lowest resonances will be accessible with these techniques,
+% the higher-mass resonances will be more technically difficult
+% due to the increased density of states with the energy transfers involved.
+%Using these propagator data, a calculation of the Roper resonance contribution
+% has the secondary consequence of offering a handle on removing excited
+% state contamination from a calculation of the quasielastic form factors.
+%\textcolor{red}{[summarizing statement or two about current status, few citations]}
+
+%To access higher resonance states in the so-called shallow inelastic scattering (SIS) regime,
+% lattice calculations will likely be more successful using other methods
+% that access the inclusive nucleon scattering amplitude to hadronic states.
+%A four-point function calculation on the lattice can obtain a discrete sampling
+% of the scattering amplitude as a function of the center-of-mass energy,
+% convolved with weights that are exponential in the energy and time separation.
+%Applying an inverse transformation to obtain the scattering amplitude
+% is an ill-posed problem, but initial calculations
+% using novel methods~\cite{Hansen:2017mnd,Bulava:2019kbi,Bruno:2020kyl}
+% have shown promise~\cite{Liang:2019frk}.
  %moment methods?
-\textcolor{red}{[more detail, check wording]}
+%\textcolor{red}{[more detail, check wording]}
 
 Calculations of two-nucleon matrix elements provide key insights
- about the correlations between nucleons inside of a nuclear medium,
+ about the correlations between nucleons inside a nuclear medium,
  a vital ingredient for construction of an effective theory
  of neutrino interactions with nuclear targets.
 %% heavier than physical Mpi => NPLQCD/HALQCD controversy
-First efforts have been made to compute deuteron and dineutron scattering phase shifts
- at unphysically heavy pion masses.
-There is some controversy about whether the deuteron forms a
- bound state at these higher pion masses.~\textcolor{red}{[citations, more content]}.
-
+\new{First efforts have been made to compute two-nucleon matrix elements in response to electroweak currents~\cite{Savage:2016kon,Chang:2017eiq}.
+These calculations will most likely have to be revisited with a variational method as well as it now appears the use of local two-nucleon creation operators do not correctly reproduce the spectrum~\cite{Francis:2018qch,Horz:2020zvv,Green:2021qol,Amarasinghe:2021lqa}.
+}
+%First efforts have been made to compute deuteron and dineutron scattering phase shifts
+% at unphysically heavy pion masses.
+%There is some controversy about whether the deuteron forms a
+% bound state at these higher pion masses.~\textcolor{red}{[citations, more content]}.
+%
 %% gA(Q2) on D2 and nuclear ET
 Future calculations of matrix elements for currents inserted between
- two-nucleon states could provide direct information about the LEC inputs to nuclear
- models~\cite{Drischler:2019xuo}
- or by providing direct comparisons of neutrino interaction matrix elements in deuterium.
-\textcolor{red}{[more detail needed on ET LECs]}
+ two-nucleon states could provide direct information about the LEC inputs to \new{EFT descriptions of nuclear physics.
+While EFT can not be used to describe the neutrino-nucleus response over the full kinematic range of interest, they can provide a crucial anchor point to constrain nuclear models, see for example Refs.~\cite{Kronfeld:2019nfb,Drischler:2019xuo,Tews:2020hgp,Davoudi:2020ngi}
+}
+% or by providing direct comparisons of neutrino interaction matrix elements in deuterium.
+%\textcolor{red}{[more detail needed on ET LECs]}
 %% overlap of energy scales of NN vs NNpi
 \textcolor{red}{[the following is likely too much detail]}
-Deuterium corrections from nuclear models were assumed to be strong only at low momentum transfer
+\new{As a specific example,} deuterium corrections from nuclear models were assumed to be strong only at low momentum transfer
  and energy-independent in the reanalysis of deuterium bubble chamber data~\cite{Meyer:2016oeg},
  despite the inability of these corrections to account for the theory-data discrepancies.
 A direct LQCD computation of these effects would isolate the effect,

@@ -31,6 +31,7 @@ For large Euclidean time, the correlation function will be dominated by the grou
 \entry{$r_n = z_n / z_0$}{}
 \end{marginnote}%
 It is useful to construct an \textit{effective mass} to visualize at which the ground state begins to saturate the correlation function
+\cw{missing word above, ``at which... point?/value?''}
 \begin{align}
 m_{\rm eff}(t) &= \ln \left( \frac{C(t)}{C(t+1)} \right)
 %\nonumber\\&=
@@ -40,6 +41,7 @@ m_{\rm eff}(t) &= \ln \left( \frac{C(t)}{C(t+1)} \right)
 
 
 A well known challenge which complicates the analysis is that for nucleon two-point functions, the S/N ratio degrades exponentially at large Euclidean time~\cite{Lepage:1989hd}
+\cw{Not important at all, but the explicit Signal/Noise below could be changed to S/N}
 \begin{equation}
 \lim_{{\rm large}\ t}\frac{\mathrm{Signal}}{\mathrm{Noise}}
     \propto \sqrt{N_{\mathrm{sample}}} e^{(m_{\mathrm{N}} - \frac{3}{2}m_\pi)t}\, ,
@@ -52,29 +54,26 @@ In order to boost statistics, given the numerical cost of generating more config
 
 
 The most common method of constructing three-point correlation functions follows a similar strategy, beginning with spatially local sources.
-A nucleon three-point function with current $j_\G$ is contstructed with interpolating operators $N(\tsep,\mathbf{x})$ and $N^\dagger(0,\mathbf{0})$,%
-%-------------------------------------------------------------------------------
-\begin{marginnote}
-\entry{$j_\G = \bar{q}\, \G\, q$}{quark bilinear currents of Dirac structure $\G$ and unspecified flavor structure}
-\end{marginnote}%
-%-------------------------------------------------------------------------------
+A nucleon three-point function with current $j_\G$ is constructed with interpolating operators $N(\tsep,\mathbf{x})$ and $N^\dagger(0,\mathbf{0})$,
 \begin{align}
 C_\G(\tsep,\t) &= \sum_{\mathbf{x,y}}e^{-i\mathbf{p\dotp x} +i\mathbf{q\dotp y}}
     \langle\O|N(\tsep,\mathbf{x}) j_\G(\t,\mathbf{y}) N^\dagger(0,\mathbf{0}) |\O\rangle
 \nonumber\\&=
     \sum_{n,m} z_n(\mathbf{p})z_m^\dagger(\mathbf{p-q})e^{-E_n(\tsep-\t)}e^{-E_m \t} g_{n,m}^\G\, ,
 \end{align}
-where $g_{n,m}^\G$ are the matrix elements of interest, and in principle, all other quantities can be determined from the two-point function, a point we will return to.%
+where $g_{n,m}^\G$ are the matrix elements of interest, and in principle, all other quantities can be determined from the two-point function, a point we will return to.
+Often, the sink is projected to zero momentum, $\mathbf{p}_n=0$, for which momentum conservation gives the momentum of the incoming state to be $\mathbf{p}_m = -\mathbf{q}$.%
 %-------------------------------------------------------------------------------
 \begin{marginnote}
+\entry{$j_\G = \bar{q}\, \G\, q$}{quark bilinear currents of Dirac structure $\G$ and unspecified flavor structure}
 \entry{$g_{n,m}^\G = \langle n| j_\G |m\rangle$}{hadronic matrix elements of interest from state $m$ to $n$ with implicit momentum and energy dependence}
+\entry{$\tsep$}{The time-separation between the sink and source}
 \end{marginnote}%
 %-------------------------------------------------------------------------------
-Often, the sink is projected to zero momentum, $\mathbf{p}_n=0$, for which momentum conservation gives the momentum of the incoming state to be $\mathbf{p}_m = -\mathbf{q}$.
-A typicall calculation is performed with a sequential propagator~\cite{Martinelli:1988rr}
+A typical calculation is performed with a sequential propagator~\cite{Martinelli:1988rr}
 whose source is constructed by taking the forward propagators from the origin and contracting all but one spin and color index at the sink time, $\tsep$.%
 % FOOTNOTE ---------------------------------------------------------------------
-\footnote{\color{red}Add comment about Adelaide FH method and one-end trick}
+\footnote{There are alternative methods for computing nucleon structure known as the one-end trick~\cite{Foster:1998vw,McNeile:2006bz,Alexandrou:2013xon} and a variant of the Feynman-Hellmann Theorem~\cite{CSSM:2014uyt}, but these are not in wide use.}
 %-------------------------------------------------------------------------------
 
 Each choice of $\tsep$, flavor and spin of the initial and final state, and each choice of flavor for the current requires a new sequential propagator, rendering this aspect of the computation relatively expensive.
@@ -85,7 +84,7 @@ The most significant challenge in determining the nucleon matrix elements and su
 If the nucleon two-point function is becoming saturated by the ground state at $t\approx1$~fm, the ideal three-point function would use values of $\tsep\approx2$~fm.
 In practice, a few values of $\tsep$ in the range $0.8 \lesssim \tsep \lesssim 1.5$~fm are used because the S/N ratio of the three-point functions decays more rapidly than the two-point function, and an extrapolation to large $\tsep$ is used to isolate the ground state matrix elements.
 However, using just one excited state in the analysis requires three values of $\tsep$ in order to have a one degree-of-freedom fit to extract the ground state matrix element.
-Following Ref.~\cite{Chang:2018uxx}, that utilized many values of $\tsep$ to determine $g_A$, a few groups have begun advocating for the use of many values of $\tsep$, including small values, to improve our ability to understand and control the excited state contamination~\cite{Hasan:2019noy,Alexandrou:2019brg,He:2021yvm}.
+Following Ref.~\cite{Chang:2018uxx}, that utilized many values of $\tsep$ to determine $g_{\mathrm{A}}$, a few groups have begun advocating for the use of many values of $\tsep$, including small values, to improve our ability to understand and control the excited state contamination~\cite{Hasan:2019noy,Alexandrou:2019brg,He:2021yvm}.
 Ref.~\cite{He:2021yvm} utilized 13 values of $\tsep$, which allows for a systematic study of the uncertainty associated with truncating early and/or late values of $\tsep$ in the analysis, as well as providing sufficient data to perform up to a complete 5-state fit.
 
 At non-zero momentum, the excited states become more problematic.  While the energy associated with the signal scales with the momentum, the energy scale associated with the noise is independent of the momentum and thus their difference, which is the energy scale that governs the decay of the S/N, grows with increasing momentum.
@@ -96,7 +95,7 @@ For boosted nucleons, parity is also no longer a good quantum number and so the 
 
 Recent results have uncovered some additional aspects of excited state contamination:
 \begin{itemize}[leftmargin=*]
-\item Two-point functions constructed as in equation~\eqref{eq:2pt} are insufficient to reliably determine any of the excited states.  Different choices of $\tmin$ and different reasonable priors in a Bayesian analysis support excited states that differ by several sigma, also resulting in sensitivity of the ground state spectrum~\cite{Park:2021ypf,He:2021yvm} and matrix elements~\cite{Jang:2019vkm,Gupta:2021ahb}.
+\item Two-point functions constructed as in Equation~\eqref{eq:2pt} are insufficient to reliably determine any of the excited states.  Different choices of $\tmin$ and different reasonable priors in a Bayesian analysis support excited states that differ by several sigma, also resulting in sensitivity of the ground state spectrum~\cite{Park:2021ypf,He:2021yvm} and matrix elements~\cite{Jang:2019vkm,Gupta:2021ahb}.
 
 \item In contrast, the curvature in the three-point functions associated with the current insertion time is very constraining on the excited state spectrum, resulting in very stable and robust determination of the spectrum while varying $\tmin$, the number of excited states, the excited state model and the excited state priors~\cite{He:2021yvm}.
 While it is encouraging that the spectrum and matrix elements become very stable, such an analysis offers no insight into the nature of the excited states.  For example, with values of $m_\pi L\approx4$, the $P$-wave $N(\mathbf{p})\pi(-\mathbf{p})$ excited state energy gap is essentially the same as the $N\pi\pi$ threshold state.
@@ -107,7 +106,7 @@ While it is encouraging that the spectrum and matrix elements become very stable
 the use of the summation method~\cite{Maiani:1987by} or a variant of the Feynman-Hellman method~\cite{deDivitiis:2012vs,Bouchard:2016heu} which is closely related to the summation method, it is understood that the excited states become significantly suppressed compared to the three-point function~\cite{Capitani:2012gj,He:2021yvm}.
 For non-zero momentum transfer, such a technique can only be used well in the Breit-Frame where the momentum of the in and out states is equal and opposite, such that the energy spectrum is the same~\cite{Gambhir:2019pvw}.
 
-\item The excited state contamination is particularly relevant for the PCAC relation, which we discuss in more detail in the next section.
+\item The excited state contamination is particularly relevant for the PCAC relation, which we discuss in more detail in Section~\ref{sec:lqcd_pcac}.
 
 
 \end{itemize}
