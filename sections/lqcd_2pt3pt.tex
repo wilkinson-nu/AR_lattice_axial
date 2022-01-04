@@ -52,25 +52,22 @@ In order to boost statistics, given the numerical cost of generating more config
 
 
 The most common method of constructing three-point correlation functions follows a similar strategy, beginning with spatially local sources.
-A nucleon three-point function with current $j_\G$ is contstructed with interpolating operators $N(\tsep,\mathbf{x})$ and $N^\dagger(0,\mathbf{0})$,%
-%-------------------------------------------------------------------------------
-\begin{marginnote}
-\entry{$j_\G = \bar{q}\, \G\, q$}{quark bilinear currents of Dirac structure $\G$ and unspecified flavor structure}
-\end{marginnote}%
-%-------------------------------------------------------------------------------
+A nucleon three-point function with current $j_\G$ is contstructed with interpolating operators $N(\tsep,\mathbf{x})$ and $N^\dagger(0,\mathbf{0})$,
 \begin{align}
 C_\G(\tsep,\t) &= \sum_{\mathbf{x,y}}e^{-i\mathbf{p\dotp x} +i\mathbf{q\dotp y}}
     \langle\O|N(\tsep,\mathbf{x}) j_\G(\t,\mathbf{y}) N^\dagger(0,\mathbf{0}) |\O\rangle
 \nonumber\\&=
     \sum_{n,m} z_n(\mathbf{p})z_m^\dagger(\mathbf{p-q})e^{-E_n(\tsep-\t)}e^{-E_m \t} g_{n,m}^\G\, ,
 \end{align}
-where $g_{n,m}^\G$ are the matrix elements of interest, and in principle, all other quantities can be determined from the two-point function, a point we will return to.%
+where $g_{n,m}^\G$ are the matrix elements of interest, and in principle, all other quantities can be determined from the two-point function, a point we will return to.
+Often, the sink is projected to zero momentum, $\mathbf{p}_n=0$, for which momentum conservation gives the momentum of the incoming state to be $\mathbf{p}_m = -\mathbf{q}$.%
 %-------------------------------------------------------------------------------
 \begin{marginnote}
+\entry{$j_\G = \bar{q}\, \G\, q$}{quark bilinear currents of Dirac structure $\G$ and unspecified flavor structure}
 \entry{$g_{n,m}^\G = \langle n| j_\G |m\rangle$}{hadronic matrix elements of interest from state $m$ to $n$ with implicit momentum and energy dependence}
+\entry{$\tsep$}{The time-separation between the sink and source}
 \end{marginnote}%
 %-------------------------------------------------------------------------------
-Often, the sink is projected to zero momentum, $\mathbf{p}_n=0$, for which momentum conservation gives the momentum of the incoming state to be $\mathbf{p}_m = -\mathbf{q}$.
 A typicall calculation is performed with a sequential propagator~\cite{Martinelli:1988rr}
 whose source is constructed by taking the forward propagators from the origin and contracting all but one spin and color index at the sink time, $\tsep$.%
 % FOOTNOTE ---------------------------------------------------------------------
