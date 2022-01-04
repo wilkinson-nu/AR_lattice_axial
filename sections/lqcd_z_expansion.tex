@@ -1,4 +1,40 @@
+LQCD results are computed at finite lattice spacing, in a finite volume and typically (for nucleons) at pion masses heavier than nature.
+Even when results at the physical pion mass are available, results at heavier pion masses can help improve the overall precision of the final result, provided the extrapolation to the physical pion mass is under control.
+EFT is extensively used to guide the extrapolation to the physical point.
+Symanzik EFT~\cite{Symanzik:1983dc,Symanzik:1983gh} provides a continuum description of a discretized lattice action that incorporates the lattice spacing corrections through a tower of increasingly irrelevant operators.
+$\chi$PT provides a description of perturbative light quark mass corrections to pions~\cite{Gasser:1984gg} and nucleons~\cite{Jenkins:1990jv,Bernard:1995dp} in a systematic expansion about the chiral limit and low momentum.
+$\chi$PT can be readily extended to systematically include discretization effects by constructing the EFT from the Symanzik EFT, which includes QCD as the leading Lagrangian and discretization effects through the higher dimensional operators~\cite{Sharpe:1998xm}.
+$\chi$PT can also be extended to incorporate the boundary conditions of the finite volume and describe the finite-volume corrections which scale as $m_\pi^n e^{-m_\pi L}$ for $m_\pi L \gtrsim3.5$ with the power $n$ depending upon the particular quantity of interest~\cite{Gasser:1986vb}.
 
+While these EFTs provide a complete description of the physics at low momentum and sufficiently light pion masses, they come with LECs that capture the short-distance (L)QCD physics which are a priori unknown, given the non-perturbative nature of QCD.%
+%-------------------------------------------------------------------------------
+\begin{marginnote}
+\entry{LEC(s)}{Low energy constant(s)}
+\end{marginnote}%
+%-------------------------------------------------------------------------------
+The LECs describing the QCD pion mass and momentum dependence can be determined both from comparing with experimental data as well as LQCD results, while the LECs describing the discretization corrections can only be determined by comparing with LQCD results as these LECs are specific to a given lattice action.
+
+The range of validity of $\chi$PT seems to be at best $m_\pi\lesssim300$~MeV~\cite{Beane:2004ks,Walker-Loud:2008rui} with some indications the convergence is troubled at the physical pion mass~\cite{Walker-Loud:2019cif,Drischler:2019xuo}.
+The reach in $Q^2$ will likely have a similar upper bound, though this has not been examined in nearly the detail as the pion mass expansion.
+For many quantities, a power series expansion in $m_\pi$ or $m_\pi^2$ may be perfectly sufficient, combined with sufficiently precise results at the physical pion mass, to guide the interpolation to the physical point, as was observed in detail for $g_A$~\cite{Chang:2018uxx}.
+For example, one can consider an expansion of the form factor as a power-series in $Q^2$ with coefficients that capture the pion mass and lattice spacing dependence
+\begin{align}
+F(Q^2) = \sum_{k=0} \ell_k(m_\pi, a) Q^{2k},
+\end{align}
+where these prefactors will depend upon the LECs of QCD and the discretized lattice action.
+This form factor expansion will only has limited validity for $Q^2$ close to zero.
+One approach to circumvent this failure mode is to appeal to the analytic structure of QCD,
+performing a conformal mapping to a obtain a new small expansion parameter.
+This parameterization, referred to as the $z$ expansion~\cite{Bhattacharya:2011ah},
+has been utilized for decades in meson flavor physics~\cite{Okubo:1971jf}
+and is a standard feature in modern LQCD calculations of meson form factors
+for determining CKM matrix elements.
+
+
+
+
+\iffalse
+\bigskip
 Lattice data are computed with nonzero lattice spacings and typically at unphysical pion masses.
 To control for the effects of these systematics,
  chiral perturbation theory and a Symanzik effective theory are typically employed.
@@ -7,10 +43,7 @@ These connect the lattice results to the physical point by means
 Powers of these expansion parameters come with some LECs
  that must be fit to the lattice data over various ensembles with different parameters.
 With the LECs in hand, extrapolation to the continuum and physical pion mass
- may be completed and results obtained for QCD.%
-\begin{marginnote}
-\entry{LEC(s)}{Low energy constant(s)}
-\end{marginnote}
+ may be completed and results obtained for QCD.
 
 These extrapolations are known for the axial charge,
  but heavy baryon chiral expansions with $Q^2$ dependence are largely unexplored.
@@ -21,12 +54,15 @@ In their place, one might choose to instead expand the form factor as
 \end{align}
  where the $\ell_k$ have some unknown dependence on the pion mass and lattice spacing.
 This form factor expansion will only has limited validity for $Q^2$ close to zero.
-One approach to circumvent this failure mode is to appeal to the analytic structure of QCD,
- performing a conformal mapping to a obtain a new small expansion parameter.
+One approach to circumvent this failure mode is to appeal to the analytic structure of QCD and
+ perform a conformal mapping to a obtain a new small expansion parameter.
 This parameterization, referred to as the $z$ expansion~\cite{Bhattacharya:2011ah},
  has been utilized for decades in meson flavor physics~\cite{Okubo:1971jf}
  and is a standard feature in modern LQCD calculations of meson form factors
  for determining CKM matrix elements.
+\fi
+
+
 
 The $z$ expansion takes the four-momentum transfer squared $Q^2$
  to a small expansion parameter $z$, using the relation
@@ -43,14 +79,18 @@ Inverting this relation and expanding as a power series in $z$ about $Q^2=-t_0$ 
 \end{align}
 Following this procedure, the dimensionful LECs that appear as prefactors for powers of $Q^2$
  are instead assembled into expressions related to the dimensionless
- coefficients of the $z$ expansion,
+ coefficients of the $z$ expansion (to avoid confusion with the lattice spacing, we label the coefficients as $b_k$),
 \begin{align}
- F\big(z(Q^2)\big) = \sum_{k=0}^\infty a_k z^k.
+ F\big(z(Q^2)\big) = \sum_{k=0}^\infty b_k z^k.
  \label{eq:zexp}
 \end{align}
 %
 For the inverse transformation to take an expansion in $z$ to an expansion in $Q^2$,
- the expansion is again cast in terms of $x=(Q^2+t_0)/(t_c-t_0)$, like in Eq.~(\ref{eq:Q2toz}).
+ the expansion is again cast in terms of
+\begin{equation}\label{eq:x_Q}
+    x = \frac{Q^2+t_0}{t_c-t_0}\, ,
+\end{equation}
+like in Eq.~(\ref{eq:Q2toz}).
 Then the expression for $z$ at small $x$ is
 \begin{align}
  (1+x)^{1/2} -1 = \frac{x}{2}
@@ -68,7 +108,9 @@ A general series in $Q^2$ may therefore be converted to a double expansion in $z
  Q^{2m} &= \big( (Q^2+t_0) -t_0 \big)^m
  = (t_c-t_0)^m
  \sum_{n=0}^{m} \left( \begin{array}{c} m \\ n \end{array} \right)
- \biggr( \frac{Q^2+t_0}{t_c-t_0} \biggr)^n \biggr( \frac{-t_0}{t_c-t_0} \biggr)^{m-n}
+ x^n
+ %\biggr( \frac{Q^2+t_0}{t_c-t_0} \biggr)^n
+ \biggr( \frac{-t_0}{t_c-t_0} \biggr)^{m-n}
 \end{align}
  and then substituting Eq.~(\ref{eq:Q2toz}) to convert powers of $Q^2+t_0$
  into powers of $z$.
@@ -86,4 +128,5 @@ Instead, observables such as $r_{\mathrm{A}}^2$ and $g_{\mathrm{A}}$
  were fit to separate chiral-continuum extrapolations.
 Application of the formulae in this section exposes the relationships
  between LECs for powers of $Q^2$ to the $z$ expansion coefficients.
-\textcolor{red}{[Citations with chiral expansions that expose $Q^2$ dependence?]}
+
+{\color{red}[add example of map from $Q^2$ to $z$ with $a^2$ and $m_\pi^2$ LECs]}
