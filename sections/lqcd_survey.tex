@@ -15,12 +15,10 @@ Though the axial charge and radius are useful for connecting with low-energy app
  such as pion electroproduction and neutron decay,
  the needs of neutrino physics in the few-GeV energy range depend
  on the full momentum transfer dependence of the form factor.
- \done{Something has gone wrong here. What the main deliverables are can't be the especially true thing you intended.}
- \asm{reordered first two sentences}
-This is especially true considering the agreement between LQCD and experiment
+ This is especially true considering the agreement between LQCD and experiment
  for the axial radius taken together with the observation that
  LQCD prefers a slower form factor fall off than experiment,
- \new{as shown in Figure~\ref{fig:gaq2_overlay}}.
+ as shown in Figure~\ref{fig:gaq2_overlay}.
 If the axial radius were the only parameter determining the form factor $Q^2$ dependence,
  then these two observations are incompatible.
 Though the form factor shape, especially when allowed to explore its full uncertainty,
@@ -29,7 +27,6 @@ Though the form factor shape, especially when allowed to explore its full uncert
 Restricting to dipole shape only, agreement with the axial radius at $Q^2=0$
  would mean the axial form factor should agree over the entire relevant $Q^2$ range,
  a statement that is not supported by the LQCD data.
-\new{
 There is no reason to expect nature to prefer a dipole-like parameterization ---
  the experimental preference toward a dipole-like parameterization is based on
  a few datasets from the 1970's and 1980's~\cite{ANL_Barish_1977, BNL_Baker_1981, Kitagaki:1983px}
@@ -42,20 +39,19 @@ In addition, the dipole parameterization violates
  and although it has the expected asymptotic behavior at high-$Q^2$,
  this occurs for a regime well outside of the kinematic range probed
  by neutrino scattering experiments.
-}
-\done{I don't think the use of the dipole for FA was motivated by its asymptotic behaviour? I thought they just tried out a few FFs and found the dipole worked best, but didn't really have a strong theory motivation for any of theose they tried.}
-\asm{You're right: as written, the statement is/was wrong.
-I think dipole is also, in some rough sense,
- the fourier transform of an exponential decay wavefunction profile.
-My thought process was that people cling to dipole by saying it has the
- correct asymptotic behavior (unlike e.g. monopole, which was also tried),
- but that the preference is unfounded because it only occurs well outside
- of the region of interest.
-Updated to reflect these thoughts better.
-}
+
+% \done{I don't think the use of the dipole for FA was motivated by its asymptotic behaviour? I thought they just tried out a few FFs and found the dipole worked best, but didn't really have a strong theory motivation for any of theose they tried.}
+% \asm{You're right: as written, the statement is/was wrong.
+% I think dipole is also, in some rough sense,
+% the fourier transform of an exponential decay wavefunction profile.
+% My thought process was that people cling to dipole by saying it has the
+%  correct asymptotic behavior (unlike e.g. monopole, which was also tried),
+%  but that the preference is unfounded because it only occurs well outside
+%  of the region of interest.
+% Updated to reflect these thoughts better.
+% }
 
 
-\new{
 Figure~\ref{fig:gaq2_overlay} shows the status of existing calculations of
  the nucleon axial form factor from LQCD,
  compared to the axial form factor obtained from neutrino scattering
@@ -64,7 +60,7 @@ The RQCD~\cite{RQCD:2019jai} and NME~\cite{Park:2021ypf} collaborations
  have the most mature analyses with several ensembles that probe a range of
  systematic effects.
 These computations each have their own methods for addressing the
- excited state contaminations discussed in Sec.~\ref{sec:lqcd_pcac},
+ excited state contaminations discussed in Section~\ref{sec:lqcd_pcac},
  which successfully restore the GGT relation.
 RQCD modify the parameterization used to fit the correlation function
  to better constrain the expected shape of excited state contamination from the $N\pi$ states.
@@ -74,7 +70,6 @@ NME test a variety of Bayesian fits to constrain the excited state contributions
 Because these two results are based on several ensembles,
  their fits are parameterized and plotted as bands rather than as scatter points
  to distinguish them from estimates on single ensembles.
-}
 
 \begin{figure}[hbt!]
 \centering
@@ -103,7 +98,6 @@ As a rough estimate, NME claims that the uncertainties are at least a factor of 
 \end{figure}
 
 \asm{Describe callat result}
-\new{
 The ETMC~\cite{Alexandrou:2020okk}, LHPC~\cite{Hasan:2017wwt},
  PACS~\cite{Ishikawa:2018rew,Shintani:2018ozy,Ishikawa:2021eut}, and CalLat~\cite{Meyer:2021vfq}
  results have just a few ensembles, so scatter points obtained from fitting
@@ -112,10 +106,10 @@ The ETMC~\cite{Alexandrou:2020okk}, LHPC~\cite{Hasan:2017wwt},
 Though these results are expected to be close to the physical point results,
  they will have unquantified systematic shifts.
 The ETMC has three ensembles, two of which have only 2 flavors of sea quarks
- and will be subject to systematics from neglecting sea effects from strange quarks.}
-\done{Should it be entirely obvious to a non-expert reader why you've written 2+1+1 rather than 4? (asking for a friend)}
-\asm{No. Not described in LQCD intro section as far as I see, so jargon removed.}
-\new{The form factor data from the remaining ETMC ensemble,
+ and will be subject to systematics from neglecting sea effects from strange quarks.
+%\done{Should it be entirely obvious to a non-expert reader why you've written 2+1+1 rather than 4? (asking for a friend)}
+%\asm{No. Not described in LQCD intro section as far as I see, so jargon removed.}
+The form factor data from the remaining ETMC ensemble,
  a physical pion mass ensemble with 4 flavors of sea quarks,
  is shown in Fig.~\ref{fig:gaq2_overlay}.
 The PACS results are on two different ensembles with physical pion mass,
@@ -125,11 +119,11 @@ The Mainz collaboration has an ongoing calculation in proceedings on 12 ensemble
  and a chiral-continuum and infinite volume extrapolation~\cite{Djukanovic:2021yqg}.
 The results from a two-state fit to their physical pion mass ensemble
  are plotted with the other results.
-}
-\done{E250 physical pion mass ensemble seems like jargon to me}
-\asm{That's the name they've given the ensemble. removed the explicit name.}
 
-\new{
+%\done{E250 physical pion mass ensemble seems like jargon to me}
+%\asm{That's the name they've given the ensemble. removed the explicit name.}
+
+\cw{Same comment about 2+1 flavor as 2+1+1}
 The published results use different lattice actions for the simulations ---
  NME~\cite{Park:2021ypf}, RQCD~\cite{RQCD:2019jai}, Mainz~\cite{Djukanovic:2021yqg},
  LHPC~\cite{Hasan:2017wwt}, and PACS~\cite{Ishikawa:2018rew,Shintani:2018ozy,Ishikawa:2021eut}
@@ -149,7 +143,6 @@ No obvious tensions are seen,
 The restriction to finite volume has also been probed to some extent by
  the PACS collaboration results, %~\cite{Ishikawa:2018rew,Shintani:2018ozy}
  again with no obvious deviations from the results of other collaborations.
-}
 
 The excellent agreement of the axial form factor data and parameterizations
  for all of the LQCD simulations provides credibility to the claims
@@ -165,20 +158,19 @@ The high-$Q^2$ agreement is reflected by the restoration of the GGT relation at 
 % which indicates a mass gap that grows with $Q^2$ leading to a larger suppression.
 %\textcolor{red}{[ but the $N\pi$ contribution from XPT is constant with $Q^2$,
 % so something isn't right ]}
-\done{I would suggest ``modified'' rather than spoiled, which seems too emotive}
-\new{These claims could be modified by systematic effects
+These claims could be modified by systematic effects
  that are common to all of the calculations,
  and excited state contaminations from $N\pi$ states in
  the axial form factor remain as a dominant concern.
 While estimates of excited states using methods that are currently employed
  by lattice calculations have helped to clarify the situation,
  modern calculations with $N\pi$-like interpolating operators
- are needed to definitively quantify the excited state contaminations over all $Q^2$.}
+ are needed to definitively quantify the excited state contaminations over all $Q^2$.
 %Modern calculations with $N\pi$-like interpolating operators should be able
 % to isolate these remnant excited state contributions in order to make
 % concrete statements about the relative size of the $N\pi$ contamination over $Q^2$.
-\new{If a dedicated calculation can demonstrate that the
- excited states are controlled well by the methods presently in use},
+If a dedicated calculation can demonstrate that the
+ excited states are controlled well by the methods presently in use,
  then worries about the contamination should be more or less resolved.
 
 Another concern is that the magnitude of $Q^2$ may adversely affect
@@ -188,7 +180,7 @@ Even for low and moderate values of momentum transfer,
  a large expansion order would be needed to constrain the form factor
  dependence on the relevant low energy constants,
  limiting the predictability of the theory.
-There is some hope that expanding in terms of the $z$ expansion parameter $z$
+There is some hope that expanding in terms of the $z$-expansion parameter $z$
  may alleviate some of these concerns by building in correlations between
  low and high orders of $Q^2$ that are expected from analyticity.
 This will be discussed in more detail in Section~\ref{sec:z_continuum},
@@ -250,10 +242,6 @@ The LHPC~\cite{Hasan:2017wwt} and PACS~\cite{Ishikawa:2021eut} collaborations
  explore methods for directly computing the form factor values and slopes
  directly at $Q^2=0$, which offer alternative methods for constraining
  the form factor shape that could be used to complement traditional methods.
- \done{Do we need citations for these two collaborations? It seems difficult for a reader to find out more...}
- \asm{The two collaborations are working together (I am a part too),
- there aren't many references to cite yet though.
- Moved the citations up from the end of the sentence and added a few more.}
 The Fermilab Lattice and MILC collaborations~\cite{Meyer:2016kwb,Lin:2019pia,Lin:2020wko} also have an ongoing
  computation of the axial form factor using a unitary HISQ-on-HISQ setup,
  for which a preliminary computation of the axial charge on
@@ -265,7 +253,7 @@ The CalLat collaboration have a computation of the axial form factor
  using a mixed-action domain wall on HISQ setup,
  with existing data on several ensembles including multiple physical pion mass ensembles.
 The fits to one physical mass ensemble from the CalLat collaboration are used
- to make statements about the phenomenological impact of the LQCD results in Sec.~\ref{sec:impact}.
+ to make statements about the phenomenological impact of the LQCD results in Section~\ref{sec:impact}.
 
 %\begin{itemize}
 %\item
