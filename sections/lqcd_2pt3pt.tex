@@ -74,12 +74,12 @@ Often, the sink is projected to zero momentum, $\mathbf{p}_n=0$, for which momen
 A typicall calculation is performed with a sequential propagator~\cite{Martinelli:1988rr}
 whose source is constructed by taking the forward propagators from the origin and contracting all but one spin and color index at the sink time, $\tsep$.%
 % FOOTNOTE ---------------------------------------------------------------------
-\footnote{\color{red}Add comment about Adelaide FH method and one-end trick} 
+\footnote{\color{red}Add comment about Adelaide FH method and one-end trick}
 %-------------------------------------------------------------------------------
 
 Each choice of $\tsep$, flavor and spin of the initial and final state, and each choice of flavor for the current requires a new sequential propagator, rendering this aspect of the computation relatively expensive.
 While each sequential propagator can only be used for these specific choices, one is free to insert any quark bilinear operator for the current, including non-trivial spatial structure and momentum.
-To boost statistics, in addition to taking advantage of translation invariance, as with the two-point function, the \textit{coherent sink technique}~\cite{LHPC:2010jcs} is used to solve a single sequential propagator for many choices of the origin.
+To boost statistics, in addition to taking advantage of translation invariance as with the two-point function, the \textit{coherent sink technique}~\cite{LHPC:2010jcs} is used to solve a single sequential propagator for many choices of the origin.
 
 The most significant challenge in determining the nucleon matrix elements and subsequent form factors is dealing with the excited state contamination, an issue that is compounded by the degrading S/N.
 If the nucleon two-point function is becoming saturated by the ground state at $t\approx1$~fm, the ideal three-point function would use values of $\tsep\approx2$~fm.
@@ -88,25 +88,26 @@ However, using just one excited state in the analysis requires three values of $
 Following Ref.~\cite{Chang:2018uxx}, that utilized many values of $\tsep$ to determine $g_A$, a few groups have begun advocating for the use of many values of $\tsep$, including small values, to improve our ability to understand and control the excited state contamination~\cite{Hasan:2019noy,Alexandrou:2019brg,He:2021yvm}.
 Ref.~\cite{He:2021yvm} utilized 13 values of $\tsep$, which allows for a systematic study of the uncertainty associated with truncating early and/or late values of $\tsep$ in the analysis, as well as providing sufficient data to perform up to a complete 5-state fit.
 
+At non-zero momentum, the excited states become more problematic.  While the energy associated with the signal scales with the momentum, the energy scale associated with the noise is independent of the momentum and thus their difference, which is the energy scale that governs the decay of the S/N, grows with increasing momentum.
+For values of $Q\gtrsim 2$~GeV, the noise becomes unmanagable unless one uses a smearing profile that couples more strongly to boosted nucleons~\cite{Bali:2016lva}.
+For boosted nucleons, parity is also no longer a good quantum number and so the correlation function begins to mix even and odd parity states through the matrix elements.  Such contamination can be handled through a variational method that incoporates even and odd parity nucleons~\cite{Stokes:2013fgw,Stokes:2018emx,Stokes:2019zdd}.
 
 
 
+Recent results have uncovered some additional aspects of excited state contamination:
+\begin{itemize}[leftmargin=*]
+\item Two-point functions constructed as in equation~\eqref{eq:2pt} are insufficient to reliably determine any of the excited states.  Different choices of $\tmin$ and different reasonable priors in a Bayesian analysis support excited states that differ by several sigma, also resulting in sensitivity of the ground state spectrum~\cite{Park:2021ypf,He:2021yvm} and matrix elements~\cite{Jang:2019vkm,Gupta:2021ahb}.
+
+\item In contrast, the curvature in the three-point functions associated with the current insertion time is very constraining on the excited state spectrum, resulting in very stable and robust determination of the spectrum while varying $\tmin$, the number of excited states, the excited state model and the excited state priors~\cite{He:2021yvm}.
+While it is encouraging that the spectrum and matrix elements become very stable, such an analysis offers no insight into the nature of the excited states.  For example, with values of $m_\pi L\approx4$, the $P$-wave $N(\mathbf{p})\pi(-\mathbf{p})$ excited state energy gap is essentially the same as the $N\pi\pi$ threshold state.
+
+\item Many groups determine the spectrum and overlap factors from fits to the two-point functions, and then pass these results into the three-point function analysis without allowing the values to adjust to the global minimum.  Such a choice can either lead to an overestimate of the uncertainty of the three-point functions (if one uses the variablility of the spectrum mentioned above), or a biased extraction of the ground state matrix elements (if one uses the ``wrong'' value of the spectrum).  Given the computational setup described above, the robust choice is to perform a global analysis of the two- and three-point functions simultaneously.
+
+\item For zero-momentum transfer, where the spectrum of the in and the out states have the same value,
+the use of the summation method~\cite{Maiani:1987by} or a variant of the Feynman-Hellman method~\cite{deDivitiis:2012vs,Bouchard:2016heu} which is closely related to the summation method, it is understood that the excited states become significantly suppressed compared to the three-point function~\cite{Capitani:2012gj,He:2021yvm}.
+For non-zero momentum transfer, such a technique can only be used well in the Breit-Frame where the momentum of the in and out states is equal and opposite, such that the energy spectrum is the same~\cite{Gambhir:2019pvw}.
+
+\item The excited state contamination is particularly relevant for the PCAC relation, which we discuss in more detail in the next section.
 
 
-\bigskip\noindent
-{\color{red}[points to add]}
-\begin{enumerate}
-
-\item 2pt functions are not sufficient to constrain excited state spectrum,
-
-\item 3pt functions do a much better job, therefore, fitting 2pt and feeding into 3pt underestimates uncertainty and may bias results.  Also, no ability to resolve ``nature'' of state (Npi or Npipi)
-
-\item non-zero momentum means parity mixing, further complicating analysis (should also fit parity odd spec and include)
-
-\item momentum smearing for higher momentum states, S goes with non-zero P but N goes with P=0, increasing the energy scale associated with S/N degradation;  for larger Qsq, use of momentum smeared sources
-
-\item the energy of the in/out states are different, complicating the analysis and preventing the use of FH/summation method
-
-\item excited state contamination seems to ruin PCAC (next section or merge with this one?)
-
-\end{enumerate}
+\end{itemize}
