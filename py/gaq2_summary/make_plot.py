@@ -121,7 +121,7 @@ plt.legend(
 plt.xticks( fontsize=14)
 plt.yticks( fontsize=14)
 plt.xlabel( r'$Q^2/$GeV$^2$', fontsize=14)
-plt.ylabel( r'$g_A(Q^2)$', fontsize=14)
+plt.ylabel( r'$F_A(Q^2)$', fontsize=14)
 
 if do_pgf:
   plt.savefig('gaq2-overlay.pgf', transparent=True)
