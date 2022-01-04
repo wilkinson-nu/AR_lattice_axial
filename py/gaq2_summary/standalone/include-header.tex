@@ -1,0 +1,134 @@
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{braket}              %% bra-ket notation
+\usepackage{changepage}          %% adjustwidth environment
+\usepackage{dsfont}              %% doublestroke font
+\usepackage[utf8]{inputenc}      %% input encoding for math pgf input
+\usepackage{fancyhdr}            %% fancy page style
+\usepackage{feynmp}              %% feynman diagrams
+\usepackage{geometry}            %% control margins
+\usepackage{graphicx}            %% includegraphics
+\usepackage{lmodern}             %% get rid of font warnings
+\usepackage{multicol}            %% multiple columns in itemize
+\usepackage{pdfpages}            %% includepdf
+\usepackage{standalone}          %% make pgf files standalone so they are only compiled when updated
+\usepackage{tikz}                %% composing graphics
+
+\DeclareUnicodeCharacter{2212}{-} %% fix minus sign in pgf input
+
+%% other commands
+\newcommand\htref[2]{\href{#1}{\tiny #2}} %% tiny arXiv reference
+
+%% make margins small for individual slides
+\newcommand\leftframe[2][-4em]{%
+\frame{%
+\begin{adjustwidth}{#1}{0em}
+#2
+\end{adjustwidth}
+} }
+
+%% filler slides, include in final but not when doing most prep
+\newif\ifdofiller
+\dofillertrue
+%\dofillerfalse
+\ifdofiller
+\newcommand\fillerframe[1]{\frame{#1}} %% create filler frame
+\newcommand\sectionframe[1]{\section{#1}\renewcommand{\rightmark}{#1}
+\thispagestyle{myfancysectionheader}
+\frame{\textcolor{darkblue}{\Huge #1}}} %% create section frame and label for it
+\else
+\newcommand\fillerframe[1]{ }
+\newcommand\sectionframe[1]{\section{#1}\renewcommand{\rightmark}{#1}}
+\fi
+
+%% set up backup slides
+\newcommand{\backupbegin}{
+ \newcounter{framenumberappendix}
+ \setcounter{framenumberappendix}{\value{framenumber}}
+}
+\newcommand{\backupend}{
+ \addtocounter{framenumberappendix}{-\value{framenumber}}
+ \addtocounter{framenumber}{\value{framenumberappendix}}
+}
+
+%% tikz libraries
+\usetikzlibrary{decorations.pathreplacing} %% decorations to replace draw, e.g. with brace
+\usetikzlibrary{patterns} %% ??
+\usetikzlibrary{backgrounds} %% ??
+
+%% color definitions
+\definecolor{myred}{RGB}{220,0,0}
+\definecolor{darkblue}{RGB}{80,80,200}
+\definecolor{darkred}{rgb}{0.95,0,0}
+\definecolor{darkgreen}{rgb}{0,0.5,0}
+\definecolor{darkpurple}{rgb}{0.3,0.0,0.3}
+\definecolor{darkorchid}{RGB}{153,50,204}
+\definecolor{duneblue}{rgb}{0,0.73,0.91}
+\definecolor{duneorange}{rgb}{0.96,0.55,0.22}
+\definecolor{clmagenta}{RGB}{191,66,244}
+\definecolor{clblue}{RGB}{66,158,244}
+
+%% tikz libraries
+\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{patterns}
+
+%% page styles
+\fancypagestyle{myblank}{
+  \fancyhf{}
+  \renewcommand{\headrulewidth}{0em}
+  \renewcommand{\footrulewidth}{.01em}
+  \fancyhead{}
+  \lfoot{}
+  \cfoot{}
+  \rfoot{\tiny \thepage / \pageref{lastslide}} %% counts up to last slide
+  \headheight 0em
+  \footskip 0em
+}
+\fancypagestyle{myfancy}{
+  \fancyhf{}
+  \renewcommand{\headrulewidth}{0em}
+  \renewcommand{\footrulewidth}{.01em}
+  \fancyhead{}
+  \lfoot{\tiny Aaron S. Meyer}
+  \cfoot{\tiny Section: \rightmark}
+  \rfoot{\tiny \thepage / \pageref{lastslide}} %% counts up to last slide
+  \headheight 0em
+  \footskip 0em
+}
+\newcommand{\refslide}[1]{
+\fancypagestyle{myreference}{
+  \fancyhf{}
+  \renewcommand{\headrulewidth}{0em}
+  \renewcommand{\footrulewidth}{.01em}
+  \fancyhead{}
+  \lfoot{\tiny Aaron S. Meyer}
+  \cfoot{\tiny \textcolor{darkblue}{\bf #1}}
+  \rfoot{\tiny \thepage / \pageref{lastslide}}
+  \headheight 0em
+  \footskip 0em
+}
+\pagestyle{myreference}
+}
+\fancypagestyle{myfancysectionheader}{
+  \fancyhf{}
+  \renewcommand{\headrulewidth}{0em}
+  \renewcommand{\footrulewidth}{.01em}
+  \fancyhead{}
+  \lfoot{\tiny Aaron S. Meyer}
+  %\cfoot{\tiny \suptitle}
+  \cfoot{\tiny \alttitle}
+  \rfoot{\tiny \thepage / \pageref{lastslide}} %% counts up to last slide
+  \headheight 0em
+  \footskip 0em
+}
+
+%%% if needed, move to main file
+%%% beamer => newcommand, article => renewcommand
+%%% must be used elsewhere
+%\newcommand{\subitem}{
+%  {\setlength\itemindent{15pt} \item[-]\phantom{}}
+%}
+%\newcommand{\SubItem}[1]{
+%  {\setlength\itemindent{15pt} \item[-] #1}
+%}
+
+
