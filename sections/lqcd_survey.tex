@@ -102,7 +102,6 @@ As a rough estimate, NME claims that the uncertainties are at least a factor of 
 \label{fig:gaq2_overlay}
 \end{figure}
 
-\asm{Describe callat result}
 \new{
 The ETMC~\cite{Alexandrou:2020okk}, LHPC~\cite{Hasan:2017wwt},
  PACS~\cite{Ishikawa:2018rew,Shintani:2018ozy,Ishikawa:2021eut}, and CalLat~\cite{Meyer:2021vfq}
@@ -125,6 +124,7 @@ The Mainz collaboration has an ongoing calculation in proceedings on 12 ensemble
  and a chiral-continuum and infinite volume extrapolation~\cite{Djukanovic:2021yqg}.
 The results from a two-state fit to their physical pion mass ensemble
  are plotted with the other results.
+The CalLat data will be described in more detail in Sec.~\ref{sec:callatdata}.
 }
 \done{E250 physical pion mass ensemble seems like jargon to me}
 \asm{That's the name they've given the ensemble. removed the explicit name.}
@@ -266,6 +266,85 @@ The CalLat collaboration have a computation of the axial form factor
  with existing data on several ensembles including multiple physical pion mass ensembles.
 The fits to one physical mass ensemble from the CalLat collaboration are used
  to make statements about the phenomenological impact of the LQCD results in Sec.~\ref{sec:impact}.
+
+\subsubsection{Description of CalLat Data}\label{sec:callatdata}
+
+Since the preliminary CalLat results~\cite{Meyer:2021vfq} for the axial form factor will be used
+ in Sec.~\ref{sec:impact}, more discussion about these results is warranted.
+The CalLat data are collected on a single ensemble generated
+ by the MILC collaboration~\cite{MILC:2012znn}
+ with a lattice spacing $a\approx 0.12~{\rm fm}$ and $m_\pi\approx 130~{\rm MeV}$.
+Two-point correlation functions are computed with conjugate
+ source and sink interpolating operators
+ to produce a positive-definite correlation function.
+The same source and sink operators are used for the three-point functions
+ as well as a local insertion of the ${\cal A}_z$ axial current.
+Up to 10 source-sink separation times were used in the range $t/a\in\{3,\dots,12\}$.
+%, performing a fit to the zero momentum
+% and a single nonzero momentum three-point correlators for each individual momentum.
+%The zero momentum parameters obtained from these fits are all consistent.
+
+The setup used in this analysis fixes $\bm{q}$ at the current
+ and projects the sink to 0 momentum, allowing the source momentum to be
+ fixed by momentum conservation.
+The momentum $\bm{q}$ at the insertion is chosen to have $q_z=0$,
+ which explicitly zeros out all of the contribution to the correlator
+ from the induced pseudoscalar.
+Momenta up to $|q_{x,y}| \leq 4\sqrt{2}\cdot (2\pi/L)$ were explored,
+ which corresponds to momentum transfers up to around $1~{\rm GeV}$.
+The ground state axial matrix element is then proportional to the axial form factor,
+ up to a known kinematic factor.
+The correlator data are fit using a parameterization that allows
+ for 3 states at each momentum.
+
+Once the axial matrix elements were obtained,
+ the form factor data were fit to a $5+4$-parameter $z$ expansion,
+ including four parameters to enforce sum rules that regulate the large-$Q^2$ behavior,
+\begin{align}
+ \left( \frac{\partial}{\partial z} \right)^n
+ \sum_{k=0}^{k_{\text{max}}+4} a_k z^k \Big|_{z=1} = 0; \; n \in \{0,1,2,3\}.
+\end{align}
+A prior was given to each of the $z$ expansion coefficients of the form
+\begin{align}
+ {\rm prior}\Big[ \frac{a_k}{|a_0|} \Big] = 0 \pm {\rm min} \Big[ 5, \frac{25}{k} \Big].
+\end{align}
+No attempt was made to correct for systematics due to lattice spacing,
+ the pion mass mistuning, or the restriction to finite volume,
+ and the uncertainties are statistical only.
+
+The axial form factor coefficients obtained from this procedure are
+ (omitting the sum rule coefficients)
+\begin{align}
+ a_k = \left\{ 0.914(10), -1.931(54), -0.63(30), 4.4(1.7), -2.2(3.6) \right\};
+ \; k \in \{0,1,2,3,4\},
+\end{align}
+ with the corresponding covariance matrix
+\begin{align}
+ \Sigma =
+\left(
+\begin{tabular}{rrrrr}
+%$ 1.07656068\times10^{-4}$,& $-5.67981167\times10^{-4}$,& $-3.20528306\times10^{-4}$,&  $1.48484537\times10^{-2}$,& $-1.32944995\times10^{-2}$ \nonumber\\
+%$-5.67981167\times10^{-4}$,& $ 2.89580422\times10^{-3}$,& $ 4.66404291\times10^{-4}$,& -$6.58295384\times10^{-2}$,& $ 7.51052601\times10^{-2}$ \nonumber\\
+%$-3.20528306\times10^{-4}$,& $ 4.66404291\times10^{-4}$,& $ 8.84891256\times10^{-2}$,& -$3.57106039\times10^{-1}$,& $-9.12119801\times10^{-1}$ \nonumber\\
+%$ 1.48484537\times10^{-2}$,& $-6.58295384\times10^{-2}$,& $-3.57106039\times10^{-1}$,&  $2.75581331\times10^{+0}$,& $ 1.80702909\times10^{+0}$ \nonumber\\
+%$-1.32944995\times10^{-2}$,& $ 7.51052601\times10^{-2}$,& $-9.12119801\times10^{-1}$,&  $1.80702909\times10^{+0}$,& $ 1.30170672\times10^{+1}$ \nonumber\\
+%
+%$ 1.07656\times10^{-4}$,& $-5.67981\times10^{-4}$,& $-3.20528\times10^{-4}$,&  $1.48485\times10^{-2}$,& $-1.32945\times10^{-2}$ \nonumber\\
+%$-5.67981\times10^{-4}$,& $ 2.89580\times10^{-3}$,& $ 4.66404\times10^{-4}$,& -$6.58295\times10^{-2}$,& $ 7.51053\times10^{-2}$ \nonumber\\
+%$-3.20528\times10^{-4}$,& $ 4.66404\times10^{-4}$,& $ 8.84891\times10^{-2}$,& -$3.57106\times10^{-1}$,& $-9.12120\times10^{-1}$ \nonumber\\
+%$ 1.48485\times10^{-2}$,& $-6.58295\times10^{-2}$,& $-3.57106\times10^{-1}$,&  $2.75581\times10^{+0}$,& $ 1.80703\times10^{+0}$ \nonumber\\
+%$-1.32945\times10^{-2}$,& $ 7.51053\times10^{-2}$,& $-9.12120\times10^{-1}$,&  $1.80703\times10^{+0}$,& $ 1.30171\times10^{+1}$ \nonumber\\
+%
+$ 1.0766\times10^{-4}$,& $-5.6798\times10^{-4}$,& $-3.2053\times10^{-4}$,&  $1.4849\times10^{-2}$,& $-1.3295\times10^{-2}$ \nonumber\\
+$-5.6798\times10^{-4}$,& $ 2.8958\times10^{-3}$,& $ 4.6640\times10^{-4}$,& -$6.5830\times10^{-2}$,& $ 7.5105\times10^{-2}$ \nonumber\\
+$-3.2053\times10^{-4}$,& $ 4.6640\times10^{-4}$,& $ 8.8489\times10^{-2}$,& -$3.5711\times10^{-1}$,& $-9.1212\times10^{-1}$ \nonumber\\
+$ 1.4849\times10^{-2}$,& $-6.5830\times10^{-2}$,& $-3.5711\times10^{-1}$,&  $2.7558\times10^{+0}$,& $ 1.8070\times10^{+0}$ \nonumber\\
+$-1.3295\times10^{-2}$,& $ 7.5105\times10^{-2}$,& $-9.1212\times10^{-1}$,&  $1.8070\times10^{+0}$,& $ 1.3017\times10^{+1}$ \nonumber\\
+\end{tabular}
+\right).
+\end{align}
+\asm{what's the best way to write this out without removing too much precision?
+check this for pos-defness}
 
 %\begin{itemize}
 %\item
