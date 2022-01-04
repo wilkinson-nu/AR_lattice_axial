@@ -1,18 +1,17 @@
-The most pressing issue to definitely resolve with the LQCD calculations is whether or not the excited state contamination is under complete control for the nucleon (quasi-)elastic form factor calculations.
-If they are, then the LQCD results indicate that the nucleon axial form factor is significantly different than what has been extracted phenomenologically, as indicated in figure~\ref{fig:gaq2_overlay}.
-On the other hand, LQCD calculations of $g_A$ were systematically low for many years, and it was finally understood the issues was related to an under-estimation of the systematic uncertainty associated with these excited states.
+The most pressing issue to \new{definitively} resolve with the LQCD calculations is whether or not the excited state contamination is under complete control for the nucleon (quasi-)elastic form factor calculations.
+If they are, then the LQCD results indicate that the nucleon axial form factor is significantly different than what has been extracted phenomenologically, as indicated in Figure~\ref{fig:gaq2_overlay}.
+\new{However, it is worth observing that} LQCD calculations of $g_{\mathrm{A}}$ were systematically low for many years, \new{before} it was finally understood the issues was related to an under-estimation of the systematic uncertainty associated with these excited states.
 
 There are several groups computing these form factors, with several different lattice actions and several different approaches to quantifying and removing the excited state contamination from the ground state matrix elements.
-Given the heightened awareness of this issue, it is much less likely that all the LQCD results are polluted by such a contamination than was the case for $g_A$.
+Given the heightened awareness of this issue, it is much less likely that all the LQCD results are polluted by such a contamination than was the case for $g_{\mathrm{A}}$.
 The most clear way to definitively resolve the question would be to perform an extremely high statistics calculation with source-sink separation times of $\tsep\approx2-3$~fm.  The extreme numerical cost
 renders this an unlikely approach.
-In the longer term, the use of multi-level integration schemes can lead to an exponentially improved stocahstic precision~\cite{Ce:2016idq}.
+In the longer term, the use of multi-level integration schemes can lead to an exponentially improved stochastic precision~\cite{Ce:2016idq}.
 
 A much more practical solution would be to implement a variational calculation using distillation~\cite{HadronSpectrum:2009krc} or its stochastic variant~\cite{Morningstar:2011ka}.
 There are several advantages to such a calculation.
 First, these methods enable the use of multi-hadron creation and annihilation operators which is essential to properly identify both the spectrum and the nature of the state, whether it is a $P$-wave $N\pi$ state, some radial excitation of the nucleon such as the Roper which can prominantly decay to an $N\pi\pi$ state or otherwise.
 Given this information, one can construct linear combinations of these operators which systematically remove the excited states from the correlation function~\cite{Blossier:2009kd}, allowing for the utilization of much earlier Euclidean times where the stochastic noise is relatively much smaller.
-
 Second, these variational methods enable the use of momentum space creation as well as annihilation operators, with full control over the spin projection of the source and sink at minimal extra cost.
 This enables one to construct useful linear combinations of correlation functions that eliminate for example, the induced pseudoscalar contribution to an axial three point function, simplifying the analysis~\cite{Meyer:2017ddy}.
 Further, one can exploit the Breit-Frame in which magintude of the incoming and outgoing momentum are the same which opens the door for utilizing the Feynman-Hellmann-like correlation functions which suppress the excited state contamination significantly compared to the three-point functions~\cite{He:2021yvm}.
@@ -22,10 +21,9 @@ Given the state of the field and the rapid advances recently made, we anticipate
 
 
 %Precise nucleon form factors for (quasi)elastic scattering are of the most immediate concern for neutrino oscillation experiments and simultaneously one of the easiest targets for LQCD in regards to nucleon interactions.
-\new{
 Moving beyond these simplest quantities, higher energy transfer processes also play a sub-dominant role for T2K (and the future
 Hyper-K) experiments, and a major role in the DUNE experiment which has a higher energy neutrino
-flux, as can be seen in Figures~\ref{fig:t2k_impact} and~\ref{fig:dune_impact}, respectively.}
+flux, as can be seen in Figures~\ref{fig:t2k_impact} and~\ref{fig:dune_impact}, respectively.
 These higher energy transfers can access other fundamentally different interaction topologies,
  such as resonant or nonresonant pion production mechanisms,
  nuclear responses with correlated nucleon pairs,
@@ -35,6 +33,7 @@ In principle, all of these interaction mechanisms are accessible to LQCD,
 Given the discrepancy between lattice axial form factor data and experimental constraints,
  it is not unreasonable to expect other interaction mechanisms have similar discrepancies
  between theory and observation.
+ \cw{I would rephrase, and say that these interaction types are as unaccessible as CCQE with modern neutrino-nucleus data, typically relying on old H2 and D2 bubble chamber datasets, with even lower statistics than the historic CCQE datasets already discussed, compounding the problem.}
 These interaction types are more challenging to extract or even inaccessible to
  experimental measurements.
 Appeals to model assumptions may give some handle for missing quantities,
@@ -102,7 +101,7 @@ It is likely that alternative strategies which focus on the inclusive $N\rightar
 %\textcolor{red}{[more detail, check wording]}
 
 Calculations of two-nucleon matrix elements provide key insights
- about the correlations between nucleons inside of a nuclear medium,
+ about the correlations between nucleons inside a nuclear medium,
  a vital ingredient for construction of an effective theory
  of neutrino interactions with nuclear targets.
 %% heavier than physical Mpi => NPLQCD/HALQCD controversy
@@ -117,7 +116,7 @@ These calculations will most likely have to be revisited with a variational meth
 %% gA(Q2) on D2 and nuclear ET
 Future calculations of matrix elements for currents inserted between
  two-nucleon states could provide direct information about the LEC inputs to \new{EFT descriptions of nuclear physics.
-While EFT can not be used to describe the neutrino-nucleus response over the full kinematic range of interest, they can provide a crucial achor point to constrain nuclear models, see for example Refs.~\cite{Kronfeld:2019nfb,Drischler:2019xuo,Tews:2020hgp,Davoudi:2020ngi}
+While EFT can not be used to describe the neutrino-nucleus response over the full kinematic range of interest, they can provide a crucial anchor point to constrain nuclear models, see for example Refs.~\cite{Kronfeld:2019nfb,Drischler:2019xuo,Tews:2020hgp,Davoudi:2020ngi}
 }
 % or by providing direct comparisons of neutrino interaction matrix elements in deuterium.
 %\textcolor{red}{[more detail needed on ET LECs]}
