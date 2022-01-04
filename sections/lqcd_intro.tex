@@ -1,14 +1,17 @@
-LQCD has been and remains one of the major uses of the world's leadership computing facilities.
+Lattice QCD has been and remains one of the major uses of the world's leadership computing facilities.
 There is an extensive literature on LQCD covering the broad range of technical and formal aspects that are necessary to cary out state of the art calculations, for which we can not do justice in this review.
 Rather, for an in depth introduction to LQCD, we refer readers to the text books~\cite{Smit:2002ug,DeGrand:2006zz,Gattringer:2010zz} and in this review, we provide a high-level summary of general issues that must be addressed as well as issues specific to LQCD calculations of nucleon matrix elements and form factors.
-
+These issues are also discussed in detail in the bi-annual FLAG Reviews, see for example the most recent one~\cite{Aoki:2021kgd}.%
+%-------------------------------------------------------------------------------
+\begin{marginnote}
+\entry{FLAG}{Flavour Lattice Averaging Group}
+\end{marginnote}
 
 
 The promise of LQCD is to provide predictions of low-energy hadronic and nuclear quantities with fully quantified theoretical uncertainties rooted in the Standard Model.
 In order to deliver upon this promise, there are several sources of systematic uncertainty which must be quantified.
 For all LQCD calculations, these include extrapolations to the continuum and infinite volume limits as well as an extrapolation or interpolation to the physical quark mass limit.
-\cw{A question from a layman: why are at least three values required?}
-For the continuum extrapolation, at least three values of the lattice spacing of $\mathrm{O}(a\lesssim0.12\textrm{ fm})$ are required to ascertain if the leading discretization corrections are sufficient or not to describe the observed scaling violations.
+For the continuum extrapolation, at least three values of the lattice spacing of $\mathrm{O}(a\lesssim0.12\textrm{ fm})$ are required to ascertain if the leading discretization corrections are sufficient or not to describe the observed scaling violations (do all three results lie on a straight line or can one detect higher-order curvature?).
 For the finite volume effects, a rule of thumb has been established from experience, that one requires calculations with $m_\pi L \gtrsim4$ in order to keep these finite size corrections at the level of $\lesssim1-2\%$ and at least qualitatively described by the leading analytic formulae.%
 \begin{marginnote}
     \entry{$\chi$PT}{Chiral Perturbation Theory: the low-energy effective field theory of QCD}
@@ -26,89 +29,111 @@ degrading S/N problem for nucleons and excited state contamination.
 %-------------------------------------------------------------------------------
 % LQCD Intro
 \subsection{LQCD: A High Level Summary}
-LQCD is a discretized version of QCD, formulated in Euclidean spacetime.
-Even at finite lattice spacing and volume, the multi-dimensional path integral is vastly too large to perform.
-The use of Euclidean spacetime renders the action density real for zero chemical potential for which one can use a Hybrid Monte Carlo algorithm~\cite{Duane:1987de} to approximate the integral with importance sampling.
-The action is quadratic in the quark fields allowing for an analytic integration over these fermionic degrees of freedom, such that the path integral
+The QCD path integral is quadratic in the quark fields allowing for an analytic integration over the fermionic fields such that in Euclidean space, one has the gluonic integral
 \begin{equation}\label{eq:Z_QCD}
 Z_{\mathrm{QCD}} = \int D U\, {\rm Det}[\Dslash(U) + m]\, e^{-S_{\mathrm{G}}(U)}
 \end{equation}
-is sampled with a weight given by ${\rm Det}[\Dslash(U) + m]\, e^{-S_G(U)}$, where $S_{\mathrm{G}}(U)$ is the gluon action in terms of link fields which are Wilson lines
+with gluon action $S_{\mathrm{G}}(U)$ and the determinant of the quark operator ${\rm Det}[\Dslash(U) + m]$, for each flavor of quark simulated.
+Even at finite lattice spacing and volume, the multi-dimensional integral is vastly too large to perform.
+However, in Euclidean space, the fermion determinant is real and positive for zero chemical potential, as well as $S_G$, and so the integral can be approximated with an HMC algorithm~\cite{Duane:1987de} using the factor ${\rm Det}[\Dslash(U) + m]\, e^{-S_{\mathrm{G}}(U)}$ as the importance sampling weight.%
+%-------------------------------------------------------------------------------
+\begin{marginnote}
+\entry{HMC}{Hybrid Monte Carlo}
+\end{marginnote}%
+%-------------------------------------------------------------------------------
+In this way, a large number of configurations of gauge fields can be generated, providing estimates of correlation functions
+\begin{equation}
+\langle O \rangle = \frac{1}{N_{\rm cfg}}\sum_{i=1}^{N_{\rm cfg}} O[U_i]
+    +\mathrm{O}\left(\frac{1}{\sqrt{N_{\rm cfg}}} \right)\, ,
+\end{equation}
+where $O[U_i]$ is the correlation function evaluated on configuration $i$.
+The most expensive part of generating the configurations is evaluating the fermion determinant for the light and strange quarks.
+This is done with the use of pseudo-fermions (bosonic fields, $\phi$)
+\begin{equation}
+Z_\psi = \int D\bar{\psi}D\psi\, e^{-\bar{\psi}[\Dslashe[U]+m]\psi}
+    = {\rm Det}[\Dslash(U) + m]
+    = \int D\phi^\dagger D\phi\, e^{-\phi^\dagger \frac{1}{\Dslashe[U]+m} \phi}
+\end{equation}
+for which the bilinear operator is the inverse of the Dirac operator, which is a large, sparse matrix.
+Most of the algorithmic development for accelerating LQCD has gone into efficiently solving these large sparse matrices with large condition numbers.  In particular, this is a problem very well suited for GPUs
+for which we have an advanced library, QUDA~\cite{Clark:2009wm,Babich:2011np}, developed for the international community.%
+%-------------------------------------------------------------------------------
+\begin{marginnote}
+\entry{GPU}{Graphical Processing Unit}
+\end{marginnote}%
+%-------------------------------------------------------------------------------
+
+
+There are many valid choices one can make in constructing the discretized lattice action, provided continuum QCD is recovered as $a\rightarrow0$.
+This is known as the universality of the continuum limit, with each choice only varying at finite lattice spacing.
+Deviations from QCD, which arise at finite $a$, are often called \textit{discretization corrections} or \textit{scaling violations}.
+That all lattice actions reduce to QCD as $a\rightarrow0$ is known as the universality of the continuum limit.  It is a property which can be proved in perturbation theory but must be established numerically given the non-perturbative nature of QCD.  For sufficiently small lattice spacings, one can use EFT to construct a continuum theory that encodes the discretization effects in a tower of higher dimensional operators. This is known as the Symanzik EFT for lattice actions~\cite{Symanzik:1983dc,Symanzik:1983gh}.%
+%-------------------------------------------------------------------------------
+\begin{marginnote}
+\entry{Universality}{All valid choices of discretized QCD become QCD as $a\rightarrow0$}
+\entry{EFT}{Effective field theory}
+\end{marginnote}%
+%-------------------------------------------------------------------------------
+One interesting example involves the violation of Lorentz symmetry at finite lattice spacing: in the Symanzik EFT, the operators which encode this Lorentz violation scale as $a^2$ with respect to the operators which survive the continuum limit, and thus, Lorentz symmetry is an accidental symmetry of the continuum limit.  It is not respected at any finite lattice spacing, but the measurable consequences vanish as $a^2$ for sufficiently small lattice spacing.
+
+For example, consider the discretized gluon action.
+The link fields are Wilson lines
 \begin{equation}
 U_\mu(x) = \exp\left\{i a\int_0^1 dt A_\mu(x +(1-t)a\hat{\mu}) \right\}
     \approx \exp\left\{i a \bar{A}_\mu(x) \right\}\, .
 \end{equation}
-Here, $A_\mu(x)$ is the gluon field, $a$ is the ``lattice spacing'' and $\bar{A}_\mu(x)$ is the average value of $A_\mu(x)$ over the spacetime interval $[x, x+a\hat{\mu}]$.
-This parameterization of the gauge fields allows for the construction of a discretized theory which preserves gauge-invariance~\cite{Wilson:1974sk}, a key property of gauge theories.
-For example, the discretized Dirac operator
-\begin{equation}\label{eq:naive_fermions}
-\bar{\psi}(x)\g_\mu D_\mu \psi(x) \rightarrow
-\bar{\psi}(x)\g_\mu\frac{1}{2a}\left[U_\mu(x)\psi(x+a\hat{\mu}) -U^\dagger_\mu(x)\psi(x-a\hat{\mu}) \right]\, ,
-\end{equation}
-is invariant under gauge transformations,
-\begin{align}
-&\psi(x)\rightarrow \Omega(x)\psi(x)\, ,&
-&U_\mu(x)\rightarrow \Omega(x)U_\mu(x)\Omega^{-1}(x+a\hat{\mu})\, .&
-\end{align}
-Of note, the transformation of the link field maintains gauge invariance for the combination of the $\bar{\psi}(x)$ and $\psi(x\pm a\hat{\mu})$ fields.
-
-
-In the continuum, the gluon action-density is given by the product of field strength tensors, which are gauge-covariant curls of the gauge potential
-\begin{align}
-&\mathcal{L}_{\mathrm{G}} = \frac{1}{2g^2}\textrm{Tr}\left[G_{\mu\nu} G_{\mu\nu}\right]\, &
-&G_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu +i [A_\mu, A_\nu]\, ,&
-\end{align}
-where $g$ is the gauge coupling.
+The gluon field $A_\mu(x)$ can be approximated as constant over the interval $[x, x+a\hat{\mu}]$, as expressed by $\bar{A}_\mu(x)$, with $a$ being the lattice spacing.
+This parameterization allows for the construction of a discretized theory which preserves gauge-invariance~\cite{Wilson:1974sk}, a key property of gauge theories.
+In the continuum, the gluon action-density is given by the product of field strength tensors, which are gauge-covariant curls of the gauge potential.
+%\begin{align}
+%&\mathcal{L}_{\mathrm{G}} = \frac{1}{2g^2}\textrm{Tr}\left[G_{\mu\nu} G_{\mu\nu}\right]\, &
+%&G_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu +i [A_\mu, A_\nu]\, ,&
+%\end{align}
+%where $g$ is the gauge coupling.
 When constructing the discretized gluon-action, it is therefore natural to use objects which encode this curl of the gauge potential.  The simplest such object is referred to as a ``plaquette'' and given by
 \begin{equation}
 \hspace{-1.25in}\Umunu \hspace{-0.65in}
     =U_{\mu\nu}(x)
     =U_\mu(x)U_\nu(x+a\hat{\mu}) U^\dagger_\mu(x+a\hat{\nu}) U^\dagger_\nu(x)\, .
 \end{equation}
-One can then show that the Wilson gauge-action reduces to the continuum action plus irrelevant (higher dimensional) operators which vanish in the continuum limit
+For small lattice spacing $a$, this Wilson gauge-action reduces to the continuum action plus irrelevant (higher dimensional) operators which vanish in the continuum limit
 \begin{align}\label{eq:gluon_action}
 S_{\mathrm{G}}(U) &= \beta \sum_{n=x/a} \sum_{\mu<\nu}
     \textrm{Re}\left[ 1 - \frac{1}{N_c} \textrm{Tr} \left[U_{\mu\nu}(n) \right]\right]
 \nonumber\\&=
-    \frac{\beta}{2N_c} a^4 \sum_{n=x/a,\mu,\nu} \frac{1}{2}
-    \textrm{Tr} \left[ G_{\mu\nu}(n)G_{\mu\nu}(n)\right]
-    +\mathrm{O}(a^6)\, ,
+    \frac{\beta}{2N_c}
+    a^4 \sum_{n=x/a,\mu,\nu}
+    \left[
+        \frac{1}{2} \textrm{Tr} \left[ G_{\mu\nu}(n)G_{\mu\nu}(n)\right]
+        +\mathrm{O}(a^2)
+    \right]\, ,
     & \rightarrow \beta = \frac{2N_c}{g^2}\, .
 \end{align}
 The continuum limit, which is the asymptotically large $Q^2$ region, is therefore approached as $\beta\rightarrow\infty$ where $g(Q^2)\rightarrow 0$.
 
-There are many choices one can make in constructing the discretized lattice action.
-Provided continuum QCD is recovered as $a\rightarrow0$, each choice is valid.
-This is known as the universality of the continuum limit, with each choice only varying at finite lattice spacing.
-Deviations from QCD, which arise at finite $a$, are often called \textit{discretization corrections} or \textit{scaling violations}.
-That all lattice actions reduce to QCD as $a\rightarrow0$ is known as the universality of the continuum limit.  It is a property which can be proved in perturbation theory but must be established numerically given the non-perturbative nature of QCD.%
+
+The inclusion of quark fields adds more variety of lattice actions, each with their own benefits and drawbacks.
+There are four commonly used fermion discretization schemes which are known as staggered fermions~\cite{Kogut:1974ag,Banks:1975gq,Banks:1976ia,Susskind:1976jm}, clover-Wilson fermions~\cite{Sheikholeslami:1985ij}, twisted mass fermions~\cite{Frezzotti:2000nk} and DWF~\cite{Kaplan:1992bt,Shamir:1993zy,Furman:1994ky}.%
+%-------------------------------------------------------------------------------
 \begin{marginnote}
-\entry{EFT}{Effective field theory}
+\entry{DWF}{Domain Wall Fermions}
 \end{marginnote}%
-For sufficiently small lattice spacings, one can use effective field theory (EFT) to construct a continuum theory that encodes the discretization effects in a tower of higher dimensional operators. This is known as the Symanzik EFT for lattice actions~\cite{Symanzik:1983dc,Symanzik:1983gh}.
-One interesting example involves the violation of Lorentz symmetry at finite lattice spacing: in the Symanzik EFT, the operators which encode this Lorentz violation scale as $a^2$ with respect to the operators which survive the continuum limit, and thus, Lorentz symmetry is an accidental symmetry of the continuum limit.  It is not respected at any finite lattice spacing, but the measurable consequences vanish as $a^2$ for sufficiently small lattice spacing.
-
-
-The inclusion of quark fields adds more variety of lattice actions.
-One main complication for fermions is that the ``naive discretization'', Equation~\eqref{eq:naive_fermions}, leads to a well-known doubling problem in which, instead of a single fermion, one has $2^d$ doubler fermions, or poles in the propagator in $d$ dimensions.
-In particular, it is challenging to remove these doublers without breaking chiral symmetry with the lattice regulator, an issue known as the Nielsen-Ninomiya No-Go theorem~\cite{Nielsen:1981hk,Nielsen:1980rz,Nielsen:1981xu}.
-There are four commonly used fermion discretization schemes that deal with the No-Go theorem in different ways which are known as staggered or Kogut-Susskind fermions~\addcite{}, clover-Wilson fermions~\addcite{}, twisted mass fermions~\addcite{} and domain wall fermions (DWF)~\addcite{}.
+%-------------------------------------------------------------------------------
 In this review, we comment that:
 \begin{itemize}[leftmargin=*]
 \item Staggered fermions are the least expensive numerically to simulate, have leading scaling violations of $\mathrm{O}(a^2)$, and they have a remnant chiral symmetry protecting the quark mass from additive mass renormalization.  However, they split the four components of the fermion spinor onto different components of a local hypercube, mixing the Dirac algebra with spacetime translations.  This significantly complicates their use for baryons~\addcite{}.
 
-\item Clover-Wilson fermions are the most commonly used discretization scheme given their theoretical simplicity and preservation of all symmetries except chiral symmetry.  The explicit breaking of chiral symmetry with the Wilson operator means the light quark masses must be finely tuned against ultra-violet chiral symmetry breaking that scales as $1/a$, after which there remain residual $\mathrm{O}(a)$ chiral symmetry breaking effects.  It is well known, albeit laborious, how to non-perturbatively remove these leading $\mathrm{O}(a)$ scaling violations~\addcite{}, which must be done for both the action as well as matrix elements.
+\item Clover-Wilson fermions are the most commonly used discretization scheme given their theoretical simplicity and preservation of all symmetries except chiral symmetry.  The explicit breaking of chiral symmetry with the Wilson operator means the light quark masses must be finely tuned against ultra-violet chiral symmetry breaking that scales as $1/a$, after which there remain residual $\mathrm{O}(a)$ chiral symmetry breaking effects.  It is well known, albeit laborious, how to non-perturbatively remove these leading $\mathrm{O}(a)$ scaling violations~\cite{Luscher:1996sc,Luscher:1996ug,Luscher:1996jn,Capitani:1998mq}, which must be done for both the action as well as matrix elements.
 
-\item Twisted mass fermions~\addcite{} are a variant of Wilson fermions that exploits the approximate $SU(2)$ chiral symmetry of QCD to introduce a twisted quark mass term, $i\mu\g_5 \tau_3$.  At maximal twist, the bare quark mass is cancelled by the $1/a$ additive quark mass, leaving $\mu$ as the only contribution through $\mathrm{O}(a)$ to the physical quark mass.  Indeed, all observables are automatically $\mathrm{O}(a)$ improved at maximal twist.
+\item Twisted mass fermions are a variant of Wilson fermions that exploits the approximate $SU(2)$ chiral symmetry of QCD to introduce a twisted quark mass term, $i\mu\g_5 \tau_3$.  At maximal twist, the bare quark mass is cancelled by the $1/a$ additive quark mass, leaving $\mu$ as the only contribution through $\mathrm{O}(a)$ to the physical quark mass.  Indeed, all observables are automatically $\mathrm{O}(a)$ improved at maximal twist~\cite{Frezzotti:2003ni}.
 However, twisted mass fermions break isospin symmetry at finite lattice spacing, causing some complications now that LQCD results are precise enough to require isospin breaking corrections from $m_d-m_u$ and
 \begin{marginnote}
 \entry{QED}{Quantum electro-dynamics}
 \end{marginnote}%
 QED to be compared with experiment.
 
-\item The fourth most common discretization are Domain Wall Fermions (DWF)~\addcite{}, which introduce a fifth dimension to the theory with unit links (the gluons are not dynamic in the fifth dimension) with the left and right handed fermions bound to opposite sides of the fifth dimension.  The overlap of these left and right modes gives rise to an explicit chiral symmetry breaking that is exponentially suppressed by the extent of the fifth dimension.  For sufficiently small chiral symmetry breaking (large $L_5$), DWF are also automatically $\mathrm{O}(a)$ improved.
-\cw{Large $L_5$ is a large lattice spacing in this 5th dimension? We should probably just write that longhand instead.}
-While very desirable, DWF are numerically more expensive to simulate, both because of the extra fifth dimension and also because the algorithmic speed up offered by multi-grid, which works tremendously for clover-Wilson fermions~\addcite{Kate + Balint Titan/Summit}, is not yet flushed out for DWF~\addcite{Boyle and QUDA people}.
+\item The fourth most common discretization are DWF, which introduce a fifth dimension to the theory with unit links (the gluons are not dynamic in the fifth dimension) with the left and right handed fermions bound to opposite sides of the fifth dimension of size $L_5$.  The overlap of these left and right modes gives rise to an explicit chiral symmetry breaking that is exponentially suppressed by the extent of the fifth dimension.  For sufficiently small chiral symmetry breaking (large $L_5$), DWF are also automatically $\mathrm{O}(a)$ improved.
+While very desirable, DWF are numerically more expensive to simulate, both because of the extra fifth dimension and also because the algorithmic speed up offered by multi-grid, which works tremendously for clover-Wilson fermions on GPUs~\cite{Clark:2016rdz}, is not yet flushed out for DWF~\cite{Boyle:2014rwa,Cohen:2011ivh,Yamaguchi:2016kop,Brower:2020xmc,Boyle:2021wcf}.
 
 \item A final common variant of action is one in which the fermion discretization used in the generation of the gauge fields (the sea quarks) and the action used when generating quark propagators (the valence quarks) are different: this is known as a \textit{mixed action}~\cite{Renner:2004ck}.
 The most common reason to use such an action is to take advantage of numerically less expensive methods to generate the configurations while retaining good chiral symmetry properties of the valence quarks, which is known to suppress chiral symmetry breaking effects from the sea-quarks~\cite{Bar:2002nr,Bar:2005tu,Tiburzi:2005is,Chen:2007ug}.
