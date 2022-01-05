@@ -134,7 +134,30 @@ As a simple example, consider the $Q^4$ expansion of equation~\eqref{eq:F_Q_powe
 f_0 &= c_0 + \ell_0 m_\pi^2 + d_0 a^2\, ,
 \nonumber\\
 f_1 &= c_1 + \ell_1 m_\pi^2 + d_1 a^2\, ,
+\nonumber\\
+f_2 &= c_2 + \ell_2 m_\pi^2 + d_2 a^2\, ,
+\label{eq:lecampi}
 \end{align}
 where $c_k$, $\ell_k$ and $d_k$ are LECs describing the pion mass and lattice spacing dependence.
 For the axial form factor, $c_0 = \lim_{m_\pi\rightarrow0} g_A$, the nucleon axial charge in the chiral limit.
+\new{
+Then the $z$ expansion coefficients that appear in equation~(\ref{eq:zexp})
+ expressed in terms of these LECs are
+\newcommand{\tctza}{\ensuremath{(t_c-t_0)}}
+\newcommand{\tctzb}{\ensuremath{\Big(-\frac{t_0}{t_c-t_0}\Big)}}
+\begin{align}
+b_0 &= f_0 +\tctza \tctzb f_1 +\tctza^2 \tctzb^2 f_2 +O\big(\tctza^3\big),
+\nonumber\\
+b_1 &= 4 \tctza f_1 +8 \tctza^2 \tctzb f_2 +O\big(\tctza^3\big),
+\nonumber\\
+b_2 &= 8 \tctza f_1 +16 \tctza^2 \Big(1 -\frac{t_0}{t_c-t_0}\Big) f_2 +O\big(\tctza^3\big).
+\end{align}
+Then the leading lattice spacing and pion mass dependence from
+ the LECs for the $Q^2$ expansion may be made manifest
+ by substituting their expresions from equation~(\ref{eq:lecampi}).
+Higher-order corrections to the $\chi$PT expressions may be checked
+ by peforming fits to the LECs of the $z$ expansion and comparing those
+ to fits to the LECs of the $Q^2$ expansion.
+}
 {\color{red}[map this out to $z^2$, deriving relation between $b_k$ and the LECs.  maybe comment about expressing $b_k$ as LECs and vice versa to test stability of the determination of LECs]}
+
