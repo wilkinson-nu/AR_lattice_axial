@@ -141,12 +141,11 @@ For the axial form factor, $c_0$ and $c_1$ are related to the axial charge and r
 &c_0 = \lim_{m_\pi\rightarrow0} g_A\, ,&
 &c_1 = -\lim_{m_\pi\rightarrow0} \frac{g_A r_A^2}{6}\, .&
 \end{align}
-\new{
 Then the $z$ expansion coefficients that appear in equation~(\ref{eq:zexp})
  expressed in terms of these LECs are
 \newcommand{\tctza}{\ensuremath{(t_c-t_0)}}
 \newcommand{\tctzb}{\ensuremath{\Big(\frac{-t_0}{t_c-t_0}\Big)}}
-\begin{align}
+\begin{align}\label{eq:z_coeff_xpt}
 b_0 &= f_0 +\tctza \tctzb f_1 +\tctza^2 \tctzb^2 f_2 +O\big(\tctza^3\big),
 \nonumber\\
 b_1 &= 4 \tctza f_1 +8 \tctza^2 \tctzb f_2 +O\big(\tctza^3\big),
@@ -159,4 +158,6 @@ Then the leading lattice spacing and pion mass dependence from
 Higher-order corrections to the $\chi$PT expressions may be checked
  by peforming fits to the LECs of the $z$ expansion and comparing those
  to fits to the LECs of the $Q^2$ expansion.
-}
+
+When the $z$-expansion coefficients are expressed as in equation~\eqref{eq:z_coeff_xpt}, this opens the possibility of performing a simultaneous $z$-expansion fit to LQCD results of the form factors on multiple ensembles simulated at different lattice spacings, pion masses and volumes.
+Similarly, the finite volume corrections can also be incorporated in this analysis: what we have called the LECs in the $f_k(m_\pi,a)$ coefficients are not just LECs, but they also encode the non-analytic contributions arising from virtual pion loops, and thus, they can be evaluated in finite as well as infinite volume.
