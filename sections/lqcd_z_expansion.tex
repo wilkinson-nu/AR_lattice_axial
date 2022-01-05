@@ -136,12 +136,16 @@ f_2 &= c_2 + \ell_2 m_\pi^2 + d_2 a^2\, ,
 \label{eq:lecampi}
 \end{align}
 where $c_k$, $\ell_k$ and $d_k$ are LECs describing the pion mass and lattice spacing dependence.
-For the axial form factor, $c_0 = \lim_{m_\pi\rightarrow0} g_A$, the nucleon axial charge in the chiral limit.
+For the axial form factor, $c_0$ and $c_1$ are related to the axial charge and radius in the chiral limit
+\begin{align}
+&c_0 = \lim_{m_\pi\rightarrow0} g_A\, ,&
+&c_1 = -\lim_{m_\pi\rightarrow0} \frac{g_A r_A^2}{6}\, .&
+\end{align}
 \new{
 Then the $z$ expansion coefficients that appear in equation~(\ref{eq:zexp})
  expressed in terms of these LECs are
 \newcommand{\tctza}{\ensuremath{(t_c-t_0)}}
-\newcommand{\tctzb}{\ensuremath{\Big(-\frac{t_0}{t_c-t_0}\Big)}}
+\newcommand{\tctzb}{\ensuremath{\Big(\frac{-t_0}{t_c-t_0}\Big)}}
 \begin{align}
 b_0 &= f_0 +\tctza \tctzb f_1 +\tctza^2 \tctzb^2 f_2 +O\big(\tctza^3\big),
 \nonumber\\
@@ -156,5 +160,3 @@ Higher-order corrections to the $\chi$PT expressions may be checked
  by peforming fits to the LECs of the $z$ expansion and comparing those
  to fits to the LECs of the $Q^2$ expansion.
 }
-{\color{red}[map this out to $z^2$, deriving relation between $b_k$ and the LECs.  maybe comment about expressing $b_k$ as LECs and vice versa to test stability of the determination of LECs]}
-
