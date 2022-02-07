@@ -57,10 +57,27 @@ cls  = get_data( 'cls_gaq2.dat')
 etm = get_data( 'etm_gaq2.dat')
 mainz = get_data( 'mainz_gaq2.dat')
 callat = get_data( 'callat_gaq2.dat')
-nme = get_data( 'nme_gaq2_z2t00.5.dat')
 pacs21 = get_data( 'pacs21_gaq2.dat')
 pacs = get_data( 'pacs_data/pacs_gaq2.dat')
 rqcd = get_rqcd( 'rqcd_gaq2_zexp4+3.dat')
+
+nme = get_data( 'nme_gaq2_z2t00.5.dat')
+## NME, optional error inflation using Q2 expansion
+## suggested by Rajan, 02/06/2022 14:14 :
+##   Use the P_2 Pade result in Eqn 55
+##   Increase the error by a factor of 3 in the g_A and coeff of Q^2 term
+##   ie, use 1.270(33) and 5.36(60)
+#
+if 1:
+  Q2_range_nme = nme.T[0]
+  gA = gv.gvar( 1.270, 0.033)
+  b_list = gv.gvar([ 5.36, -0.22], [0.60, 0.81])
+  MN = params_1603_03048[ "MN"]
+  scaling_4MN = np.array([ np.power( 2. *MN, -2*n) for n in range( 1, 3) ])
+  FA_nme_denom = define_BBA_generic( b_list *scaling_4MN, **params_1603_03048)
+  FA_nme = (lambda Q2: gA *FA_nme_denom( Q2))
+  FAQ2_nme_vals = np.array([ FA_nme( Q2) for Q2 in Q2_range_nme ])
+  nme = np.array([ Q2_range_nme, gv.mean( FAQ2_nme_vals), gv.sdev( FAQ2_nme_vals) ]).T
 
 FA_Q2_fn, _  = define_FA_zexp_sum4( 4, **params_1603_03048)
 
