@@ -52,7 +52,7 @@
 
 \providecommand{\cw}[1]{{\color{purple} Callum: #1}}
 \newcommand\citeneeded{[{\color{blue} \underline{CITATION NEEDED}}]}
-
+\newcommand{\change}[1]{{\color{red} #1}}
 
 % Greek letters
 \def\g{\gamma}
@@ -151,11 +151,10 @@ of neutrinos still remain to be measured, with additional focuses on measuring
 oscillation parameters with high precision and testing whether the current
 three-flavor mixing paradigm is sufficient~\cite{Esteban:2020cvm, ParticleDataGroup:2020ssz}.
 These goals introduce stringent requirements on the precision of current and future experiments.
-High-intensity beams are required to produce the flux of neutrinos to be able to accumulate the necessary statistics.
+High-intensity beams are required to produce a sufficient flux of neutrinos to accumulate the necessary statistics.
 Increased statistics place additional burden on our understanding of the systematic uncertainties needed for the experimental program.
 
-
-Two, billion dollar scale, next-generation experiments designed to meet these experimental constraints
+Two, \change{large-scale}, next-generation experiments designed to meet these experimental constraints
 are
 %the Deep Underground Neutrino Experiment (DUNE)~\cite{Abi:2020wmh}
 DUNE~\cite{Abi:2020wmh}
@@ -175,19 +174,19 @@ baselines (L), both experiments sit at a similar L/E, so probe similar oscillati
 %-------------------------------------------------------------------------------
 At the few-GeV energies of interest, $\nu N$ interactions have many available interaction channels,
 including quasielastic, resonant, and deep inelastic scattering~\cite{zeller12, hayato_review_2014, Mosel:2016cwa, Katori:2016yel, NuSTEC:2017hzk}.
-All current and planned experiments use nuclear targets ($^{12}$C--$^{40}$Ar) as the
-target material to increase the interaction rate, as well as to avoid serious experimental complications using elementary targets.
-The use of nuclear targets significantly complicates the cross section modeling issues and
-associated systematics as intra-nuclear dynamics have a comparable energy scale to
-the energy transfers in the neutrino interactions of interest.
+\change{The presence of multiple interactions channels complicates analysis of data in neutrino experiments, and theoretical models which make different physical assumptions are typically used to model them, with {\it ad hoc} extrapolation to fill in gaps between the models.}
+\change{Additionally, all current and planned experiments use target materials predominantly composed of hydrocarbons, liquid argon or water, in which the nucleons are not free. These avoid serious experimental complications associated with using elementary targets (e.g., liquid hydrogen) and increase the interaction rate in a given detector volume due to their higher densities.}
+\change{However, the use of nuclear targets significantly complicates the cross-section modeling issues and
+  associated systematics in a number of ways.
+Intranuclear motion can be significant relative to the energy transfer in the interactions of interest; interactions with correlated nucleon-nucleon states can add additional strength; and rescattering of pions and nucleons in the nucleus confuse the relationship between the primary interaction channels and the observed particles in a detector, and change the fraction of energy lost to neutrons, which are typically unobserved in the detectors used.}
 
 A significant challenge impeding progress towards a consistent theoretical description of%
 \begin{marginnote}
   \entry{$\nu A$}{Neutrino-nucleus}
   \entry{$\nu N$}{Neutrino-nucleon}
 \end{marginnote}%
-$\nu A$ scattering is the lack of data to benchmark parts of the calculation against. For example, neutrino quasielastic scattering ($\nu_{l} + n \rightarrow l^{-} + p$ or $\bar{\nu}_{l} + p \rightarrow l^{+} + n$) is the simplest of the relevant hard scattering processes, and dominates the neutrino cross section below energies of $\approx$1 GeV. However, modern experiments using nuclear targets are unable to measure it without significant nuclear effects~\cite{garvey_review_2014, NuSTEC:2017hzk}.
-Neutrino cross section models for quasielastic scattering (and other hard-scattering processes) have relied heavily on sparse data from the 1960--1980's from several bubble chamber experiments which used H$_{2}$ or D$_2$ targets~\cite{zeller12, ParticleDataGroup:2020ssz}.
+$\nu A$ scattering is the lack of data to benchmark parts of the calculation against. For example, neutrino quasielastic scattering ($\nu_{l} + n \rightarrow l^{-} + p$ or $\bar{\nu}_{l} + p \rightarrow l^{+} + n$) is the simplest of the relevant hard scattering processes, and dominates the neutrino cross section below energies of $\approx$1 GeV. However, modern experiments using nuclear targets are unable to measure it without significant nuclear effects~\cite{garvey_review_2014, NuSTEC:2017hzk}. \change{Instead, they measure a specific final state, for example one muon and no pions, which will, for example, have significant contributions from resonant pion production where the pion has rescattered in the nucleus and has either been absorbed or has lost sufficient energy to be below detection threshold.}
+\change{Given the challenge to benchmark neutrino cross-section models for quasielastic scattering (and other hard-scattering processes) with new $\nu A$ datasets, experiments and theorists have relied heavily on sparse data from the 1960--1980's from several bubble chamber experiments which used H$_{2}$ or D$_2$ targets~\cite{zeller12, ParticleDataGroup:2020ssz}.}
 The small neutrino cross section, and relatively weak (by modern standards) accelerator neutrino beams utilized by these early experiments, mean that the available quasielastic event sample on light targets amounts to a few thousand events~\cite{ANL_Barish_1977, BNL_Fanourakis_1980, BNL_Baker_1981, Kitagaki:1983px, Allasia:1990uy}.%
 \footnote{Some constraints on the axial form factor have been obtained from fits
  to pion electroproduction data.
@@ -214,7 +213,7 @@ be rectified by a modern $\nu N$ scattering experiment.
 Safety considerations make it unlikely that new high-statistics bubble-chamber experiments using
 hydrogen or deuterium will be deployed to fill this crucial gap,
 so experimentalists are looking for other ways to access neutrino interactions
-with elementary targets as a tool for disambiguating neutrino cross section modeling uncertainties.
+with elementary targets as a tool for disambiguating neutrino cross-section modeling uncertainties.
 One possibility is to use various hydrocarbon targets to subtract the carbon interaction contributions from
 the total hydrocarbon event rates, and produce ``on hydrogen'' measurements~\cite{PhysRevD.92.051302, PhysRevD.101.092003, Hamacher-Baumann:2020ogq, DUNE:2021tad}.
 These ideas are promising, but typically rely on kinematic tricks that are only relevant for some channels, and it remains to be seen whether the systematic uncertainty associated with modeling the carbon subtraction can be adequately controlled. Such ideas may also be extended to other compound target materials with hydrogen or deuterium components.
