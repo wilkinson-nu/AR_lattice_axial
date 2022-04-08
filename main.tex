@@ -53,6 +53,11 @@
 \providecommand{\cw}[1]{{\color{purple} Callum: #1}}
 \newcommand\citeneeded{[{\color{blue} \underline{CITATION NEEDED}}]}
 \newcommand{\change}[1]{{\color{red} #1}}
+%\def\addcite#1{{\color{red}CITE[#1]}}
+%\def\addcomment#1{{\color{red}COMMENT: #1}}
+\def\asm#1{{\color{blue}#1}}
+\def\del#1{}
+\def\done#1{{\color{gray}#1}}
 
 % Greek letters
 \def\g{\gamma}
@@ -78,12 +83,6 @@
 \newcommand{\Umunu}{\includegraphics[width=0.6\textwidth,valign=c]{plots/plaquette}}
 
 \setcounter{secnumdepth}{4}
-\def\addcite#1{{\color{red}CITE[#1]}}
-\def\addcomment#1{{\color{red}COMMENT: #1}}
-\def\new#1{{\color{blue}#1}}
-\def\asm#1{{\color{red}#1}}
-\def\done#1{{\color{gray}#1}}
-
 
 % Metadata Information
 \jname{Annu. Rev. Nucl. Part. Sci.}
@@ -728,9 +727,16 @@ This has led to new analysis strategies that more carefully deal with the $N\pi$
  work best~\cite{Bali:2014nma,Gupta:2017dwj}.
 
 
-While these results are very encouraging, they are not conclusive in the sense that they require us to impose our theoretical prior on the analysis, rather than the results naturally ``falling out'' from the numerical analysis.
-In order to achieve this more stringent validation, the calculations would have to generally be performed at larger source-sink separation times where the correlation functions are all saturated by the ground state, but the noise is exponentially larger.
-Given the extreme cost of such a strategy, a better solution would be to implement a variational method that allows for the use of multi-hadron operators that can explicitly remove the $N\pi$ excited states through a diagonalization of the correlation functions~\cite{Blossier:2009kd}.  We will return to this point in Section~\ref{sec:future}.
+\del{\textcolor{gray}{ While these results are very encouraging, they are not conclusive in the sense that they require us to impose our theoretical prior on the analysis, rather than the results naturally ``falling out'' from the numerical analysis.
+}}
+\asm{These results are very encouraging,
+ but must be reproduced by a several independent measurements.
+At the time of writing,
+ not all of the results are free from imposed theoretical expectations.}
+In order to achieve \del{this}\asm{a} more stringent validation, the calculations would have to generally be performed \del{at larger source-sink separation times }where the correlation functions are \del{all }saturated by the ground state\asm{.
+This could be accomplished by taking the correlation function at large Euclidean times},
+ but the noise is exponentially larger.
+Given the extreme cost of \asm{using }such a strategy, a better \del{solution }\asm{alternative }would be to implement a variational method that allows for the use of multi-hadron operators that can explicitly remove the $N\pi$ excited states through a diagonalization of the correlation functions~\cite{Blossier:2009kd}.  We will return to this point in Section~\ref{sec:future}.
 
 
 % ------------------------------------------------------------------------------
