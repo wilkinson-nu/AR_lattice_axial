@@ -58,6 +58,7 @@
 \def\asm#1{{\color{blue}#1}}
 \def\del#1{}
 \def\done#1{{\color{brown}#1}}
+\definecolor{ao(english)}{rgb}{0.0, 0.5, 0.0}
 
 % Greek letters
 \def\g{\gamma}
@@ -204,19 +205,6 @@ For more details, we refer the reader to Refs.~\cite{Bernard:1993bq,Bernard:2001
 }
 \change{These data do not have sufficient power to constrain theoretical models satisfactorily~\cite{Meyer:2016oeg, Hill:2017wgb}. As a result, there is insufficient information about fundamental $\nu N$ scattering processes on which to build a complete model for $\nu A$ scattering, a substantial limitation which has serious implications for the precision goals of future experiments.}
 
-\sout{The sparse data from deuterium bubble-chamber experiments do not constrain
-the axial form factor precisely.
-The popular dipole ansatz has a shape that
-is overconstrained by data resulting in an underestimated uncertainty.
-Employing a model-independent $z$ expansion parameterization
-relaxes the strict shape requirements of the dipole and yields
-a more realistic uncertainty that is nearly an order of magnitude larger~\cite{Meyer:2016oeg}.
-The axial radius, which is proportional to the slope of the form factor at $Q^2=0$,
-has a 50\% uncertainty when estimated from the deuterium scattering data,
-or $\approx35\%$ if deuterium scattering and muonic hydrogen are considered
-together~\cite{Hill:2017wgb}.
-Ideally, the lack of precision in the axial form factor would
-be rectified by a modern $\nu N$ scattering experiment.}
 
 Safety considerations make it unlikely that new high-statistics bubble-chamber experiments using
 hydrogen or deuterium will be deployed to fill this crucial gap,
@@ -231,7 +219,7 @@ These ideas are promising, but typically rely on kinematic tricks that are only 
 %LQCD can provide the missing
 free nucleon amplitudes
 that are otherwise not known at the required precision, \change{without the need for an updated experiment}.
-LQCD provides a theoretical \change{method} %alternative 
+LQCD provides a theoretical \change{method} %alternative
 for predicting the free nucleon amplitudes directly from the Standard Model of particle physics, with systematically improvable theoretical uncertainties.%
 %-------------------------------------------------------------------------------
 \begin{marginnote}
@@ -337,8 +325,23 @@ Armed with the newfound confidence in the control of systematics for the axial c
  more emphasis is now being put into the \change{axial} form factor at nonzero momentum transfer
 to make contact with the needs of the neutrino community and provide
  complementary constraints on free nucleon amplitudes.
-One extremely striking feature of LQCD calculations is the strong preference for a slower
-fall off of the form factor with increasing $Q^2$ than predicted by phenomenological determinations from experiment (Figure~\ref{fig:gaq2_overlay}).
+{\color{ao(english)} \change{The need for this is clear:} sparse data from deuterium bubble-chamber experiments do not constrain
+the axial form factor precisely.
+The popular dipole ansatz has a shape that
+is overconstrained by data resulting in an underestimated uncertainty.
+Employing a model-independent $z$ expansion parameterization
+relaxes the strict shape requirements of the dipole and yields
+a more realistic uncertainty that is nearly an order of magnitude larger~\cite{Meyer:2016oeg}.
+The axial radius, which is proportional to the slope of the form factor at $Q^2=0$,
+has a 50\% uncertainty when estimated from the deuterium scattering data,
+or $\approx35\%$ if deuterium scattering and muonic hydrogen are considered
+together~\cite{Hill:2017wgb}.
+\change{Given that a modern $\nu N$ scattering experiment is extremely unlikely, LQCD is the only viable method to improve our understanding of the axial form factor to the required level of precision.}
+%Ideally, the lack of precision in the axial form factor would be rectified by a modern $\nu N$ scattering experiment.}
+}
+
+\change{Already, } one extremely striking feature of LQCD calculations is the strong preference for a slower
+fall off of the form factor with increasing $Q^2$ than predicted by phenomenological determinations from experiment (\change{Section~\ref{sec:lqcd_results}}).
 This preference is consistently reproduced by several lattice collaborations using
 independent computation methods, lending more credence to the result.
 When integrated over the full range of $Q^2$ to compute the nucleon cross section,
@@ -365,8 +368,8 @@ The labels correspond to the following form factor parameterization choices and 
 Of particular note is the observed tension between the black and blue bands,
  which results from the tension between proton magnetic form factor parameterizations
  (see Figure~\ref{fig:protonmagneticff}).
-The size of the red band with respect to the green band demonstrates the uncertainty reduction from replacing the deuterium scattering axial form factor with one obtained from LQCD, and the significant change in normalization is due to the slower fall off of the axial form factor.
-Additionally, the size of the red band demonstrates the relevance of the tension in vector form factors, characterized by the difference between the black and blue curves.
+The size of the \change{upper} red band with respect to the \change{lower, large} green band demonstrates the uncertainty reduction from replacing the deuterium scattering axial form factor with one obtained from LQCD. \change{\sout{and}} The significant change in normalization is due to the slower fall off of the axial form factor.
+Additionally, the size of the red band demonstrates the relevance of the tension in vector form factors, characterized by the difference between the black and blue curves, \change{with the uncertainty from LQCD a sub-dominant correction}.
 
 %------------------------------------------------------------------------------
 % nu-N cross section
@@ -375,7 +378,7 @@ Additionally, the size of the red band demonstrates the relevance of the tension
  \includegraphics[width=0.7\textwidth]{plots/xsec_comparison-standalone.pdf}\vspace{4pt}
 \caption{
  Neutrino cross sections on a free neutron, with their uncertainty bands,
- for various choices of parameterization explained in the bullet list provided in the text.
+ for various choices of parameterization explained in the bullet list provided in the \change{Section~\ref{sec:sof}}.
  \label{fig:nucleonxsec}
 }
 \end{figure}
