@@ -8,6 +8,7 @@ from plot_params import *
 
 import matplotlib.pyplot as plt
 
+long_Q2 = 1
 do_pgf = 1
 if do_pgf:
   mpl.use("pgf")
@@ -81,7 +82,7 @@ if 1:
 
 FA_Q2_fn, _  = define_FA_zexp_sum4( 4, **params_1603_03048)
 
-Q2_range = np.arange( 0.0, 1.02, 0.01)
+Q2_range = np.arange( 0.0, 2.02, 0.01)
 FA_Q2 = np.array([ FA_Q2_fn( Q2, ak_1603_03048) for Q2 in Q2_range ])
 
 ymean = gv.mean( FA_Q2)
@@ -125,23 +126,34 @@ phx = plt.errorbar( callat.T[0], callat.T[1], yerr=callat.T[2],
 phn = plt.fill_between( nme.T[0],  nme.T[1]  -nme.T[2],  nme.T[1]  +nme.T[2],
   color=violet,  alpha=0.4, label=lbn, zorder=3)
 
-plt.xlim([-0.009,1.0])
-plt.ylim([ 0.3, 1.35])
+if long_Q2:
+  plt.xlim([-0.018,2.0])
+  plt.ylim([ 0.0, 1.35])
+  plt.xticks( np.arange( 0.0, 2.01, 0.5), fontsize=14)
+  plt.text( x=0.33, y=0.42, s=r'$\nu$D $z$ exp', color='red', rotation=-32, fontsize=14)
+  fout = 'gaq2-overlay-20.pgf'
+
+else:
+  plt.xlim([-0.009,1.0])
+  plt.ylim([ 0.3, 1.35])
+  plt.xticks( np.arange( 0.0, 1.01, 0.25), fontsize=14)
+  plt.text( x=0.25, y=0.60, s=r'$\nu$D $z$ exp', color='red', rotation=-30, fontsize=14)
+  fout = 'gaq2-overlay.pgf'
+
 #plt.axis('off')
 #plt.text(x=0.25, y=0.65, s=r'$\nu$D $z$ exp', color='red', rotation=-30, fontsize=20) ## old bds
-plt.text(x=0.25, y=0.60, s=r'$\nu$D $z$ exp', color='red', rotation=-30, fontsize=14)
 
 plt.legend(
   [phn, phr, phm, phx, php21, php, phe, phc],
   [lbn, lbr, lbm, lbx, lbp21, lbp, lbe, lbc],
-    fontsize=12,ncol=2)
+  fontsize=12, ncol=2)
 plt.xticks( fontsize=14)
 plt.yticks( fontsize=14)
 plt.xlabel( r'$Q^2/$GeV$^2$', fontsize=14)
 plt.ylabel( r'$F_A(Q^2)$', fontsize=14)
 
 if do_pgf:
-  plt.savefig('gaq2-overlay.pgf', transparent=True)
+  plt.savefig( fout, transparent=True)
 else:
   plt.show()
 

@@ -57,7 +57,7 @@
 %\def\addcomment#1{{\color{red}COMMENT: #1}}
 \def\asm#1{{\color{blue}#1}}
 \def\del#1{}
-\def\done#1{{\color{gray}#1}}
+\def\done#1{{\color{brown}#1}}
 
 % Greek letters
 \def\g{\gamma}
@@ -153,7 +153,7 @@ These goals introduce stringent requirements on the precision of current and fut
 High-intensity beams are required to produce a sufficient flux of neutrinos to accumulate the necessary statistics.
 Increased statistics place additional burden on our understanding of the systematic uncertainties needed for the experimental program.
 
-Two, \change{large-scale}, next-generation experiments designed to meet these experimental constraints
+Two\del{,} \done{large-scale}, next-generation experiments designed to meet these experimental constraints
 are
 %the Deep Underground Neutrino Experiment (DUNE)~\cite{Abi:2020wmh}
 DUNE~\cite{Abi:2020wmh}
@@ -164,7 +164,7 @@ DUNE has a broad neutrino energy spectrum with a peak at a neutrino energy of $\
 with significant contributions between 0.1--10 GeV, over a 1295 km baseline.
 Hyper-K has a narrow neutrino energy spectrum peaked at a neutrino energy of $\approx$0.6 GeV, with significant
 contributions between 0.1--2 GeV, over a 295 km baseline. Despite their different energies (E) and
-baselines (L), both experiments sit at a similar L/E, probing similar oscillation physics.%
+baselines (L), both experiments sit at a similar L/E, \del{so }\asm{and therefore }probe similar oscillation physics.%
 %-------------------------------------------------------------------------------
 \begin{marginnote}
     \entry{DUNE}{Deep Underground Neutrino Experiment}
@@ -173,11 +173,18 @@ baselines (L), both experiments sit at a similar L/E, probing similar oscillatio
 %-------------------------------------------------------------------------------
 At the few-GeV energies of interest, $\nu N$ interactions have many available interaction channels,
 including quasielastic, resonant, and deep inelastic scattering~\cite{zeller12, hayato_review_2014, Mosel:2016cwa, Katori:2016yel, NuSTEC:2017hzk}.
-\change{Theoretical models which make different physical assumptions are typically used to model these, with {\it ad hoc} extrapolation to fill in gaps between the regions of validity of those models.}
-\change{Additionally, all current and planned experiments use target materials predominantly composed of hydrocarbons, liquid argon or water, in which the nucleons are not free. These avoid serious experimental complications associated with using elementary targets (e.g., liquid hydrogen) and increase the interaction rate in a given detector volume due to their higher densities.}
-\change{However, the use of nuclear targets significantly complicates the cross-section modeling issues in a number of ways. Intranuclear motion can be significant relative to the energy transfer in the interactions of interest; interactions with correlated nucleon-nucleon states can add additional strength; and rescattering of pions and nucleons in the nucleus confuse the relationship between the primary interaction channels and the observed particles in a detector, and change the fraction of energy lost to neutrons, which are typically unobserved in the detectors used.}
+\asm{\P}
+\del{, and t}\asm{. T}\done{heoretical models \del{which}\asm{that} make different physical assumptions are typically used to model \del{them}\asm{each interaction channel}, \del{with}\asm{and} {\it ad hoc} extrapolation\asm{s are used} to fill in gaps between the models.}
+\done{Additionally, all current and planned experiments use target materials predominantly composed of hydrocarbons, liquid argon or water, in which the nucleons are not free. These avoid serious experimental complications associated with using elementary targets (e.g., liquid hydrogen) and increase the interaction rate in a given detector volume due to their higher densities.}
+\done{However, the use of nuclear targets significantly complicates the cross-section modeling issues and
+  associated systematics\del{ in a number of ways}.}
+\done{Intranuclear motion can be significant relative to the energy transfer \del{in}\asm{for} the interactions of interest;}
+\change{interactions with correlated nucleon-nucleon states can add additional strength;}\asm{{\footnotesize\bf [are these always increases in strength?]}}%
+\del{and rescattering of pions and nucleons in the nucleus confuse the relationship between the primary interaction channels and the observed particles in a detector, and change the fraction of energy lost to neutrons, which are typically unobserved in the detectors used.}
+\done{and rescattering of pions and nucleons in the nucleus \asm{can }confuse the relationship between the \asm{particles associated with the }primary interaction channels and \del{the }\asm{those }observed \del{particles in a }\asm{in the }detector\del{,}\asm{.}}
+\done{\asm{Rescattering can manifest as changes to the particle content} and \asm{as }change\asm{s to} the fraction of energy lost to neutrons, which are typically unobserved in the detectors used.}
 \change{The presence of multiple interactions channels and the addition nuclear effects significantly complicates the analysis of data from neutrino experiments, and gives rise to a major source of systematic uncertainty.}
-  
+
 A significant challenge impeding progress towards a consistent theoretical description of%
 \begin{marginnote}
   \entry{$\nu A$}{Neutrino-nucleus}
@@ -730,7 +737,7 @@ This has led to new analysis strategies that more carefully deal with the $N\pi$
 \del{\textcolor{gray}{ While these results are very encouraging, they are not conclusive in the sense that they require us to impose our theoretical prior on the analysis, rather than the results naturally ``falling out'' from the numerical analysis.
 }}
 \asm{These results are very encouraging,
- but must be reproduced by a several independent measurements.
+ but must be reproduced by several independent LQCD calculations for validation.
 At the time of writing,
  not all of the results are free from imposed theoretical expectations.}
 In order to achieve \del{this}\asm{a} more stringent validation, the calculations would have to generally be performed \del{at larger source-sink separation times }where the correlation functions are \del{all }saturated by the ground state\asm{.
@@ -747,7 +754,10 @@ The main deliverables from LQCD calculations of the axial form factor
  are the axial and induced pseudoscalar form factors taken in the continuum,
  infinite volume and physical pion mass limits, complete with a set of parameterization coefficients
  and covariance matrix.
-Though the axial charge and radius are useful for connecting with low-energy applications,
+Though the axial \asm{vector coupling}%
+\footnote{Within the LQCD community, the axial vector coupling
+ is commonly referred to as the axial charge.}
+ and \asm{axial }radius are useful for connecting with low-energy applications,
  such as pion electroproduction and neutron decay,
  the needs of neutrino physics in the few-GeV energy range depend
  on the full momentum transfer dependence of the form factor.
