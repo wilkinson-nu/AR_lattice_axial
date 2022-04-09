@@ -299,7 +299,7 @@ and the BBBA05 parameterization~\cite{Bradford:2006yz} are shown.
 \end{figure}
 %------------------------------------------------------------------------------
 
-However, there is a significant tension in existing parameterizations of the proton magnetic form factor, as
+However, there is a significant tension in existing parameterizations of the proton magnetic form factor extracted from that data, as
 shown in Figure~\ref{fig:protonmagneticff}.
 Two different parameterizations of the form factor, normalized by the dipole, are shown.%
 \begin{marginnote}
@@ -325,11 +325,11 @@ from neutron decay experiments~\cite{Dubbers:2021wqv}.
 LQCD calculations of the axial charge have historically been low compared to experiment~\cite{Aoki:2021kgd},
  and the discrepancy has been the topic of some controversy.
 It is now understood that the treatment of excited state systematics is the main culprit for this discrepancy~\cite{Bar:2017kxh,Ottnad:2020qbw,Aoki:2021kgd}.
-With proper control over the excited state contamination, the LQCD calculations are now in good agreement with the experimental value~\cite{Jang:2019vkm,Gupta:2018qil,Alexandrou:2020okk,Abramczyk:2019fnf,Park:2021ypf,RQCD:2019jai,Hasan:2019noy,Djukanovic:2021yqg,Harris:2019bih,Liang:2018pis,Shintani:2018ozy,Ishikawa:2018rew}
+With proper control over the excited state contamination, LQCD calculations are now in good agreement with the experimental value~\cite{Jang:2019vkm,Gupta:2018qil,Alexandrou:2020okk,Abramczyk:2019fnf,Park:2021ypf,RQCD:2019jai,Hasan:2019noy,Djukanovic:2021yqg,Harris:2019bih,Liang:2018pis,Shintani:2018ozy,Ishikawa:2018rew}
  with one group achieving a sub-percent determination of $g_{\mathrm{A}}$~\cite{Chang:2018uxx,Berkowitz:2018gqe,Walker-Loud:2019cif}.
 
 Armed with the newfound confidence in the control of systematics for the axial charge,
- more emphasis is now being put into the form factor at nonzero momentum transfer
+ more emphasis is now being put into the \change{axial} form factor at nonzero momentum transfer
 to make contact with the needs of the neutrino community and provide
  complementary constraints on free nucleon amplitudes.
 One extremely striking feature of LQCD calculations is the strong preference for a slower
@@ -378,12 +378,12 @@ Additionally, the size of the red band demonstrates the relevance of the tension
 
 % ------------------------------------------------------------------------------
 % Lattice QCD
-\section{LQCD determinations of the nucleon quasi-elastic form factor\label{sec:lqcd}}
+\section{LQCD determinations of the nucleon quasielastic form factor\label{sec:lqcd}}
 
 LQCD has been and remains one of the major uses of the world's leadership computing facilities.
 There is an extensive literature on LQCD covering the broad range of technical and formal aspects that are necessary to carry out state of the art calculations, for which we can not do justice in this review.
 Rather, for an in depth introduction to LQCD, we refer readers to the text books~\cite{Smit:2002ug,DeGrand:2006zz,Gattringer:2010zz} and in this review, we provide a high-level summary of general issues that must be addressed as well as issues specific to LQCD calculations of nucleon matrix elements and form factors.
-These issues are also discussed in detail in the bi-annual FLAG Reviews, see for example the most recent one~\cite{Aoki:2021kgd}.%
+These issues are also discussed in detail in the bi-annual FLAG Reviews, see for example the most recent~\cite{Aoki:2021kgd}.%
 %-------------------------------------------------------------------------------
 \begin{marginnote}
 \entry{FLAG}{Flavour Lattice Averaging Group}
@@ -391,7 +391,7 @@ These issues are also discussed in detail in the bi-annual FLAG Reviews, see for
 
 
 The promise of LQCD is to provide predictions of low-energy hadronic and nuclear quantities with fully quantified theoretical uncertainties rooted in the Standard Model.
-In order to deliver upon this promise, there are several sources of systematic uncertainty which must be quantified.
+In order to deliver upon this promise, there are several sources of systematic uncertainty which must be \change{assessed}.
 For all LQCD calculations, these include extrapolations to the continuum and infinite volume limits as well as an extrapolation or interpolation to the physical quark mass limit.
 For the continuum extrapolation, at least three values of the lattice spacing, $a$, of $\mathrm{O}(a\lesssim0.12\textrm{ fm})$ are required to ascertain if the leading discretization corrections are sufficient or not to describe the observed scaling violations (do all three results lie on a straight line or can one detect higher-order curvature?).
 For the finite volume effects, a rule of thumb has been established from experience, that one requires calculations with $m_\pi L \gtrsim4$ (where $L$ is the spatial extent of the lattice volume) in order to keep these finite size corrections at the level of $\lesssim1-2\%$ and at least qualitatively described by the leading analytic formulae.%
@@ -410,7 +410,7 @@ degrading S/N problem for nucleons and excited state contamination.
 
 %-------------------------------------------------------------------------------
 % LQCD Intro
-\subsection{LQCD: A High Level Summary}
+\subsection{LQCD: a high level summary}
 The QCD path integral is quadratic in the quark fields allowing for an analytic integration over the fermionic fields such that in Euclidean space, one has the gluonic integral
 \begin{equation}\label{eq:Z_QCD}
 Z_{\mathrm{QCD}} = \int D U\, {\rm Det}[\Dslash(U) + m_q]\, e^{-S_{\mathrm{G}}(U)},
@@ -528,7 +528,7 @@ It is important for the field to test this assumption of universality by computi
 
 % ------------------------------------------------------------------------------
 % anatomy of LQCD calculation
-\subsection{Anatomy of LQCD Calculations of Nucleon Form Factors\label{sec:calc_anatomy}}
+\subsection{Anatomy of LQCD calculations of nucleon form factors\label{sec:calc_anatomy}}
 
 In order to determine the mass of the nucleon (or any hadron), we rely on the construction of two-point correlation functions that are constructed in a mixed time-momentum representation, most commonly utilizing spatially local creation operators (sources) and momentum space annihilation operators (sinks).
 The non-perturbative nature of QCD means we do not know how to construct the nucleon wave function, and so we utilize \textit{interpolating operators} which have the quantum numbers of the state we are interested in.
@@ -577,8 +577,8 @@ A well known challenge which complicates the analysis is that for nucleon two-po
 \lim_{{\rm large}\ t} {\rm S/N}%\frac{\mathrm{Signal}}{\mathrm{Noise}}
     \propto \sqrt{N_{\mathrm{sample}}} e^{-(m_{\mathrm{N}} - \frac{3}{2}m_\pi)t}\, ,
 \end{equation}
-which adds an extra source of excited state systematic uncertainty that must be quantified:
-the region in time when the ground state begins to saturate the correlation functions, at $t\approx 1$~fm, the noise is becoming significant, making the correlation functions in this region susceptible to correlated fluctuations which can bias a simplistic single-state analysis.
+which adds an extra source of excited state systematic uncertainty that must be quantified.
+\change{In} the region in time when the ground state begins to saturate the correlation functions, at $t\approx 1$~fm, the noise \change{becomes} significant, making the correlation functions in this region susceptible to correlated fluctuations which can bias a simplistic single-state analysis.
 Further, as the pion mass is reduced towards its physical value, the excited state energy gap also shrinks, as the lowest lying excited state is typically a nucleon-pion in a relative $P$-wave.  At the same time, the energy scale which governs the exponential degradation of the signal also grows.  The former issue means calculations must be performed at larger Euclidean time to suppress the smaller gapped excited states and the latter issue means we need exponentially more statistics to obtain a fixed relative uncertainty at a given time.
 In order to boost statistics, given the numerical cost of generating more configurations, time and spatial translation invariance are used to generate sources at several choices of $t_0$ and $\mathbf{x}_0$, which are then translated back to the origin and averaged together.  For the nucleon, it was observed that hundreds of sources on each configuration, using an anisotropic clover-Wilson ensemble~\cite{HadronSpectrum:2008xlg}, still showed approximate $\sqrt{N_{\rm sample}}$ improvement of the stochastic uncertainty as a function of the number of sources per configuration~\cite{Beane:2009kya}.
 
@@ -636,7 +636,7 @@ While it is encouraging that the spectrum and matrix elements become very stable
  \entry{$N\pi\pi$}{Nucleon and two pion}
 \end{marginnote}
 
-\item Many groups determine the spectrum and overlap factors from fits to the two-point functions, and then pass these results into the three-point function analysis without allowing the values to adjust to the global minimum.  Such a choice can either lead to an overestimate of the uncertainty of the three-point functions (if one uses the variablility of the spectrum mentioned above), or a biased extraction of the ground state matrix elements (if one uses the ``wrong'' value of the spectrum).  Given the computational setup described above, the robust choice is to perform a global analysis of the two- and three-point functions simultaneously.
+\item Many groups determine the spectrum and overlap factors from fits to the two-point functions, and then pass these results into the three-point function analysis without allowing the values to adjust to the global minimum.  Such a choice can either lead to an overestimate of the uncertainty of the three-point functions (if one uses the variability of the spectrum mentioned above), or a biased extraction of the ground state matrix elements (if one uses the ``wrong'' value of the spectrum).  Given the computational setup described above, the robust choice is to perform a global analysis of the two- and three-point functions simultaneously.
 
 \item For zero-momentum transfer, where the spectrum of the in and the out states have the same value,
 the use of the summation method~\cite{Maiani:1987by} or a variant of the Feynman-Hellman method~\cite{deDivitiis:2012vs,Bouchard:2016heu} which is closely related to the summation method, it is understood that the excited states become significantly suppressed compared to the three-point function~\cite{Capitani:2012gj,He:2021yvm}.
@@ -653,7 +653,7 @@ For non-zero momentum transfer, such a technique can only be used well in the Br
 \subsection{Role of PCAC in LQCD results of $F_{\mathrm{A}}(Q^2)$\label{sec:lqcd_pcac}}
 
 $F_{\rm A}(Q^2)$ can be isolated in LQCD calculations with particular kinematic choices that are not contaminated by the induced pseudoscalar form factor, see for example Ref.~\cite{Gupta:2017dwj}.
-Given the challenges in identifying all the sources of systematic uncertainty in the calculation of $g_A$, particularly the excited state contamination, it is prudent to perform cross checks of observables to test for consistency of the results.
+Given the challenges in identifying all the sources of systematic uncertainty in the calculation of $g_{\mathrm{A}}$, particularly the excited state contamination, it is prudent to perform cross checks of observables to test for consistency of the results.
 The validity of the PCAC relation,
 \begin{align}
  \partial^\mu A^{a}_{\mu}(x) = 2 m_q P^{a}(x),
@@ -717,7 +717,7 @@ However, the three-point axial matrix element can enhance these contributions re
 The primary excited state contaminations to the temporal axial form factor matrix elements
  were shown to be driven by two specific $N\pi$ states,
  characterized by a transition through an axial current
- of the nucleon state to an $N\pi$ excited state or vise versa~\cite{Jang:2019vkm}.
+ of the nucleon state to an $N\pi$ excited state or vice versa~\cite{Jang:2019vkm}.
 In the language of $\chi$PT, these states contribute to tree-level nucleon-pion graphs with fixed relative momentum~\cite{Bar:2018xyi}.
 In contrast to the temporal axial insertion, the spatial axial insertion
  is instead expected to be more strongly affected by a tower of loop-level
@@ -825,13 +825,12 @@ The NME collaboration also performed a chiral-continuum and finite volume extrap
  their results are based a fit to their five largest volume ensembles neglecting
  effects from lattice spacing, finite volume, and pion mass.
 The plotted NME result is obtained
- by inflating the uncertainty on $g_A$ and $b_0$ in Eq.(55)
+ by inflating the uncertainty on $g_A$ and $b_0$ in Equation 55
  of Ref.~\cite{Park:2021ypf} by a factor of 3
  to account for possible variation due to lattice spacing and quark mass.
 }
 \label{fig:gaq2_overlay}
 \end{figure}
-
 The ETMC~\cite{Alexandrou:2020okk}, LHPC~\cite{Hasan:2017wwt},
  PACS~\cite{Ishikawa:2018rew,Shintani:2018ozy,Ishikawa:2021eut}, and CalLat~\cite{Meyer:2021vfq}
  results have just a few ensembles, so scatter points obtained from fitting
@@ -858,7 +857,7 @@ The results from a two-state fit to their physical pion mass ensemble
 The CalLat data will be described in more detail in Sec.~\ref{sec:callatdata}.
 
 
-The published results use different lattice actions for the simulations ---
+The published results shown in Figure~\ref{fig:gaq2_overlay} use different lattice actions for the simulations ---
 RQCD~\cite{RQCD:2019jai}, Mainz~\cite{Djukanovic:2021yqg} and PACS~\cite{Ishikawa:2018rew,Shintani:2018ozy,Ishikawa:2021eut} use non-peturbatively $\mathrm{O}(a)$ improved clover-Wilson fermions for the action and current (PACS notes that the improvement coefficient for the current is consistent with zero so they do not improve it),
 NME~\cite{Park:2021ypf} and LHPC~\cite{Hasan:2017wwt} use tree-level (perturbative) $\mathrm{O}(a)$ improved clover-Wilson fermions for the action and no improvement for the current,
  ETMC~\cite{Alexandrou:2020okk} use twisted mass fermions (that are automatically $\mathrm{O}(a)$ improved) with a clover term,
@@ -1036,7 +1035,7 @@ Following this procedure, the dimensionful LECs that appear as prefactors for po
 %
 For the inverse transformation to take an expansion in $z$ to an expansion in $Q^2$,
  the expansion is again cast in terms of $x$
-like in Eq.~(\ref{eq:Q2toz}).
+\change{as} in Equation~\ref{eq:Q2toz}.
 Then the expression for $z$ at small $x$ is
 \begin{align}
  (1+x)^{1/2} -1 = \frac{x}{2}
@@ -1058,7 +1057,7 @@ A general series in $Q^2$ may therefore be converted to a double expansion in $z
  %\biggr( \frac{Q^2+t_0}{t_c-t_0} \biggr)^n
  \biggr( \frac{-t_0}{t_c-t_0} \biggr)^{m-n}
 \end{align}
- and then substituting Eq.~(\ref{eq:Q2toz}) to convert powers of $Q^2+t_0$
+ and then substituting Equation~\ref{eq:Q2toz} to convert powers of $Q^2+t_0$
  into powers of $z$.
 All dependence on the dimension is absorbed into powers of $t_c-t_0 \propto m_\pi^2$.
 The relative weight of the expansion parameters may be adjusted by changing
@@ -1074,8 +1073,8 @@ Instead, observables such as $r_{\mathrm{A}}^2$ and $g_{\mathrm{A}}$
  were fit to separate chiral-continuum extrapolations.
 Application of the formulae in this section exposes the relationships
  between LECs for powers of $Q^2$ to the $z$ expansion coefficients.
-As a simple example, consider the $Q^4$ expansion of equation~\eqref{eq:F_Q_power} with
-the a truncation at the leading chiral and discretization corrections
+ As a simple example, consider the $Q^4$ expansion of Equation~\eqref{eq:F_Q_power} with
+ a truncation at the leading chiral and discretization corrections
 \begin{align}
 f_0 &= c_0 + \ell_0 m_\pi^2 + d_0 a^2\, ,
 \nonumber\\
@@ -1087,8 +1086,8 @@ f_2 &= c_2 + \ell_2 m_\pi^2 + d_2 a^2\, ,
 where $c_k$, $\ell_k$ and $d_k$ are LECs describing the pion mass and lattice spacing dependence.
 For the axial form factor, $c_0$ and $c_1$ are related to the axial charge and radius in the chiral limit
 \begin{align}
-&c_0 = \lim_{m_\pi\rightarrow0} g_A\, ,&
-&c_1 = -\lim_{m_\pi\rightarrow0} \frac{g_A r_A^2}{6}\, .&
+&c_0 = \lim_{m_\pi\rightarrow0} g_{\mathrm{A}}\, ,&
+&c_1 = -\lim_{m_\pi\rightarrow0} \frac{g_{\mathrm{A}} r_{\mathrm{A}}^2}{6}\, .&
 \end{align}
 Then the $z$ expansion coefficients that appear in equation~(\ref{eq:zexp})
  expressed in terms of these LECs are
@@ -1174,7 +1173,7 @@ The issue of how to assign strength between the CCQE and CC-2p2h channels has be
 % Future
 \section{Future Improvements\label{sec:future}}
 
-The most pressing issue to definitively resolve with the LQCD calculations is whether or not the excited state contamination is under complete control for the nucleon (quasi-)elastic form factor calculations.
+The most pressing issue \change{that needs to be} definitively \change{resolved for} the LQCD calculations is whether or not the excited state contamination is under complete control for the nucleon (quasi-)elastic form factor calculations.
 If they are, then the LQCD results indicate that the nucleon axial form factor is significantly different than what has been extracted phenomenologically, as indicated in Figure~\ref{fig:gaq2_overlay}.
 However, it is worth observing that LQCD calculations of $g_{\mathrm{A}}$ were systematically low for many years, before it was finally understood the issues was related to an under-estimation of the systematic uncertainty associated with these excited states.
 
