@@ -254,8 +254,10 @@ In Section~\ref{sec:future}, we comment on the most important improvements to be
 
 For charged current quasielastic $\nu N$ scattering,
 the neutron ($|n\rangle$) to proton ($\langle p|$)
-interaction is described by a $V-A$ weak interaction, given at the quark level by
-$\bar{u}\gamma_\mu(1- \gamma_5)d$ (or its conjugate for proton to neutron), with the nucleon level amplitude at four-momentum transfer $Q^2 = -q^2$ parameterized by
+interaction is \del{described}\asm{mediated} by a $V-A$ weak \del{interaction}\asm{current},
+ given at the quark level by $\bar{u}\gamma_\mu(1- \gamma_5)d$
+ (or its conjugate for proton to neutron)\del{, with the }\asm{.
+ The} nucleon\asm{-}level amplitude at four-momentum transfer $Q^2 = -q^2$ \asm{is} parameterized by
 \begin{align}\label{eq:nucleon_ff}
 \langle p | V^\mu | n \rangle
     &= \bar{U}_p(p+q) \Big[
@@ -270,7 +272,7 @@ $\bar{u}\gamma_\mu(1- \gamma_5)d$ (or its conjugate for proton to neutron), with
     \Big] U_n(p)\, .
 \end{align}
 The isovector, vector form factors, $F_1^+$ and $F_2^+$, can be precisely estimated from electron-nucleon scattering data.
-Electron-proton and electron-neutron scattering are sensitive to the isoscalar, $F_{1,2}^s$ and isovector, $F_{1,2}^3$ form factors.  After isolating $F_{1,2}^3$, approximate isospin symmetry can be used to relate these $\tau_3$ form factors to the charged $\tau_+$ form factors of Equation~\eqref{eq:nucleon_ff}: in the isospin limit, $\langle p| \bar{u}\, \Gamma u - \bar{d}\, \Gamma d |p\rangle = \langle p| \bar{u}\, \Gamma d |n\rangle$
+Electron-proton and electron-neutron scattering are sensitive to \asm{linear combinations of} the isoscalar, $F_{1,2}^s$ and isovector, $F_{1,2}^3$ form factors.  After isolating $F_{1,2}^3$, approximate isospin symmetry can be used to relate these $\tau_3$ form factors to the charged $\tau_+$ form factors of Equation~\eqref{eq:nucleon_ff}: in the isospin limit, $\langle p| \bar{u}\, \Gamma u - \bar{d}\, \Gamma d |p\rangle = \langle p| \bar{u}\, \Gamma d |n\rangle$
  for Dirac structure $\Gamma$ and $F_{1,2}^3 = F_{1,2}^+$
  for the isovector Dirac and Pauli form factors.
 %------------------------------------------------------------------------------
@@ -293,7 +295,11 @@ and the BBBA05 parameterization~\cite{Bradford:2006yz} are shown.
 
 However, there is a significant tension in existing parameterizations of the proton magnetic form factor extracted from that data, as
 shown in Figure~\ref{fig:protonmagneticff}.
-Two different parameterizations of the form factor, normalized by the dipole, are shown.%
+Two different parameterizations of the form factor, normalized by \del{the}\asm{a} dipole\asm{~parameterization},%
+\begin{marginnote}
+\entry{dipole parameterization}{$F_D(Q^2)\equiv (1+{Q^2}/{M_D^2})^{-2}$}
+\end{marginnote}%
+ are shown.%
 \begin{marginnote}
 \entry{BBBA05}{The Bradford, Bodek, Budd and Arrington 2005 nucleon elastic form factor parameterization~\cite{Bradford:2006yz}}
 \end{marginnote}%
@@ -301,30 +307,42 @@ The BBBA05~\cite{Bradford:2006yz} are displayed as the lower (blue) band with a 
 A more recent $z$ expansion parameterization from Borah {\it et al.}~\cite{Borah:2020gte} is displayed by the upper (black) band with a dashed mean value.
 The tension is significant over all $Q^2 > 0$, at the level of several percent,
 including significant disagreement in the slope of the form factor at $Q^2 = 0$.
-Of the nucleon form factor calculations from LQCD,
-the vector form factors are also the most mature,
+\del{Of the nucleon form factor calculations from LQCD,}%
+\asm{LQCD computations of }the vector form factors are also the most mature \asm{of the nucleon matrix elements},
 exhibiting no obvious tensions with experimental determinations
-of the vector form factors at their current level of precision.
-A percent level calculation of the form factor $Q^2$ behavior combined with a direct calculation of the slope of the magnetic form factor would provide useful insight about this tension or could discriminate
+\sout{of the vector form factors }at their current level of precision.
+A percent\asm{-}level calculation of the form factor $Q^2$ behavior \del{combined with}\asm{or} a direct calculation of the \del{slope of the }magnetic form factor \asm{slope could potentially }\del{would provide useful insight about this tension or could }discriminate
 between the two parameterizations.
 
-The nucleon axial form factor has had a much more complicated past than the vector form factors in LQCD.%
+\sout{The nucleon axial form factor has had a much more complicated past than the vector form factors in LQCD.}%
+\del{
 \begin{marginnote}
- \entry{Axial charge} {The axial form factor at zero momentum transfer, $g_{\mathrm{A}} = F_{\mathrm{A}}(0)$}
+ \entry{Axial \asm{vector coupling}\del{charge}} {The axial form factor at zero momentum transfer, $g_{\mathrm{A}} = F_{\mathrm{A}}(0)$}
 \end{marginnote}%
-The axial charge is a key benchmark for LQCD and is precisely known
+}
+The axial \del{charge}\asm{vector coupling}%
+\footnote{Within the LQCD community, the axial vector coupling
+ is commonly referred to as the axial charge.}%
+\begin{marginnote}
+ \entry{Axial \asm{vector coupling}\del{charge}} {The axial form factor at zero momentum transfer, $g_{\mathrm{A}} = F_{\mathrm{A}}(0)$}
+\end{marginnote}%
+ is a key benchmark for LQCD and is precisely known
 from neutron decay experiments~\cite{Dubbers:2021wqv}.
-LQCD calculations of the axial charge have historically been low compared to experiment~\cite{Aoki:2021kgd},
+LQCD calculations of the axial \del{charge}\asm{coupling} have historically been low compared to experiment~\cite{Aoki:2021kgd},
  and the discrepancy has been the topic of some controversy.
 It is now understood that the treatment of excited state systematics is the main culprit for this discrepancy~\cite{Bar:2017kxh,Ottnad:2020qbw,Aoki:2021kgd}.
+\asm{This topic, and how it pertains to the full momentum dependence of the form factor,
+ will be discussed in detail in Sec.~\ref{sec:lqcd_pcac}.}
 With proper control over the excited state contamination, LQCD calculations are now in good agreement with the experimental value~\cite{Jang:2019vkm,Gupta:2018qil,Alexandrou:2020okk,Abramczyk:2019fnf,Park:2021ypf,RQCD:2019jai,Hasan:2019noy,Djukanovic:2021yqg,Harris:2019bih,Liang:2018pis,Shintani:2018ozy,Ishikawa:2018rew}
  with one group achieving a sub-percent determination of $g_{\mathrm{A}}$~\cite{Chang:2018uxx,Berkowitz:2018gqe,Walker-Loud:2019cif}.
 
-Armed with the newfound confidence in the control of systematics for the axial charge,
- more emphasis is now being put into the \change{axial} form factor at nonzero momentum transfer
+\sout{Armed with the newfound confidence in the control of systematics for the axial charge,
+ more emphasis is now being put into}
+\asm{With more confidence in the ability to control the systematic errors for the axial vector coupling, LQCD collaborations now focus on computing}
+ the \done{axial} form factor at nonzero momentum transfer \asm{in order}
 to make contact with the needs of the neutrino community and provide
  complementary constraints on free nucleon amplitudes.
-{\color{ao(english)} \change{The need for this is clear:} sparse data from deuterium bubble-chamber experiments do not constrain
+\done{The need for this is clear: sparse data from deuterium bubble-chamber experiments do not constrain
 the axial form factor precisely.
 The popular dipole ansatz has a shape that
 is overconstrained by data resulting in an underestimated uncertainty.
@@ -335,17 +353,19 @@ The axial radius, which is proportional to the slope of the form factor at $Q^2=
 has a 50\% uncertainty when estimated from the deuterium scattering data,
 or $\approx35\%$ if deuterium scattering and muonic hydrogen are considered
 together~\cite{Hill:2017wgb}.
-\change{Given that a modern $\nu N$ scattering experiment is extremely unlikely, LQCD is the only viable method to improve our understanding of the axial form factor to the required level of precision.}
+Given that a modern $\nu N$ scattering experiment is extremely unlikely, LQCD is the only viable method to improve our understanding of the axial form factor to the required level of precision.
 %Ideally, the lack of precision in the axial form factor would be rectified by a modern $\nu N$ scattering experiment.}
 }
 
-\change{Already, } one extremely striking feature of LQCD calculations is the strong preference for a slower
-fall off of the form factor with increasing $Q^2$ than predicted by phenomenological determinations from experiment (\change{Section~\ref{sec:lqcd_results}}).
+\done{Already,} one extremely striking feature of LQCD calculations \asm{of the axial form factor}
+is the strong preference for a slower fall off \del{of the form factor }with increasing $Q^2$ than \asm{what is predicted by}\del{predicted by phenomenological determinations from} experiment (\done{Section~\ref{sec:lqcd_results}}).
 This preference is consistently reproduced by several lattice collaborations using
 independent computation methods, lending more credence to the result.
-When integrated over the full range of $Q^2$ to compute the nucleon cross section,
-this translates to an enhancement in the free nucleon cross section as large as 30--40\%
-over neutrino energies greater than $1~{\rm GeV}$ (Section~\ref{sec:impact}).
+\sout{When integrated over the full range of $Q^2$ to compute the nucleon cross section, this}
+\asm{The nucleon cross section is obtained by integrating over $Q^2$, and the slower falloff with $Q^2$}
+translates to an enhancement \sout{in the free nucleon cross section as large}
+\asm{by as much} as 30--40\%
+\del{over}\asm{for} neutrino energies greater than $1~{\rm GeV}$ (Section~\ref{sec:impact}).
 In addition, the precision on the axial form factor uncertainty from LQCD
 is small enough to be sensitive to the tension between vector form factor parameterizations.
 
@@ -354,21 +374,22 @@ The labels correspond to the following form factor parameterization choices and 
 \begin{description}
  \item[BBBA05] Vector form factors from BBBA05~\cite{Bradford:2006yz},
  and axial form factors from Meyer~{\it et al.}~\cite{Meyer:2016oeg}.
- The uncertainty is taken from BBBA05, with all fit parameters assumed to be uncorrelated.
+ The uncertainty is taken \asm{only} from \asm{the} BBBA05 \asm{parameterization},
+ with all fit parameters assumed to be uncorrelated.
  \item[$z$ exp, vector] Vector form factors from Borah~{\it et al.}~\cite{Borah:2020gte},
  and axial form factors from Meyer~{\it et al.}~\cite{Meyer:2016oeg}.
- The uncertainty is taken from Borah~{\it et al.}
- \item[$z$ exp, ${\rm D}_{2}$ axial] as ``$z$ exp, vector,''
- with the uncertainty taken from Meyer~{\it et al.} instead.
+ The uncertainty is taken \asm{only} from Borah~{\it et al.}
+ \item[$z$ exp, ${\rm D}_{2}$ axial] \asm{the same} as ``$z$ exp, vector,''
+ with the uncertainty taken \asm{only} from Meyer~{\it et al.} instead.
  \item[$z$ exp, LQCD axial] Vector form factors from Borah~{\it et al.}~\cite{Borah:2020gte},
- axial form factors and their uncertainty provided by authors from an LQCD simulation
- on a single physical mass ensemble.
+ \asm{and the} axial form factor\del{s and their}\asm{~with its} uncertainty
+ provided by authors from an LQCD simulation on a single physical mass ensemble.
 \end{description}
 Of particular note is the observed tension between the black and blue bands,
  which results from the tension between proton magnetic form factor parameterizations
  (see Figure~\ref{fig:protonmagneticff}).
-The size of the \change{upper} red band with respect to the \change{lower, large} green band demonstrates the uncertainty reduction from replacing the deuterium scattering axial form factor with one obtained from LQCD. \change{\sout{and}} The significant change in normalization is due to the slower fall off of the axial form factor.
-Additionally, the size of the red band demonstrates the relevance of the tension in vector form factors, characterized by the difference between the black and blue curves, \change{with the uncertainty from LQCD a sub-dominant correction}.
+The size of the \done{upper} red band with respect to the \done{lower, large} green band demonstrates the uncertainty reduction from replacing the deuterium scattering axial form factor with one obtained from LQCD. \del{and}The significant change in normalization is due to the slower fall off of the axial form factor.
+Additionally, the size of the red band demonstrates the relevance of the tension in vector form factors, characterized by the difference between the black and blue curves, \change{with the uncertainty from LQCD a sub-dominant correction}\asm{{\bf [This is comparable, not subdominant?]}}.
 
 %------------------------------------------------------------------------------
 % nu-N cross section
@@ -377,7 +398,7 @@ Additionally, the size of the red band demonstrates the relevance of the tension
  \includegraphics[width=0.7\textwidth]{plots/xsec_comparison-standalone.pdf}\vspace{4pt}
 \caption{
  Neutrino cross sections on a free neutron, with their uncertainty bands,
- for various choices of parameterization explained in the bullet list provided in the \change{Section~\ref{sec:sof}}.
+ for various choices of parameterization explained in the bullet list provided in the \done{Section~\ref{sec:sof}}.
  \label{fig:nucleonxsec}
 }
 \end{figure}
@@ -761,9 +782,7 @@ The main deliverables from LQCD calculations of the axial form factor
  are the axial and induced pseudoscalar form factors taken in the continuum,
  infinite volume and physical pion mass limits, complete with a set of parameterization coefficients
  and covariance matrix.
-Though the axial \asm{vector coupling}%
-\footnote{Within the LQCD community, the axial vector coupling
- is commonly referred to as the axial charge.}
+Though the axial \asm{vector coupling}
  and \asm{axial }radius are useful for connecting with low-energy applications,
  such as pion electroproduction and neutron decay,
  the needs of neutrino physics in the few-GeV energy range depend
