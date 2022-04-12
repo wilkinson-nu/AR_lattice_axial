@@ -475,7 +475,7 @@ However, in Euclidean space, the fermion determinant is real and positive for ze
 \entry{Ensemble}{A set of configurations all generated with the same bare QCD parameters}
 \end{marginnote}%
 %-------------------------------------------------------------------------------
-In this way, a large number of configurations of gauge fields can be generated, providing estimates of correlation functions
+In this way, a large number of configurations of gauge fields can be generated, providing \change{a stochastic determination of the} \sout{estimates of} correlation functions
 \begin{equation}
 \langle O \rangle = \frac{1}{N_{\rm cfg}}\sum_{i=1}^{N_{\rm cfg}} O[U_i]
     +\mathrm{O}\left(\frac{1}{\sqrt{N_{\rm cfg}}} \right)\, ,
@@ -507,9 +507,12 @@ Deviations from QCD, which arise at finite $a$, are often called \textit{discret
 \entry{EFT}{Effective field theory}
 \end{marginnote}%
 %-------------------------------------------------------------------------------
-That all lattice actions reduce to QCD as $a\rightarrow0$ is known as the universality of the continuum limit.  It is a property which can be proved in perturbation theory but must be established numerically given the non-perturbative nature of QCD.  For sufficiently small lattice spacings, one can use EFT to construct a continuum theory that encodes the discretization effects in a tower of higher dimensional operators. This is known as the Symanzik EFT for lattice actions~\cite{Symanzik:1983dc,Symanzik:1983gh}.One interesting example involves the violation of Lorentz symmetry at finite lattice spacing: in the Symanzik EFT, the operators which encode this Lorentz violation scale as $a^2$ with respect to the operators which survive the continuum limit, and thus, Lorentz symmetry is an accidental symmetry of the continuum limit.  It is not respected at any finite lattice spacing, but the measurable consequences vanish as $a^2$ for sufficiently small lattice spacing.
+\sout{That all lattice actions reduce to QCD as $a\rightarrow0$ is known as the universality of the continuum limit.  It}
+\change{Universality} is a property which can be proved in perturbation theory but must be established numerically given the non-perturbative nature of QCD.  For sufficiently small lattice spacings, one can use EFT to construct a continuum theory that encodes the discretization effects in a tower of higher dimensional operators. This is known as the Symanzik EFT for lattice actions~\cite{Symanzik:1983dc,Symanzik:1983gh}.
+One interesting example involves the violation of Lorentz symmetry at finite lattice spacing: in the Symanzik EFT, the operators which encode this Lorentz violation scale as $a^2$ with respect to the operators which survive the continuum limit, and thus, Lorentz symmetry is an accidental symmetry of the continuum limit.  It is not respected at any finite lattice spacing, but the measurable consequences vanish as $a^2$ for sufficiently small lattice spacing.
 
-For example, consider the discretized gluon action.
+\change{As a concrete} 
+example, consider the discretized gluon action.
 The link fields are Wilson lines
 \begin{equation}
 U_\mu(x) = \exp\left\{i a\int_0^1 dt A_\mu(x +(1-t)a\hat{\mu}) \right\}
@@ -524,7 +527,7 @@ When constructing the discretized gluon-action, it is therefore natural to use o
     =U_{\mu\nu}(x)
     =U_\mu(x)U_\nu(x+a\hat{\mu}) U^\dagger_\mu(x+a\hat{\nu}) U^\dagger_\nu(x)\, .
 \end{equation}
-For small lattice spacing $a$, this Wilson gauge-action reduces to the continuum action plus irrelevant (higher dimensional) operators which vanish in the continuum limit
+For small lattice spacing, this Wilson gauge-action reduces to the continuum action plus irrelevant (higher dimensional) operators which vanish in the continuum limit
 \begin{align}\label{eq:gluon_action}
 S_{\mathrm{G}}(U) &= \beta \sum_{n=x/a} \sum_{\mu<\nu}
     \textrm{Re}\left[ 1 - \frac{1}{N_c} \textrm{Tr} \left[U_{\mu\nu}(n) \right]\right]
@@ -557,7 +560,7 @@ In this review, we comment that:
 
 \item Clover-Wilson fermions are the most commonly used discretization scheme given their theoretical simplicity and preservation of all symmetries except chiral symmetry.  The explicit breaking of chiral symmetry with the Wilson operator means the light quark masses must be finely tuned against ultra-violet chiral symmetry breaking that scales as $1/a$, after which there remain residual $\mathrm{O}(a)$ chiral symmetry breaking effects.  It is well known, albeit laborious, how to non-perturbatively remove these leading $\mathrm{O}(a)$ scaling violations~\cite{Luscher:1996sc,Luscher:1996ug,Luscher:1996jn,Capitani:1998mq}, which must be done for both the action as well as matrix elements.
 
-\item Twisted mass fermions are a variant of Wilson fermions that exploits the approximate $SU(2)$ chiral symmetry of QCD to introduce a twisted quark mass term, $i\mu\g_5 \tau_3$.  At maximal twist, the bare quark mass is cancelled by the $1/a$ additive quark mass, leaving $\mu$ as the only contribution through $\mathrm{O}(a)$ to the physical quark mass.  Indeed, all observables are automatically $\mathrm{O}(a)$ improved at maximal twist~\cite{Frezzotti:2003ni}.
+\item Twisted mass fermions are a variant of Wilson fermions that exploits the approximate $SU(2)$ chiral symmetry of QCD to introduce a twisted quark mass term, $i\mu\g_5 \tau_3$.  At maximal twist, the bare quark mass is cancelled by the $1/a$ additive quark mass, leaving $\mu$ as the only contribution through $\mathrm{O}(a)$ to the physical quark mass.  All observables are automatically $\mathrm{O}(a)$ improved at maximal twist~\cite{Frezzotti:2003ni}.
 However, twisted mass fermions break isospin symmetry at finite lattice spacing, causing some complications now that LQCD results are precise enough to require isospin breaking corrections from $m_d-m_u$ and%
 \begin{marginnote}
 \entry{QED}{Quantum electro-dynamics}
@@ -565,7 +568,7 @@ However, twisted mass fermions break isospin symmetry at finite lattice spacing,
 QED to be compared with experiment.
 
 \item The fourth most common discretization are DWF, which introduce a fifth dimension to the theory with unit links (the gluons are not dynamic in the fifth dimension) with the left and right handed fermions bound to opposite sides of the fifth dimension of size $L_5$.  The overlap of these left and right modes gives rise to an explicit chiral symmetry breaking that is exponentially suppressed by the extent of the fifth dimension.  For sufficiently small chiral symmetry breaking (large $L_5$), DWF are also automatically $\mathrm{O}(a)$ improved.
-While very desirable, DWF are numerically more expensive to simulate, both because of the extra fifth dimension and also because the algorithmic speed up offered by multi-grid, which works tremendously for clover-Wilson fermions on GPUs~\cite{Clark:2016rdz}, is not yet flushed out for DWF~\cite{Boyle:2014rwa,Cohen:2011ivh,Yamaguchi:2016kop,Brower:2020xmc,Boyle:2021wcf}.
+While very desirable, DWF are numerically more expensive to simulate, both because of the extra fifth dimension and also because the algorithmic speed up offered by multi-grid, which works tremendously for clover-Wilson fermions on GPUs~\cite{Clark:2016rdz}, \change{but} is not yet flushed out for DWF~\cite{Boyle:2014rwa,Cohen:2011ivh,Yamaguchi:2016kop,Brower:2020xmc,Boyle:2021wcf}.
 
 \item A final common variant of action is one in which the fermion discretization used in the generation of the gauge fields (the sea quarks) and the action used when generating quark propagators (the valence quarks) are different: this is known as a \textit{mixed action}~\cite{Renner:2004ck}.
 The most common reason to use such an action is to take advantage of numerically less expensive methods to generate the configurations while retaining good chiral symmetry properties of the valence quarks, which is known to suppress chiral symmetry breaking effects from the sea-quarks~\cite{Bar:2002nr,Bar:2005tu,Tiburzi:2005is,Chen:2007ug}.
