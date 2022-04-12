@@ -9,6 +9,7 @@
 % For tracking purposes => this is v1.0 - Apr. 2013
 
 \documentclass{ar-1col}
+%\usepackage{showframe}
 
 \usepackage{url}
 \usepackage[numbers,sort&compress]{natbib}
@@ -223,7 +224,12 @@ LQCD provides a theoretical method for predicting the free nucleon amplitudes di
 \entry{LQCD}{Lattice quantum chromodynamics}
 \entry{Axial coupling} {The axial form factor at zero momentum transfer, $g_{\mathrm{A}} = F_{\mathrm{A}}(0)$}
 \end{marginnote}%---------------------------------------------------------------
-Recently, a LQCD milestone was achieved when the nucleon axial coupling  was determined with a 1\% total uncertainty and a value consistent with experiment~\cite{Chang:2018uxx}.
+Recently, a LQCD milestone was achieved when the nucleon axial coupling%
+%FOOTNOTE --------------------------------------------------------------------
+\footnote{Within the LQCD community, the axial coupling
+ is commonly referred to as the axial charge.}
+%---------------------------------------------------------------------
+was determined with a 1\% total uncertainty and a value consistent with experiment~\cite{Chang:2018uxx}.
 LQCD can also provide percent- to few percent-level uncertainties for the nucleon quasielastic axial form factor with momentum transfers up to a few-${\rm GeV}^2$.
 Similarly, current tension in the neutron magnetic form factor parameterization, which is roughly half the size of the total axial form factor uncertainty, can be resolved with LQCD calculations.
 Such results are anticipated in the next year or so with computing power available in the present near-exascale computing era.
@@ -312,39 +318,20 @@ exhibiting no obvious tensions with experimental determinations
 A percent\asm{-}level calculation of the form factor $Q^2$ behavior \del{combined with}\asm{or} a direct calculation of the \del{slope of the }magnetic form factor \asm{slope could potentially }\del{would provide useful insight about this tension or could }discriminate
 between the two parameterizations.
 
-\sout{The nucleon axial form factor has had a much more complicated past than the vector form factors in LQCD.}%
-\del{
-\begin{marginnote}
- \entry{Axial \asm{vector coupling}\del{charge}} {The axial form factor at zero momentum transfer, $g_{\mathrm{A}} = F_{\mathrm{A}}(0)$}
-\end{marginnote}%
-}
-The axial \del{charge}\asm{vector coupling}%
-\footnote{Within the LQCD community, the axial coupling
- is commonly referred to as the axial charge.}
- is a key benchmark for LQCD and is precisely known
+The axial coupling
+is a key benchmark for LQCD and is precisely known
 from neutron decay experiments~\cite{Dubbers:2021wqv}.
 LQCD calculations of the axial \del{charge}\asm{coupling} have historically been low compared to experiment~\cite{Aoki:2021kgd},
  and the discrepancy has been the topic of some controversy.
 It is now understood that the treatment of excited state systematics is the main culprit for this discrepancy~\cite{Bar:2017kxh,Ottnad:2020qbw,Aoki:2021kgd}.
 \asm{This topic, and how it pertains to the full momentum dependence of the form factor,
- will be discussed in detail in Sec.~\ref{sec:lqcd_pcac}.}
+ will be discussed in detail in Section~\ref{sec:lqcd_pcac}.}
 With proper control over the excited state contamination, LQCD calculations are now in good agreement with the experimental value~\cite{Jang:2019vkm,Gupta:2018qil,Alexandrou:2020okk,Abramczyk:2019fnf,Park:2021ypf,RQCD:2019jai,Hasan:2019noy,Djukanovic:2021yqg,Harris:2019bih,Liang:2018pis,Shintani:2018ozy,Ishikawa:2018rew}
  with one group achieving a sub-percent determination of $g_{\mathrm{A}}$~\cite{Chang:2018uxx,Berkowitz:2018gqe,Walker-Loud:2019cif}.
 
-\sout{
- \textcolor{gray}{Armed with the newfound confidence in the control of systematics for the axial charge,}
- \textcolor{gray}{more emphasis is now being put into}}
-\sout{
-\asm{With more confidence in the ability to control the}
-\asm{systematic errors for the axial coupling, LQCD collaborations now focus on computing}
- the \done{axial} form factor at nonzero momentum transfer \asm{in order}
- to make contact with the needs of the neutrino community and provide
- complementary constraints on free nucleon amplitudes.
-}
-{\textcolor{blue}{ {\bf [Wick's recommendation:]}
- \emph{The success in calculating the threshold value $g_A(0)$ motivates current efforts
- to map out $g_A(Q^2)$ of importance to the long-baseline neutrino program.}}}
-\asm{The need for this is clear:} \done{sparse data from deuterium bubble-chamber experiments do not constrain
+The success in calculating the threshold value $g_A$ motivates current efforts
+to map out $F_A(Q^2)$ of importance to the long-baseline neutrino program.
+The need for this is clear: sparse data from deuterium bubble-chamber experiments do not constrain
 the axial form factor precisely.
 The popular dipole ansatz has a shape that
 is overconstrained by data resulting in an underestimated uncertainty.
@@ -356,20 +343,31 @@ has a 50\% uncertainty when estimated from the deuterium scattering data,
 or $\approx35\%$ if deuterium scattering and muonic hydrogen are considered
 together~\cite{Hill:2017wgb}.
 Given that a modern $\nu N$ scattering experiment is extremely unlikely, LQCD is the only viable method to improve our understanding of the axial form factor to the required level of precision.
-%Ideally, the lack of precision in the axial form factor would be rectified by a modern $\nu N$ scattering experiment.}
-}
 
-\done{Already,} one extremely striking feature of LQCD calculations \asm{of the axial form factor}
-is the strong preference for a slower fall off \del{of the form factor }with increasing $Q^2$ than \asm{what is predicted by}\del{predicted by phenomenological determinations from} {\color{red} extractions from} experiment (\done{Section~\ref{sec:lqcd_results}}).
+
+A striking feature of LQCD calculations of $F_A(Q^2)$
+is the slower fall off with increasing $Q^2$ than what is extracted from experiment (Section~\ref{sec:lqcd_results}).
 This preference is consistently reproduced by several lattice collaborations using
 independent computation methods, lending more credence to the result.
-\sout{When integrated over the full range of $Q^2$ to compute the nucleon cross section, this}
 \asm{The nucleon cross section is obtained by integrating over $Q^2$, and the slower falloff with $Q^2$}
-translates to an enhancement \sout{in the free nucleon cross section as large}
+translates to an enhancement
 \asm{by as much} as 30--40\%
 \del{over}\asm{for} neutrino energies greater than $1~{\rm GeV}$ (Section~\ref{sec:impact}).
 In addition, the precision on the axial form factor uncertainty from LQCD
 is small enough to be sensitive to the tension between vector form factor parameterizations.
+
+
+%------------------------------------------------------------------------------
+% nu-N cross section
+\begin{figure}%[hbt!]
+ \centering
+ \includegraphics[width=0.7\textwidth]{plots/xsec_comparison-standalone.pdf}\vspace{4pt}
+\caption{
+ Neutrino cross sections on a free neutron, with their uncertainty bands,
+ for various choices of parameterization explained in the bullet list provided in the \done{Section~\ref{sec:sof}}.
+ \label{fig:nucleonxsec}
+}
+\end{figure}
 
 The aforementioned situation with nucleon form factors is depicted in Figure~\ref{fig:nucleonxsec}.
 The labels correspond to the following form factor parameterization choices and uncertainties:
@@ -390,25 +388,17 @@ The labels correspond to the following form factor parameterization choices and 
 Of particular note is the observed tension between the black and blue bands,
  which results from the tension between proton magnetic form factor parameterizations
  (see Figure~\ref{fig:protonmagneticff}).
-The size of the \done{upper} red band with respect to the \done{lower, large} green band demonstrates the uncertainty reduction from replacing the deuterium scattering axial form factor with one obtained from LQCD. \del{and}The significant change in normalization is due to the slower fall off of the axial form factor.
-Additionally, the size of the red band demonstrates the relevance of the tension in vector form factors, characterized by the difference between the black and blue curves, \change{with the uncertainty from LQCD a sub-dominant correction}\asm{{\bf [This is comparable, not subdominant?]}}.
+The width of the upper red band, which comes from the LQCD results,
+is comparable in size to the discrepancy between these black and blue curves.
+The LQCD uncertainty is also noticeably smaller than the green band that arises from the deuterium scattering determination of $F_A(Q^2)$.
+The normalization of the red curve is higher due to the slower fall off of the axial form factor.
 
-%------------------------------------------------------------------------------
-% nu-N cross section
-\begin{figure}[hbt!]
- \centering
- \includegraphics[width=0.7\textwidth]{plots/xsec_comparison-standalone.pdf}\vspace{4pt}
-\caption{
- Neutrino cross sections on a free neutron, with their uncertainty bands,
- for various choices of parameterization explained in the bullet list provided in the \done{Section~\ref{sec:sof}}.
- \label{fig:nucleonxsec}
-}
-\end{figure}
+
 
 
 % ------------------------------------------------------------------------------
 % Lattice QCD
-\section{LQCD determinations of the nucleon quasielastic form factor\label{sec:lqcd}}
+\section{LQCD determinations of nucleon form factors\label{sec:lqcd}}
 
 LQCD has been and remains one of the major uses of the world's leadership computing facilities.
 There is an extensive literature on LQCD covering the broad range of technical and formal aspects that are necessary to carry out state of the art calculations, for which we can not do justice in this review.
@@ -420,22 +410,21 @@ These issues are also discussed in detail in the bi-annual FLAG Reviews, see for
 \end{marginnote}
 
 
-The promise of LQCD is to provide \change{Standard Model} predictions of low-energy hadronic and nuclear quantities with fully quantified theoretical uncertainties. \sout{rooted in the Standard Model.}
-\sout{In order to deliver upon this promise, there are }
-\change{To achieve this goal,} several sources of systematic uncertainty \sout{which} must be \change{assessed}.
-\sout{For all LQCD calculations, t} These include extrapolations to the continuum and infinite volume limits as well as an extrapolation or interpolation to the physical quark mass limit.
-\sout{For the continuum extrapolation, a} At least three values of the lattice spacing, $a$, of $\mathrm{O}(a\lesssim0.12\textrm{ fm})$ are required to ascertain if the leading discretization corrections are sufficient or not to describe the observed scaling violations (do all three results lie on a straight line or can one detect higher-order curvature?).
+The promise of LQCD is to provide Standard Model predictions of low-energy hadronic and nuclear quantities with fully quantified theoretical uncertainties.
+To achieve this goal, several sources of systematic uncertainty must be assessed.
+These include extrapolations to the continuum and infinite volume limits as well as an extrapolation or interpolation to the physical quark mass limit.
+At least three values of the lattice spacing, $a$, of $\mathrm{O}(a\lesssim0.12\textrm{ fm})$ are required to ascertain if the leading discretization corrections are sufficient or not to describe the observed scaling violations (do all three results lie on a straight line or can one detect higher-order curvature?).
 For the finite volume effects, a rule of thumb has been established from experience, that one requires calculations with $m_\pi L \gtrsim4$ (where $L$ is the spatial extent of the lattice volume) in order to keep these finite size corrections at the level of $\lesssim1-2\%$ and at least qualitatively described by the leading analytic formulae.%
 \begin{marginnote}
     \entry{$\chi$PT}{Chiral Perturbation Theory: the low-energy effective field theory of QCD}
 \end{marginnote}%
 For the light-quark mass dependence, $\chi$PT may be able to guide the extrapolations.
 However, for the nucleon, the convergence of $\chi$PT is not yet established, even at the physical pion mass with evidence of lack of convergence for the nucleon mass and $g_{\mathrm{A}}$~\cite{Chang:2018uxx,Walker-Loud:2019cif}.
-As we will discuss more in Section~\ref{sec:calc_anatomy}, \sout{for properties of nucleons, }there are two additional significant sources of \sout{systematic }uncertainty \asm{for nucleons }which are the exponentially%
+As we will discuss more in Section~\ref{sec:calc_anatomy}, there are two additional significant sources of uncertainty for nucleons which are the exponentially%
 \begin{marginnote}
     \entry{S/N}{Signal-to-noise}
 \end{marginnote}%
-degrading S/N problem \del{for nucleons }and excited state contamination.
+degrading S/N problem and excited state contamination.
 
 
 
