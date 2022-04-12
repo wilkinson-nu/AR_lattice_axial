@@ -666,9 +666,9 @@ To boost statistics, in addition to taking advantage of translation invariance a
 The most significant challenge in determining the nucleon matrix elements and subsequent form factors is dealing with the excited state contamination, an issue that is compounded by the degrading S/N.
 If the nucleon two-point function is becoming saturated by the ground state at $t\approx1$~fm, the ideal three-point function would use values of $\tsep\approx2$~fm.
 In practice, a few values of $\tsep$ in the range $0.8 \lesssim \tsep \lesssim 1.5$~fm are used because the S/N ratio of the three-point functions decays more rapidly than the two-point function, and an extrapolation to large $\tsep$ is used to isolate the ground state matrix elements.
-However, using just one excited state in the analysis requires three values of $\tsep$ in order to have a one degree-of-freedom fit to extract the ground state matrix element.
+However, using just one excited state in the analysis requires three values of $\tsep$ to have a one degree-of-freedom fit to extract the ground state matrix element.
 Most results have been generated with three or fewer values of $\tsep$.
-Following Ref.~\cite{Chang:2018uxx}, that utilized many values of $\tsep$ to determine $g_{\mathrm{A}}$, a few groups have begun advocating for the use of many values of $\tsep$, including small values, to improve our ability to understand and control the excited state contamination~\cite{Hasan:2019noy,Alexandrou:2019brg,He:2021yvm}.
+Ref.~\cite{Chang:2018uxx} utilized many values of $\tsep$ to determine $g_{\mathrm{A}}$, \change{and} a few \change{other} groups have begun advocating for the use of many values of $\tsep$, including small values, to improve our ability to understand and control the excited state contamination~\cite{Hasan:2019noy,Alexandrou:2019brg,He:2021yvm}.
 Ref.~\cite{He:2021yvm} utilized 13 values of $\tsep$, which allows for a systematic study of the uncertainty associated with truncating early and/or late values of $\tsep$ in the analysis, as well as providing sufficient data to perform up to a complete 5-state fit.
 
 At non-zero momentum, the excited states become more problematic.  While the energy associated with the signal grows with the momentum, the energy scale associated with the noise is independent of the momentum and thus their difference, which is the energy scale that governs the decay of the S/N, grows with increasing momentum.
@@ -681,7 +681,9 @@ Recent results have uncovered some additional aspects of excited state contamina
 \begin{itemize}[leftmargin=*]
 \item Two-point functions constructed as in Equation~\eqref{eq:2pt} are insufficient to reliably determine any of the excited states.  Different choices of $\tmin$ and different reasonable priors in a Bayesian analysis support excited states that differ by several sigma, also resulting in sensitivity of the ground state spectrum~\cite{Park:2021ypf,He:2021yvm} and matrix elements~\cite{Jang:2019vkm,Gupta:2021ahb}.
 
-\item In contrast, the curvature in the three-point functions associated with the current insertion time is very constraining on the excited state spectrum, resulting in very stable and robust determination of the spectrum while varying $\tmin$, the number of excited states, the excited state model and the excited state priors~\cite{He:2021yvm}.
+\item In contrast, the curvature in the three-point functions associated with the current insertion time \change{provides extra constraints that make the determination of the spectrum stable and robust}
+\del{is very constraining on the excited state spectrum, resulting in very stable and robust determination of the spectrum}
+while varying $\tmin$, the number of excited states, the excited state model and the excited state priors~\cite{He:2021yvm}.
 While it is encouraging that the spectrum and matrix elements become very stable, such an analysis offers no insight into the nature of the excited states.  For example, with typical values of $m_\pi L\approx4$, the $P$-wave $N(\mathbf{p})\pi(-\mathbf{p})$ excited state energy gap is essentially the same as the $N\pi\pi$ threshold state.%
 \begin{marginnote}
  \entry{$N\pi$}{Nucleon-pion}
@@ -691,8 +693,10 @@ While it is encouraging that the spectrum and matrix elements become very stable
 \item Many groups determine the spectrum and overlap factors from fits to the two-point functions, and then pass these results into the three-point function analysis without allowing the values to adjust to the global minimum.  Such a choice can either lead to an overestimate of the uncertainty of the three-point functions (if one uses the variability of the spectrum mentioned above), or a biased extraction of the ground state matrix elements (if one uses the ``wrong'' value of the spectrum).  Given the computational setup described above, the robust choice is to perform a global analysis of the two- and three-point functions simultaneously.
 
 \item For zero-momentum transfer, where the spectrum of the in and the out states have the same value,
-the use of the summation method~\cite{Maiani:1987by} or a variant of the Feynman-Hellman method~\cite{deDivitiis:2012vs,Bouchard:2016heu} which is closely related to the summation method, it is understood that the excited states become significantly suppressed compared to the three-point function~\cite{Capitani:2012gj,He:2021yvm}.
-For non-zero momentum transfer, such a technique can only be used well in the Breit-Frame where the momentum of the in and out states is equal and opposite, such that the energy spectrum is the same~\cite{Gambhir:2019pvw}.
+the use of the summation method~\cite{Maiani:1987by} or a variant of the Feynman-Hellman method~\cite{deDivitiis:2012vs,Bouchard:2016heu}, \del{which is closely related to the summation method,} it is understood that the excited states become significantly suppressed compared to the three-point function~\cite{Capitani:2012gj,He:2021yvm}.
+For non-zero momentum transfer, 
+\change{only the Breit-Frame where the momentum of the in and out states is equal and opposite, is amenable to this alternative method~\cite{Gambhir:2019pvw}.}
+\del{such a technique can only be used well in the Breit-Frame where the momentum of the in and out states is equal and opposite, such that the energy spectrum is the same~\cite{Gambhir:2019pvw}.}
 
 \item The excited state contamination is particularly relevant for the PCAC relation, which we discuss in more detail in Section~\ref{sec:lqcd_pcac}.
 
