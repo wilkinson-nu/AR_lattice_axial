@@ -702,14 +702,14 @@ For non-zero momentum transfer,
 % LQCD PCAC
 \subsection{Role of PCAC in LQCD results of $F_{\mathrm{A}}(Q^2)$\label{sec:lqcd_pcac}}
 
-$F_{\rm A}(Q^2)$ can be isolated in LQCD calculations with particular kinematic choices that are not contaminated by the induced pseudoscalar form factor, see for example Ref.~\cite{Gupta:2017dwj}.
-Given the challenges in identifying all the sources of systematic uncertainty in the calculation of $g_{\mathrm{A}}$, particularly the excited state contamination, it is prudent to perform cross checks of observables to test for consistency of the results.
+\sout{$F_{\rm A}(Q^2)$ can be isolated in LQCD calculations with particular kinematic choices that are not contaminated by the induced pseudoscalar form factor, see for example Ref.~\cite{Gupta:2017dwj}.}
+Given the challenges in identifying all the sources of systematic uncertainty in the calculation of $g_{\mathrm{A}}$, particularly the excited state contamination, it is prudent to perform cross checks of observables \del{to}\asm{that} test for consistency of the results.
 The validity of the PCAC relation,
 \begin{align}
  \partial^\mu A^{a}_{\mu}(x) = 2 m_q P^{a}(x),
  \label{eq:pcac}
 \end{align}
-provides a complex consistency check.
+provides a complex consistency check\asm{~at nonzero $Q^2$}.
 Here, $A^{a}_\mu$ and $P^{a}$ are the axial and pseudoscalar currents,
  respectively, and $m_q$ is the light quark mass.
 The PCAC relation is an exact symmetry in the continuum limit.
@@ -746,28 +746,29 @@ Initial calculations targeting the axial form factor verified the PCAC relation
  is now informed by baryon $\chi$PT, which suggests that chiral
  and excited state corrections to the spatial axial, temporal axial, and induced pseudoscalar
  are functionally different and not properly removed.
-The axial contributions are largely dominated by loop-level $N\pi$ excited states
+The axial \asm{form factor} contributions are largely dominated by loop-level $N\pi$ excited states
  with a highly suppressed tree-level correction.
-The correction to the axial current is nearly independent of $Q^2$.
-On the other hand, corrections to the induced pseudoscalar are
+The correction to the axial \asm{form factor}\sout{current} is nearly independent of $Q^2$.
+On the other hand, corrections to the induced pseudoscalar \asm{form factor} are
  driven by the tree-level correction and has
  a strong $Q^2$ dependence~\cite{Bar:2018xyi}, with the largest correction at low $Q^2$.
 The $N\pi$ loop contribution in the induced pseudoscalar is highly suppressed by
  an approximate cancellation.
 The contamination to the pseudoscalar current is redundant with the
- axial and induced pseudoscalar chiral corrections and can be obtained
+ \asm{chiral corrections to the} axial and induced pseudoscalar
+ \del{chiral corrections}\asm{form factors} and can be obtained
  by application of the PCAC relation.
 
 Scrutiny of the LQCD data has demonstrated many of the features
- that were expected from chiral perturbation theory.
+ \sout{that were expected from}\asm{predicted by} chiral perturbation theory.
 $N\pi$ states were initially expected to be negligible due to a volume suppression
  of the state overlap, which makes them invisible to the two-point functions~\cite{Bar:2016uoj}.
 However, the three-point axial matrix element can enhance these contributions relative
  to the ground state nucleon matrix element, which is enough to overcome the volume suppression.
-The primary excited state contaminations to the temporal axial form factor matrix elements
+The \del{primary}\asm{main} excited state\asm{s that contaminate}\del{ contaminations to} the temporal axial form factor matrix elements
  were shown to be driven by two specific $N\pi$ states,
- characterized by a transition through an axial current
- of the nucleon state to an $N\pi$ excited state or vice versa~\cite{Jang:2019vkm}.
+ characterized by a transition\del{ through an axial current}
+ of the nucleon state to an $N\pi$ excited state \asm{through the axial current} or vice versa~\cite{Jang:2019vkm}.
 In the language of $\chi$PT, these states contribute to tree-level nucleon-pion graphs with fixed relative momentum~\cite{Bar:2018xyi}.
 In contrast to the temporal axial insertion, the spatial axial insertion
  is instead expected to be more strongly affected by a tower of loop-level
@@ -778,10 +779,12 @@ Taking into account these observations,
  axial matrix element~\cite{Jang:2019vkm,He:2021yvm}.
 
 
-Nucleon matrix elements of the temporal axial current have the largest visible excited state contamination~\cite{Jang:2019vkm,RQCD:2019jai} which can be at least qualitatively understood with $\chi$PT~\cite{Bar:2018xyi}.
-This has led to new analysis strategies that more carefully deal with the $N\pi$ excited state with pion-pole contributions, yielding minimal violations of PCAC that include such matrix elements, as well as improved understanding of excited state contamination on matrix elements sensitive to $F_{\rm A}(Q^2)$ or $\tilde{F}_{\rm P}(Q^2)$, which previously exhibited deviations as large as $40\%$ from the PPD or GGT
- ansatz at low $Q^2$, where it was expected to
- work best~\cite{Bali:2014nma,Gupta:2017dwj}.
+Nucleon matrix elements of the temporal axial current have the largest visible excited state contamination~\cite{Jang:2019vkm,RQCD:2019jai}\asm{,} which can be at least qualitatively understood with $\chi$PT~\cite{Bar:2018xyi}.
+This has led to new analysis strategies that more carefully deal with the $N\pi$ excited state with pion-pole contributions\asm{
+~and pull information about the excited states from the temporal axial current.}\del{,}
+\asm{These new strategies} yield\del{ing} minimal violations of PCAC\del{ that include such matrix elements, as well as}\asm{~and an} improved understanding of excited state contamination on matrix elements sensitive to $F_{\rm A}(Q^2)$ or $\tilde{F}_{\rm P}(Q^2)$\del{,}\asm{.}
+\del{ which previously}\asm{Previously, these matrix elements} exhibited deviations as large as $40\%$ from the PPD or GGT
+ \del{ansatz}\asm{relations} at low $Q^2$\del{,} where \asm{they were}\del{it was} expected to work best~\cite{Bali:2014nma,Gupta:2017dwj}.
 
 
 \del{\textcolor{gray}{ While these results are very encouraging, they are not conclusive in the sense that they require us to impose our theoretical prior on the analysis, rather than the results naturally ``falling out'' from the numerical analysis.
@@ -804,7 +807,7 @@ The main deliverables from LQCD calculations of the axial form factor
  are the axial and induced pseudoscalar form factors taken in the continuum,
  infinite volume and physical pion mass limits, complete with a set of parameterization coefficients
  and covariance matrix.
-Though the axial \asm{vector coupling}
+Though the axial \asm{coupling}
  and \asm{axial }radius are useful for connecting with low-energy applications,
  such as pion electroproduction and neutron decay,
  the needs of neutrino physics in the few-GeV energy range depend
