@@ -583,9 +583,11 @@ It is important for the field to test this assumption of universality by computi
 % anatomy of LQCD calculation
 \subsection{Anatomy of LQCD calculations of nucleon form factors\label{sec:calc_anatomy}}
 
-In order to determine the mass of the nucleon (or any hadron), we rely on the construction of two-point correlation functions that are constructed in a mixed time-momentum representation, most commonly utilizing spatially local creation operators (sources) and momentum space annihilation operators (sinks).
+\sout{In order to determine the mass of the nucleon (or any hadron), we rely on the construction of}
+\asm{Hadron masses are determined from LQCD by constructing} two-point correlation functions \sout{that are constructed} in a mixed time-momentum representation\del{,}\asm{.}
+\del{ most commonly utilizing}\asm{A common strategy uses} spatially local creation operators (sources) and momentum space annihilation operators (sinks)\asm{, taking advantage of momentum conservation to select the source momentum}.
 The non-perturbative nature of QCD means we do not know how to construct the nucleon wave function, and so we utilize \textit{interpolating operators} which have the quantum numbers of the state we are interested in.
-These creation and annihilation operators will couple to all eigenstates of QCD with the same quantum numbers giving rise to a two-point function with a spectral decomposition
+These creation and annihilation operators will couple to all eigenstates of QCD with the same quantum numbers\asm{,} giving rise to a two-point function with a spectral decomposition
 \begin{align}\label{eq:2pt}
     C(t,\mathbf{p}) &= \sum_{\mathbf{x}} e^{-i \mathbf{p\dotp x}}
         \langle \O| O(t,\mathbf{x}) O^\dagger(0,\mathbf{0}) | \O \rangle
@@ -602,10 +604,10 @@ To go from the first equality to the second, we have inserted a complete set of 
 \entry{$O(t,\mathbf{x}) = e^{\hat{H}t} O(0,\mathbf{x}) e^{-\hat{H}t}$}{The Hamiltonian, $\hat{H}$, is used to time evolve the operator}
 \end{marginnote}%
 %-------------------------------------------------------------------------------
-Momentum conservation selects only the state $n(\mathbf{p})$ in the sum over all states enabling the use of this mixed spatial creation operator and momentum annihilation operator.
-As we will discuss in more detail below, it is more desirable to instead creation operators
-in momentum space rather than position space.
-They are not commonly used as they are significantly more expensive numerically to generate.
+\sout{Momentum conservation selects only the state $n(\mathbf{p})$ in the sum over all states enabling the use of this mixed spatial creation operator and momentum annihilation operator.}
+As we will discuss in more detail below, it is more desirable to instead \del{creation}\asm{build both source and sink} operators
+in momentum space\sout{ rather than position space}.
+\del{They}\asm{Momentum space sources} are not commonly used as they are significantly more \asm{numerically} expensive \del{numerically }to generate.
 
 For large Euclidean time, the correlation function will be dominated by the ground state as the excited states will be exponentially suppressed by the energy gap
 \begin{equation}
@@ -625,19 +627,24 @@ m_{\rm eff}(t) &= \ln \left( \frac{C(t)}{C(t+1)} \right)
 \end{align}
 
 
-A well known challenge which complicates the analysis is that for nucleon two-point functions, the S/N ratio degrades exponentially at large Euclidean time~\cite{Lepage:1989hd}
+\sout{A well known challenge \asm{that}\del{which} complicates the analysis is that f}%
+\asm{F}or nucleon two-point functions, the S/N ratio degrades exponentially at large Euclidean time~\cite{Lepage:1989hd}
 \begin{equation}
 \lim_{{\rm large}\ t} {\rm S/N}%\frac{\mathrm{Signal}}{\mathrm{Noise}}
-    \propto \sqrt{N_{\mathrm{sample}}} e^{-(m_{\mathrm{N}} - \frac{3}{2}m_\pi)t}\, ,
+    \propto \sqrt{N_{\mathrm{sample}}} e^{-(m_{\mathrm{N}} - \frac{3}{2}m_\pi)t}\, \del{,}\asm{.}
 \end{equation}
-which adds an extra source of excited state systematic uncertainty that must be quantified.
-\change{In} the region in time when the ground state begins to saturate the correlation functions, at $t\approx 1$~fm, the noise \change{becomes} significant, making the correlation functions in this region susceptible to correlated fluctuations which can bias a simplistic single-state analysis.
-Further, as the pion mass is reduced towards its physical value, the excited state energy gap also shrinks, as the lowest lying excited state is typically a nucleon-pion in a relative $P$-wave.  At the same time, the energy scale which governs the exponential degradation of the signal also grows.  The former issue means calculations must be performed at larger Euclidean time to suppress the smaller gapped excited states and the latter issue means we need exponentially more statistics to obtain a fixed relative uncertainty at a given time.
-In order to boost statistics, given the numerical cost of generating more configurations, time and spatial translation invariance are used to generate sources at several choices of $t_0$ and $\mathbf{x}_0$, which are then translated back to the origin and averaged together.  For the nucleon, it was observed that hundreds of sources on each configuration, using an anisotropic clover-Wilson ensemble~\cite{HadronSpectrum:2008xlg}, still showed approximate $\sqrt{N_{\rm sample}}$ improvement of the stochastic uncertainty as a function of the number of sources per configuration~\cite{Beane:2009kya}.
+\sout{which adds an extra source of excited state systematic uncertainty that must be quantified.}
+\change{In} the region in time when the ground state begins to saturate the correlation functions, \asm{typically around}\del{at} $t\approx 1$~fm, the noise \change{becomes} significant, \asm{which makes}\del{making} the correlation functions in this region susceptible to correlated fluctuations \asm{that}\del{which} can bias a simplistic single-state analysis.
+\asm{This forces measurements to be made at Euclidean times where
+ excited state contamination is still appreciable,
+ which adds an extra source of systematic uncertainty.}
+\del{Further, a}\asm{A}s the pion mass is reduced towards its physical value, the \asm{energies of the} excited state\asm{s decrease}\sout{energy gap also shrinks}, as the lowest lying excited state is typically a nucleon-pion in a relative $P$-wave.
+At the same time, the energy scale \asm{that}\del{which} governs the exponential degradation of the signal also grows.
+The former issue means calculations must be performed at larger Euclidean time to suppress the \sout{smaller gapped}\asm{slowly decaying} excited states\asm{,} and the latter issue means we need exponentially more statistics to obtain a fixed relative uncertainty at a given \asm{Euclidean} time.
+\asm{\bf [The rest of the paragraph seems unnecessary, remove?]}
+In order to boost statistics, \sout{given the numerical cost of generating more configurations, }time and spatial translation invariance are used to generate sources at several choices of $t_0$ and $\mathbf{x}_0$\del{, which}\asm{~that} are then translated back to the origin and averaged together.  For the nucleon, it was observed that hundreds of sources on each configuration, using an anisotropic clover-Wilson ensemble~\cite{HadronSpectrum:2008xlg}, still showed approximate $\sqrt{N_{\rm sample}}$ improvement of the stochastic uncertainty as a function of the number of sources per configuration~\cite{Beane:2009kya}.
 
-
-
-The most common method of constructing three-point correlation functions follows a similar strategy, beginning with spatially local sources.
+The most common method of constructing three-point correlation functions follows a \del{similar }strategy\asm{~similar to the two-point correlation functions}, beginning with spatially local sources.
 A nucleon three-point function with current $j_\G$ is constructed with interpolating operators $N(\tsep,\mathbf{x})$ and $N^\dagger(0,\mathbf{0})$,
 \begin{align}
 C_\G(\tsep,\t) &= \sum_{\mathbf{x,y}}e^{-i\mathbf{p\dotp x} +i\mathbf{q\dotp y}}
@@ -645,8 +652,9 @@ C_\G(\tsep,\t) &= \sum_{\mathbf{x,y}}e^{-i\mathbf{p\dotp x} +i\mathbf{q\dotp y}}
 \nonumber\\&=
     \sum_{n,m} z_n(\mathbf{p})z_m^\dagger(\mathbf{p-q})e^{-E_n(\tsep-\t)}e^{-E_m \t} g_{n,m}^\G\, ,
 \end{align}
-where $g_{n,m}^\G$ are the matrix elements of interest, and in principle, all other quantities can be determined from the two-point function, a point we will return to.
-Often, the sink is projected to zero momentum, $\mathbf{p}_n=0$, for which momentum conservation gives the momentum of the incoming state to be $\mathbf{p}_m = -\mathbf{q}$.%
+where $g_{n,m}^\G$ are the matrix elements of interest, and in principle, all other quantities can be determined from \del{the }two-point function\asm{s}, a point we will return to.
+\asm{\bf [this $p_n$, $p_m$ notation might be confusing because the spectral decompositions of $|n\rangle$ and $|m\rangle$ are not explicitly written]}
+Often, the sink is projected to zero momentum, $\mathbf{p}_n=0$, \del{for which}\asm{and} momentum conservation \sout{gives the momentum of the}\asm{selects an} incoming state \del{to be}\asm{with} $\mathbf{p}_m = -\mathbf{q}$.%
 %-------------------------------------------------------------------------------
 \begin{marginnote}
 \entry{$j_\G = \bar{q}\, \G\, q$}{quark bilinear currents of Dirac structure $\G$ and unspecified flavor structure}
