@@ -1055,8 +1055,8 @@ However, the LQCD calculations of the form factors are typically carried out up 
 %------------------------------------------------------------------------------
 complicating a combined extrapolation in the various variables of interest.
 For simpler quantities, such as the spectrum and nucleon axial, scalar and tensor charges, results at heavier pion masses can help improve the overall precision of the final result, provided the extrapolation to the physical pion mass is under control.
-Even if only physical pion mass ensembles were used with sufficiently large volumes that the volume corrections are negligible, there would still be an issue related to the continuum extrapolation.
-As the lattice spacing is changed, if the lattice volume is not changed in an exactly compensating way, the physical volume from one lattice spacing to the next will change.  As a consequence, the available momentum for the nucleon and currents will change, which means the value of the four-momentum transfer $Q$ will not be the same from one lattice spacing to the next.  Consequently, the continuum extrapolation, which straightforward in principle, is complicated in practice, requiring a minimum of a combined extrapolation in $Q$ and $a$.
+For the form factors, even if only physical pion mass ensembles were used with sufficiently large volumes that the volume corrections are negligible, there would still be an issue related to the continuum extrapolation.
+As the lattice spacing is changed, if the lattice volume is not changed in an exactly compensating way, the physical volume from one lattice spacing to the next will change.  As a consequence, the allowed quantized momentum for the nucleon and currents will change, which means the value of the four-momentum transfer $Q$ will not be the same from one lattice spacing to the next.  Consequently, the continuum extrapolation, which straightforward in principle, is complicated in practice, requiring a minimum of a combined extrapolation in $Q$ and $a$.
 Is it possible to perform a combined extrapolation/interpolation analysis over the full range of $Q$ while also taking the continuum and physical pion mass limits?
 
 
@@ -1069,7 +1069,8 @@ The $z$ expansion takes the four-momentum transfer squared $Q^2$
 \begin{align}
  z(t=-Q^2;t_0,t_c) = \frac{\sqrt{t_c-t} -\sqrt{t_c-t_0}}{ \sqrt{t_c-t} +\sqrt{t_c-t_0}}.
 \end{align}
-Here, $t_c$ is no larger than the particle production threshold in timelike momentum transfer
+Both $t_0$ and $t_c$ are parameters that can be chosen, with some restrictions.
+$t_c$ can not be larger than the particle production threshold in the timelike momentum transfer
  and $t_0$ is a parameter (typically negative) that
  may be chosen to improve the series convergence.
 Inverting this relation and expanding as a power series in $z$ about $Q^2=-t_0$ ($z=0$) yields
