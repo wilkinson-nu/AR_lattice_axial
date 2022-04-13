@@ -60,6 +60,7 @@
 \def\del#1{}
 \def\done#1{{\color{brown}#1}}
 \definecolor{ao(english)}{rgb}{0.0, 0.5, 0.0}
+\def\addcite#1{{\color{red}CITE[#1]}}
 
 % Greek letters
 \def\g{\gamma}
@@ -74,6 +75,9 @@
 \newcommand*\dotp{\mathpalette\bigcdot@{.5}}
 \newcommand*\bigcdot@[2]{\mathbin{\vcenter{\hbox{\scalebox{#2}{$\m@th#1\bullet$}}}}}
 \makeatother
+
+\newcommand{\tctza}{\ensuremath{(t_c-t_0)}}
+\newcommand{\tctzb}{\ensuremath{\Big(\frac{-t_0}{t_c-t_0}\Big)}}
 
 
 \def\Dslash{D\hskip-0.65em /}
@@ -1037,18 +1041,125 @@ which are used in Section~\ref{sec:impact} without considering their uncertainti
 
 {\color{ao(english)}Andre: trying a rewrite - not using change macro}
 
-LQCD results for $F_A(Q^2)$ and the Dirac and Pauli form factors are often determined up to $Q^2\approx1-2$~GeV$^2$.
-This extends beyond the range of validity of $\chi$PT~\cite{Gasser:1984gg,Jenkins:1990jv,Bernard:1995dp}, which may converge up to $Q\approx300$~MeV.%
+Consider an expansion of the form factor as a power-series in $Q^2$ with coefficients that capture the pion mass, lattice spacing and lattice volume dependence
+\begin{align}\label{eq:F_Q_power}
+F(Q^2) = \sum_{k=0} f_k(m_\pi, a, L) Q^{2k}.
+\end{align}
+This expression will be valid for arbitrarily small values of $m_\pi$, $Q$ and $a$, and for sufficiently large values of $L$.
+However, it is not valid for large values of $Q$: perturbative QCD predicts the form factor should scale as $Q^{-4}$ in the asymptotically large $Q^2$-regime.
+For sufficiently small values of $m_\pi$ and $Q$ (and large $L$), $\chi$PT~\cite{Gasser:1984gg,Jenkins:1990jv,Bernard:1995dp} provides a model independent parameterization of the coefficients, $f_k$.  $\chi$PT can be extended to incorporate the lattice spacing corrections as well~\cite{Sharpe:1998xm}.
+
+However, the LQCD calculations of the form factors are typically carried out up to $Q^2\approx1-3$~GeV$^2$, well outside the range of validity of $\chi$PT,%
 % FOOTNOTE ---------------------------------------------------------------
-\footnote{The range of validity of $\chi$PT seems to be at best $m_\pi\lesssim300$~MeV~\cite{Beane:2004ks,Walker-Loud:2008rui} with some indications the convergence is troubled at the physical pion mass~\cite{Walker-Loud:2019cif,Drischler:2019xuo}.}
-The LQCD results are also obtained at finite lattice spacing and finite volume, leading to additional systematic corrections to the observables.
-For small momentum, small pion mass, small lattice spacing~\cite{Symanzik:1983dc,Symanzik:1983gh,Sharpe:1998xm} and large volumes~\cite{Gasser:1986vb}, these systematics can all be captured through the EFT framework~\cite{Weinberg:1978kz}.
-Even when results at the physical pion mass are available, results at heavier pion masses can help improve the overall precision of the final result, provided the extrapolation to the physical pion mass is under control.
-Is it possible to perform a combined extrapolation/interpolation analysis over the full range of $Q^2$ while also taking the continuum and physical pion mass limits?
+\footnote{The range of validity of $\chi$PT in the pion mass seems to be at best $m_\pi\lesssim300$~MeV~\cite{Beane:2004ks,Walker-Loud:2008rui} with some indications the convergence is troubled at the physical pion mass~\cite{Walker-Loud:2019cif,Drischler:2019xuo}.  A similar upper limit in $Q$ is likely.}
+%------------------------------------------------------------------------------
+complicating a combined extrapolation in the various variables of interest.
+For simpler quantities, such as the spectrum and nucleon axial, scalar and tensor charges, results at heavier pion masses can help improve the overall precision of the final result, provided the extrapolation to the physical pion mass is under control.
+Even if only physical pion mass ensembles were used with sufficiently large volumes that the volume corrections are negligible, there would still be an issue related to the continuum extrapolation.
+As the lattice spacing is changed, if the lattice volume is not changed in an exactly compensating way, the physical volume from one lattice spacing to the next will change.  As a consequence, the available momentum for the nucleon and currents will change, which means the value of the four-momentum transfer $Q$ will not be the same from one lattice spacing to the next.  Consequently, the continuum extrapolation, which straightforward in principle, is complicated in practice, requiring a minimum of a combined extrapolation in $Q$ and $a$.
+Is it possible to perform a combined extrapolation/interpolation analysis over the full range of $Q$ while also taking the continuum and physical pion mass limits?
+
+
+The $z$ expansion~\cite{Bhattacharya:2011ah} is often used to improve the extrapolation/interpolation in $Q^2$.  The $z$ expansion makes use of the analytic structure of QCD,
+performing a conformal mapping to a obtain a new small expansion parameter, and it has been utilized for decades in meson flavor physics~\cite{Okubo:1971jf}
+and is a standard feature in modern LQCD calculations of meson form factors
+for determining CKM matrix elements.
+The $z$ expansion takes the four-momentum transfer squared $Q^2$
+ to a small expansion parameter $z$, using the relation
+\begin{align}
+ z(t=-Q^2;t_0,t_c) = \frac{\sqrt{t_c-t} -\sqrt{t_c-t_0}}{ \sqrt{t_c-t} +\sqrt{t_c-t_0}}.
+\end{align}
+Here, $t_c$ is no larger than the particle production threshold in timelike momentum transfer
+ and $t_0$ is a parameter (typically negative) that
+ may be chosen to improve the series convergence.
+Inverting this relation and expanding as a power series in $z$ about $Q^2=-t_0$ ($z=0$) yields
+\begin{align}
+x \equiv  \frac{Q^2+t_0}{t_c-t_0} = 4 \sum_{k=1}^\infty k z^k.
+ \label{eq:Q2toz}
+\end{align}
+Following this procedure, the dimensionful coefficients $f_k$ in Eq.~\eqref{eq:F_Q_power} are assembled into expressions related to the dimensionless coefficients of the $z$ expansion (which we denote here by $b_k$ to avoid confusion with the lattice spacing $a$)
+\begin{align}
+ F\big(z(Q^2; t_0, t_c)\big) = \sum_{k=0}^\infty b_k z^k.
+ \label{eq:zexp}
+\end{align}
+
+The most recent multi-ensemble LQCD publications with computations
+of the axial form factor~\cite{Park:2021ypf,RQCD:2019jai}
+have treated the $z$ expansion coefficients as the relevant LECs
+and fit to these coefficients with a chiral-continuum extrapolation.
+As discussed above, for sufficiently small $m_\pi$, $Q$ and $a$, the coefficients $f_k$ have a well defined expansion that is rooted in $\chi$PT and its extension to incorporate discretization effects.%
+%-------------------------------------------------------------------------------
+\begin{marginnote}
+\entry{LEC(s)}{Low energy constant(s), the coefficients of hadronic EFT operators}
+\end{marginnote}%
+%-------------------------------------------------------------------------------
+This is possible as there is a rigorous mapping between the quark-level operators in QCD and the higher order Symanzik expansion with hadronic level operators in the EFT.
+For a dynamic quantity, such as the form factor, or the $z$ expansion parameterization of it, it is not guaranteed that the coefficients can be described with simple $m_\pi$ and $a$ expansions.  For pion masses that are sufficiently close to the physical pion mass, and for lattice spacings sufficiently close to the continuum limit, a Taylor expansion about these limits should be adequate to interpolate and extrapolate with controlled uncertainties.
+For some quantities, such as the proton radius, there are divergent $\ln(m_\pi)$ corrections that arise in the $\chi$PT description, which are observed as rapid pion mass dependence in LQCD calculations, see for example Ref.~\cite{Green:2014xba}.  Such corrections as these, or possibly important $a^2\ln(a)$ corrections that arise in lattice perturbation theory~\cite{Balog:2009yj,Balog:2009np,Husung:2019ytz}, if relevant, are ones that may not be easily or correctly captured by parameterizing the $z$ expansion coefficients as a power series in $a$ and/or $m_\pi$.
+There is the additional subtlety of understanding and incorporating the finite volume corrections, which are well understood in the regime where $\chi$PT is applicable~\cite{Gasser:1986vb}, but we will not comment on in further detail.
+
+We propose a strategy that might improve our systematic understanding of these effects, but needs to be explored to understand its validity and applicability.
+In essence, the proposal is to begin with the EFT parameterization of the form factor and perform the conformal mapping to express the $z$ expansion coefficients, $b_k$ in terms the $f_k$ coefficients that are derived from $\chi$PT and its finite volume and lattice spacing EFT extensions.
+Then, one can compare the values of the LECs determined in the $z$ expansion analysis over the entire range of data, to an analysis of the form factor in the low $m_\pi$ and low $Q^2$ region utilizing the $\chi$PT expression.  One could also explore simultaneous fits with both methods, where one utilizes higher order terms in the $z$ expansion, if needed, which could also help quantify corrections that can not be systematically described with the $\chi$PT parameterization.
+One can of course study effects of truncating the $\chi$PT expansion by working to higher orders in determining the $f_k$ coefficients and studying the impact on the analysis.
+
+
+As a slightly more concrete example, start with the inverse transformation from $z$ back to $Q^2$, expressed in terms of $x$, given in Eq.~\eqref{eq:Q2toz}.  The expression for $z$ at small $x$ is \begin{align}
+ (1+x)^{1/2} -1 = \frac{x}{2}
+ -4\sum_{k=2}^\infty \frac{(2k-3)!}{k!(k-2)!} \biggr( -\frac{x}{4} \biggr)^{k},
+ &\quad
+ z = \frac{1}{x} \big( (1+x)^{1/2} -1 \big)^2,
+ \label{eq:ztoQ2}
+\end{align}
+ which starts at $O(x)$.
+For large $Q^2$, the relation is instead expanded in terms of $x^{-1}$.
+A general series in $Q^2$ may therefore be converted to a double expansion in $z$ and $t_c-t_0$
+ by first converting powers of $Q^2$ to those of $Q^2+t_0$ and $t_0$ using the  binomial theorem,
+\begin{align}
+ Q^{2m} &= \big( (Q^2+t_0) -t_0 \big)^m
+ = (t_c-t_0)^m
+ \sum_{n=0}^{m} \left( \begin{array}{c} m \\ n \end{array} \right)
+ x^n
+ %\biggr( \frac{Q^2+t_0}{t_c-t_0} \biggr)^n
+ \biggr( \frac{-t_0}{t_c-t_0} \biggr)^{m-n}
+\end{align}
+and then substituting Equation~\ref{eq:Q2toz} to convert powers of $Q^2+t_0$ into powers of $z$.
+All dependence on the dimension is absorbed into powers of $t_c-t_0 \propto m_\pi^2$.
+The relative weight of the expansion parameters may be adjusted by changing the value of $t_0$, giving some modicum of freedom over the expansion order.
+If we consider the $Q^4$ expansion of Equation~\eqref{eq:F_Q_power} with
+a truncation at the leading chiral and discretization corrections
+\begin{align}
+f_0 &= c_0 + \ell_0 m_\pi^2 + d_0 a^2\, ,
+\nonumber\\
+f_1 &= c_1 + \ell_1 m_\pi^2 + d_1 a^2\, ,
+\nonumber\\
+f_2 &= c_2 + \ell_2 m_\pi^2 + d_2 a^2\, ,
+\label{eq:lecampi}
+\end{align}
+where $c_k$, $\ell_k$ and $d_k$ are LECs describing the pion mass and lattice spacing dependence.
+For the axial form factor, $c_0$ and $c_1$ are related to the axial coupling and radius in the chiral limit
+\begin{align}
+&c_0 = \lim_{m_\pi\rightarrow0} g_{\mathrm{A}}\, ,&
+&c_1 = -\lim_{m_\pi\rightarrow0} \frac{g_{\mathrm{A}} r_{\mathrm{A}}^2}{6}\, .&
+\end{align}
+Then the $z$ expansion coefficients that appear in equation~(\ref{eq:zexp})
+expressed in terms of these LECs are
+\begin{align}\label{eq:z_coeff_xpt}
+b_0 &= f_0 +\tctza \tctzb f_1 +\tctza^2 \tctzb^2 f_2 +O\big(\tctza^3\big),
+\nonumber\\
+b_1 &= 4 \tctza f_1 +8 \tctza^2 \tctzb f_2 +O\big(\tctza^3\big),
+\nonumber\\
+b_2 &= 8 \tctza f_1 +16 \tctza^2 \Big(1 -\frac{t_0}{t_c-t_0}\Big) f_2 +O\big(\tctza^3\big).
+\end{align}
+The leading lattice spacing, pion mass and finite volume dependence may be made manifest by substituting their expresions from equation~(\ref{eq:lecampi}).
 
 
 
 
+
+
+
+\bigskip
 {\color{ao(english)}OLD BELOW}
 
 LQCD results are computed at finite lattice spacing, in a finite volume and typically (for nucleons) at pion masses heavier than nature.
@@ -1163,8 +1274,6 @@ For the axial form factor, $c_0$ and $c_1$ are related to the axial coupling and
 \end{align}
 Then the $z$ expansion coefficients that appear in equation~(\ref{eq:zexp})
  expressed in terms of these LECs are
-\newcommand{\tctza}{\ensuremath{(t_c-t_0)}}
-\newcommand{\tctzb}{\ensuremath{\Big(\frac{-t_0}{t_c-t_0}\Big)}}
 \begin{align}\label{eq:z_coeff_xpt}
 b_0 &= f_0 +\tctza \tctzb f_1 +\tctza^2 \tctzb^2 f_2 +O\big(\tctza^3\big),
 \nonumber\\
