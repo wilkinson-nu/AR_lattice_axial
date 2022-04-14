@@ -600,22 +600,22 @@ m_{\rm eff}(t) &= \ln \left( \frac{C(t)}{C(t+1)} \right)
 For nucleon two-point functions, the S/N ratio degrades exponentially at large Euclidean time~\cite{Lepage:1989hd}
 \begin{equation}
 \lim_{{\rm large}\ t} {\rm S/N}%\frac{\mathrm{Signal}}{\mathrm{Noise}}
-    \propto \sqrt{N_{\mathrm{sample}}} e^{-(m_{\mathrm{N}} - \frac{3}{2}m_\pi)t}\, \del{,}\asm{.}
+    \propto \sqrt{N_{\mathrm{sample}}} e^{-(m_{\mathrm{N}} - \frac{3}{2}m_\pi)t}\, .
 \end{equation}
 In the region in time when the ground state begins to saturate the correlation functions, typically around $t\approx 1$~fm, the noise becomes significant, which makes the correlation functions in this region susceptible to correlated fluctuations that can bias a simplistic single-state analysis.
 This forces measurements to be made at Euclidean times where
  excited state contamination is still appreciable,
  which adds an extra source of systematic uncertainty.
-As the pion mass is reduced towards its physical value, the \asm{energies of the} excited state\asm{s decrease}\sout{energy gap also shrinks}, as the lowest lying excited state is typically a nucleon-pion in a relative $P$-wave.
-At the same time, the energy scale \asm{that}\del{which} governs the exponential degradation of the signal also grows.
-The former issue means calculations must be performed at larger Euclidean time to suppress the \sout{smaller gapped}\asm{slowly decaying} excited states\asm{,} and the latter issue means we need exponentially more statistics to obtain a fixed relative uncertainty at a given \asm{Euclidean} time.
+As the pion mass is reduced towards its physical value, the energies of the excited states decrease, as the lowest lying excited state is typically a nucleon-pion in a relative $P$-wave.
+At the same time, the energy scale that governs the exponential degradation of the signal also grows.
+The former issue means calculations must be performed at larger Euclidean time to suppress the slowly decaying excited states, and the latter issue means we need exponentially more statistics to obtain a fixed relative uncertainty at a given Euclidean time.
 \asm{\bf [who is this the rest of this paragraph written for?
  seems unnecessary, since LQCD people will already know it
  and neutrino people won't need to know it.
  remove?]}
-In order to boost statistics, \sout{given the numerical cost of generating more configurations, }time and spatial translation invariance are used to generate sources at several choices of $t_0$ and $\mathbf{x}_0$\del{, which}\asm{~that} are then translated back to the origin and averaged together.  For the nucleon, it was observed that hundreds of sources on each configuration, using an anisotropic clover-Wilson ensemble~\cite{HadronSpectrum:2008xlg}, still showed approximate $\sqrt{N_{\rm sample}}$ improvement of the stochastic uncertainty as a function of the number of sources per configuration~\cite{Beane:2009kya}.
+In order to boost statistics, time and spatial translation invariance are used to generate sources at several choices of $t_0$ and $\mathbf{x}_0$ that are then translated back to the origin and averaged together.  For the nucleon, it was observed that hundreds of sources on each configuration, using an anisotropic clover-Wilson ensemble~\cite{HadronSpectrum:2008xlg}, still showed approximate $\sqrt{N_{\rm sample}}$ improvement of the stochastic uncertainty as a function of the number of sources per configuration~\cite{Beane:2009kya}.
 
-The most common method of constructing three-point correlation functions follows a \del{similar }strategy\asm{~similar to the two-point correlation functions}, beginning with spatially local sources.
+The most common method of constructing three-point correlation functions follows a strategy similar to the two-point correlation functions, beginning with spatially local sources.
 A nucleon three-point function with current $j_\G$ is constructed with interpolating operators $N(\tsep,\mathbf{x})$ and $N^\dagger(0,\mathbf{0})$,
 \begin{align}
 C_\G(\tsep,\t) &= \sum_{\mathbf{x,y}}e^{-i\mathbf{p\dotp x} +i\mathbf{q\dotp y}}
@@ -623,9 +623,9 @@ C_\G(\tsep,\t) &= \sum_{\mathbf{x,y}}e^{-i\mathbf{p\dotp x} +i\mathbf{q\dotp y}}
 \nonumber\\&=
     \sum_{n,m} z_n(\mathbf{p})z_m^\dagger(\mathbf{p-q})e^{-E_n(\tsep-\t)}e^{-E_m \t} g_{n,m}^\G\, ,
 \end{align}
-where $g_{n,m}^\G$ are the matrix elements of interest, and in principle, all other quantities can be determined from \del{the }two-point function\asm{s}, a point we will return to.
+where $g_{n,m}^\G$ are the matrix elements of interest, and in principle, all other quantities can be determined from two-point functions, a point we will return to.
 \asm{\bf [this $p_n$, $p_m$ notation might be confusing because the spectral decompositions of $|n\rangle$ and $|m\rangle$ are not explicitly written]}
-Often, the sink is projected to zero momentum, $\mathbf{p}_n=0$, \del{for which}\asm{and} momentum conservation \sout{gives the momentum of the}\asm{selects an} incoming state \del{to be}\asm{with} $\mathbf{p}_m = -\mathbf{q}$.%
+Often, the sink is projected to zero momentum, $\mathbf{p}_n=0$, and momentum conservation selects an incoming state with $\mathbf{p}_m = -\mathbf{q}$.%
 %-------------------------------------------------------------------------------
 \begin{marginnote}
 \entry{$j_\G = \bar{q}\, \G\, q$}{quark bilinear currents of Dirac structure $\G$ and unspecified flavor structure}
@@ -634,9 +634,9 @@ Often, the sink is projected to zero momentum, $\mathbf{p}_n=0$, \del{for which}
 \end{marginnote}%
 %-------------------------------------------------------------------------------
 A typical calculation is performed with a sequential propagator~\cite{Martinelli:1988rr}
-whose source is \sout{constructed}\asm{obtained} by taking \del{the }forward propagators from the origin and contracting \asm{the spin and color indices for all but one quark operator}\sout{all but one spin and color index at the sink time, $\tsep$}.
-\asm{In the case of the nucleon three-point correlation function,
- the sequential propagator could originate either from the current insertion or from the sink.}%
+whose source is obtained by taking forward propagators from the origin and contracting the spin and color indices for all but one quark operator.
+In the case of the nucleon three-point correlation function,
+ the sequential propagator could originate either from the current insertion or from the sink.%
 % FOOTNOTE ---------------------------------------------------------------------
 \footnote{There are alternative methods for computing nucleon structure known as the one-end trick~\cite{Foster:1998vw,McNeile:2006bz,Alexandrou:2013xon} and a variant of the Feynman-Hellmann Theorem~\cite{CSSM:2014uyt}, but these are not in wide use.}
 %-------------------------------------------------------------------------------
@@ -648,31 +648,28 @@ Each choice of $\tsep$, flavor and spin of the initial and final state, and each
 While each sequential propagator can only be used for these specific choices, one is free to insert any quark bilinear operator for the current, including non-trivial spatial structure and momentum.
 To boost statistics, in addition to taking advantage of translation invariance as with the two-point function, the \textit{coherent sink technique}~\cite{LHPC:2010jcs} is used to solve a single sequential propagator for many choices of the origin.
 
-The most significant challenge \asm{for}\del{in} determining the nucleon matrix elements and subsequent form factors is dealing with the excited state contamination, an issue that is compounded by the degrading S/N.
-If the nucleon two-point function is becoming saturated by the ground state at $t\approx1$~fm, \del{the }ideal\asm{ly} three-point function\asm{s} would use values of $\tsep\asm{\gtrsim}\del{\approx}2$~fm.
-\asm{However, the S/N ratio of the three-point functions decays more rapidly than the two-point functions.}
-In practice, a few values of $\tsep$ in the range $0.8 \lesssim \tsep \lesssim 1.5$~fm are used \sout{because the S/N ratio of the three-point functions decays more rapidly than the two-point function, }and a\del{n extrapolation to large $\tsep$}\asm{~fit to the time dependence} is used to isolate the ground state matrix elements.
-\sout{However, using }\asm{Fits that allow for }just one excited state \sout{in the analysis }require\del{s} three values of $\tsep$ to \sout{have a one degree-of-freedom fit to extract the ground state matrix element}\asm{not be overconstrained}.
+The most significant challenge for determining the nucleon matrix elements and subsequent form factors is dealing with the excited state contamination, an issue that is compounded by the degrading S/N.
+If the nucleon two-point function is becoming saturated by the ground state at $t\approx1$~fm, ideally three-point functions would use values of $\tsep\gtrsim 2$~fm.
+However, the S/N ratio of the three-point functions decays more rapidly than the two-point functions.
+In practice, a few values of $\tsep$ in the range $0.8 \lesssim \tsep \lesssim 1.5$~fm are used and a fit to the time dependence is used to isolate the ground state matrix elements.
+Fits that allow for just one excited state require three values of $\tsep$ to not be overconstrained.
 Most results have been generated with three or fewer values of $\tsep$.
-Ref.~\cite{Chang:2018uxx} utilized many values of $\tsep$ to determine $g_{\mathrm{A}}$, \change{and} a few \change{other} groups have begun advocating for the use of many values of $\tsep$, including small values, to improve \sout{our ability to understand and }control \asm{over} the excited state contamination~\cite{Hasan:2019noy,Alexandrou:2019brg,He:2021yvm}.
-Ref.~\cite{He:2021yvm} utilized 13 values of $\tsep$, which allow\del{s}\asm{ed} for a systematic study of the uncertainty associated with \asm{the truncation of $\tsep$ and a fit to a 5-state model}\sout{truncating early and/or late values of $\tsep$ in the analysis, as well as providing sufficient data to perform up to a complete 5-state fit}.
+Ref.~\cite{Chang:2018uxx} utilized many values of $\tsep$ to determine $g_{\mathrm{A}}$, and a few other groups have begun advocating for the use of many values of $\tsep$, including small values, to improve control over the excited state contamination~\cite{Hasan:2019noy,Alexandrou:2019brg,He:2021yvm}.
+Ref.~\cite{He:2021yvm} utilized 13 values of $\tsep$, which allowed for a systematic study of the uncertainty associated with the truncation of $\tsep$ and a fit to a 5-state model.
 
-At non-zero momentum, the \asm{tradeoff between }excited states \asm{and S/N }become\asm{s} more problematic.
-While the energy associated with the signal grows with the momentum, the energy scale associated with the noise is independent of the momentum\del{ and thus t}%
-\asm{. T}heir difference, which is the energy scale that governs the decay of the S/N, \asm{therefore} grows with increasing momentum.
+At non-zero momentum, the tradeoff between excited states and S/N becomes more problematic.
+While the energy associated with the signal grows with the momentum, the energy scale associated with the noise is independent of the momentum. Their difference, which is the energy scale that governs the decay of the S/N, therefore grows with increasing momentum.
 For values of $Q\gtrsim 2$~GeV, the noise becomes unmanagable unless one uses a smearing profile that couples more strongly to boosted nucleons~\cite{Bali:2016lva}.
-\sout{For boosted nucleons, p}\asm{P}arity is also no longer a good quantum number \asm{for boosted nucleons} and so the \asm{matrix elements couple to both}\sout{correlation function begins to mix} even and odd parity states\sout{ through the matrix elements}.  Such contamination can be handled through a variational method that incoporates even and odd parity nucleons~\cite{Stokes:2013fgw,Stokes:2018emx,Stokes:2019zdd}.
+Parity is also no longer a good quantum number for boosted nucleons and so the matrix elements couple to both even and odd parity states.  Such contamination can be handled through a variational method that incoporates even and odd parity nucleons~\cite{Stokes:2013fgw,Stokes:2018emx,Stokes:2019zdd}.
 
 
 
 Recent results have uncovered some additional aspects of excited state contamination:
 \begin{itemize}[leftmargin=*]
-\item \del{T}\asm{Nucleon t}wo-point functions constructed as in Equation~\eqref{eq:2pt} are insufficient to reliably determine any of the excited states.  Different choices of $\tmin$ and different reasonable priors in a Bayesian analysis support excited states that differ by several sigma, also resulting in sensitivity of the ground state spectrum~\cite{Park:2021ypf,He:2021yvm} and matrix elements~\cite{Jang:2019vkm,Gupta:2021ahb}.
+\item Nucleon two-point functions constructed as in Equation~\eqref{eq:2pt} are insufficient to reliably determine any of the excited states.  Different choices of $\tmin$ and different reasonable priors in a Bayesian analysis support excited states that differ by several sigma, also resulting in sensitivity of the ground state spectrum~\cite{Park:2021ypf,He:2021yvm} and matrix elements~\cite{Jang:2019vkm,Gupta:2021ahb}.
 
-\item In contrast, the curvature in the three-point functions associated with the current insertion time \change{provides extra constraints that make the determination of the spectrum stable and robust}%
-\del{is very constraining on the excited state spectrum, resulting in very stable and robust determination of the spectrum}
-while varying $\tmin$, the number of excited states, the excited state model and the excited state priors~\cite{He:2021yvm}.
-While it is encouraging that the spectrum and matrix elements become \del{very }stable, such an analysis offers no insight into the nature of the excited states.  For example, with typical values of $m_\pi L\approx4$, the $P$-wave $N(\mathbf{p})\pi(-\mathbf{p})$ excited state energy \sout{gap }is essentially the same as the $N\pi\pi$ threshold state.%
+\item In contrast, the curvature in the three-point functions associated with the current insertion time provides extra constraints that make the determination of the spectrum stable and robust while varying $\tmin$, the number of excited states, the excited state model and the excited state priors~\cite{He:2021yvm}.
+While it is encouraging that the spectrum and matrix elements become stable, such an analysis offers no insight into the nature of the excited states.  For example, with typical values of $m_\pi L\approx4$, the $P$-wave $N(\mathbf{p})\pi(-\mathbf{p})$ excited state energy is essentially the same as the $N\pi\pi$ threshold state.%
 \begin{marginnote}
  \entry{$N\pi$}{Nucleon-pion}
  \entry{$N\pi\pi$}{Nucleon and two pion}
@@ -682,15 +679,10 @@ While it is encouraging that the spectrum and matrix elements become \del{very }
 
 \item For zero-momentum transfer,
  where the spectrum of the in and the out states have the same value,
- the use of \asm{analysis techniques such as }the summation method~\cite{Maiani:1987by}
+ the use of nalysis techniques such as the summation method~\cite{Maiani:1987by}
  or a variant of the Feynman-Hellman
- method~\cite{deDivitiis:2012vs,Bouchard:2016heu}\del{,}
- \del{which is closely related to the summation method,}%
- \sout{it is understood that the excited states become significantly suppressed compared to the three-point function~}%
- \asm{can significantly suppress the excited states}~\cite{Capitani:2012gj,He:2021yvm}.
-For non-zero momentum transfer,
-\change{only the Breit-Frame where the momentum of the in and out states is equal and opposite, is amenable to this alternative method~\cite{Gambhir:2019pvw}.}
-\del{such a technique can only be used well in the Breit-Frame where the momentum of the in and out states is equal and opposite, such that the energy spectrum is the same~\cite{Gambhir:2019pvw}.}
+ method~\cite{deDivitiis:2012vs,Bouchard:2016heu} can significantly suppress the excited states~\cite{Capitani:2012gj,He:2021yvm}.
+For non-zero momentum transfer, only the Breit-Frame where the momentum of the in and out states is equal and opposite, is amenable to this alternative method~\cite{Gambhir:2019pvw}.
 
 \item The excited state contamination is particularly relevant for the PCAC relation, which we discuss in more detail in Section~\ref{sec:lqcd_pcac}.
 
@@ -702,14 +694,13 @@ For non-zero momentum transfer,
 % LQCD PCAC
 \subsection{Role of PCAC in LQCD results of $F_{\mathrm{A}}(Q^2)$\label{sec:lqcd_pcac}}
 
-\sout{$F_{\rm A}(Q^2)$ can be isolated in LQCD calculations with particular kinematic choices that are not contaminated by the induced pseudoscalar form factor, see for example Ref.~\cite{Gupta:2017dwj}.}
-Given the challenges in identifying all the sources of systematic uncertainty in the calculation of $g_{\mathrm{A}}$, particularly the excited state contamination, it is prudent to perform cross checks of observables \del{to}\asm{that} test for consistency of the results.
+Given the challenges in identifying all the sources of systematic uncertainty in the calculation of $g_{\mathrm{A}}$, particularly the excited state contamination, it is prudent to perform cross checks of observables that test for consistency of the results.
 The validity of the PCAC relation,
 \begin{align}
  \partial^\mu A^{a}_{\mu}(x) = 2 m_q P^{a}(x),
  \label{eq:pcac}
 \end{align}
-provides a complex consistency check\asm{~at nonzero $Q^2$}.
+provides a complex consistency check at nonzero $Q^2$.
 Here, $A^{a}_\mu$ and $P^{a}$ are the axial and pseudoscalar currents,
  respectively, and $m_q$ is the light quark mass.
 The PCAC relation is an exact symmetry in the continuum limit.
@@ -746,29 +737,28 @@ Initial calculations targeting the axial form factor verified the PCAC relation
  is now informed by baryon $\chi$PT, which suggests that chiral
  and excited state corrections to the spatial axial, temporal axial, and induced pseudoscalar
  are functionally different and not properly removed.
-The axial \asm{form factor} contributions are largely dominated by loop-level $N\pi$ excited states
+The axial form factor contributions are largely dominated by loop-level $N\pi$ excited states
  with a highly suppressed tree-level correction.
-The correction to the axial \asm{form factor}\sout{current} is nearly independent of $Q^2$.
-On the other hand, corrections to the induced pseudoscalar \asm{form factor} are
+The correction to the axial form factor is nearly independent of $Q^2$.
+On the other hand, corrections to the induced pseudoscalar form factor are
  driven by the tree-level correction and has
  a strong $Q^2$ dependence~\cite{Bar:2018xyi}, with the largest correction at low $Q^2$.
 The $N\pi$ loop contribution in the induced pseudoscalar is highly suppressed by
  an approximate cancellation.
 The contamination to the pseudoscalar current is redundant with the
- \asm{chiral corrections to the} axial and induced pseudoscalar
- \del{chiral corrections}\asm{form factors} and can be obtained
+ chiral corrections to the axial and induced pseudoscalar form factors and can be obtained
  by application of the PCAC relation.
 
 Scrutiny of the LQCD data has demonstrated many of the features
- \sout{that were expected from}\asm{predicted by} chiral perturbation theory.
+ predicted by chiral perturbation theory.
 $N\pi$ states were initially expected to be negligible due to a volume suppression
  of the state overlap, which makes them invisible to the two-point functions~\cite{Bar:2016uoj}.
 However, the three-point axial matrix element can enhance these contributions relative
  to the ground state nucleon matrix element, which is enough to overcome the volume suppression.
-The \del{primary}\asm{main} excited state\asm{s that contaminate}\del{ contaminations to} the temporal axial form factor matrix elements
+The main excited states that contaminate the temporal axial form factor matrix elements
  were shown to be driven by two specific $N\pi$ states,
- characterized by a transition\del{ through an axial current}
- of the nucleon state to an $N\pi$ excited state \asm{through the axial current} or vice versa~\cite{Jang:2019vkm}.
+ characterized by a transition
+ of the nucleon state to an $N\pi$ excited state through the axial current or vice versa~\cite{Jang:2019vkm}.
 In the language of $\chi$PT, these states contribute to tree-level nucleon-pion graphs with fixed relative momentum~\cite{Bar:2018xyi}.
 In contrast to the temporal axial insertion, the spatial axial insertion
  is instead expected to be more strongly affected by a tower of loop-level
@@ -781,22 +771,20 @@ Taking into account these observations,
 
 Nucleon matrix elements of the temporal axial current have the largest visible excited state contamination~\cite{Jang:2019vkm,RQCD:2019jai}\asm{,} which can be at least qualitatively understood with $\chi$PT~\cite{Bar:2018xyi}.
 This has led to new analysis strategies that more carefully deal with the $N\pi$ excited state with pion-pole contributions\asm{
-~and pull information about the excited states from the temporal axial current.}\del{,}
-\asm{These new strategies} yield\del{ing} minimal violations of PCAC\del{ that include such matrix elements, as well as}\asm{~and an} improved understanding of excited state contamination on matrix elements sensitive to $F_{\rm A}(Q^2)$ or $\tilde{F}_{\rm P}(Q^2)$\del{,}\asm{.}
-\del{ which previously}\asm{Previously, these matrix elements} exhibited deviations as large as $40\%$ from the PPD or GGT
- \del{ansatz}\asm{relations} at low $Q^2$\del{,} where \asm{they were}\del{it was} expected to work best~\cite{Bali:2014nma,Gupta:2017dwj}.
+  ~and pull information about the excited states from the temporal axial current.} \change{\bf[``pull'' seems informal?]}
+These new strategies yield minimal violations of PCAC and an improved understanding of excited state contamination on matrix elements sensitive to $F_{\rm A}(Q^2)$ or $\tilde{F}_{\rm P}(Q^2)$.
+Previously, these matrix elements exhibited deviations as large as $40\%$ from the PPD or GGT
+ relations at low $Q^2$ where they were expected to work best~\cite{Bali:2014nma,Gupta:2017dwj}.
 
 
-\del{\textcolor{gray}{ While these results are very encouraging, they are not conclusive in the sense that they require us to impose our theoretical prior on the analysis, rather than the results naturally ``falling out'' from the numerical analysis.
-}}
-\asm{These results are very encouraging,
+These results are very encouraging,
  but must be reproduced by several independent LQCD calculations for validation.
 At the time of writing,
- not all of the results are free from imposed theoretical expectations.}
-In order to achieve \del{this}\asm{a} more stringent validation, the calculations would have to generally be performed \del{at larger source-sink separation times }where the correlation functions are \del{all }saturated by the ground state\asm{.
-This could be accomplished by taking the correlation function at large Euclidean times},
+ not all of the results are free from imposed theoretical expectations.
+In order to achieve a more stringent validation, the calculations would have to generally be performed where the correlation functions are saturated by the ground state.
+This could be accomplished by taking the correlation function at large Euclidean times,
  but the noise is exponentially larger.
-Given the extreme cost of \asm{using }such a strategy, a better \del{solution }\asm{alternative }would be to implement a variational method that allows for the use of multi-hadron operators that can explicitly remove the $N\pi$ excited states through a diagonalization of the correlation functions~\cite{Blossier:2009kd}.  We will return to this point in Section~\ref{sec:future}.
+Given the extreme cost of using such a strategy, a better alternative would be to implement a variational method that allows for the use of multi-hadron operators that can explicitly remove the $N\pi$ excited states through a diagonalization of the correlation functions~\cite{Blossier:2009kd}.  We will return to this point in Section~\ref{sec:future}.
 
 
 % ------------------------------------------------------------------------------
@@ -807,22 +795,17 @@ The main deliverables from LQCD calculations of the axial form factor
  are the axial and induced pseudoscalar form factors taken in the continuum,
  infinite volume and physical pion mass limits, complete with a set of parameterization coefficients
  and covariance matrix.
-Though the axial \asm{coupling}
+Though the axial coupling
  and radius are useful for connecting with low-energy applications,
  such as pion electroproduction and neutron decay,
  the needs of neutrino physics in the few-GeV energy range depend
  on the full momentum transfer dependence of the form factor.
-\sout{This is especially true considering the agreement between LQCD and experiment
- for the axial radius taken together with the observation that
- LQCD prefers a slower form factor fall off than experiment,
- as shown in Figure~\ref{fig:gaq2_overlay}.}
-\asm{Despite the agreement between LQCD and experiment for the axial radius,
- LQCD prefers an axial form factor that fall offs with slower $Q^2$ than experiment,
- which is shown in Figure~\ref{fig:gaq2_overlay}.}
+Despite the agreement between LQCD and experiment for the axial radius,
+ LQCD prefers an axial form factor that \change{falls off more slowly as a function of $Q^2$} than experiment,
+ which is shown in Figure~\ref{fig:gaq2_overlay}.
 If the axial radius were the only parameter determining the form factor $Q^2$ dependence,
  then these two observations are incompatible.
 
-\asm{\P}
 Though the form factor shape, especially when allowed to explore its full uncertainty,
  is decidedly \emph{not} a dipole, the central value curve determined
  from experiment appears to be dipole-like.
@@ -1349,7 +1332,7 @@ The $E_{\nu}^{\mathrm{true}}$ --- $E_{\nu}^{\mathrm{rec,\;had}}$ smearing in thi
   \subfloat[FD]{\includegraphics[width=0.3\textwidth]{plots/DUNE_osc_numu_Ar40_breakdown.pdf}}
   \vspace{11pt}
   \caption{The $\nu_{\mu}$--$^{40}$Ar CC-inclusive event rates per ton (kiloton) per $1\times10^{21}$POT at DUNE's near (far) detector site, shown as a function of $E^{\mathrm{rec,\;had}}_{\nu}$. The GENIE~\cite{Andreopoulos:2009rq, GENIE:2021npt} nominal event rate (blue solid line) is produced using the GENIEv3 10a\_02\_11a tune to nucleon data~\cite{GENIE:2021zuu} and the DUNE flux~\cite{Abi:2020evt}. The CCQE (orange dashed line), CC-2p2h (red short dashed line), CC-RES (long-dashed gray line) and CC-other (green dotted line), here meaning all events that are not CCQE, CC-2p2h or CC-RES, contributions are shown. The oscillated flux is calculated using the best fit NuFit5.0 oscillation parameters in normal ordering~\cite{Esteban:2020cvm, nufitweb}. Additionally, an alternative GENIE model is shown, where the only change is to use the $z$ expansion model of the axial form factor, with parameters tuned to LQCD results from the CalLat collaboration, as described in Section~\ref{sec:callatdata}.
-\del{Additionally, t}\asm{T}he ratio of the modified to nominal GENIE models is shown in the bottom panel of each plot.}
+The ratio of the modified to nominal GENIE models is shown in the bottom panel of each plot.}
   \label{fig:dune_impact}
 \end{figure}
 Figure~\ref{fig:dune_impact} shows the $\nu_{\mu}$--$^{40}$Ar CC-inclusive event rates per ton (kiloton) per $1\times10^{21}$POT at DUNE's near (far) detector site, shown as a function of $E^{\mathrm{rec,\;had}}_{\nu}$, with and without modifications to the axial form factor. At this higher neutrino beam energy (with $E_{\nu}^{\mathrm{peak}} \approxeq 2.5$ GeV), CCQE events still make up a sizeable, $\approx$30\%, fraction of the total events.
