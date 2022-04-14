@@ -610,11 +610,6 @@ This forces measurements to be made at Euclidean times where
 As the pion mass is reduced towards its physical value, the energies of the excited states decrease, as the lowest lying excited state is typically a nucleon-pion in a relative $P$-wave.
 At the same time, the energy scale that governs the exponential degradation of the signal also grows.
 The former issue means calculations must be performed at larger Euclidean time to suppress the slowly decaying excited states, and the latter issue means we need exponentially more statistics to obtain a fixed relative uncertainty at a given Euclidean time.
-\asm{\bf [who is this the rest of this paragraph written for?
- seems unnecessary, since LQCD people will already know it
- and neutrino people won't need to know it.
- remove?]}
-In order to boost statistics, time and spatial translation invariance are used to generate sources at several choices of $t_0$ and $\mathbf{x}_0$ that are then translated back to the origin and averaged together.  For the nucleon, it was observed that hundreds of sources on each configuration, using an anisotropic clover-Wilson ensemble~\cite{HadronSpectrum:2008xlg}, still showed approximate $\sqrt{N_{\rm sample}}$ improvement of the stochastic uncertainty as a function of the number of sources per configuration~\cite{Beane:2009kya}.
 
 The most common method of constructing three-point correlation functions follows a strategy similar to the two-point correlation functions, beginning with spatially local sources.
 A nucleon three-point function with current $j_\G$ is constructed with interpolating operators $N(\tsep,\mathbf{x})$ and $N^\dagger(0,\mathbf{0})$,
@@ -642,12 +637,6 @@ In the case of the nucleon three-point correlation function,
 \footnote{There are alternative methods for computing nucleon structure known as the one-end trick~\cite{Foster:1998vw,McNeile:2006bz,Alexandrou:2013xon} and a variant of the Feynman-Hellmann Theorem~\cite{CSSM:2014uyt}, but these are not in wide use.}
 %-------------------------------------------------------------------------------
 
-\asm{\bf [like above, who is this paragraph written for?]}
-Each choice of $\tsep$, flavor and spin of the initial and final state, and each choice of flavor for the current requires a new sequential propagator, rendering this aspect of the computation relatively expensive.
-%\asm{Sequential sources are relatively expensive, since a new sequential source
-% is needed every time one the sequential propagator contraction changes.}
-While each sequential propagator can only be used for these specific choices, one is free to insert any quark bilinear operator for the current, including non-trivial spatial structure and momentum.
-To boost statistics, in addition to taking advantage of translation invariance as with the two-point function, the \textit{coherent sink technique}~\cite{LHPC:2010jcs} is used to solve a single sequential propagator for many choices of the origin.
 
 The most significant challenge for determining the nucleon matrix elements and subsequent form factors is dealing with the excited state contamination, an issue that is compounded by the degrading S/N.
 If the nucleon two-point function is becoming saturated by the ground state at $t\approx1$~fm, ideally three-point functions would use values of $\tsep\gtrsim 2$~fm.
