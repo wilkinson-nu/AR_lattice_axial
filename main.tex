@@ -187,7 +187,7 @@ However, the presence of multiple interaction channels and the addition of nucle
 Intranuclear motion can be significant relative to the energy transfer for the interactions of interest;
 interactions with correlated nucleon-nucleon states can modify or redistribute the interaction strength;
 and rescattering of pions and nucleons in the nucleus can confuse the relationship between the particles associated with the primary interaction channels and those observed in the detector.
-Rescattering can manifest as changes to the particle content and changes to the fraction of energy lost to neutrons, which are typically unobserved in the commonly used detectors.
+Rescattering can manifest as changes to the particle content and changes to the fraction of energy lost to neutrons, \change{which are typically unobservable in the detectors utilized by few-GeV neutrino oscillation experiments.}
 
 A significant challenge impeding progress towards a consistent theoretical description of
 $\nu A$ scattering is the lack of data with which to benchmark parts of the calculation.
@@ -260,7 +260,7 @@ In Section~\ref{sec:future}, we comment on the most important improvements to be
 % State of the field
 \section{Status of single nucleon (quasi-) elastic form factors\label{sec:sof}}
 
-For charged current quasielastic $\nu N$ scattering,
+For charged-current quasielastic $\nu N$ scattering,
 the neutron ($|n\rangle$) to proton ($\langle p|$)
 interaction is mediated by a $V-A$ weak current,
  given at the quark level by $\bar{u}\gamma_\mu(1- \gamma_5)d$
@@ -332,8 +332,8 @@ This topic, and how it pertains to the full momentum dependence of the form fact
 With proper control over the excited state contamination, LQCD calculations are now in good agreement with the experimental value~\cite{Jang:2019vkm,Gupta:2018qil,Alexandrou:2020okk,Abramczyk:2019fnf,Park:2021ypf,RQCD:2019jai,Hasan:2019noy,Djukanovic:2021yqg,Harris:2019bih,Liang:2018pis,Shintani:2018ozy,Ishikawa:2018rew}
  with one group achieving a sub-percent determination of $g_{\mathrm{A}}$~\cite{Chang:2018uxx,Berkowitz:2018gqe,Walker-Loud:2019cif}.
 
-The success in calculating the threshold value $g_A$ motivates current efforts
-to map out $F_A(Q^2)$ of importance to the long-baseline neutrino program.
+The success in calculating the threshold value $g_{\mathrm{A}}$ motivates current efforts
+to map out $F_{\mathrm{A}}(Q^2)$ of importance to the long-baseline neutrino program.
 The need for this is clear: sparse data from deuterium bubble-chamber experiments do not constrain
 the axial form factor precisely.
 The popular dipole ansatz has a shape that
@@ -348,7 +348,7 @@ together~\cite{Hill:2017wgb}.
 Given that a modern $\nu N$ scattering experiment is extremely unlikely, LQCD is the only viable method to improve our understanding of the axial form factor to the required level of precision.
 
 
-A striking feature of LQCD calculations of $F_A(Q^2)$
+A striking feature of LQCD calculations of $F_{\mathrm{A}}(Q^2)$
 is the slower fall off with increasing $Q^2$ than what is extracted from experiment (Section~\ref{sec:lqcd_results}).
 This preference is consistently reproduced by several lattice collaborations using
 independent computation methods, lending more credence to the result.
@@ -393,7 +393,7 @@ Of particular note is the observed tension between the black and blue bands,
  (see Figure~\ref{fig:protonmagneticff}).
 The width of the upper red band, which comes from the LQCD results,
 is comparable in size to the discrepancy between these black and blue curves.
-The LQCD uncertainty is also noticeably smaller than the green band that arises from the deuterium scattering determination of $F_A(Q^2)$.
+The LQCD uncertainty is also noticeably smaller than the green band that arises from the deuterium scattering determination of $F_{\mathrm{A}}(Q^2)$.
 The normalization of the red curve is higher due to the slower fall off of the axial form factor.
 
 
@@ -540,7 +540,7 @@ However, twisted mass fermions break isospin symmetry at finite lattice spacing,
 \end{marginnote}%
 QED.
 
-\item The fourth most common discretization are DWF, which introduce a fifth dimension to the theory with unit links (the gluons are not dynamic in the fifth dimension) with the left and right handed fermions bound to opposite sides of the fifth dimension of size $L_5$.  The overlap of these left and right modes gives rise to an explicit chiral symmetry breaking that is exponentially suppressed by the extent of the fifth dimension.  For sufficiently small chiral symmetry breaking (large $L_5$), DWF are also automatically \asm{$\mathrm{O}(a)$ improved}.
+\item The fourth most common discretization are DWF, which introduce a fifth dimension to the theory with unit links (the gluons are not dynamic in the fifth dimension) with the left and right handed fermions bound to opposite sides of the fifth dimension of size $L_5$.  The overlap of these left and right modes gives rise to an explicit chiral symmetry breaking that is exponentially suppressed by the extent of the fifth dimension.  For sufficiently small chiral symmetry breaking (large $L_5$), DWF are also automatically $\mathrm{O}(a)$ improved.
 While very desirable, DWF are more expensive to simulate numerically, both because of the extra fifth dimension and also because the algorithmic speed up offered by multi-grid computational technique, which works tremendously for clover-Wilson fermions on GPUs~\cite{Clark:2016rdz} but is not yet fleshed out for DWF~\cite{Boyle:2014rwa,Cohen:2011ivh,Yamaguchi:2016kop,Brower:2020xmc,Boyle:2021wcf}.
 
 \item A final common variant of action is one in which the fermion discretization used in the generation of the gauge fields (the sea quarks) and the action used when generating quark propagators (the valence quarks) are different: this is known as a \textit{mixed action}~\cite{Renner:2004ck}.
@@ -555,9 +555,8 @@ It is important for the field to test this assumption of universality by computi
 % anatomy of LQCD calculation
 \subsection{Anatomy of LQCD calculations of nucleon form factors\label{sec:calc_anatomy}}
 
-\sout{In order to determine the mass of the nucleon (or any hadron), we rely on the construction of}
-\asm{Hadron masses are determined from LQCD by constructing} two-point correlation functions \sout{that are constructed} in a mixed time-momentum representation\del{,}\asm{.}
-\del{ most commonly utilizing}\asm{A common strategy uses} spatially local creation operators (sources) and momentum space annihilation operators (sinks)\asm{, taking advantage of momentum conservation to select the source momentum}.
+Hadron masses are determined from LQCD by constructing two-point correlation functions in a mixed time-momentum representation.
+A common strategy uses spatially local creation operators (sources) and momentum space annihilation operators (sinks), taking advantage of momentum conservation to select the source momentum.
 The non-perturbative nature of QCD means we do not know how to construct the nucleon wave function, and so we utilize \textit{interpolating operators} which have the quantum numbers of the state we are interested in.
 These creation and annihilation operators will couple to all eigenstates of QCD with the same quantum numbers\asm{,} giving rise to a two-point function with a spectral decomposition
 \begin{align}\label{eq:2pt}
@@ -576,10 +575,9 @@ To go from the first equality to the second, we have inserted a complete set of 
 \entry{$O(t,\mathbf{x}) = e^{\hat{H}t} O(0,\mathbf{x}) e^{-\hat{H}t}$}{The Hamiltonian, $\hat{H}$, is used to time evolve the operator}
 \end{marginnote}%
 %-------------------------------------------------------------------------------
-\sout{Momentum conservation selects only the state $n(\mathbf{p})$ in the sum over all states enabling the use of this mixed spatial creation operator and momentum annihilation operator.}
-As we will discuss in more detail below, it is more desirable to instead \del{creation}\asm{build both source and sink} operators
-in momentum space\sout{ rather than position space}.
-\del{They}\asm{Momentum space sources} are not commonly used as they are significantly more \asm{numerically} expensive \del{numerically }to generate.
+As we will discuss in more detail below, it is more desirable to instead build both source and sink operators
+in momentum space.
+Momentum space sources are not commonly used as they are significantly more numerically expensive to generate.
 
 For large Euclidean time, the correlation function will be dominated by the ground state as the excited states will be exponentially suppressed by the energy gap
 \begin{equation}
@@ -599,18 +597,16 @@ m_{\rm eff}(t) &= \ln \left( \frac{C(t)}{C(t+1)} \right)
 \end{align}
 
 
-\sout{A well known challenge \asm{that}\del{which} complicates the analysis is that f}%
-\asm{F}or nucleon two-point functions, the S/N ratio degrades exponentially at large Euclidean time~\cite{Lepage:1989hd}
+For nucleon two-point functions, the S/N ratio degrades exponentially at large Euclidean time~\cite{Lepage:1989hd}
 \begin{equation}
 \lim_{{\rm large}\ t} {\rm S/N}%\frac{\mathrm{Signal}}{\mathrm{Noise}}
     \propto \sqrt{N_{\mathrm{sample}}} e^{-(m_{\mathrm{N}} - \frac{3}{2}m_\pi)t}\, \del{,}\asm{.}
 \end{equation}
-\sout{which adds an extra source of excited state systematic uncertainty that must be quantified.}
-\change{In} the region in time when the ground state begins to saturate the correlation functions, \asm{typically around}\del{at} $t\approx 1$~fm, the noise \change{becomes} significant, \asm{which makes}\del{making} the correlation functions in this region susceptible to correlated fluctuations \asm{that}\del{which} can bias a simplistic single-state analysis.
-\asm{This forces measurements to be made at Euclidean times where
+In the region in time when the ground state begins to saturate the correlation functions, typically around $t\approx 1$~fm, the noise becomes significant, which makes the correlation functions in this region susceptible to correlated fluctuations that can bias a simplistic single-state analysis.
+This forces measurements to be made at Euclidean times where
  excited state contamination is still appreciable,
- which adds an extra source of systematic uncertainty.}
-\del{Further, a}\asm{A}s the pion mass is reduced towards its physical value, the \asm{energies of the} excited state\asm{s decrease}\sout{energy gap also shrinks}, as the lowest lying excited state is typically a nucleon-pion in a relative $P$-wave.
+ which adds an extra source of systematic uncertainty.
+As the pion mass is reduced towards its physical value, the \asm{energies of the} excited state\asm{s decrease}\sout{energy gap also shrinks}, as the lowest lying excited state is typically a nucleon-pion in a relative $P$-wave.
 At the same time, the energy scale \asm{that}\del{which} governs the exponential degradation of the signal also grows.
 The former issue means calculations must be performed at larger Euclidean time to suppress the \sout{smaller gapped}\asm{slowly decaying} excited states\asm{,} and the latter issue means we need exponentially more statistics to obtain a fixed relative uncertainty at a given \asm{Euclidean} time.
 \asm{\bf [who is this the rest of this paragraph written for?
@@ -1305,7 +1301,7 @@ T2K, and other experiments with a relatively low energy ($\lessapprox1$ GeV) bea
 E^{\mathrm{rec,\;QE}}_{\nu}\left(p_{l}, \theta_{l}\right) = \frac{2m_f\sqrt{p_{l}^2 + m^2_l} - m_l^2 + m_i^2-m_f^{2}}{2\left(m_f-\sqrt{p_{l}^2 + m^2_l}+p_l \cos\theta_l\right)},
 \label{eq:enuqe}
 \end{equation}
-\noindent where $m_l$ is the mass of the outgoing lepton, $m_{i}$ is the mass of the initial state nucleon, and $m_{f}$ is the mass of the final state nucleon. As this variable assumes quasielastic kinematics, it is applied to a signal sample of CC0$\pi$ events.\footnote{Note that in recent analyses, T2K has included samples \del{including}\asm{with} a single charged pion using a modified version of Equation~\eqref{eq:enuqe}~\cite{T2K:2017rgv, T2K:2019bcf, T2K:2021xwb}.}%
+\noindent where $m_l$ is the mass of the outgoing lepton, $m_{i}$ is the mass of the initial state nucleon, and $m_{f}$ is the mass of the final state nucleon. As this variable assumes quasielastic kinematics, it is applied to a signal sample of CC0$\pi$ events.\footnote{Note that in recent analyses, T2K has included samples with a single charged pion using a modified version of Equation~\eqref{eq:enuqe}~\cite{T2K:2017rgv, T2K:2019bcf, T2K:2021xwb}.}%
 \begin{marginnote}
 \entry{CC0$\pi$}{Events with a muon, no pions or other mesons, and any number of nucleons produced in the final state}
 \entry{CCQE}{Charged-current quasielastic}
@@ -1320,8 +1316,7 @@ Events that are not true CCQE events also contribute to the CC0$\pi$ signal, suc
   \subfloat[Near detector]{\includegraphics[width=0.3\textwidth]{plots/T2KND_numu_H2O_model_comp.pdf}}\hspace{75pt}
   \subfloat[Far detector] {\includegraphics[width=0.3\textwidth]{plots/T2KFD_numu_H2O_osc_model_comp.pdf}}
   \vspace{11pt}
-  \caption{The $\nu_{\mu}$--H$_{2}$O CC0$\pi$ event rates per ton (kiloton) per $1\times10^{21}$POT at T2K's near (far) detector site, shown as a function of $E^{\mathrm{rec,\;QE}}_{\nu}$. The GENIE~\cite{Andreopoulos:2009rq, GENIE:2021npt} nominal event rate (blue solid line) is produced using the GENIEv3 10a\_02\_11a tune to nucleon data~\cite{GENIE:2021zuu} and the T2K flux~\cite{T2K:2012bge}\del{, and}%
-\asm{. T}he CCQE (orange dashed line), CC-2p2h (red short dashed line) and CC-other (green dotted line), here meaning all events that are not CCQE or CC-2p2h, contributions are shown. The oscillated flux is calculated using the best fit NuFit5.0 oscillation parameters in normal ordering~\cite{Esteban:2020cvm, nufitweb}. Additionally, an alternative GENIE model is shown, where the only change is to use the $z$ expansion model of the axial form factor, with parameters tuned to LQCD results from the CalLat collaboration, as described in Section~\ref{sec:callatdata}. \sout{Additionally, t}\asm{T}he ratio of the modified to nominal GENIE models is shown\asm{~in the bottom panel of each plot}.}
+  \caption{The $\nu_{\mu}$--H$_{2}$O CC0$\pi$ event rates per ton (kiloton) per $1\times10^{21}$POT at T2K's near (far) detector site, shown as a function of $E^{\mathrm{rec,\;QE}}_{\nu}$. The GENIE~\cite{Andreopoulos:2009rq, GENIE:2021npt} nominal event rate (blue solid line) is produced using the GENIEv3 10a\_02\_11a tune to nucleon data~\cite{GENIE:2021zuu} and the T2K flux~\cite{T2K:2012bge}. The CCQE (orange dashed line), CC-2p2h (red short dashed line) and CC-other (green dotted line), here meaning all events that are not CCQE or CC-2p2h, contributions are shown. The oscillated flux is calculated using the best fit NuFit5.0 oscillation parameters in normal ordering~\cite{Esteban:2020cvm, nufitweb}. Additionally, an alternative GENIE model is shown, where the only change is to use the $z$ expansion model of the axial form factor, with parameters tuned to LQCD results from the CalLat collaboration, as described in Section~\ref{sec:callatdata}. The ratio of the modified to nominal GENIE models is shown in the bottom panel of each plot.}
   \label{fig:t2k_impact}
 \end{figure}
 Figure~\ref{fig:t2k_impact} shows the $\nu_{\mu}$--H$_{2}$O CC0$\pi$ event rate expected at the T2K near and far detectors for a fixed exposure, shown as a function of $E^{\mathrm{rec,\;QE}}_{\nu}\left(p_{l}, \theta_{l}\right)$, with and without modifications to the axial form factor. The nominal GENIEv3 10a\_02\_11a model~\cite{Andreopoulos:2009rq, GENIE:2021npt} uses a dipole axial form factor with $M_{\mathrm{A}} = 0.941$%
@@ -1330,22 +1325,22 @@ Figure~\ref{fig:t2k_impact} shows the $\nu_{\mu}$--H$_{2}$O CC0$\pi$ event rate 
 \end{marginnote}%
  GeV obtained through a fit to bubble chamber data~\cite{GENIE:2021zuu}. The alternative model shown differs only in the use of the $z$ expansion model for the axial form factor, with parameters tuned to the LQCD results from the CalLat collaboration described in Section~\ref{sec:callatdata}.
 One obvious observation to be made from Figure~\ref{fig:t2k_impact} is that the CCQE events
-\asm{, for} which the axial form factor is relevant\asm{,}\del{ for}
- \sout{clearly }make up the majority of T2K's CC0$\pi$ sample\del{,}
- in both the oscillated and unoscillated fluxes.
-\sout{It is also clear that t}\asm{T}he tuned LQCD values \del{has}\asm{have a} significant effect on the total expected event rate in both cases, on the order of 20\%.
+, for which the axial form factor is relevant,
+make up the majority of T2K's CC0$\pi$ sample
+in both the oscillated and unoscillated fluxes.
+The tuned LQCD values have a significant effect on the total expected event rate in both cases, on the order of 20\%.
 
-Also clear from Figure~\ref{fig:t2k_impact} is that the change in \asm{both }the total\del{, or}\asm{~and} CCQE-contributed event rates is not purely a normalization change, \asm{but instead depends on neutrino energy }and is different for the near and far detector\sout{ spectra}.
+Also clear from Figure~\ref{fig:t2k_impact} is that the change in both the total and CCQE-contributed event rates is not purely a normalization change, but instead depends on neutrino energy and is different for the near and far detector.
 In the T2K oscillation analysis, the near detector data is used to constrain the cross section model, to reduce the uncertainty at the far detector and on the measured oscillation parameters. If there is insufficient freedom in the cross section model to account for this change to the CCQE model, other parts of the model may well be distorted to ensure good agreement with the near detector data.
 However, this can introduce biases at the far detector, as the different interaction types that contribute to the CC0$\pi$ samples shown in Figure~\ref{fig:t2k_impact} have very different $E_{\nu}^{\mathrm{true}}$ --- $E^{\mathrm{rec,\;QE}}_{\nu}$ relationships. So if other components of the model are distorted to fit the unoscillated near detector event rate, that same {\it effective} change is not in general expected to extrapolate to the far detector spectrum correctly.
 
-Experiments with higher neutrino beam energies typically do not limit their analyses to CC0$\pi$ events or use Equation~\ref{eq:enuqe} for reconstructing the neutrino energy. Instead, they use all charged-current events (CC-inclusive), and reconstruct the neutrino energy through a combination of particle identification and tracking\sout{, and}\asm{~together with} calorimetry.
+Experiments with higher neutrino beam energies typically do not limit their analyses to CC0$\pi$ events or use Equation~\ref{eq:enuqe} for reconstructing the neutrino energy. Instead, they use all charged-current events (CC-inclusive), and reconstruct the neutrino energy through a combination of particle identification and tracking together with calorimetry.
 For an ideal detector, with no tracking threshold on protons, charged pions or electromagnetic activity, this can be expressed as,
 \begin{equation}
 E_{\nu}^{\mathrm{rec,\;had}} = E_{l} + \Sigma_{p} E_{\mathrm{kin}} + \Sigma_{\pi^{\pm}, \pi^{0}, \gamma} E_{\mathrm{total}},
 \label{eq:enuhad}
 \end{equation}
-\noindent where $E_{l}$ is the energy of the outgoing charged lepton\asm{\bf [define $E_{\mathrm{kin}}$, $E_{\mathrm{total}}$?]}.
+\noindent where $E_{l}$ is the energy of the outgoing charged lepton, \change{and $E_{\mathrm{kin}}$ and $E_{\mathrm{total}}$ indicate the kinetic and total energies of individual outgoing hadrons.} \asm{\bf [define $E_{\mathrm{kin}}$, $E_{\mathrm{total}}$?]}.
 The $E_{\nu}^{\mathrm{true}}$ --- $E_{\nu}^{\mathrm{rec,\;had}}$ smearing in this idealized case is due to missing kinetic energy lost to neutrons, and initial state nuclear effects (e.g., nucleons are not at rest inside the nucleus). Real detectors have tracking thresholds below which charged particles cannot be reconstructed, which results in additional smearing due to missing the masses of charged pions, although some energy lost to neutrons may be recovered.
 
 \begin{figure}[htbp]
@@ -1353,19 +1348,17 @@ The $E_{\nu}^{\mathrm{true}}$ --- $E_{\nu}^{\mathrm{rec,\;had}}$ smearing in thi
   \subfloat[ND]{\includegraphics[width=0.3\textwidth]{plots/DUNE_numu_Ar40_breakdown.pdf}}\hspace{75pt}
   \subfloat[FD]{\includegraphics[width=0.3\textwidth]{plots/DUNE_osc_numu_Ar40_breakdown.pdf}}
   \vspace{11pt}
-  \caption{The $\nu_{\mu}$--$^{40}$Ar CC-inclusive event rates per ton (kiloton) per $1\times10^{21}$POT at DUNE's near (far) detector site, shown as a function of $E^{\mathrm{rec,\;had}}_{\nu}$. The GENIE~\cite{Andreopoulos:2009rq, GENIE:2021npt} nominal event rate (blue solid line) is produced using the GENIEv3 10a\_02\_11a tune to nucleon data~\cite{GENIE:2021zuu} and the DUNE flux~\cite{Abi:2020evt}\del{, and t}%
-\asm{. T}he CCQE (orange dashed line), CC-2p2h (red short dashed line), CC-RES (long-dashed gray line) and CC-other (green dotted line), here meaning all events that are not CCQE, CC-2p2h or CC-RES, contributions are shown. The oscillated flux is calculated using the best fit NuFit5.0 oscillation parameters in normal ordering~\cite{Esteban:2020cvm, nufitweb}. Additionally, an alternative GENIE model is shown, where the only change is to use the $z$ expansion model of the axial form factor, with parameters tuned to LQCD results from the CalLat collaboration, as described in Section~\ref{sec:callatdata}.
-\del{Additionally, t}\asm{T}he ratio of the modified to nominal GENIE models is shown\asm{~in the bottom panel of each plot}.}
+  \caption{The $\nu_{\mu}$--$^{40}$Ar CC-inclusive event rates per ton (kiloton) per $1\times10^{21}$POT at DUNE's near (far) detector site, shown as a function of $E^{\mathrm{rec,\;had}}_{\nu}$. The GENIE~\cite{Andreopoulos:2009rq, GENIE:2021npt} nominal event rate (blue solid line) is produced using the GENIEv3 10a\_02\_11a tune to nucleon data~\cite{GENIE:2021zuu} and the DUNE flux~\cite{Abi:2020evt}. The CCQE (orange dashed line), CC-2p2h (red short dashed line), CC-RES (long-dashed gray line) and CC-other (green dotted line), here meaning all events that are not CCQE, CC-2p2h or CC-RES, contributions are shown. The oscillated flux is calculated using the best fit NuFit5.0 oscillation parameters in normal ordering~\cite{Esteban:2020cvm, nufitweb}. Additionally, an alternative GENIE model is shown, where the only change is to use the $z$ expansion model of the axial form factor, with parameters tuned to LQCD results from the CalLat collaboration, as described in Section~\ref{sec:callatdata}.
+\del{Additionally, t}\asm{T}he ratio of the modified to nominal GENIE models is shown in the bottom panel of each plot.}
   \label{fig:dune_impact}
 \end{figure}
 Figure~\ref{fig:dune_impact} shows the $\nu_{\mu}$--$^{40}$Ar CC-inclusive event rates per ton (kiloton) per $1\times10^{21}$POT at DUNE's near (far) detector site, shown as a function of $E^{\mathrm{rec,\;had}}_{\nu}$, with and without modifications to the axial form factor. At this higher neutrino beam energy (with $E_{\nu}^{\mathrm{peak}} \approxeq 2.5$ GeV), CCQE events still make up a sizeable, $\approx$30\%, fraction of the total events.
-The modification to the axial form factor based on the LQCD results from the CalLat collaboration described in Section~\ref{sec:callatdata} \sout{has an approximately 10\% effect to}\asm{results in an approximately 10\% enhancement to} the total predicted event rate at both the near and far detectors\sout{, with different shape dependence, as in the T2K case.}%
-\asm{. As in the case with the T2K event rate, the enhancement has a nontrivial neutrino energy dependence.}
+The modification to the axial form factor based on the LQCD results from the CalLat collaboration described in Section~\ref{sec:callatdata} results in an approximately 10\% enhancement to the total predicted event rate at both the near and far detectors. As in the case with the T2K event rate, the enhancement has a nontrivial neutrino energy dependence.
 Despite the different neutrino energy reconstruction methods used by DUNE and T2K, the same arguments about potential bias due to model-dependence apply when there are differences in the effect of an out-of-model change between near and far detectors.
 
 The issue of how to assign strength between the CCQE and CC-2p2h channels has been a major focus for neutrino oscillation experiments over the past decade.
-Experimental data from a large number of experiments \sout{has found disagreements}\asm{have disagreed} on the 10--30\% level between model predictions and data in the CC$0\pi$ channel~\cite{garvey_review_2014, Mosel:2016cwa, NuSTEC:2017hzk, Katori:2016yel, ParticleDataGroup:2020ssz}\sout{, prompting}%
-\asm{. This has prompted} development of {\it ad hoc} systematic uncertainties and empirical model tunings \sout{by individual }\asm{unique to each }experiment\del{s}, with a tendancy \sout{has been }to soak up model-data discrepancies into the CC-2p2h channel.
+\change{Experimental data from a large number of experiments has disagreed with model predictions in the CC$0\pi$ channel at the 10--30\% level}
+\sout{Experimental data from a large number of experiments have disagreed on the 10--30\% level between model predictions and data in the CC$0\pi$ channel}~\cite{garvey_review_2014, Mosel:2016cwa, NuSTEC:2017hzk, Katori:2016yel, ParticleDataGroup:2020ssz}. This has prompted development of {\it ad hoc} systematic uncertainties and empirical model tunings unique to each experiment, with a tendancy to soak up model-data discrepancies into the CC-2p2h channel.
 These are major contributors to the final uncertainties on key oscillation parameter measurements and projected sensitivities~\cite{T2K:2019bcf, DUNE:2020jqi, T2K:2021xwb, NOvA:2021nfi, DUNE:2021mtg}. It is therefore very significant that the LQCD results shown in Figures~\ref{fig:t2k_impact} and~\ref{fig:dune_impact} suggest that an increase to the strength of the CCQE contribution on the order of 20\% is necessary.
 
 
@@ -1373,8 +1366,8 @@ These are major contributors to the final uncertainties on key oscillation param
 % Future
 \section{Future Improvements\label{sec:future}}
 
-The most pressing issue \change{that needs to be} definitively \change{resolved for} the LQCD calculations is whether or not the excited state contamination is under complete control for the nucleon (quasi-)elastic form factor calculations.
-If they are, then the LQCD results \sout{indicate}\asm{imply} that the nucleon axial form factor is significantly different than what has been extracted phenomenologically, as indicated in Figure~\ref{fig:gaq2_overlay}.
+The most pressing issue that needs to be definitively resolved for the LQCD calculations is whether or not the excited state contamination is under complete control for the nucleon (quasi-)elastic form factor calculations.
+If they are, then the LQCD results imply that the nucleon axial form factor is significantly different than what has been extracted phenomenologically, as indicated in Figure~\ref{fig:gaq2_overlay}.
 However, it is worth observing that LQCD calculations of $g_{\mathrm{A}}$ were systematically low for many years, before it was finally understood the issues was related to an under-estimation of the systematic uncertainty associated with these excited states.
 
 There are several groups computing these form factors, with several different lattice actions and several different approaches to quantifying and removing the excited state contamination from the ground state matrix elements.
@@ -1389,11 +1382,11 @@ First, these methods enable the use of multi-hadron creation and annihilation op
  that are essential to properly identify both the spectrum and the nature of the state~\cite{Dudek:2012xn,Lang:2012db},
  whether it is a $P$-wave $N\pi$ state,
  some radial excitation of the nucleon such as the Roper
- \del{which can}\asm{that} prominantly decay\asm{s} to an $N\pi\pi$ state,
+ that prominantly decays to an $N\pi\pi$ state,
  or otherwise.
 Given this information, one can construct linear combinations of these operators which systematically remove the excited states from the correlation function~\cite{Blossier:2009kd}, allowing for the utilization of much earlier Euclidean times where the stochastic noise is relatively much smaller.
 Second, these variational methods enable the use of momentum space creation as well as annihilation operators, with full control over the spin projection of the source and sink at minimal extra cost.
-This enables one to construct useful linear combinations of correlation functions that eliminate\asm{,} for example, the induced pseudoscalar contribution to an axial three point function, \asm{which} simplif\asm{ies}\del{ying} the analysis~\cite{Meyer:2017ddy}.
+This enables one to construct useful linear combinations of correlation functions that eliminate, for example, the induced pseudoscalar contribution to an axial three point function, which simplifies the analysis~\cite{Meyer:2017ddy}.
 Further, one can exploit the Breit-Frame in which magintude of the incoming and outgoing momentum are the same which opens the door for utilizing the Feynman-Hellmann-like correlation functions which suppress the excited state contamination significantly compared to the three-point functions~\cite{He:2021yvm}.
 It is encouraging that the first exploratory calculations with such methods have begun~\cite{Egerer:2018xgu,Barca:2021iak}.
 
@@ -1422,7 +1415,7 @@ Calculations that access the combined resonant and nonresonant scattering amplit
  where a current induces a transition of the nucleon to a multiparticle final state.
 The most prominent resonant contribution is from the $N\rightarrow\D$ transition.
 However, building up an understanding of the entire resonant region, following the standard LQCD computational strategy, will be an extremely challenging endeavour given the dense spectrum of multi-particle states, and more importantly, the lack of formalism to relate three-particle matrix elements in finite volume to the infinite volume physics of interest.
-\sout{It is likely that a}\asm{A}lternative strategies \del{which}\asm{that} focus on the inclusive $N\rightarrow X$ contribution~\cite{Hansen:2017mnd,Gambino:2020crt,Fukaya:2020wpp,Bruno:2020kyl}, or the use of two-currents to compute the hadronic tensor~\cite{Liu:1993cv,Liang:2019frk} will \asm{likely }be more fruitful.
+Alternative strategies that focus on the inclusive $N\rightarrow X$ contribution~\cite{Hansen:2017mnd,Gambino:2020crt,Fukaya:2020wpp,Bruno:2020kyl}, or the use of two-currents to compute the hadronic tensor~\cite{Liu:1993cv,Liang:2019frk} \change{are likely to} be more fruitful.
 
 Calculations of two-nucleon matrix elements provide key insights
  about the correlations between nucleons inside a nuclear medium,
@@ -1448,17 +1441,17 @@ A direct LQCD computation of these effects would isolate the effect,
 \section{Conclusions\label{sec:conclusions}}
 
 LQCD collaborations are able to produce consistent results for benchmark quantities such as $g_{\mathrm{A}}$ with percent level systematic uncertainties, which are in excellent agreement with experimental data.
-These results introduce the exciting possibility of \asm{using }LQCD calculations to tackle other quantities that are not easily \asm{accessible }experimentally\sout{ accessible}, or for which tensions between measurements, or competing models, exist.
-In this review\asm{,} we discussed \sout{using }LQCD \sout{to calculate}\asm{calculations of} nucleon form factors as a function of momentum transfer, which are of particular interest to the few-GeV neutrino experimental program.
-\del{Notable tensions exist in current parameterizations of the vector form factors, but h}\asm{H}ere we focused on the axial form factor, $F_{\mathrm{A}}(Q^2)$, which is of primary importance because current parameterizations are simplistic and rely on a handful of low-statistics $\nu N$ bubble chamber measurements.
-\asm{However, notable tensions exist in current parameterizations of the vector form factors too.}
-$F_{\mathrm{A}}(Q^2)$ cannot be cleanly measured with existing experiments \del{which}\asm{that} use heavier nuclear targets both for safety reasons and to increase the event rate, so LQCD offers a novel path to this important quantity.
-We have compared $F_{\mathrm{A}}(Q^2)$ calculations from a variety of different LQCD collaborations using different approaches and techniques, and shown them to be in good agreement with each other, but crucially, in poor agreement with the simple dipole model tuned to historic $\nu N$ data \asm{that are }currently relied upon.
+These results introduce the exciting possibility of using LQCD calculations to tackle other quantities that are not easily accessible experimentally, or for which tensions between measurements, or competing models, exist.
+In this review, we discussed LQCD calculations of nucleon form factors as a function of momentum transfer, which are of particular interest to the few-GeV neutrino experimental program.
+Here we focused on the axial form factor, $F_{\mathrm{A}}(Q^2)$, which is of primary importance because current parameterizations are simplistic and rely on a handful of low-statistics $\nu N$ bubble chamber measurements.
+However, notable tensions exist in current parameterizations of the vector form factors too.
+$F_{\mathrm{A}}(Q^2)$ cannot be cleanly measured with existing experiments that use heavier nuclear targets both for safety reasons and to increase the event rate, so LQCD offers a novel path to this important quantity.
+We have compared $F_{\mathrm{A}}(Q^2)$ calculations from a variety of different LQCD collaborations using different approaches and techniques, and shown them to be in good agreement with each other, but crucially, in poor agreement with the simple dipole model tuned to historic $\nu N$ data that are currently relied upon.
 Assuming that no systematic effects affecting all of the LQCD calculations are uncovered, this suggests a significant increase of approximately 20\% to the strength of the CCQE scattering channel that dominates the neutrino scattering cross section for $E_{\nu} \lesssim 1$ GeV.
-We have demonstrated that these results produce a significant \asm{shape }change in the predicted neutrino event spectra for T2K (which has similar considerations to Hyper-K) and DUNE experiments.
+We have demonstrated that these results produce a significant \asm{shape }change \change{\bf [I'm not sure I would stress shape]} in the predicted neutrino event spectra for T2K (which has similar considerations to Hyper-K) and DUNE experiments. 
 Determining the impact on oscillation results would require a full analysis performed by each experimental collaboration, but it is clear that LQCD results for $F_{\mathrm{A}}(Q^2)$ may offer a valuable insight that can clarify aspects of the complex neutrino interaction modeling problem these experiments face.
-We additionally discussed a number of ways \del{in which}\asm{that} current calculations can be improved and validated, and to increase confidence that the LQCD results are not subject to an uncontrolled systematic uncertainty.
-Finally, we discussed a number of other quantities that are important to neutrino oscillation experiments in the few-GeV energy regime \asm{and} that LQCD can provide first principles predictions for.
+We additionally discussed a number of ways that current calculations can be improved and validated, and to increase confidence that the LQCD results are not subject to an uncontrolled systematic uncertainty.
+Finally, we discussed a number of other quantities that are important to neutrino oscillation experiments in the few-GeV energy regime and that LQCD can provide first principles predictions for.
 These include resonant pion production at higher energy transfers (of particular interest to DUNE), and insights into nucleon-nucleon correlations, for which there are no clear experimental prospects.
 These possibilities would all work to break current degeneracies between $\nu N$ interactions and various nuclear effects that all come into play for present modeling efforts of the $\nu A$ cross sections.
 
