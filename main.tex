@@ -529,10 +529,10 @@ In this review, we comment that:
 
 \item Clover-Wilson fermions are the most commonly used discretization scheme given their theoretical simplicity and preservation of all symmetries except chiral symmetry.  The explicit breaking of chiral symmetry with the Wilson operator means the light quark masses must be finely tuned against ultraviolet chiral symmetry breaking that scales as $1/a$, after which there remain residual $\mathrm{O}(a)$ chiral symmetry breaking effects.  It is well known, albeit laborious, how to non-perturbatively remove these leading $\mathrm{O}(a)$ scaling violations~\cite{Luscher:1996sc,Luscher:1996ug,Luscher:1996jn,Capitani:1998mq}, which must be done for both the action as well as matrix elements.
 
-\item Twisted mass fermions are a variant of Wilson fermions that exploits the approximate $SU(2)$ chiral symmetry of QCD to introduce a twisted quark mass term, $i\mu\g_5 \tau_3$\asm{.}
-\sout{which can be}\done{\asm{This term is} used to automatically remove the leading $\mathrm{O}(a)$ discretization effects~\cite{Frezzotti:2003ni}%
- \asm{, a benefit generically referred to as $\mathrm{O}(a)$ improvement,}
- at the expense of introducing isospin breaking at finite lattice spacing.}
+\item Twisted mass fermions are a variant of Wilson fermions that exploits the approximate $SU(2)$ chiral symmetry of QCD to introduce a twisted quark mass term, $i\mu\g_5 \tau_3$.
+This term is used to automatically remove the leading $\mathrm{O}(a)$ discretization effects~\cite{Frezzotti:2003ni}%
+ , a benefit generically referred to as $\mathrm{O}(a)$ improvement,
+ at the expense of introducing isospin breaking at finite lattice spacing.
 
 \item The fourth most common discretization are DWF, which introduce a fifth dimension to the theory with unit links (the gluons are not dynamic in the fifth dimension) with the left and right handed fermions bound to opposite sides of the fifth dimension of size $L_5$.  The overlap of these left and right modes gives rise to an explicit chiral symmetry breaking that is exponentially suppressed by the extent of the fifth dimension.  For sufficiently small chiral symmetry breaking (large $L_5$), DWF are also automatically $\mathrm{O}(a)$ improved.
 While very desirable, DWF are more expensive to simulate numerically, both because of the extra fifth dimension and also because the algorithmic speed up offered by multi-grid computational technique, which works tremendously for clover-Wilson fermions on GPUs~\cite{Clark:2016rdz} but is not yet fleshed out for DWF~\cite{Boyle:2014rwa,Cohen:2011ivh,Yamaguchi:2016kop,Brower:2020xmc,Boyle:2021wcf}.
@@ -617,7 +617,7 @@ C_\G(\tsep,\t) &= \sum_{\mathbf{x,y}}e^{-i\mathbf{p\dotp x} +i\mathbf{q\dotp y}}
     \sum_{n,m} z_n(\mathbf{p})z_m^\dagger(\mathbf{p-q})e^{-E_n(\tsep-\t)}e^{-E_m \t} g_{n,m}^\G(\mathbf{q})\, ,
 \end{align}
 where $g_{n,m}^\G$ are the matrix elements of interest, and in principle, all other quantities can be determined from two-point functions, a point we will return to.
-Often, the sink is projected to zero momentum, $\mathbf{p}_n=0$, and momentum conservation selects an incoming state with $\mathbf{p}_m = -\mathbf{q}$.%
+Often, the sink is projected to zero momentum, $\mathbf{p}=0$, and momentum conservation selects an incoming state with momentum $-\mathbf{q}$.%
 %-------------------------------------------------------------------------------
 \begin{marginnote}
 \entry{$j_\G = \bar{q}\, \G\, q$}{quark bilinear currents of Dirac structure $\G$ and unspecified flavor structure}
@@ -754,7 +754,7 @@ Taking into account these observations,
  axial matrix element~\cite{Jang:2019vkm,He:2021yvm}.
 
 
-Nucleon matrix elements of the temporal axial current have the largest visible excited state contamination~\cite{Jang:2019vkm,RQCD:2019jai}\asm{,} which can be at least qualitatively understood with $\chi$PT~\cite{Bar:2018xyi}.
+Nucleon matrix elements of the temporal axial current have the largest visible excited state contamination~\cite{Jang:2019vkm,RQCD:2019jai}, which can be at least qualitatively understood with $\chi$PT~\cite{Bar:2018xyi}.
 This has led to new analysis strategies that more carefully deal with the $N\pi$ excited state with pion-pole contributions and additionally use the temporal axial current correlator to determine excited states.
 These new strategies yield minimal violations of PCAC and an improved understanding of excited state contamination on matrix elements sensitive to $F_{\rm A}(Q^2)$ or $\tilde{F}_{\rm P}(Q^2)$.
 Previously, these matrix elements exhibited deviations as large as $40\%$ from the PPD or GGT
@@ -1017,25 +1017,26 @@ However, the LQCD calculations of the form factors are typically carried out up 
 \footnote{The range of validity of $\chi$PT in the pion mass seems to be at best $m_\pi\lesssim300$~MeV~\cite{Beane:2004ks,Walker-Loud:2008rui} with some indications the convergence is troubled at the physical pion mass~\cite{Walker-Loud:2019cif,Drischler:2019xuo}.  A similar upper limit in $Q$ is likely.}
 %------------------------------------------------------------------------------
 complicating a combined extrapolation in the various variables of interest.
-For \sout{simpler }quantities\asm{~with no nontrivial momentum transfer dependence}, such as the spectrum and nucleon axial, scalar and tensor charges, results at heavier pion masses can help improve the overall precision of the final result provided the extrapolation to the physical pion mass is under control.
+For \del{simpler }quantities\del{~with no nontrivial momentum transfer dependence,} such as the spectrum and nucleon axial, scalar and tensor couplings, results at heavier pion masses can help improve the overall precision of the final result provided the extrapolation to the physical pion mass is under control.
 For the form factors,
- \sout{even if only physical pion mass ensembles were used with sufficiently large volumes that the volume corrections are negligible,
- there would still be an issue related to the continuum extrapolation.}
- \asm{there is still an issue related to the continuum extrapolation even when using only ensembles with physical pion mass and large volumes with negligible volume corrections.}
-\asm{%
-The reason is that the spatial volume is given by the lattice spacing times
- the number of spatial sites.
-Decreasing the lattice spacing without a compensating increase in the number of sites
+ there is still an issue related to the continuum extrapolation even when using only ensembles with physical pion masses and large volumes with negligible volume corrections.
+The reason is that the spatial extent, $L$, is given by the lattice spacing times
+ the number of spatial sites, $N$.
+\del{Decreasing the lattice spacing without a compensating increase in the number of sites
  will result in a decrease in the total volume.}
-\sout{As the lattice spacing is changed, if the lattice volume is not changed in an exactly compensating way, the physical volume from one lattice spacing to the next will change.}
-\sout{As a consequence, t}\asm{T}he allowed quantized momentum for the nucleon and currents will \asm{therefore} change\asm{~with the lattice spacing}, which means the value of the four-momentum transfer $Q$ will not be the same from one \sout{lattice spacing}\asm{ensemble} to the next.
-Consequently, the continuum extrapolation, which \asm{is} straightforward in principle, is complicated in practice, requiring a\asm{t} minimum \sout{of }a combined extrapolation in $Q$ and $a$.
+\del{In practice, it is not possible to change the lattice spacing by an amount that readily.}%
+In practice, given the non-trivial relation between the lattice spacing $a$, a derived quantity, and the bare gauge coupling that is an input parameter of the calculation, it is not possible to change $a$ in such a way that $L = N a$ is constant.
+%\del{There is no way to continuously vary the lattice spacing without changing the total volume.}
+%\del{As the lattice spacing is changed, if the lattice volume is not changed in an exactly compensating way, the physical volume from one lattice spacing to the next will change.}
+%\del{As a consequence, t}
+\del{\asm{T}he allowed quantized momentum for the nucleon and currents will \asm{therefore} change\del{~with the lattice spacing}, which means the value of the four-momentum transfer $Q$ will not be the same from one \asm{lattice spacing}\del{ensemble} to the next.}
+{The allowed quantized momentum for the nucleon and currents will therefore change as the lattice spacing is changed, which means the value of the four-momentum transfer $Q$ will not be the same from one physical pion mass ensemble to the next.}
+Consequently, the continuum extrapolation, which \asm{is} straightforward in principle, is complicated in practice, minimally requiring a combined extrapolation in $Q$ and $a$.
 Is it possible to perform a combined extrapolation/interpolation analysis over the full range of \asm{individual }$Q$ while also taking the continuum and physical pion mass limits?
 
 
-The $z$ expansion~\cite{Bhattacharya:2011ah} is often used to improve the extrapolation/interpolation in $Q^2$.
 The $z$ expansion \sout{makes use of}\asm{takes advantage of} the analytic structure of QCD\del{,}
- \asm{by }performing a conformal mapping to a obtain a new small expansion parameter\del{, and it}\asm{. This technique} has been utilized for decades in meson flavor physics~\cite{Okubo:1971jf}
+ \asm{by }performing a conformal mapping to obtain a new small expansion parameter\del{, and it}\asm{. This technique} has been utilized for decades in meson flavor physics~\cite{Okubo:1971jf}
 and is a standard feature in modern LQCD calculations of meson form factors
 \sout{for determining}\asm{that constrain} CKM matrix elements.
 The $z$ expansion takes the four-momentum transfer squared $Q^2$
@@ -1076,7 +1077,7 @@ There is the additional subtlety of understanding and incorporating the finite v
 We propose a strategy that might improve our systematic understanding of these effects, but needs to be explored to understand its validity and applicability.
 In essence, the proposal is to begin with the EFT parameterization of the form factor and perform the conformal mapping to express the $z$ expansion coefficients, $b_k$ in terms the $f_k$ coefficients that are derived from $\chi$PT and its finite volume and lattice spacing EFT extensions.
 Then, one can compare the values of the LECs determined in the $z$ expansion analysis over the entire range of data, to an analysis of the form factor in the low $m_\pi$ and low $Q^2$ region utilizing the $\chi$PT expression.  One could also explore simultaneous fits with both methods, where one utilizes higher order terms in the $z$ expansion, if needed, which could also help quantify corrections that cannot be systematically described with the $\chi$PT parameterization.
-\asm{One can of course study effects of truncating the $\chi$PT expansion by working to higher orders in determining the $f_k$ coefficients and studying the impact on the analysis.
+\del{One can of course study effects of truncating the $\chi$PT expansion by working to higher orders in determining the $f_k$ coefficients and studying the impact on the analysis.
  {\bf [don't understand this sentence]}}
 
 
@@ -1088,7 +1089,7 @@ As a slightly more concrete example, start with the inverse transformation from 
  \label{eq:ztoQ2}
 \end{align}
  which starts at $O(x)$.
-\sout{For large $Q^2$, the relation is instead expanded in terms of $x^{-1}$.}
+\del{For large $Q^2$, the relation is instead expanded in terms of $x^{-1}$.}
 A general series in $Q^2$ may therefore be converted to a double expansion in $z$ and $t_c-t_0$
  by first converting powers of $Q^2$ to those of $Q^2+t_0$ and $t_0$ using the  binomial theorem,
 \begin{align}
@@ -1100,7 +1101,7 @@ A general series in $Q^2$ may therefore be converted to a double expansion in $z
  \biggr( \frac{-t_0}{t_c-t_0} \biggr)^{m-n}
 \end{align}
 and then substituting equation~(\ref{eq:Q2toz}) to convert powers of
- \asm{$x$}\sout{$Q^2+t_0$} into powers of $z$.
+ \asm{$x$}\del{$Q^2+t_0$} into powers of $z$.
 All dependence on the dimension is absorbed into powers of
  $t_c-t_0 \asm{\sim}\del{\propto} m_\pi^2$.
 The relative weight of the expansion parameters may be adjusted by changing the value of $t_0$, giving some modicum of freedom over the expansion order.
@@ -1131,143 +1132,6 @@ b_2 &= 8 \tctza f_1 +16 \tctza^2 \Big(1 -\frac{t_0}{t_c-t_0}\Big) f_2 +O\big(\tc
 \end{align}
 The leading lattice spacing, pion mass and finite volume dependence may be made manifest by substituting their expressions from equation~(\ref{eq:lecampi}).
 
-
-
-
-
-
-
-\bigskip
-{\color{ao(english)}OLD BELOW \hrule}
-
-LQCD results are computed at finite lattice spacing, in a finite volume and typically (for nucleons) at pion masses heavier than nature.
-Even when results at the physical pion mass are available, results at heavier pion masses can help improve the overall precision of the final result, provided the extrapolation to the physical pion mass is under control.
-EFT is extensively used to guide the extrapolation to the physical point.
-Symanzik EFT~\cite{Symanzik:1983dc,Symanzik:1983gh} provides a continuum description of a discretized lattice action that incorporates the lattice spacing corrections through a tower of increasingly irrelevant operators.
-$\chi$PT provides a description of perturbative light quark mass corrections to pions~\cite{Gasser:1984gg} and nucleons~\cite{Jenkins:1990jv,Bernard:1995dp} in a systematic expansion about the chiral limit and low momentum, also through a series of increasingly irrelevant operators.
-$\chi$PT can be readily extended to systematically include discretization effects by constructing the EFT from the Symanzik EFT, which includes QCD as the leading Lagrangian and discretization effects through the higher dimensional operators~\cite{Sharpe:1998xm}.
-$\chi$PT can also be extended to incorporate the boundary conditions of the finite volume and describe the finite-volume corrections which scale as $m_\pi^n e^{-m_\pi L}$ for $m_\pi L \gtrsim3.5$ with the power $n$ depending upon the particular quantity of interest~\cite{Gasser:1986vb}.
-
-While these EFTs provide a complete description of the physics at low momentum and sufficiently light pion masses, they come with LECs that capture the short-distance (L)QCD physics which are a priori unknown, given the non-perturbative nature of QCD.%
-%-------------------------------------------------------------------------------
-\begin{marginnote}
-\entry{LEC(s)}{Low energy constant(s)}
-\end{marginnote}%
-%-------------------------------------------------------------------------------
-The LECs describing the QCD pion mass and momentum dependence can be determined both from comparing with experimental data as well as LQCD results, while the LECs describing the discretization corrections can only be determined by comparing with LQCD results as these LECs are specific to a given lattice action.
-
-The range of validity of $\chi$PT seems to be at best $m_\pi\lesssim300$~MeV~\cite{Beane:2004ks,Walker-Loud:2008rui} with some indications the convergence is troubled at the physical pion mass~\cite{Walker-Loud:2019cif,Drischler:2019xuo}.
-The reach in $Q^2$ will likely have a similar upper bound, though this has not been examined in nearly the same detail as the pion mass expansion.
-For many quantities, a power series expansion in $m_\pi$ or $m_\pi^2$ may be perfectly sufficient, combined with sufficiently precise results at the physical pion mass, to guide the interpolation to the physical point, as was observed in detail for $g_A$~\cite{Chang:2018uxx}.
-For example, one can consider an expansion of the form factor as a power-series in $Q^2$ with coefficients that capture the pion mass and lattice spacing dependence
-\begin{align}\label{eq:F_Q_power}
-F(Q^2) = \sum_{k=0} f_k(m_\pi, a) Q^{2k},
-\end{align}
-where these prefactors will depend upon the LECs of QCD and the discretized lattice action.
-This form factor expansion only has limited validity for $Q^2$ close to zero.
-One approach to circumvent this failure mode is to appeal to the analytic structure of QCD,
-performing a conformal mapping to a obtain a new small expansion parameter.
-This parameterization, referred to as the $z$ expansion~\cite{Bhattacharya:2011ah},
-has been utilized for decades in meson flavor physics~\cite{Okubo:1971jf}
-and is a standard feature in modern LQCD calculations of meson form factors
-for determining CKM matrix elements.
-
-
-The $z$ expansion takes the four-momentum transfer squared $Q^2$
- to a small expansion parameter $z$, using the relation
-\begin{align}
- z(t=-Q^2;t_0,t_c) = \frac{\sqrt{t_c-t} -\sqrt{t_c-t_0}}{ \sqrt{t_c-t} +\sqrt{t_c-t_0}}.
-\end{align}
-Here, $t_c$ is no larger than the particle production threshold in timelike momentum transfer
- and $t_0$ is a parameter (typically negative) that
- may be chosen to improve the series convergence.
-Inverting this relation and expanding as a power series in $z$ about $Q^2=-t_0$ ($z=0$) yields
-\begin{align}
-x \equiv  \frac{Q^2+t_0}{t_c-t_0} = 4 \sum_{k=1}^\infty k z^k.
- \label{eq:Q2toz}
-\end{align}
-Following this procedure, the dimensionful LECs that appear as prefactors for powers of $Q^2$
- are instead assembled into expressions related to the dimensionless
- coefficients of the $z$ expansion (to avoid confusion with the lattice spacing, we label the coefficients as $b_k$),
-\begin{align}
- F\big(z(Q^2)\big) = \sum_{k=0}^\infty b_k z^k.
- \label{eq:zexp}
-\end{align}
-%
-For the inverse transformation to take an expansion in $z$ to an expansion in $Q^2$,
- the expansion is again cast in terms of $x$
-as in Equation~\ref{eq:Q2toz}.
-Then the expression for $z$ at small $x$ is
-\begin{align}
- (1+x)^{1/2} -1 = \frac{x}{2}
- -4\sum_{k=2}^\infty \frac{(2k-3)!}{k!(k-2)!} \biggr( -\frac{x}{4} \biggr)^{k},
- &\quad
- z = \frac{1}{x} \big( (1+x)^{1/2} -1 \big)^2,
- \label{eq:ztoQ2}
-\end{align}
- which starts at $O(x)$.
-For large $Q^2$, the relation is instead expanded in terms of $x^{-1}$.
-
-A general series in $Q^2$ may therefore be converted to a double expansion in $z$ and $t_c-t_0$
- by first converting powers of $Q^2$ to those of $Q^2+t_0$ and $t_0$ using the  binomial theorem,
-\begin{align}
- Q^{2m} &= \big( (Q^2+t_0) -t_0 \big)^m
- = (t_c-t_0)^m
- \sum_{n=0}^{m} \left( \begin{array}{c} m \\ n \end{array} \right)
- x^n
- %\biggr( \frac{Q^2+t_0}{t_c-t_0} \biggr)^n
- \biggr( \frac{-t_0}{t_c-t_0} \biggr)^{m-n}
-\end{align}
- and then substituting Equation~\ref{eq:Q2toz} to convert powers of $Q^2+t_0$
- into powers of $z$.
-All dependence on the dimension is absorbed into powers of $t_c-t_0 \propto m_\pi^2$.
-The relative weight of the expansion parameters may be adjusted by changing
- the value of $t_0$, giving some modicum of freedom over the expansion order.
-
-The most recent multi-ensemble LQCD publications with computations
- of the axial form factor~\cite{Park:2021ypf,RQCD:2019jai}
- have treated the $z$ expansion coefficients as the relevant LECs
- and fit to these coefficients with a chiral-continuum extrapolation.
-No attempt was made to connect these LECs to those obtained
- from chiral expansions with explicit $Q^2$ dependence.
-Instead, observables such as $r_{\mathrm{A}}^2$ and $g_{\mathrm{A}}$
- were fit to separate chiral-continuum extrapolations.
-Application of the formulae in this section exposes the relationships
- between LECs for powers of $Q^2$ to the $z$ expansion coefficients.
- As a simple example, consider the $Q^4$ expansion of Equation~\eqref{eq:F_Q_power} with
- a truncation at the leading chiral and discretization corrections
-\begin{align}
-f_0 &= c_0 + \ell_0 m_\pi^2 + d_0 a^2\, ,
-\nonumber\\
-f_1 &= c_1 + \ell_1 m_\pi^2 + d_1 a^2\, ,
-\nonumber\\
-f_2 &= c_2 + \ell_2 m_\pi^2 + d_2 a^2\, ,
-\label{eq:lecampi}
-\end{align}
-where $c_k$, $\ell_k$ and $d_k$ are LECs describing the pion mass and lattice spacing dependence.
-For the axial form factor, $c_0$ and $c_1$ are related to the axial coupling and radius in the chiral limit
-\begin{align}
-&c_0 = \lim_{m_\pi\rightarrow0} g_{\mathrm{A}}\, ,&
-&c_1 = -\lim_{m_\pi\rightarrow0} \frac{g_{\mathrm{A}} r_{\mathrm{A}}^2}{6}\, .&
-\end{align}
-Then the $z$ expansion coefficients that appear in equation~(\ref{eq:zexp})
- expressed in terms of these LECs are
-\begin{align}\label{eq:z_coeff_xpt}
-b_0 &= f_0 +\tctza \tctzb f_1 +\tctza^2 \tctzb^2 f_2 +O\big(\tctza^3\big),
-\nonumber\\
-b_1 &= 4 \tctza f_1 +8 \tctza^2 \tctzb f_2 +O\big(\tctza^3\big),
-\nonumber\\
-b_2 &= 8 \tctza f_1 +16 \tctza^2 \Big(1 -\frac{t_0}{t_c-t_0}\Big) f_2 +O\big(\tctza^3\big).
-\end{align}
-The leading lattice spacing and pion mass dependence from
- the LECs for the $Q^2$ expansion may be made manifest
- by substituting their expresions from equation~(\ref{eq:lecampi}).
-Higher-order corrections to the $\chi$PT expressions may be checked
- by peforming fits to the LECs of the $z$ expansion and comparing those
- to fits to the LECs of the $Q^2$ expansion.
-
-When the $z$ expansion coefficients are expressed as in equation~\eqref{eq:z_coeff_xpt}, a simultaneous fit of the LQCD form factor data can be performed across multiple ensembles at different lattice spacings and pions masses, with coefficients connected to the EFTs that are valid for sufficiently small pion mass and $Q^2$.
-Similarly, the finite volume corrections can also be incorporated in this analysis: what we have called the LECs in the $f_k(m_\pi,a)$ coefficients are not just LECs, but they also encode the non-analytic contributions arising from virtual pion loops, and thus, they can be evaluated in finite as well as infinite volume.
 
 
 
@@ -1338,7 +1202,7 @@ The modification to the axial form factor based on the LQCD results from the Cal
 Despite the different neutrino energy reconstruction methods used by DUNE and T2K, the same arguments about potential bias due to model-dependence apply when there are differences in the effect of an out-of-model change between near and far detectors.
 
 The issue of how to assign strength between the CCQE and CC-2p2h channels has been a major focus for neutrino oscillation experiments over the past decade.
-\sout{Experimental }Data from a large number of experiments has disagreed with model predictions in the CC$0\pi$ channel at the 10--30\% level~\cite{garvey_review_2014, Mosel:2016cwa, NuSTEC:2017hzk, Katori:2016yel, ParticleDataGroup:2020ssz}. This has prompted development of {\it ad hoc} systematic uncertainties and empirical model tunings unique to each experiment, with a tendancy to soak up model-data discrepancies into the CC-2p2h channel.
+\del{Experimental }Data from a large number of experiments has disagreed with model predictions in the CC$0\pi$ channel at the 10--30\% level~\cite{garvey_review_2014, Mosel:2016cwa, NuSTEC:2017hzk, Katori:2016yel, ParticleDataGroup:2020ssz}. This has prompted development of {\it ad hoc} systematic uncertainties and empirical model tunings unique to each experiment, with a tendancy to soak up model-data discrepancies into the CC-2p2h channel.
 These are major contributors to the final uncertainties on key oscillation parameter measurements and projected sensitivities~\cite{T2K:2019bcf, DUNE:2020jqi, T2K:2021xwb, NOvA:2021nfi, DUNE:2021mtg}. It is therefore very significant that the LQCD results shown in Figures~\ref{fig:t2k_impact} and~\ref{fig:dune_impact} suggest that an increase to the strength of the CCQE contribution on the order of 20\% is necessary.
 
 
@@ -1369,9 +1233,6 @@ Second, these variational methods enable the use of momentum space creation as w
 This enables one to construct useful linear combinations of correlation functions that eliminate, for example, the induced pseudoscalar contribution to an axial three point function, which simplifies the analysis~\cite{Meyer:2017ddy}.
 Further, one can exploit the Breit-Frame in which magintude of the incoming and outgoing momentum are the same which opens the door for utilizing the Feynman-Hellmann-like correlation functions which suppress the excited state contamination significantly compared to the three-point functions~\cite{He:2021yvm}.
 It is encouraging that the first exploratory calculations with such methods have begun~\cite{Egerer:2018xgu,Barca:2021iak}.
-
-\asm{\bf [orphaned, move up to first paragraph? or combine with previous?]}
-Given the state of the field and the rapid advances recently made, we anticipate this excited state issue will be definitively resolved for elastic nucleon form factor calculations within a year or two, thus enabling precise determinations of the quasi-elastic axial form factor and the elastic electric and magnetic form factors that will resolve the discrepancies reviewed in Section~\ref{sec:sof}.
 
 
 Moving beyond these simplest quantities, higher energy transfer processes also play a sub-dominant role for T2K (and the future
@@ -1428,6 +1289,23 @@ However, notable tensions exist in current parameterizations of the vector form 
 $F_{\mathrm{A}}(Q^2)$ cannot be cleanly measured with existing experiments that use heavier nuclear targets both for safety reasons and to increase the event rate, so LQCD offers a novel path to this important quantity.
 We have compared $F_{\mathrm{A}}(Q^2)$ calculations from a variety of different LQCD collaborations using different approaches and techniques, and shown them to be in good agreement with each other, but crucially, in poor agreement with the simple dipole model tuned to historic $\nu N$ data that are currently relied upon.
 Assuming that no systematic effects affecting all of the LQCD calculations are uncovered, this suggests a significant increase of approximately 20\% to the strength of the CCQE scattering channel that dominates the neutrino scattering cross section for $E_{\nu} \lesssim 1$ GeV.
+
+\pagebreak
+\del{
+Even though we cannot rule out the possiblity of an undetermined systematic correction,
+ where we have most importantly focused on the excited state contamination,
+ the consistency of the LQCD predictions imply that these results are unlikely to change,
+ and will continue to be refined and substantiated in the upcoming years.
+}
+While it is possible that the lattice community will uncover additional systematic uncertainties in the calculation of the axial form factor, given the current state of understanding in the field, we believe this is unlikely.  The consistency of the various incomplete LQCD results at the physical pion mass lend confidence to this assessment, and \del{it is most likely }these results will continue to be refined and substantiated.
+%while it is possible that the lattice community.
+%\asm{\bf [orphaned, move up to first paragraph? or combine with previous?]}
+\del{Given the state of the field and the rapid advances recently made, we anticipate this excited state issue will be definitively resolved for elastic nucleon form factor calculations within a year or two,}
+\change{
+Given the state of the field and the rapid advances recently made, we anticipate that \sout{these issues will be definitively resolved }\asm{the systematic uncertainties will be fully understood}\sout{for elastic form factor calculations }within a year or two,}
+ thus enabling precise determinations of the quasielastic axial form factor and the elastic electric and magnetic form factors\asm{.
+At this point, LQCD will be able to resolve}\del{ that will resolve} the \asm{experimental and phenomenological} discrepancies reviewed in Section~\ref{sec:sof}.
+
 We have demonstrated that these results produce a significant change in the predicted neutrino event spectra for T2K (which has similar considerations to Hyper-K) and DUNE experiments.
 Determining the impact on oscillation results would require a full analysis performed by each experimental collaboration, but it is clear that LQCD results for $F_{\mathrm{A}}(Q^2)$ may offer a valuable insight that can clarify aspects of the complex neutrino interaction modeling problem these experiments face.
 We additionally discussed a number of ways that current calculations can be improved and validated, and to increase confidence that the LQCD results are not subject to an uncontrolled systematic uncertainty.
