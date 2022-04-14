@@ -614,10 +614,13 @@ A nucleon three-point function with current $j_\G$ is constructed with interpola
 C_\G(\tsep,\t) &= \sum_{\mathbf{x,y}}e^{-i\mathbf{p\dotp x} +i\mathbf{q\dotp y}}
     \langle\O|N(\tsep,\mathbf{x}) j_\G(\t,\mathbf{y}) N^\dagger(0,\mathbf{0}) |\O\rangle
 \nonumber\\&=
-    \sum_{n,m} z_n(\mathbf{p})z_m^\dagger(\mathbf{p-q})e^{-E_n(\tsep-\t)}e^{-E_m \t} g_{n,m}^\G\, ,
+    \sum_{\mathbf{x,y}}e^{-i\mathbf{p\dotp x} +i\mathbf{q\dotp y}}
+    e^{-E_n(\tsep-\t)}e^{-E_m\t}
+    \langle\O|N(0,\mathbf{x})|n\rangle\langle n|j_\G(0,\mathbf{y})|m\rangle\langle m| N^\dagger(0,\mathbf{0}) |\O\rangle
+\nonumber\\&=
+    \sum_{n,m} z_n(\mathbf{p})z_m^\dagger(\mathbf{p-q})e^{-E_n(\tsep-\t)}e^{-E_m \t} g_{n,m}^\G(\mathbf{q})\, ,
 \end{align}
 where $g_{n,m}^\G$ are the matrix elements of interest, and in principle, all other quantities can be determined from two-point functions, a point we will return to.
-\asm{\bf [this $p_n$, $p_m$ notation might be confusing because the spectral decompositions of $|n\rangle$ and $|m\rangle$ are not explicitly written]}
 Often, the sink is projected to zero momentum, $\mathbf{p}_n=0$, and momentum conservation selects an incoming state with $\mathbf{p}_m = -\mathbf{q}$.%
 %-------------------------------------------------------------------------------
 \begin{marginnote}
