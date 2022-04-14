@@ -1033,10 +1033,11 @@ Consequently, the continuum extrapolation, which \asm{is} straightforward in pri
 Is it possible to perform a combined extrapolation/interpolation analysis over the full range of \asm{individual }$Q$ while also taking the continuum and physical pion mass limits?
 
 
-The $z$ expansion~\cite{Bhattacharya:2011ah} is often used to improve the extrapolation/interpolation in $Q^2$.  The $z$ expansion makes use of the analytic structure of QCD,
-performing a conformal mapping to a obtain a new small expansion parameter, and it has been utilized for decades in meson flavor physics~\cite{Okubo:1971jf}
+The $z$ expansion~\cite{Bhattacharya:2011ah} is often used to improve the extrapolation/interpolation in $Q^2$.
+The $z$ expansion \sout{makes use of}\asm{takes advantage of} the analytic structure of QCD\del{,}
+ \asm{by }performing a conformal mapping to a obtain a new small expansion parameter\del{, and it}\asm{. This technique} has been utilized for decades in meson flavor physics~\cite{Okubo:1971jf}
 and is a standard feature in modern LQCD calculations of meson form factors
-for determining CKM matrix elements.
+\sout{for determining}\asm{that constrain} CKM matrix elements.
 The $z$ expansion takes the four-momentum transfer squared $Q^2$
  to a small expansion parameter $z$, using the relation
 \begin{align}
@@ -1067,15 +1068,16 @@ As discussed above, for sufficiently small $m_\pi$, $Q$ and $a$, the coefficient
 \entry{LEC(s)}{Low energy constant(s), the coefficients of hadronic EFT operators}
 \end{marginnote}%
 %-------------------------------------------------------------------------------
-This is possible as there is a rigorous mapping between the quark-level operators in QCD and the higher order Symanzik expansion with hadronic level operators in the EFT.
+This is possible \del{as}\asm{because} there is a rigorous mapping between the quark-level operators in QCD and the higher order Symanzik expansion with hadronic level operators in the EFT.
 For a dynamic quantity, such as the form factor, or the $z$ expansion parameterization of it, it is not guaranteed that the coefficients can be described with simple $m_\pi$ and $a$ expansions.  For pion masses that are sufficiently close to the physical pion mass, and for lattice spacings sufficiently close to the continuum limit, a Taylor expansion about these limits should be adequate to interpolate and extrapolate with controlled uncertainties.
 For some quantities, such as the proton radius, there are divergent $\ln(m_\pi)$ corrections that arise in the $\chi$PT description, which are observed as rapid pion mass dependence in LQCD calculations, see for example Ref.~\cite{Green:2014xba}.  Such corrections as these, or possibly important $a^2\ln(a)$ corrections that arise in lattice perturbation theory~\cite{Balog:2009yj,Balog:2009np,Husung:2019ytz}, if relevant, are ones that may not be easily or correctly captured by parameterizing the $z$ expansion coefficients as a power series in $a$ and/or $m_\pi$.
 There is the additional subtlety of understanding and incorporating the finite volume corrections, which are well understood in the regime where $\chi$PT is applicable~\cite{Gasser:1986vb}, but we will not comment on in further detail.
 
 We propose a strategy that might improve our systematic understanding of these effects, but needs to be explored to understand its validity and applicability.
 In essence, the proposal is to begin with the EFT parameterization of the form factor and perform the conformal mapping to express the $z$ expansion coefficients, $b_k$ in terms the $f_k$ coefficients that are derived from $\chi$PT and its finite volume and lattice spacing EFT extensions.
-Then, one can compare the values of the LECs determined in the $z$ expansion analysis over the entire range of data, to an analysis of the form factor in the low $m_\pi$ and low $Q^2$ region utilizing the $\chi$PT expression.  One could also explore simultaneous fits with both methods, where one utilizes higher order terms in the $z$ expansion, if needed, which could also help quantify corrections that can not be systematically described with the $\chi$PT parameterization.
-One can of course study effects of truncating the $\chi$PT expansion by working to higher orders in determining the $f_k$ coefficients and studying the impact on the analysis.
+Then, one can compare the values of the LECs determined in the $z$ expansion analysis over the entire range of data, to an analysis of the form factor in the low $m_\pi$ and low $Q^2$ region utilizing the $\chi$PT expression.  One could also explore simultaneous fits with both methods, where one utilizes higher order terms in the $z$ expansion, if needed, which could also help quantify corrections that cannot be systematically described with the $\chi$PT parameterization.
+\asm{One can of course study effects of truncating the $\chi$PT expansion by working to higher orders in determining the $f_k$ coefficients and studying the impact on the analysis.
+ {\bf [don't understand this sentence]}}
 
 
 As a slightly more concrete example, start with the inverse transformation from $z$ back to $Q^2$, expressed in terms of $x$, given in Eq.~\eqref{eq:Q2toz}.  The expression for $z$ at small $x$ is \begin{align}
@@ -1086,7 +1088,7 @@ As a slightly more concrete example, start with the inverse transformation from 
  \label{eq:ztoQ2}
 \end{align}
  which starts at $O(x)$.
-For large $Q^2$, the relation is instead expanded in terms of $x^{-1}$.
+\sout{For large $Q^2$, the relation is instead expanded in terms of $x^{-1}$.}
 A general series in $Q^2$ may therefore be converted to a double expansion in $z$ and $t_c-t_0$
  by first converting powers of $Q^2$ to those of $Q^2+t_0$ and $t_0$ using the  binomial theorem,
 \begin{align}
@@ -1097,11 +1099,13 @@ A general series in $Q^2$ may therefore be converted to a double expansion in $z
  %\biggr( \frac{Q^2+t_0}{t_c-t_0} \biggr)^n
  \biggr( \frac{-t_0}{t_c-t_0} \biggr)^{m-n}
 \end{align}
-and then substituting Equation~\ref{eq:Q2toz} to convert powers of $Q^2+t_0$ into powers of $z$.
-All dependence on the dimension is absorbed into powers of $t_c-t_0 \propto m_\pi^2$.
+and then substituting equation~(\ref{eq:Q2toz}) to convert powers of
+ \asm{$x$}\sout{$Q^2+t_0$} into powers of $z$.
+All dependence on the dimension is absorbed into powers of
+ $t_c-t_0 \asm{\sim}\del{\propto} m_\pi^2$.
 The relative weight of the expansion parameters may be adjusted by changing the value of $t_0$, giving some modicum of freedom over the expansion order.
 If we consider the $Q^4$ expansion of Equation~\eqref{eq:F_Q_power} with
-a truncation at the leading chiral and discretization corrections
+ a truncation at the leading chiral and discretization corrections\asm{, we get}
 \begin{align}
 f_0 &= c_0 + \ell_0 m_\pi^2 + d_0 a^2\, ,
 \nonumber\\
@@ -1110,14 +1114,14 @@ f_1 &= c_1 + \ell_1 m_\pi^2 + d_1 a^2\, ,
 f_2 &= c_2 + \ell_2 m_\pi^2 + d_2 a^2\, ,
 \label{eq:lecampi}
 \end{align}
-where $c_k$, $\ell_k$ and $d_k$ are $\chi$PT expressions, including non-analytic $\ln(m_\pi)$ type and LEC corrections describing the pion mass and lattice spacing dependence.
+ where $c_k$, $\ell_k$ and $d_k$ are $\chi$PT expressions, including non-analytic $\ln(m_\pi)$ type and LEC corrections describing the pion mass and lattice spacing dependence.
 For the axial form factor, $c_0$ and $c_1$ are related to the axial coupling and radius in the chiral limit
 \begin{align}
 &c_0 = \lim_{m_\pi\rightarrow0} g_{\mathrm{A}}\, ,&
 &c_1 = -\lim_{m_\pi\rightarrow0} \frac{g_{\mathrm{A}} r_{\mathrm{A}}^2}{6}\, .&
 \end{align}
-Then the $z$ expansion coefficients that appear in equation~(\ref{eq:zexp})
-expressed in terms of $f_k$ are
+Then the $z$ expansion coefficients that appear in equation~(\ref{eq:zexp}),
+ expressed in terms of $f_k$, are
 \begin{align}\label{eq:z_coeff_xpt}
 b_0 &= f_0 +\tctza \tctzb f_1 +\tctza^2 \tctzb^2 f_2 +O\big(\tctza^3\big),
 \nonumber\\
@@ -1125,7 +1129,7 @@ b_1 &= 4 \tctza f_1 +8 \tctza^2 \tctzb f_2 +O\big(\tctza^3\big),
 \nonumber\\
 b_2 &= 8 \tctza f_1 +16 \tctza^2 \Big(1 -\frac{t_0}{t_c-t_0}\Big) f_2 +O\big(\tctza^3\big).
 \end{align}
-The leading lattice spacing, pion mass and finite volume dependence may be made manifest by substituting their expresions from equation~(\ref{eq:lecampi}).
+The leading lattice spacing, pion mass and finite volume dependence may be made manifest by substituting their expressions from equation~(\ref{eq:lecampi}).
 
 
 
