@@ -187,7 +187,7 @@ However, the presence of multiple interaction channels and the addition of nucle
 Intranuclear motion can be significant relative to the energy transfer for the interactions of interest;
 interactions with correlated nucleon-nucleon states can modify or redistribute the interaction strength;
 and rescattering of pions and nucleons in the nucleus can confuse the relationship between the particles associated with the primary interaction channels and those observed in the detector.
-Rescattering can manifest as changes to the particle content and changes to the fraction of energy lost to neutrons, \change{which are typically unobservable in the detectors utilized by few-GeV neutrino oscillation experiments.}
+Rescattering can manifest as changes to the particle content and changes to the fraction of energy lost to neutrons, which are typically unobservable in the detectors utilized by few-GeV neutrino oscillation experiments.
 
 A significant challenge impeding progress towards a consistent theoretical description of
 $\nu A$ scattering is the lack of data with which to benchmark parts of the calculation.
@@ -529,14 +529,10 @@ In this review, we comment that:
 
 \item Clover-Wilson fermions are the most commonly used discretization scheme given their theoretical simplicity and preservation of all symmetries except chiral symmetry.  The explicit breaking of chiral symmetry with the Wilson operator means the light quark masses must be finely tuned against ultraviolet chiral symmetry breaking that scales as $1/a$, after which there remain residual $\mathrm{O}(a)$ chiral symmetry breaking effects.  It is well known, albeit laborious, how to non-perturbatively remove these leading $\mathrm{O}(a)$ scaling violations~\cite{Luscher:1996sc,Luscher:1996ug,Luscher:1996jn,Capitani:1998mq}, which must be done for both the action as well as matrix elements.
 
-\item Twisted mass fermions are a variant of Wilson fermions that exploits the approximate $SU(2)$ chiral symmetry of QCD to introduce a twisted quark mass term, $i\mu\g_5 \tau_3$ \change{which can be used to automatically remove the leading $\mathrm{O}(a)$ discretization effects~\cite{Frezzotti:2003ni} at the expense of introducing isospin breaking at finite lattice spacing.}
-\sout{At \asm{maximal twist}, the bare quark mass is cancelled by the $1/a$ additive quark mass, leaving $\mu$ as the only contribution through $\mathrm{O}(a)$ to the physical quark mass.  All observables are automatically \asm{$\mathrm{O}(a)$ improved} at maximal twist.
-\asm{\bf [``maximal twist'', ``$\mathrm{O}(a)$ improved'' are both jargon]}
-However, twisted mass fermions break isospin symmetry at finite lattice spacing, which causes some complications now that LQCD results are precise enough to resolve isospin breaking corrections from $m_d-m_u$ and}%
-%\begin{marginnote}
-%\entry{QED}{Quantum electro-dynamics}
-%\end{marginnote}%
-%QED.
+\item Twisted mass fermions are a variant of Wilson fermions that exploits the approximate $SU(2)$ chiral symmetry of QCD to introduce a twisted quark mass term, $i\mu\g_5 \tau_3$\asm{.}
+\sout{which can be}\done{\asm{This term is} used to automatically remove the leading $\mathrm{O}(a)$ discretization effects~\cite{Frezzotti:2003ni}%
+ \asm{, a benefit generically referred to as $\mathrm{O}(a)$ improvement,}
+ at the expense of introducing isospin breaking at finite lattice spacing.}
 
 \item The fourth most common discretization are DWF, which introduce a fifth dimension to the theory with unit links (the gluons are not dynamic in the fifth dimension) with the left and right handed fermions bound to opposite sides of the fifth dimension of size $L_5$.  The overlap of these left and right modes gives rise to an explicit chiral symmetry breaking that is exponentially suppressed by the extent of the fifth dimension.  For sufficiently small chiral symmetry breaking (large $L_5$), DWF are also automatically $\mathrm{O}(a)$ improved.
 While very desirable, DWF are more expensive to simulate numerically, both because of the extra fifth dimension and also because the algorithmic speed up offered by multi-grid computational technique, which works tremendously for clover-Wilson fermions on GPUs~\cite{Clark:2016rdz} but is not yet fleshed out for DWF~\cite{Boyle:2014rwa,Cohen:2011ivh,Yamaguchi:2016kop,Brower:2020xmc,Boyle:2021wcf}.
@@ -694,9 +690,7 @@ provides a complex consistency check at nonzero $Q^2$.
 Here, $A^{a}_\mu$ and $P^{a}$ are the axial and pseudoscalar currents,
  respectively, and $m_q$ is the light quark mass.
 The PCAC relation is an exact symmetry in the continuum limit.
-\change{When applied to the axial current matrix element of the nucleon, it yields the Goldberger-Treiman relation, which is usually expressed in the $Q^2\approx m_\pi^2$ region.  For arbitrary $Q^2$, it is sometimes referred to as the GGT}
-\sout{The generalization of this relation to the nucleon form factors
- yields the GGT}%
+When applied to the axial current matrix element of the nucleon, it yields the Goldberger-Treiman relation, which is usually expressed in the $Q^2\approx m_\pi^2$ region.  For arbitrary $Q^2$, it is sometimes referred to as the GGT%
  \begin{marginnote}
  \entry{GGT}{Generalized Goldberger-Triemann relation (Equation~\eqref{eq:ggt})}
  \end{marginnote}%
@@ -761,8 +755,7 @@ Taking into account these observations,
 
 
 Nucleon matrix elements of the temporal axial current have the largest visible excited state contamination~\cite{Jang:2019vkm,RQCD:2019jai}\asm{,} which can be at least qualitatively understood with $\chi$PT~\cite{Bar:2018xyi}.
-This has led to new analysis strategies that more carefully deal with the $N\pi$ excited state with pion-pole contributions \asm{and \change{additionally use the temporal axial current correlator to determine excited states.}}
-%information about the excited states from the temporal axial current.}
+This has led to new analysis strategies that more carefully deal with the $N\pi$ excited state with pion-pole contributions and additionally use the temporal axial current correlator to determine excited states.
 These new strategies yield minimal violations of PCAC and an improved understanding of excited state contamination on matrix elements sensitive to $F_{\rm A}(Q^2)$ or $\tilde{F}_{\rm P}(Q^2)$.
 Previously, these matrix elements exhibited deviations as large as $40\%$ from the PPD or GGT
  relations at low $Q^2$ where they were expected to work best~\cite{Bali:2014nma,Gupta:2017dwj}.
@@ -792,7 +785,7 @@ Though the axial coupling
  the needs of neutrino physics in the few-GeV energy range depend
  on the full momentum transfer dependence of the form factor.
 Despite the agreement between LQCD and experiment for the axial radius,
- LQCD \change{predicts} \del{prefers} an axial form factor that \change{falls off more slowly as a function of $Q^2$} than experiment,
+ LQCD predicts an axial form factor that falls off more slowly as a function of $Q^2$ than experiment,
  which is shown in Figure~\ref{fig:gaq2_overlay}.
 If the axial radius were the only parameter determining the form factor $Q^2$ dependence,
  then these two observations are incompatible.
@@ -1189,7 +1182,7 @@ Following this procedure, the dimensionful LECs that appear as prefactors for po
 %
 For the inverse transformation to take an expansion in $z$ to an expansion in $Q^2$,
  the expansion is again cast in terms of $x$
-\change{as} in Equation~\ref{eq:Q2toz}.
+as in Equation~\ref{eq:Q2toz}.
 Then the expression for $z$ at small $x$ is
 \begin{align}
  (1+x)^{1/2} -1 = \frac{x}{2}
@@ -1314,7 +1307,7 @@ For an ideal detector, with no tracking threshold on protons, charged pions or e
 E_{\nu}^{\mathrm{rec,\;had}} = E_{l} + \Sigma_{p} E_{\mathrm{kin}} + \Sigma_{\pi^{\pm}, \pi^{0}, \gamma} E_{\mathrm{total}},
 \label{eq:enuhad}
 \end{equation}
-\noindent where $E_{l}$ is the energy of the outgoing charged lepton, \change{and $E_{\mathrm{kin}}$ and $E_{\mathrm{total}}$ indicate the kinetic and total energies of individual outgoing hadrons.} \asm{\bf [define $E_{\mathrm{kin}}$, $E_{\mathrm{total}}$?]}.
+\noindent where $E_{l}$ is the energy of the outgoing charged lepton, and $E_{\mathrm{kin}}$ and $E_{\mathrm{total}}$ indicate the kinetic and total energies of individual outgoing hadrons.
 The $E_{\nu}^{\mathrm{true}}$ --- $E_{\nu}^{\mathrm{rec,\;had}}$ smearing in this idealized case is due to missing kinetic energy lost to neutrons, and initial state nuclear effects (e.g., nucleons are not at rest inside the nucleus). Real detectors have tracking thresholds below which charged particles cannot be reconstructed, which results in additional smearing due to missing the masses of charged pions, although some energy lost to neutrons may be recovered.
 
 \begin{figure}[htbp]
@@ -1331,8 +1324,7 @@ The modification to the axial form factor based on the LQCD results from the Cal
 Despite the different neutrino energy reconstruction methods used by DUNE and T2K, the same arguments about potential bias due to model-dependence apply when there are differences in the effect of an out-of-model change between near and far detectors.
 
 The issue of how to assign strength between the CCQE and CC-2p2h channels has been a major focus for neutrino oscillation experiments over the past decade.
-\change{Experimental data from a large number of experiments has disagreed with model predictions in the CC$0\pi$ channel at the 10--30\% level}
-\sout{Experimental data from a large number of experiments have disagreed on the 10--30\% level between model predictions and data in the CC$0\pi$ channel}~\cite{garvey_review_2014, Mosel:2016cwa, NuSTEC:2017hzk, Katori:2016yel, ParticleDataGroup:2020ssz}. This has prompted development of {\it ad hoc} systematic uncertainties and empirical model tunings unique to each experiment, with a tendancy to soak up model-data discrepancies into the CC-2p2h channel.
+\sout{Experimental }Data from a large number of experiments has disagreed with model predictions in the CC$0\pi$ channel at the 10--30\% level~\cite{garvey_review_2014, Mosel:2016cwa, NuSTEC:2017hzk, Katori:2016yel, ParticleDataGroup:2020ssz}. This has prompted development of {\it ad hoc} systematic uncertainties and empirical model tunings unique to each experiment, with a tendancy to soak up model-data discrepancies into the CC-2p2h channel.
 These are major contributors to the final uncertainties on key oscillation parameter measurements and projected sensitivities~\cite{T2K:2019bcf, DUNE:2020jqi, T2K:2021xwb, NOvA:2021nfi, DUNE:2021mtg}. It is therefore very significant that the LQCD results shown in Figures~\ref{fig:t2k_impact} and~\ref{fig:dune_impact} suggest that an increase to the strength of the CCQE contribution on the order of 20\% is necessary.
 
 
@@ -1389,7 +1381,7 @@ Calculations that access the combined resonant and nonresonant scattering amplit
  where a current induces a transition of the nucleon to a multiparticle final state.
 The most prominent resonant contribution is from the $N\rightarrow\D$ transition.
 However, building up an understanding of the entire resonant region, following the standard LQCD computational strategy, will be an extremely challenging endeavour given the dense spectrum of multi-particle states, and more importantly, the lack of formalism to relate three-particle matrix elements in finite volume to the infinite volume physics of interest.
-Alternative strategies that focus on the inclusive $N\rightarrow X$ contribution~\cite{Hansen:2017mnd,Gambino:2020crt,Fukaya:2020wpp,Bruno:2020kyl}, or the use of two-currents to compute the hadronic tensor~\cite{Liu:1993cv,Liang:2019frk} \change{are likely to} be more fruitful.
+Alternative strategies that focus on the inclusive $N\rightarrow X$ contribution~\cite{Hansen:2017mnd,Gambino:2020crt,Fukaya:2020wpp,Bruno:2020kyl}, or the use of two-currents to compute the hadronic tensor~\cite{Liu:1993cv,Liang:2019frk} are likely to be more fruitful.
 
 Calculations of two-nucleon matrix elements provide key insights
  about the correlations between nucleons inside a nuclear medium,
@@ -1422,7 +1414,7 @@ However, notable tensions exist in current parameterizations of the vector form 
 $F_{\mathrm{A}}(Q^2)$ cannot be cleanly measured with existing experiments that use heavier nuclear targets both for safety reasons and to increase the event rate, so LQCD offers a novel path to this important quantity.
 We have compared $F_{\mathrm{A}}(Q^2)$ calculations from a variety of different LQCD collaborations using different approaches and techniques, and shown them to be in good agreement with each other, but crucially, in poor agreement with the simple dipole model tuned to historic $\nu N$ data that are currently relied upon.
 Assuming that no systematic effects affecting all of the LQCD calculations are uncovered, this suggests a significant increase of approximately 20\% to the strength of the CCQE scattering channel that dominates the neutrino scattering cross section for $E_{\nu} \lesssim 1$ GeV.
-We have demonstrated that these results produce a significant \asm{shape }change \change{\bf [I'm not sure I would stress shape]} in the predicted neutrino event spectra for T2K (which has similar considerations to Hyper-K) and DUNE experiments.
+We have demonstrated that these results produce a significant change in the predicted neutrino event spectra for T2K (which has similar considerations to Hyper-K) and DUNE experiments.
 Determining the impact on oscillation results would require a full analysis performed by each experimental collaboration, but it is clear that LQCD results for $F_{\mathrm{A}}(Q^2)$ may offer a valuable insight that can clarify aspects of the complex neutrino interaction modeling problem these experiments face.
 We additionally discussed a number of ways that current calculations can be improved and validated, and to increase confidence that the LQCD results are not subject to an uncontrolled systematic uncertainty.
 Finally, we discussed a number of other quantities that are important to neutrino oscillation experiments in the few-GeV energy regime and that LQCD can provide first principles predictions for.
