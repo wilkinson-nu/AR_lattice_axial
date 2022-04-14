@@ -532,13 +532,14 @@ In this review, we comment that:
 
 \item Clover-Wilson fermions are the most commonly used discretization scheme given their theoretical simplicity and preservation of all symmetries except chiral symmetry.  The explicit breaking of chiral symmetry with the Wilson operator means the light quark masses must be finely tuned against ultraviolet chiral symmetry breaking that scales as $1/a$, after which there remain residual $\mathrm{O}(a)$ chiral symmetry breaking effects.  It is well known, albeit laborious, how to non-perturbatively remove these leading $\mathrm{O}(a)$ scaling violations~\cite{Luscher:1996sc,Luscher:1996ug,Luscher:1996jn,Capitani:1998mq}, which must be done for both the action as well as matrix elements.
 
-\item Twisted mass fermions are a variant of Wilson fermions that exploits the approximate $SU(2)$ chiral symmetry of QCD to introduce a twisted quark mass term, $i\mu\g_5 \tau_3$.  At \asm{maximal twist}, the bare quark mass is cancelled by the $1/a$ additive quark mass, leaving $\mu$ as the only contribution through $\mathrm{O}(a)$ to the physical quark mass.  All observables are automatically \asm{$\mathrm{O}(a)$ improved} at maximal twist~\cite{Frezzotti:2003ni}.
+\item Twisted mass fermions are a variant of Wilson fermions that exploits the approximate $SU(2)$ chiral symmetry of QCD to introduce a twisted quark mass term, $i\mu\g_5 \tau_3$ \change{which can be used to automatically remove the leading $\mathrm{O}(a)$ discretization effects~\cite{Frezzotti:2003ni} at the expense of introducing isospin breaking at finite lattice spacing.}
+\sout{At \asm{maximal twist}, the bare quark mass is cancelled by the $1/a$ additive quark mass, leaving $\mu$ as the only contribution through $\mathrm{O}(a)$ to the physical quark mass.  All observables are automatically \asm{$\mathrm{O}(a)$ improved} at maximal twist.
 \asm{\bf [``maximal twist'', ``$\mathrm{O}(a)$ improved'' are both jargon]}
-However, twisted mass fermions break isospin symmetry at finite lattice spacing, which causes some complications now that LQCD results are precise enough to resolve isospin breaking corrections from $m_d-m_u$ and%
-\begin{marginnote}
-\entry{QED}{Quantum electro-dynamics}
-\end{marginnote}%
-QED.
+However, twisted mass fermions break isospin symmetry at finite lattice spacing, which causes some complications now that LQCD results are precise enough to resolve isospin breaking corrections from $m_d-m_u$ and}%
+%\begin{marginnote}
+%\entry{QED}{Quantum electro-dynamics}
+%\end{marginnote}%
+%QED.
 
 \item The fourth most common discretization are DWF, which introduce a fifth dimension to the theory with unit links (the gluons are not dynamic in the fifth dimension) with the left and right handed fermions bound to opposite sides of the fifth dimension of size $L_5$.  The overlap of these left and right modes gives rise to an explicit chiral symmetry breaking that is exponentially suppressed by the extent of the fifth dimension.  For sufficiently small chiral symmetry breaking (large $L_5$), DWF are also automatically $\mathrm{O}(a)$ improved.
 While very desirable, DWF are more expensive to simulate numerically, both because of the extra fifth dimension and also because the algorithmic speed up offered by multi-grid computational technique, which works tremendously for clover-Wilson fermions on GPUs~\cite{Clark:2016rdz} but is not yet fleshed out for DWF~\cite{Boyle:2014rwa,Cohen:2011ivh,Yamaguchi:2016kop,Brower:2020xmc,Boyle:2021wcf}.
@@ -802,7 +803,7 @@ Though the axial coupling
  the needs of neutrino physics in the few-GeV energy range depend
  on the full momentum transfer dependence of the form factor.
 Despite the agreement between LQCD and experiment for the axial radius,
- LQCD prefers an axial form factor that \change{falls off more slowly as a function of $Q^2$} than experiment,
+ LQCD \change{predicts} \del{prefers} an axial form factor that \change{falls off more slowly as a function of $Q^2$} than experiment,
  which is shown in Figure~\ref{fig:gaq2_overlay}.
 If the axial radius were the only parameter determining the form factor $Q^2$ dependence,
  then these two observations are incompatible.
