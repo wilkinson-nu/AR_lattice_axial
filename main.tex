@@ -110,7 +110,7 @@
 %% after first compilation of the tex, need to compile the diagram using the command
 %% $ mpost plaquette.mp
 %% then recompile the entire document again
-\usepackage{feynmp}
+\usepackage{feynmp-auto}
 \DeclareGraphicsRule{*}{mps}{*}{} %% needed for feynmp
 \newcommand{\Umunu}{
 \hspace{-5em}
@@ -124,28 +124,14 @@
  %% base vertices
  \fmfleft{l0,l1}
  \fmfright{r0,r1}
- %% square box, with vertex placement for arrows
- \fmf{plain,tension=0.1}{l1,ml}
- \fmf{plain,tension=0.1}{l0,m0}
- \fmf{plain,tension=0.1}{r0,mr}
- \fmf{plain,tension=0.1}{r1,m1}
- \fmf{plain}{ml,l0}
- \fmf{plain}{m0,r0}
- \fmf{plain}{mr,r1}
- \fmf{plain}{m1,l1}
- \fmffreeze
- %% labels
  %% something about the latex template borks the label placement,
  %% but that is above my paygrade to fix
- \fmf{phantom,l.s=bottom,label=$U_\mu(x)$}{l0,r0}
- \fmf{phantom,l.s=left,label=$U_\nu(x+a\hat{\mu})$}{r1,r0}
- \fmf{phantom,l.d=4.0,l.s=top,label=$U^\dagger_\mu(x+a\hat{\nu})$}{r1,l1}
- \fmf{phantom,l.d=0.1,l.s=left,label=$U^\dagger_\nu(x)$}{l0,l1}
- %% arrows
- \fmf{fermion}{l1,ml}
- \fmf{fermion}{l0,m0}
- \fmf{fermion}{r0,mr}
- \fmf{fermion}{r1,m1}
+ %% l.s: label.side
+ %% l.d: label.distance
+ \fmf{fermion,l.d=0.1,l.s=right, label=$U^\dagger_\nu(x)$}{l1,l0}
+ \fmf{fermion,        l.s=bottom,label=$U_\mu(x)$}{l0,r0}
+ \fmf{fermion,        l.s=right, label=$U_\nu(x+a\hat{\mu})$}{r0,r1}
+ \fmf{fermion,l.d=4.0,l.s=top,   label=$U^\dagger_\mu(x+a\hat{\nu})$}{r1,l1}
 \end{fmfgraph*}
 }
 \end{fmffile}
