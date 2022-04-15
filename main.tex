@@ -74,7 +74,29 @@
 \def\tsep{t_{\rm sep}}
 \def\tmin{t_{\rm min}}
 
-\newcommand{\Umunu}{\includegraphics[width=0.6\textwidth,valign=c]{plots/plaquette}}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+%\newcommand{\Umunu}{\hspace{-1.25in}\includegraphics[width=0.6\textwidth,valign=c]{plots/plaquette}\hspace{-0.65in}}
+\newcommand{\Umunu}{
+\hspace{-2.5em}
+\def\boxsize{1.3}
+\def\lbos{0.05}
+\raisebox{-3.5em}{
+\scalebox{1.0}{
+\begin{tikzpicture}
+\draw[thick] (0,0) -- (\boxsize,0) -- (\boxsize,\boxsize) -- (0,\boxsize) -- cycle;
+\draw[thick,-stealth] (       0,       0) -- (0.55*\boxsize,            0);
+\draw[thick,-stealth] (\boxsize,       0) -- (     \boxsize,0.55*\boxsize);
+\draw[thick,-stealth] (\boxsize,\boxsize) -- (0.45*\boxsize,     \boxsize);
+\draw[thick,-stealth] (       0,\boxsize) -- (            0,0.45*\boxsize);
+\node[anchor=north] at (       0.5*\boxsize ,    -\lbos*\boxsize ) {\small $U_\mu(x)$};
+\node[anchor=west ] at ({(1+\lbos)*\boxsize},       0.5*\boxsize ) {\small $U_\nu(x+a\hat{\mu})$};
+\node[anchor=south] at (       0.5*\boxsize ,{(1+\lbos)*\boxsize}) {\small $U^\dagger_\mu(x+a\hat{\nu})$};
+\node[anchor=east ] at (    -\lbos*\boxsize ,       0.5*\boxsize ) {\small $U^\dagger_\nu(x)$};
+\end{tikzpicture}
+}
+}
+}
 
 \setcounter{secnumdepth}{4}
 
@@ -478,7 +500,7 @@ This parameterization allows for the construction of a discretized theory that p
 In the continuum, the gluon action-density is given by the product of field strength tensors, which are gauge-covariant curls of the gauge potential.
 When constructing the discretized gluon-action, it is therefore natural to use objects which encode this curl of the gauge potential.  The simplest such object is referred to as a ``plaquette'' and given by
 \begin{equation}
-\hspace{-1.25in}\Umunu \hspace{-0.65in}
+  \Umunu
     =U_{\mu\nu}(x)
     =U_\mu(x)U_\nu(x+a\hat{\mu}) U^\dagger_\mu(x+a\hat{\nu}) U^\dagger_\nu(x)\, .
 \end{equation}
