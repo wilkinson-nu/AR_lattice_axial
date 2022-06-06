@@ -426,22 +426,24 @@ is small enough to be sensitive to the tension between vector form factor parame
 The aforementioned situation with nucleon form factors is depicted in Figure~\ref{fig:nucleonxsec}.
 The labels correspond to the following form factor parameterization choices and uncertainties:
 \begin{description}
- \item[BBBA05] Vector form factors from BBBA05~\cite{Bradford:2006yz},
- and axial form factors from Meyer~{\it et al.}~\cite{Meyer:2016oeg}.
- The uncertainty is taken only from the BBBA05 parameterization,
- with all fit parameters assumed to be uncorrelated.
- \item[$z$ exp, vector] Vector form factors from Borah~{\it et al.}~\cite{Borah:2020gte},
- and axial form factors from Meyer~{\it et al.}~\cite{Meyer:2016oeg}.
- The uncertainty is taken only from Borah~{\it et al.}
- \item[$z$ exp, ${\rm D}_{2}$ axial] the same as ``$z$ exp, vector,''
- with the uncertainty taken only from Meyer~{\it et al.} instead.
- \item[$z$ exp, LQCD axial] Vector form factors from Borah~{\it et al.}~\cite{Borah:2020gte},
- and the axial form factor with its uncertainty
- provided by authors from an LQCD simulation on a single physical mass ensemble.
+\item[BBBA05] Vector form factors from BBBA05~\cite{Bradford:2006yz},
+and axial form factors from Meyer~{\it et al.}~\cite{Meyer:2016oeg}.
+The uncertainty is taken only from the BBBA05 parameterization,
+with all fit parameters assumed to be uncorrelated.
+
+\item[$z$ exp, vector] Vector form factors from Borah~{\it et al.}~\cite{Borah:2020gte},
+and axial form factors from Meyer~{\it et al.}~\cite{Meyer:2016oeg}.
+The uncertainty is taken only from Borah~{\it et al.}
+
+\item[$z$ exp, ${\rm D}_{2}$ axial] the same as ``$z$ exp, vector,''
+with the uncertainty taken only from Meyer~{\it et al.} instead.
+
+\item[$z$ exp, LQCD axial] Vector form factors from Borah~{\it et al.}~\cite{Borah:2020gte},
+and the axial form factor with its uncertainty from an LQCD simulation on a single physical mass ensemble~\cite{Meyer:2021vfq}.
 \end{description}
 Of particular note is the observed tension between the black and blue bands,
- which results from the tension between proton magnetic form factor parameterizations
- (see Figure~\ref{fig:protonmagneticff}).
+which results from the tension between proton magnetic form factor parameterizations
+(see Figure~\ref{fig:protonmagneticff}).
 The width of the upper red band, which comes from the LQCD results,
 is comparable in size to the discrepancy between these black and blue curves.
 The LQCD uncertainty is also noticeably smaller than the green band that arises from the deuterium scattering determination of $F_{\mathrm{A}}(Q^2)$.
@@ -550,7 +552,11 @@ When constructing the discretized gluon-action, it is therefore natural to use o
     =U_{\mu\nu}(x)
     =U_\mu(x)U_\nu(x+a\hat{\mu}) U^\dagger_\mu(x+a\hat{\nu}) U^\dagger_\nu(x)\, .
 \end{equation}
-For small lattice spacing, this Wilson gauge-action reduces to the continuum action plus irrelevant (higher dimensional) operators which vanish in the continuum limit
+For small lattice spacing, this Wilson gauge-action reduces to the continuum action plus irrelevant (higher dimensional) operators which vanish in the continuum limit%
+%FOOTNOTE
+\footnote{In the renormalization sense, these are operators of mass dimension $[O]>4$, such that their dimensionful couplings scale as $a^n=\Lambda^{-n}$ where $\Lambda$ is a high energy scale
+that goes to infinite in the continuum limit for LQCD, and $n=[O]-4$}
+%--------------------------------------------------------------
 \begin{align}\label{eq:gluon_action}
 S_{\mathrm{G}}(U) &= \beta \sum_{n=x/a} \sum_{\mu<\nu}
     \textrm{Re}\left[ 1 - \frac{1}{N_c} \textrm{Tr} \left[U_{\mu\nu}(n) \right]\right]
@@ -564,10 +570,6 @@ S_{\mathrm{G}}(U) &= \beta \sum_{n=x/a} \sum_{\mu<\nu}
     & \rightarrow \beta = \frac{2N_c}{g^2}\, .
 \end{align}
 The continuum limit, which is the asymptotically large $Q^2$ region, is therefore approached as $\beta\rightarrow\infty$ where $g(Q^2)\rightarrow 0$.%
-\begin{marginnote}
-\entry{Irrelevant operators}{In the renormalization sense, these are operators of mass dimension $[O]>4$, such that their dimensionful couplings scale as $a^n=\Lambda^{-n}$ where $\Lambda$ is a high energy scale
-that goes to infinite in the continuum limit for LQCD, and $n=[O]-4$}
-\end{marginnote}
 
 
 The inclusion of quark fields adds more variety of lattice actions, each with their own benefits and drawbacks.
@@ -617,24 +619,20 @@ In this expression, $|\O\rangle$ is the vacuum state,
 $z_n(\mathbf{p}) = \sum_{\mathbf{x}}e^{-i\mathbf{p\dotp x}} \langle \O|O(0,\mathbf{x})|n\rangle$
 and $z_n^\dagger(\mathbf{p}) = \langle n(\mathbf{p})|O^\dagger(0,\mathbf{0})|\O\rangle$.
 To go from the first equality to the second, we have inserted a complete set of states, $1=\sum_n |n\rangle\langle n|$ and we have used the time-evolution operator to shift the annihilation operator to $t=0$ and expose the explicit time dependence.%
-%-------------------------------------------------------------------------------
-\begin{marginnote}
-\entry{$O(t,\mathbf{x}) = e^{\hat{H}t} O(0,\mathbf{x}) e^{-\hat{H}t}$}{The Hamiltonian, $\hat{H}$, is used to time evolve the operator}
-\end{marginnote}%
-%-------------------------------------------------------------------------------
+% FOOTNOTE --------------------------------------------------------------
+\footnote{The Hamiltonian, $\hat{H}$, is used to time evolve the operator $O(t,\mathbf{x}) = e^{\hat{H}t} O(0,\mathbf{x}) e^{-\hat{H}t}$.}
+%------------------------------------------------------------------------------
 As we will discuss in more detail below, it is more desirable to instead build both source and sink operators
 in momentum space.
 Momentum space sources are not commonly used as they are significantly more numerically expensive to generate.
 
 For large Euclidean time, the correlation function will be dominated by the ground state as the excited states will be exponentially suppressed by the energy gap
-\begin{equation}
-    C(t) = z_0 z_0^\dagger e^{-E_0 t}\left[
-        1 + r_1 r^\dagger_1 e^{-\Delta_{1,0}t} + \cdots \right]\, .
-\end{equation}%
-\begin{marginnote}
-\entry{$\D_{m,n}= E_m - E_n$}{energy gap}
-\entry{$r_n = z_n / z_0$}{ratio of overlap factors}
-\end{marginnote}%
+\begin{align}
+&C(t) = z_0 z_0^\dagger e^{-E_0 t}\left[
+        1 + r_1 r^\dagger_1 e^{-\Delta_{1,0}t} + \cdots \right]\, ,&
+&\D_{m,n}= E_m - E_n\, ,&
+&r_n = \frac{z_n}{z_0}\, .&
+\end{align}
 It is useful to construct an \textit{effective mass} to visualize at which time $t$, the ground state begins to saturate the correlation function
 \begin{align}
 m_{\rm eff}(t) &= \ln \left( \frac{C(t)}{C(t+1)} \right)
@@ -672,8 +670,8 @@ where $g_{n,m}^\G$ are the matrix elements of interest, and in principle, all ot
 Often, the sink is projected to zero momentum, $\mathbf{p}=0$, and momentum conservation selects an incoming state with momentum $-\mathbf{q}$.%
 %-------------------------------------------------------------------------------
 \begin{marginnote}
-\entry{$j_\G = \bar{q}\, \G\, q$}{quark bilinear currents of Dirac structure $\G$ and unspecified flavor structure}
-\entry{$g_{n,m}^\G = \langle n| j_\G |m\rangle$}{hadronic matrix elements of interest from state $m$ to $n$ with implicit momentum and energy dependence}
+\entry{$j_\G$}{quark bilinear currents of Dirac structure $\G$ and unspecified flavor structure $\bar{q}\, \G\, q$}
+\entry{$g_{n,m}^\G$}{hadronic matrix elements of interest from state $m$ to $n$ with implicit momentum and energy dependence, $\langle n| j_\G |m\rangle$}
 \entry{$\tsep$}{The time-separation between the sink and source}
 \end{marginnote}%
 %-------------------------------------------------------------------------------
@@ -985,7 +983,7 @@ There is some hope that expanding in terms of the $z$ expansion parameter $z$
 This will be discussed in Section~\ref{sec:z_continuum},
  where the relationship between $Q^2$ and $z$ will be analyzed in more detail.
 
-
+\subsubsection{Additional Results}
 In addition to the aforementioned published results, there are
  a handful of recent preliminary results that deserve mention.
 The LHPC~\cite{Hasan:2017wwt} and PACS~\cite{Ishikawa:2021eut} collaborations
