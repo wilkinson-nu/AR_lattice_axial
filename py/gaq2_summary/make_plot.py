@@ -8,7 +8,7 @@ from plot_params import *
 
 import matplotlib.pyplot as plt
 
-long_Q2 = 1
+long_Q2 = 0
 do_pgf = 1
 if do_pgf:
   mpl.use("pgf")
@@ -54,7 +54,7 @@ def get_rqcd( fn):
     data.append([ float( lsp[0]), float( lsp[1]), float( lsp[3]) ])
   return np.array( data)
 
-cls  = get_data( 'cls_gaq2.dat')
+lhpc  = get_data( 'lhpc_gaq2.dat')
 etm = get_data( 'etm_gaq2.dat')
 mainz = get_data( 'mainz_gaq2.dat')
 callat = get_data( 'callat_gaq2.dat')
@@ -100,7 +100,7 @@ f0.set_size_inches( *figure_size_default)
 plt.subplots_adjust( *plot_axes_default)
 plt.fill_between( Q2_range, ym, yp, color='red', alpha=0.3, zorder=-5)
 
-lbc = 'CLS 17'
+lbc = 'LHPC 17'
 lbe = 'ETMC 20'
 lbm = 'Mainz 21'
 lbx = 'CalLat 21'
@@ -115,7 +115,7 @@ php = plt.errorbar( pacs.T[0], pacs.T[1], yerr=pacs.T[2],
   color='#508EED',   marker='s', linestyle='', label=lbp, zorder=-2)
 php21 = plt.errorbar( pacs21.T[0], pacs21.T[1], yerr=pacs21.T[2],
   color='#508EED',   marker='s', markerfacecolor='none', linestyle='', label=lbp21, zorder=-2)
-phc = plt.errorbar( cls.T[0], cls.T[1], yerr=cls.T[2],
+phc = plt.errorbar( lhpc.T[0], lhpc.T[1], yerr=lhpc.T[2],
   color=sunkist,  marker='^', linestyle='', label=lbc, zorder=-1)
 phe = plt.errorbar( etm.T[0], etm.T[1], yerr=etm.T[2],
   color='#3CB24C',   marker='o', linestyle='', label=lbe, zorder=0)
